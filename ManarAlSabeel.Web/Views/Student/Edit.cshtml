@@ -1,67 +1,100 @@
 ﻿@model ManarAlSabeel.Domain.Entities.Student
 
 @{
-    ViewBag.Title = "Edit";
+	ViewBag.Title = "تعديل بيات الطالب";
 }
 
-@using (Html.BeginForm("Edit", "Student", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-	@Html.ValidationSummary()
-	
-	<label>الاسم:</label>
-	@Html.TextBoxFor(x => x.Name)
-	<br />
-	
-	<label>تاريخ الميلاد:</label>
-	@Html.TextBoxFor(x => x.BirthDate)
-	<br />
-	
-	<label>اسم المدرسة:</label>
-	@Html.TextBoxFor(x => x.SchoolName)
-	<br />
-	
-	<label>آخر شهادة دراسية:</label>
-	@Html.TextBoxFor(x => x.LastEducationDegree)
-	<br />
-	
-	<label>المرحلة الدراسية الحالية:</label>
-	@Html.TextBoxFor(x => x.EducationStage)
-	<br />
-	
-	<label>اسم الفصل الدراسي:</label>
-	@Html.TextBoxFor(x => x.SchoolClass)
-	<br />
-	
-	<label>كيف تعرفت على المركز:</label>
-	@Html.TextBoxFor(x => x.HowKnewTheCenter)
-	<br />
-	
-	<label>الفترة المتوقعة لانهاء القرآن:</label>
-	@Html.TextBoxFor(x => x.ExpectedQuraanFinishTime)
-	<br />
-	
-	<label>هل هو مسجل بالمواصلات:</label>
-	@Html.CheckBoxFor(x => x.IsInTransportations)
-	<br />
-	
-	<label>الجنس:</label>
-	<label>ذكر</label>
-	@Html.RadioButtonFor(x => x.Sex, ManarAlSabeel.Domain.Entities.Sex.Male)
-	<label>أنثى</label>
-	@Html.RadioButtonFor(x => x.Sex, ManarAlSabeel.Domain.Entities.Sex.Female)
-	<br />
-	
-	<label>الحالة:</label>
-	@Html.TextBoxFor(x => x.Staus)
-	<br />
-	
-	<hr />
-	@Html.TextBoxFor(x => x.Branch.ID)
-	@Html.TextBoxFor(x => x.Guardian.ID)
-	@Html.TextBoxFor(x => x.OriginalNationality.ID)
-	@Html.TextBoxFor(x => x.AcquiredNationality.ID, new {value="0"})
-	@Html.TextBoxFor(x => x.ID)
-	<hr />
-	
-	<input type="submit" value="حفظ" />
-}
+<br />
+
+<div class="panel panel-default" style="width: 45%; margin: 0 auto;">
+	<div class="panel-body">
+
+		@using (Html.BeginForm("Edit", "Student", FormMethod.Post, new { enctype = "multipart/form-data", role="form" }))
+		{
+			@Html.ValidationSummary()
+
+			<div class="form-group">
+				<label>الاسم:</label>
+				@Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+			</div>
+
+			<div class="form-group">
+				<label>تاريخ الميلاد:</label>
+				@Html.TextBoxFor(x => x.BirthDate,
+					new { @class = "form-control date-input", data_date_format = "dd/mm/yyyy",
+						  Value = Model.BirthDate.ToShortDateString()
+						}
+					)
+			</div>
+
+			<div class="form-group">
+				<label>اسم المدرسة:</label>
+				@Html.TextBoxFor(x => x.SchoolName, new { @class = "form-control" })
+			</div>
+
+			<div class="form-group">
+				<label>آخر شهادة دراسية:</label>
+				@Html.TextBoxFor(x => x.LastEducationDegree, new { @class = "form-control" })
+			</div>
+
+			<div class="form-group">
+				<label>المرحلة الدراسية الحالية:</label>
+				@Html.TextBoxFor(x => x.EducationStage, new { @class = "form-control" })
+			</div>
+
+
+			<div class="form-group">
+				<label>اسم الفصل الدراسي:</label>
+				@Html.TextBoxFor(x => x.SchoolClass, new { @class = "form-control" })
+			</div>
+
+			<div class="form-group">
+				<label>كيف تعرفت على المركز:</label>
+				@Html.TextBoxFor(x => x.HowKnewTheCenter, new { @class = "form-control" })
+			</div>
+
+			<div class="form-group">
+				<label>الفترة المتوقعة لانهاء القرآن:</label>
+				@Html.TextBoxFor(x => x.ExpectedQuraanFinishTime, new { @class = "form-control" })
+			</div>
+
+			<div class="form-group">
+				<label>هل هو مسجل بالمواصلات:</label>
+				@Html.CheckBoxFor(x => x.IsInTransportations)
+			</div>
+
+			<div class="form-group">
+				<label>الجنس:</label>
+				<label>ذكر</label>
+				@Html.RadioButtonFor(x => x.Sex, ManarAlSabeel.Domain.Entities.Sex.Male)
+				<label>أنثى</label>
+				@Html.RadioButtonFor(x => x.Sex, ManarAlSabeel.Domain.Entities.Sex.Female)
+			</div>
+
+			<div class="form-group">
+				<label>الحالة:</label>
+				@Html.TextBoxFor(x => x.Staus, new { @class = "form-control" })
+			</div>
+
+			<hr />
+			@Html.TextBoxFor(x => x.Branch.ID)
+			@Html.TextBoxFor(x => x.Guardian.ID)
+			@Html.TextBoxFor(x => x.OriginalNationality.ID)
+
+			if (Model.AcquiredNationality != null && Model.AcquiredNationality.ID > 0)
+			{
+				@Html.TextBoxFor(x => x.AcquiredNationality.ID)
+			}
+			else
+			{
+				@Html.TextBoxFor(x => x.AcquiredNationality.ID, new { Value = "0" })
+			}
+
+			@Html.TextBoxFor(x => x.ID)
+			<hr />
+
+			<input type="submit" value="حفظ" class="btn btn-lg btn-primary btn-block" />
+		}
+
+	</div>
+</div>

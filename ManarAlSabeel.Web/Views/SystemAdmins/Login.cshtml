@@ -1,20 +1,23 @@
 ﻿@{
-    ViewBag.Title = "Login";
+	ViewBag.Title = "تسجيل الدخول";
 }
 
-@using (Html.BeginForm("Login", "SystemAdmins", FormMethod.Post, new { role = "form" }))
-{
-	@Html.ValidationSummary(true)
-	
-	<div class="form-group">
-		<label for="exampleInputEmail1">البريد الالكتروني</label>
-		@Html.TextBox("email", "", new { @type = "email", @class = "form-control", placeholder = "البريد الالكتروني" })
+<br />
+
+<div class="panel panel-default" style="width: 40%; margin: 0 auto;">
+	<div class="panel-body">
+		
+		<h3>تسجيل الدخول</h3>
+
+		@using (Html.BeginForm("Login", "SystemAdmins", FormMethod.Post, new { role = "form", @class = "form-signin" }))
+		{
+			@Html.ValidationSummary(true)
+
+			@Html.TextBox("email", "", new { @type = "email", @class = "form-control", placeholder = "البريد الالكتروني" })
+			@Html.Password("password", "", new { @class = "form-control", placeholder = "كلمة المرور" })
+
+			<br />
+			<button type="submit" class="btn btn-lg btn-primary btn-block">دخول</button>
+		}
 	</div>
-	
-	<div class="form-group">
-		<label for="exampleInputEmail1">كلمة المرور</label>
-		@Html.Password("password", "", new { @class = "form-control", placeholder = "كلمة المرور" })
-	</div>
-	
-	<button type="submit" class="btn btn-default">دخول</button>
-}
+</div>

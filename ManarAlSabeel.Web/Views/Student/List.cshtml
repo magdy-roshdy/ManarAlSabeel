@@ -4,36 +4,27 @@
     ViewBag.Title = "قائمة الطلاب";
 }
 
-@Html.ActionLink("اضافة طالب", "Create", "Student")
-<hr />
-
-<table border="1">
-	<tr>
-		<td>ID</td>
-		<td>الاسم</td>
-		<td>السن</td>
-		<td>حذف</td>
-	</tr>
-
-
+<h2>قائمة الطلاب</h2>
+<table class="table table-condensed table-hover">
+	
 	@foreach (ManarAlSabeel.Domain.Entities.Student student in Model)
 	{
-	 <tr>
-		<td>@student.ID</td>
-		<td>
-			@Html.ActionLink(student.Name, "Edit", new { student.ID })
-		</td>
-		<td>@student.Age</td>
-		<td>
-			@using (@Html.BeginForm("Delete", "Student"))
-			{
-				@Html.Hidden("productId", student.ID)
-				@Html.Hidden("returnUrl", "/")
-				<input class="actionButtons" type="submit"
-					   value="Remove" />
-			}
-		</td>
-	 </tr>
+		<tr>
+			<td>@student.ID</td>
+			<td>
+				@Html.ActionLink(student.Name, "Edit", new { student.ID })
+			</td>
+			<td>@student.Age</td>
+			<td>
+				@using (@Html.BeginForm("Delete", "Student"))
+				{
+					@Html.Hidden("productId", student.ID)
+					@Html.Hidden("returnUrl", "/")
+					<input class="btn btn-default" type="submit"
+						   value="Remove" />
+				}
+			</td>
+		</tr>
 	}
 
 </table>
