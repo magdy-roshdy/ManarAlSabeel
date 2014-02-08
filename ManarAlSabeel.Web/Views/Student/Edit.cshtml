@@ -1,0 +1,67 @@
+﻿@model ManarAlSabeel.Domain.Entities.Student
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm("Edit", "Student", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+	@Html.ValidationSummary()
+	
+	<label>الاسم:</label>
+	@Html.TextBoxFor(x => x.Name)
+	<br />
+	
+	<label>تاريخ الميلاد:</label>
+	@Html.TextBoxFor(x => x.BirthDate)
+	<br />
+	
+	<label>اسم المدرسة:</label>
+	@Html.TextBoxFor(x => x.SchoolName)
+	<br />
+	
+	<label>آخر شهادة دراسية:</label>
+	@Html.TextBoxFor(x => x.LastEducationDegree)
+	<br />
+	
+	<label>المرحلة الدراسية الحالية:</label>
+	@Html.TextBoxFor(x => x.EducationStage)
+	<br />
+	
+	<label>اسم الفصل الدراسي:</label>
+	@Html.TextBoxFor(x => x.SchoolClass)
+	<br />
+	
+	<label>كيف تعرفت على المركز:</label>
+	@Html.TextBoxFor(x => x.HowKnewTheCenter)
+	<br />
+	
+	<label>الفترة المتوقعة لانهاء القرآن:</label>
+	@Html.TextBoxFor(x => x.ExpectedQuraanFinishTime)
+	<br />
+	
+	<label>هل هو مسجل بالمواصلات:</label>
+	@Html.CheckBoxFor(x => x.IsInTransportations)
+	<br />
+	
+	<label>الجنس:</label>
+	<label>ذكر</label>
+	@Html.RadioButtonFor(x => x.Sex, ManarAlSabeel.Domain.Entities.Sex.Male)
+	<label>أنثى</label>
+	@Html.RadioButtonFor(x => x.Sex, ManarAlSabeel.Domain.Entities.Sex.Female)
+	<br />
+	
+	<label>الحالة:</label>
+	@Html.TextBoxFor(x => x.Staus)
+	<br />
+	
+	<hr />
+	@Html.TextBoxFor(x => x.Branch.ID)
+	@Html.TextBoxFor(x => x.Guardian.ID)
+	@Html.TextBoxFor(x => x.OriginalNationality.ID)
+	@Html.TextBoxFor(x => x.AcquiredNationality.ID, new {value="0"})
+	@Html.TextBoxFor(x => x.ID)
+	<hr />
+	
+	<input type="submit" value="حفظ" />
+}

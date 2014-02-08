@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ManarAlSabeel.Domain"
+                   namespace="ManarAlSabeel.Domain.Entities">
+	<class name="Student" table="Students">
+		<id name="ID" column="StudentID">
+			<generator class="identity" />
+		</id>
+		
+		<many-to-one name="Guardian"
+								 class="StudentGuardian"
+								 column="StudentGuardianID"/>
+
+		<many-to-one name="Branch"
+								 class="Branch"
+								 column="StudentBranchID"/>
+		
+		<property name="Name" column="StudentName" />
+		<property name="BirthDate" column="StudentBirthDate" />
+		<property name="PersonalPhotoPath" column="StudentPersonalPhotoPath"
+							not-null="false" />
+		<many-to-one name="OriginalNationality"
+								 class="Country"
+								 column="StudentOriginNationality"/>
+		<many-to-one name="AcquiredNationality"
+								 class="Country" not-null="false"
+								 column="StudentAcquiredNationality"/>
+
+		<property name="SchoolName" column="StudentSchoolName" not-null="false" />
+		<property name="LastEducationDegree" column="StudentLastEducationDegree" not-null="false" />
+		<property name="EducationStage" column="StudentEducationStage" not-null="false" />
+		<property name="SchoolClass" column="StudentSchoolClass" not-null="false" />
+		<property name="HowKnewTheCenter" column="StudentHowYouKnewTheCenter" not-null="false" />
+		<property name="ExpectedQuraanFinishTime" column="StudentExpectedQuraanFinishTime" not-null="false" />
+		<property name="IsInTransportations" column="StudentIsInTransportations" />
+		<property name="Sex" column="StudentSex" />
+		<property name="Staus" column="StudentStatus" />
+
+		<filter name="sexFilter" condition=":sex = StudentSex" />
+		<filter name="branchFilter" condition=":branch = StudentBranchID" />
+	</class>
+</hibernate-mapping>

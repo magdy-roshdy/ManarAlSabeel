@@ -1,0 +1,20 @@
+﻿using ManarAlSabeel.Domain.Abstract;
+using Ninject;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.ClientServices.Providers;
+using System.Web.Mvc;
+using System.Web.Security;
+
+namespace ManarAlSabeel.Web.Infrastructure
+{
+	public class SystemAdminsRolesProvider : ClientRoleProvider
+	{
+		public override string[] GetRolesForUser(string username)
+		{
+			return new string[] { "admin", "manager", "superAdmin" };
+		}
+	}
+}

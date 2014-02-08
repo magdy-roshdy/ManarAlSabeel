@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20827.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManarAlSabeel.Domain", "ManarAlSabeel.Domain\ManarAlSabeel.Domain.csproj", "{3E17B0A4-6BF0-4D1A-8487-4286DCC76081}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManarAlSabeel.Web", "ManarAlSabeel.Web\ManarAlSabeel.Web.csproj", "{A9499836-9D7C-46EA-858D-8DCA30AF42EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHibernate", "..\NHibernate_source.code\NHibernate.csproj", "{5909BFE7-93CF-4E5F-BE22-6293368AF01D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E17B0A4-6BF0-4D1A-8487-4286DCC76081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E17B0A4-6BF0-4D1A-8487-4286DCC76081}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E17B0A4-6BF0-4D1A-8487-4286DCC76081}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E17B0A4-6BF0-4D1A-8487-4286DCC76081}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9499836-9D7C-46EA-858D-8DCA30AF42EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9499836-9D7C-46EA-858D-8DCA30AF42EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9499836-9D7C-46EA-858D-8DCA30AF42EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9499836-9D7C-46EA-858D-8DCA30AF42EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5909BFE7-93CF-4E5F-BE22-6293368AF01D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5909BFE7-93CF-4E5F-BE22-6293368AF01D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5909BFE7-93CF-4E5F-BE22-6293368AF01D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5909BFE7-93CF-4E5F-BE22-6293368AF01D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

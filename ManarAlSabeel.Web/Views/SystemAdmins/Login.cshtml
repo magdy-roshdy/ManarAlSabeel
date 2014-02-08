@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+@using (Html.BeginForm("Login", "SystemAdmins", FormMethod.Post, new { role = "form" }))
+{
+	@Html.ValidationSummary(true)
+	
+	<div class="form-group">
+		<label for="exampleInputEmail1">البريد الالكتروني</label>
+		@Html.TextBox("email", "", new { @type = "email", @class = "form-control", placeholder = "البريد الالكتروني" })
+	</div>
+	
+	<div class="form-group">
+		<label for="exampleInputEmail1">كلمة المرور</label>
+		@Html.Password("password", "", new { @class = "form-control", placeholder = "كلمة المرور" })
+	</div>
+	
+	<button type="submit" class="btn btn-default">دخول</button>
+}

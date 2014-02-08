@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3E17B0A4-6BF0-4D1A-8487-4286DCC76081}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ManarAlSabeel.Domain</RootNamespace>
+    <AssemblyName>ManarAlSabeel.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\ICenterRepository.cs" />
+    <Compile Include="Abstract\IDataBaseFiltersProvider.cs" />
+    <Compile Include="Concrete\NHibernateCenterRepository.cs" />
+    <Compile Include="Entities\AdmissionInterview.cs" />
+    <Compile Include="Entities\Branch.cs" />
+    <Compile Include="Entities\Center.cs" />
+    <Compile Include="Entities\Class.cs" />
+    <Compile Include="Entities\Country.cs" />
+    <Compile Include="Entities\DisciplinaryActivityLog.cs" />
+    <Compile Include="Entities\Enums.cs" />
+    <Compile Include="Entities\Exam.cs" />
+    <Compile Include="Entities\ExternalSupervisor.cs" />
+    <Compile Include="Entities\LearningProgressLog.cs" />
+    <Compile Include="Entities\LearningProgressMark.cs" />
+    <Compile Include="Entities\LearningProgressAxes.cs" />
+    <Compile Include="Entities\LearningProgressUnit.cs" />
+    <Compile Include="Entities\Manager.cs" />
+    <Compile Include="Entities\RegisteredStudent.cs" />
+    <Compile Include="Entities\Semester.cs" />
+    <Compile Include="Entities\Stage.cs" />
+    <Compile Include="Entities\Student.cs" />
+    <Compile Include="Entities\StudentAbsenceLog.cs" />
+    <Compile Include="Entities\StudentBehaviorEvaluation.cs" />
+    <Compile Include="Entities\StudentCertificate.cs" />
+    <Compile Include="Entities\StudentDocument.cs" />
+    <Compile Include="Entities\StudentGuardian.cs" />
+    <Compile Include="Entities\Teacher.cs" />
+    <Compile Include="Entities\TeacherAbsenceLog.cs" />
+    <Compile Include="Entities\Track.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="hibernate.cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="NH.Mapping\Filters.hbm.xml" />
+    <EmbeddedResource Include="NH.Mapping\Manager.hbm.xml" />
+    <EmbeddedResource Include="NH.Mapping\Branch.hbm.xml" />
+    <EmbeddedResource Include="NH.Mapping\Center.hbm.xml" />
+    <EmbeddedResource Include="NH.Mapping\Country.hbm.xml" />
+    <EmbeddedResource Include="NH.Mapping\Teacher.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NH.Mapping\Student.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NH.Mapping\StudentGuardian.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\NHibernate_source.code\NHibernate.csproj">
+      <Project>{5909bfe7-93cf-4e5f-be22-6293368af01d}</Project>
+      <Name>NHibernate</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

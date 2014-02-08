@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ManarAlSabeel.Domain"
+                   namespace="ManarAlSabeel.Domain.Entities">
+	<class name="StudentGuardian" table="StudentGuardians">
+		
+		<id name="ID" column="GuardianID">
+			<generator class="identity" />
+		</id>
+
+		<property name="Name" column="GuardianName" />
+		<property name="HomePhone" column="GuardianHomePhone" not-null="false" />
+		<property name="MobilePhone" column="GuardianMobilePhone" />
+		<property name="OtherPhone" column="GuardianOtherPhone" not-null="false" />
+		<property name="HomeAddress" column="GuardianHomeAddress" not-null="false" />
+		<property name="Email" column="GuardianEmailAddress" />
+		<property name="Sex" column="GuardianSex" />
+	</class>
+</hibernate-mapping>

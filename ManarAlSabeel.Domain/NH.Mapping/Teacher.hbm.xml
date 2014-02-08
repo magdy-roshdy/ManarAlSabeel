@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ManarAlSabeel.Domain"
+                   namespace="ManarAlSabeel.Domain.Entities">
+	
+	<class name="Teacher" table="Teachers">
+
+		<id name="ID" column="TeacherID">
+			<generator class="identity"/>
+		</id>
+		<property name="Name" column="TeacherName" />
+		<property name="Sex" column="TeacherSex" />
+		<property name="BirthDate" column="TeacherBirthDate" />
+		<property name="MaritalStatus" column="TeacherMaritalStatus" />
+		<property name="MarriageDate" column="TeacherMarriageDate" not-null="false" />
+		<property name="Profession" column="TeacherProfission" not-null="false" />
+		<property name="ReligiousIdeology"
+							column="TeacherReligiousIdeology" not-null="false" />
+		<property name="MobileNumber" column="TeacherMobile" />
+		<property name="HomeNumber" column="TeacherHomeNumber" not-null="false" />
+		<property name="Email" column="TeacherEmail" not-null="false" />
+		<property name="AmountOfMemorization" column="TeacherMemorizedQuraanAmount" />
+		<property name="IsSupervisor" column="TeacherIsSupervisor" />
+		<property name="Status" column="TeacherStatus" />
+		
+		<many-to-one name="Branch" class="Branch"
+								 column="TeacherBranchID" />
+
+		<many-to-one name="Nationality" class="Country"
+								 column="TeacherNationality" />
+
+		<many-to-one name="BirthPlace" class="Country"
+								 column="TeacherBirthPlace" />
+	</class>
+
+</hibernate-mapping>
