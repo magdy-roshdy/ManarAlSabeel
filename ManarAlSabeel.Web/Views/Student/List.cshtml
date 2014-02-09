@@ -5,8 +5,16 @@
 }
 
 <h2>قائمة الطلاب</h2>
+
 <table class="table table-condensed table-hover">
-	
+	<thead>
+        		<tr>
+			<th>#</th>
+			<th>الاسم</th>
+			<th>السن</th>
+			<th>-</th>
+		</tr>
+	</thead>
 	@foreach (ManarAlSabeel.Domain.Entities.Student student in Model)
 	{
 		<tr>
