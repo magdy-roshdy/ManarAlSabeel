@@ -1,3 +1,4 @@
 * add Custom Profile Provider to hold user's data
 * add Branch_ID to Guardians table
 * make date-picker arabic
+* add foundation to the external_supervisor and branch so only realted external_supervisors will be shown in the branch

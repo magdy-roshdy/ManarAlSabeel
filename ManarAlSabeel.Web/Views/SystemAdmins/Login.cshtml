@@ -13,8 +13,8 @@
 		{
 			@Html.ValidationSummary(true)
 
-			@Html.TextBox("email", "", new { @type = "email", @class = "form-control", placeholder = "البريد الالكتروني" })
-			@Html.Password("password", "", new { @class = "form-control", placeholder = "كلمة المرور" })
+			@Html.TextBox("email", "", new { @type = "email", @class = "form-control", placeholder = "البريد الالكتروني", required="required" })
+			@Html.Password("password", "", new { @class = "form-control", placeholder = "كلمة المرور", required="required" })
 
 			<br />
 			<button type="submit" class="btn btn-lg btn-primary btn-block">دخول</button>
