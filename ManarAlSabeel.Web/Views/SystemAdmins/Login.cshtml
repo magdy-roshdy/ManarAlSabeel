@@ -1,5 +1,5 @@
 ﻿@{
-	ViewBag.Title = "تسجيل الدخول";
+	ViewBag.Title = @StringTable.LoginPageTitle;
 }
 
 <br />
@@ -7,14 +7,19 @@
 <div class="panel panel-default" style="width: 40%; margin: 0 auto;">
 	<div class="panel-body">
 		
-		<h3>تسجيل الدخول</h3>
+		<h3>@StringTable.LoginPageTitle</h3>
 
 		@using (Html.BeginForm("Login", "SystemAdmins", FormMethod.Post, new { role = "form", @class = "form-signin" }))
 		{
 			@Html.ValidationSummary(true)
 
-			@Html.TextBox("email", "", new { @type = "email", @class = "form-control", placeholder = "البريد الالكتروني", required="required" })
-			@Html.Password("password", "", new { @class = "form-control", placeholder = "كلمة المرور", required="required" })
+			@Html.TextBox("email", "", new { @type = "email", @class = "form-control",
+				placeholder = @StringTable.Email, dir="ltr",
+				required="required" })
+			
+			@Html.Password("password", "", new { @class = "form-control",
+				placeholder = @StringTable.Password, dir="ltr",
+				required="required" })
 
 			<br />
 			<button type="submit" class="btn btn-lg btn-primary btn-block">دخول</button>

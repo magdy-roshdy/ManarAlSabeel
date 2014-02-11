@@ -1,12 +1,10 @@
 ﻿@model ManarAlSabeel.Domain.Entities.Student
 
 @{
-	ViewBag.Title = "تعديل بيات الطالب";
+	ViewBag.Title = @StringTable.EditStudentInfo;
 }
 
 <br />
-
-<span style="font-size: 30pt;" class="glyphicon glyphicon-list-alt"></span>
 
 <div class="panel panel-default" style="width: 45%; margin: 0 auto;">
 	<div class="panel-body">
@@ -16,12 +14,12 @@
 			@Html.ValidationSummary()
 
 			<div class="form-group">
-				<label>الاسم:</label>
+				<label>@StringTable.Name:</label>
 				@Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
 			</div>
 
 			<div class="form-group">
-				<label>تاريخ الميلاد:</label>
+				<label>@StringTable.DateOfBirth:</label>
 				@Html.TextBoxFor(x => x.BirthDate,
 					new { @class = "form-control date-input", data_date_format = "dd/mm/yyyy",
 						  Value = Model.BirthDate.ToShortDateString()
@@ -30,51 +28,50 @@
 			</div>
 
 			<div class="form-group">
-				<label>اسم المدرسة:</label>
+				<label>@StringTable.SchoolName:</label>
 				@Html.TextBoxFor(x => x.SchoolName, new { @class = "form-control" })
 			</div>
-
+			
 			<div class="form-group">
-				<label>آخر شهادة دراسية:</label>
-				@Html.TextBoxFor(x => x.LastEducationDegree, new { @class = "form-control" })
-			</div>
-
-			<div class="form-group">
-				<label>المرحلة الدراسية الحالية:</label>
-				@Html.TextBoxFor(x => x.EducationStage, new { @class = "form-control" })
-			</div>
-
-
-			<div class="form-group">
-				<label>اسم الفصل الدراسي:</label>
+				<label>@StringTable.SchoolClassName:</label>
 				@Html.TextBoxFor(x => x.SchoolClass, new { @class = "form-control" })
 			</div>
 
 			<div class="form-group">
-				<label>كيف تعرفت على المركز:</label>
+				<label>@StringTable.LastStudyDegree:</label>
+				@Html.TextBoxFor(x => x.LastEducationDegree, new { @class = "form-control" })
+			</div>
+
+			<div class="form-group">
+				<label>@StringTable.CurrentStudySatge:</label>
+				@Html.TextBoxFor(x => x.EducationStage, new { @class = "form-control" })
+			</div>
+
+			<div class="form-group">
+				<label>@StringTable.HowDidYouTheCenter:</label>
 				@Html.TextBoxFor(x => x.HowKnewTheCenter, new { @class = "form-control" })
 			</div>
 
 			<div class="form-group">
-				<label>الفترة المتوقعة لانهاء القرآن:</label>
+				<label>@StringTable.ExpectedPeriodToFinishQuraan:</label>
 				@Html.TextBoxFor(x => x.ExpectedQuraanFinishTime, new { @class = "form-control" })
 			</div>
 
 			<div class="form-group">
-				<label>هل هو مسجل بالمواصلات:</label>
+				<label>@StringTable.IsStudentRegisteredInTransportations:</label>
 				@Html.CheckBoxFor(x => x.IsInTransportations)
 			</div>
 
 			<div class="form-group">
-				<label>الجنس:</label>
-				<label>ذكر</label>
+				<label>@StringTable.Sex:</label>
+				<label>@StringTable.Male</label>
 				@Html.RadioButtonFor(x => x.Sex, ManarAlSabeel.Domain.Entities.Sex.Male)
-				<label>أنثى</label>
+				<label>@StringTable.Female</label>
 				@Html.RadioButtonFor(x => x.Sex, ManarAlSabeel.Domain.Entities.Sex.Female)
 			</div>
 
 			<div class="form-group">
-				<label>الحالة:</label>
+				<label>@StringTable.Status:</label>
 				@Html.TextBoxFor(x => x.Staus, new { @class = "form-control" })
 			</div>
 
@@ -95,7 +92,8 @@
 			@Html.TextBoxFor(x => x.ID)
 			<hr />
 
-			<input type="submit" value="حفظ" class="btn btn-lg btn-primary btn-block" />
+			<input type="submit" value="@StringTable.Save"
+				   class="btn btn-lg btn-primary btn-block" />
 		}
 
 	</div>

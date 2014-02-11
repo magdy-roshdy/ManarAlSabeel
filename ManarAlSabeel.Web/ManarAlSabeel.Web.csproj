@@ -169,6 +169,10 @@
       <Project>{3e17b0a4-6bf0-4d1a-8487-4286dcc76081}</Project>
       <Name>ManarAlSabeel.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ManarAlSabeel.Resources\ManarAlSabeel.Resources.csproj">
+      <Project>{4c3079c8-df5a-4b9f-b29d-092c8f58f093}</Project>
+      <Name>ManarAlSabeel.Resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
@@ -185,6 +189,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Student\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\HeaderBar.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

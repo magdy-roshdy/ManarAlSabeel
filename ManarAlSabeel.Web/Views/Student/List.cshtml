@@ -1,17 +1,17 @@
 ﻿@model IEnumerable<ManarAlSabeel.Domain.Entities.Student>
 
 @{
-    ViewBag.Title = "قائمة الطلاب";
+	ViewBag.Title = @StringTable.StudentList;
 }
 
-<h2>قائمة الطلاب</h2>
+<h2>@StringTable.StudentList</h2>
 
 <table class="table table-condensed">
 	<thead>
-        		<tr>
+		<tr>
 			<th>#</th>
-			<th>الاسم</th>
-			<th>السن</th>
+			<th>@StringTable.Name</th>
+			<th>@StringTable.Age</th>
 			<th>-</th>
 		</tr>
 	</thead>
@@ -29,7 +29,7 @@
 					@Html.Hidden("productId", student.ID)
 					@Html.Hidden("returnUrl", "/")
 					<input class="btn btn-default btn-xs" type="submit"
-						   value="حــدف" />
+						   value="@StringTable.Delete" />
 				}
 			</td>
 		</tr>
