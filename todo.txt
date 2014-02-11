@@ -3,3 +3,4 @@
 * make date-picker arabic
 * add foundation to the external_supervisor and branch so only realted external_supervisors will be shown in the branch
 * make datePicker and css localization based
+* link NHibernate and Iesi.Collections to thier Github repos
