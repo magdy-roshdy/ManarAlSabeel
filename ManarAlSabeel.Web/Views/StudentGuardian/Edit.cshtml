@@ -1,0 +1,65 @@
+﻿@model ManarAlSabeel.Domain.Entities.StudentGuardian
+
+@{
+	ViewBag.Title = ManarAlSabeel.Web.HtmlHeplers.Helpers.GetPageTitle(@StringTable.EditStudentGuardian);
+}
+
+<h2>@StringTable.EditStudentGuardian</h2>
+
+<div class="panel panel-default" style="width: 45%; margin: 0 auto;">
+	<div class="panel-body">
+
+		@using (Html.BeginForm("Edit", "StudentGuardian", FormMethod.Post, new { role = "form" }))
+		{
+			@Html.ValidationSummary()
+
+			<div class="form-group">
+				<label>@StringTable.Name:</label>
+				@Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+			</div>
+
+			<div class="form-group">
+				<label>@StringTable.HomePhone:</label>
+				@Html.TextBoxFor(x => x.HomePhone, new { @class = "form-control", dir = "ltr" })
+			</div>
+
+			<div class="form-group">
+				<label>@StringTable.MobileNumber:</label>
+				@Html.TextBoxFor(x => x.MobilePhone, new { @class = "form-control", dir = "ltr" })
+			</div>
+
+			<div class="form-group">
+				<label>@StringTable.OtherPhoneNumber:</label>
+				@Html.TextBoxFor(x => x.OtherPhone, new { @class = "form-control", dir = "ltr" })
+			</div>
+
+			<div class="form-group">
+				<label>@StringTable.HomeAddress:</label>
+				@Html.TextBoxFor(x => x.HomeAddress, new { @class = "form-control" })
+			</div>
+
+			<div class="form-group">
+				<label>@StringTable.Email:</label>
+				@Html.TextBoxFor(x => x.Email, new { @class = "form-control", @type="email", dir="ltr" })
+			</div>
+
+			<div class="form-group">
+				<label>@StringTable.Sex:</label>
+				<label>@StringTable.Male</label>
+				@Html.RadioButtonFor(x => x.Sex, ManarAlSabeel.Domain.Entities.Sex.Male)
+				<label>@StringTable.Female</label>
+				@Html.RadioButtonFor(x => x.Sex, ManarAlSabeel.Domain.Entities.Sex.Female)
+			</div>
+
+			
+			<hr />
+			@Html.TextBoxFor(x => x.Branch.ID)
+			@Html.TextBoxFor(x => x.ID)
+			<hr />
+
+			<input type="submit" value="@StringTable.Save"
+				   class="btn btn-lg btn-primary btn-block" />
+		}
+
+	</div>
+</div>

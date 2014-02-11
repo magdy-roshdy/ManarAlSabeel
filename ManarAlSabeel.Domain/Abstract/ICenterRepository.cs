@@ -8,11 +8,14 @@ namespace ManarAlSabeel.Domain.Abstract
 {
 	public interface ICenterRepository
 	{
-		IQueryable<StudentGuardian> GetAllStudentGuardians();
-
 		IQueryable<Student> GetAllStudents();
-
 		int? SaveStudent(Student student);
+		bool DeleteStudent(int studentId);
+
+		IQueryable<StudentGuardian> GetAllStudentGuardians();
+		int? SaveStudentGuardian(StudentGuardian studentGuardian);
+		bool DeleteStudentGuardian(int studentGuardianId);
+
 
 		void TEMP();
 	}

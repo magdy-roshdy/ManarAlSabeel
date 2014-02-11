@@ -59,21 +59,11 @@ namespace ManarAlSabeel.Domain.Concrete
 
 		public IQueryable<StudentGuardian> GetAllStudentGuardians()
 		{
-			using (ISession session = Session)
-			{
-				using (ITransaction transaction = session.BeginTransaction())
-				{
-					var studentsGuardians = (from guardian
-						in session.Query<StudentGuardian>()
-						 select guardian);
-					transaction.Commit();
-					
-					return studentsGuardians;
-				}
+			var guardians = (from guardian
+			in Session.Query<StudentGuardian>()
+							 select guardian);
 
-			}
-
-			
+			return guardians;
 		}
 
 		public void TEMP()
@@ -187,6 +177,99 @@ namespace ManarAlSabeel.Domain.Concrete
 			}
 
 			return new_id;
+		}
+
+
+		public int? SaveStudentGuardian(StudentGuardian studentGuardian)
+		{
+			int? new_id = null;
+			if (studentGuardian.ID > 0) //edit
+			{
+				new_id = studentGuardian.ID;
+				using (ISession session = Session)
+				{
+					using (ITransaction transaction = session.BeginTransaction())
+					{
+						StudentGuardian db_studentGuardian = session.Get<StudentGuardian>(studentGuardian.ID);
+
+						db_studentGuardian.Name = studentGuardian.Name;
+						db_studentGuardian.HomeAddress = studentGuardian.HomeAddress;
+						db_studentGuardian.HomePhone = studentGuardian.HomePhone;
+						db_studentGuardian.MobilePhone = studentGuardian.MobilePhone;
+						db_studentGuardian.OtherPhone = studentGuardian.OtherPhone;
+						db_studentGuardian.Sex = studentGuardian.Sex;
+						db_studentGuardian.Email = studentGuardian.Email;
+
+						db_studentGuardian.Branch = session.Get<Branch>(studentGuardian.Branch.ID);
+
+						session.SaveOrUpdate(db_studentGuardian);
+						transaction.Commit();
+
+						session.Flush();
+					}
+				}
+			}
+			else //new
+			{
+				using (ISession session = Session)
+				{
+					using (ITransaction transaction = session.BeginTransaction())
+					{
+						studentGuardian.Branch = session.Get<Branch>(studentGuardian.Branch.ID);
+
+						session.Save(studentGuardian);
+						transaction.Commit();
+						session.Flush();
+
+						new_id = studentGuardian.ID;
+					}
+				}
+			}
+
+			return new_id;
+		}
+
+
+		public bool DeleteStudent(int studentId)
+		{
+			using (ISession session = Session)
+			{
+				using (ITransaction transaction = session.BeginTransaction())
+				{
+					Student db_student = session.Get<Student>(studentId);
+					if(db_student != null)
+					{
+						session.Delete(db_student);
+						transaction.Commit();
+						session.Flush();
+
+						return true;
+					}
+				}
+			}
+
+			return false;
+		}
+
+		public bool DeleteStudentGuardian(int studentGuardianId)
+		{
+			using (ISession session = Session)
+			{
+				using (ITransaction transaction = session.BeginTransaction())
+				{
+					StudentGuardian db_studentGuardian = session.Get<StudentGuardian>(studentGuardianId);
+					if (db_studentGuardian != null)
+					{
+						session.Delete(db_studentGuardian);
+						transaction.Commit();
+						session.Flush();
+
+						return true;
+					}
+				}
+			}
+
+			return false;
 		}
 	}
 }

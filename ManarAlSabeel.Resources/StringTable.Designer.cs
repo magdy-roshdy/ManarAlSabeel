@@ -70,11 +70,29 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to إضافة ولي أمر.
+        /// </summary>
+        public static string AddStudentGuardian {
+            get {
+                return ResourceManager.GetString("AddStudentGuardian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to السن.
         /// </summary>
         public static string Age {
             get {
                 return ResourceManager.GetString("Age", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to هل أنت متأكد؟.
+        /// </summary>
+        public static string AreYouSure {
+            get {
+                return ResourceManager.GetString("AreYouSure", resourceCulture);
             }
         }
         
@@ -102,6 +120,15 @@ namespace ManarAlSabeel.Resources {
         public static string Delete {
             get {
                 return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعديل بيانات ولي أمر.
+        /// </summary>
+        public static string EditStudentGuardian {
+            get {
+                return ResourceManager.GetString("EditStudentGuardian", resourceCulture);
             }
         }
         
@@ -147,6 +174,24 @@ namespace ManarAlSabeel.Resources {
         public static string Guardians {
             get {
                 return ResourceManager.GetString("Guardians", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to عنوان المنزل.
+        /// </summary>
+        public static string HomeAddress {
+            get {
+                return ResourceManager.GetString("HomeAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to هاتف المنزل.
+        /// </summary>
+        public static string HomePhone {
+            get {
+                return ResourceManager.GetString("HomePhone", resourceCulture);
             }
         }
         
@@ -214,11 +259,29 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to رقم الجوال.
+        /// </summary>
+        public static string MobileNumber {
+            get {
+                return ResourceManager.GetString("MobileNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to الاسم.
         /// </summary>
         public static string Name {
             get {
                 return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to رقم هاتف اضافي.
+        /// </summary>
+        public static string OtherPhoneNumber {
+            get {
+                return ResourceManager.GetString("OtherPhoneNumber", resourceCulture);
             }
         }
         
@@ -273,6 +336,15 @@ namespace ManarAlSabeel.Resources {
         public static string Status {
             get {
                 return ResourceManager.GetString("Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to قائمة أولياء الأمور.
+        /// </summary>
+        public static string StudentGuardiansList {
+            get {
+                return ResourceManager.GetString("StudentGuardiansList", resourceCulture);
             }
         }
         

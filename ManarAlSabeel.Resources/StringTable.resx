@@ -120,8 +120,14 @@
   <data name="AddStudent" xml:space="preserve">
     <value>إضافة طالب</value>
   </data>
+  <data name="AddStudentGuardian" xml:space="preserve">
+    <value>إضافة ولي أمر</value>
+  </data>
   <data name="Age" xml:space="preserve">
     <value>السن</value>
+  </data>
+  <data name="AreYouSure" xml:space="preserve">
+    <value>هل أنت متأكد؟</value>
   </data>
   <data name="CurrentStudySatge" xml:space="preserve">
     <value>المرحلة الدراسية الحالية</value>
@@ -131,6 +137,9 @@
   </data>
   <data name="Delete" xml:space="preserve">
     <value>حـذف</value>
+  </data>
+  <data name="EditStudentGuardian" xml:space="preserve">
+    <value>تعديل بيانات ولي أمر</value>
   </data>
   <data name="EditStudentInfo" xml:space="preserve">
     <value>تعديل بيات الطالب</value>
@@ -146,6 +155,12 @@
   </data>
   <data name="Guardians" xml:space="preserve">
     <value>أولياء الأمور</value>
+  </data>
+  <data name="HomeAddress" xml:space="preserve">
+    <value>عنوان المنزل</value>
+  </data>
+  <data name="HomePhone" xml:space="preserve">
+    <value>هاتف المنزل</value>
   </data>
   <data name="HowDidYouTheCenter" xml:space="preserve">
     <value>كيف تعرفت على المركز</value>
@@ -168,8 +183,14 @@
   <data name="ManarAlSabeel" xml:space="preserve">
     <value>مركز منار السبيل</value>
   </data>
+  <data name="MobileNumber" xml:space="preserve">
+    <value>رقم الجوال</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>الاسم</value>
+  </data>
+  <data name="OtherPhoneNumber" xml:space="preserve">
+    <value>رقم هاتف اضافي</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>كلمة المرور</value>
@@ -188,6 +209,9 @@
   </data>
   <data name="Status" xml:space="preserve">
     <value>الحالة</value>
+  </data>
+  <data name="StudentGuardiansList" xml:space="preserve">
+    <value>قائمة أولياء الأمور</value>
   </data>
   <data name="StudentList" xml:space="preserve">
     <value>قائمة الطلاب</value>

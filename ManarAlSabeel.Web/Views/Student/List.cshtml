@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<ManarAlSabeel.Domain.Entities.Student>
 
 @{
-	ViewBag.Title = @StringTable.StudentList;
+	ViewBag.Title = ManarAlSabeel.Web.HtmlHeplers.Helpers.GetPageTitle(@StringTable.StudentList);
 }
 
 <h2>@StringTable.StudentList</h2>
@@ -26,10 +26,11 @@
 			<td>
 				@using (@Html.BeginForm("Delete", "Student"))
 				{
-					@Html.Hidden("productId", student.ID)
+					@Html.Hidden("studentId", student.ID)
 					@Html.Hidden("returnUrl", "/")
 					<input class="btn btn-default btn-xs" type="submit"
-						   value="@StringTable.Delete" />
+						   value="@StringTable.Delete"
+						   onclick="return confirm('@StringTable.AreYouSure')" />
 				}
 			</td>
 		</tr>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ManarAlSabeel.Domain.Entities.StudentGuardian>
+
+@{
+	ViewBag.Title = ManarAlSabeel.Web.HtmlHeplers.Helpers.GetPageTitle(@StringTable.StudentGuardiansList);
+}
+
+<h2>@StringTable.StudentGuardiansList</h2>
+
+<table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>@StringTable.Name</th>
+			<th>@StringTable.Sex</th>
+			<th>-</th>
+		</tr>
+	</thead>
+	@foreach (ManarAlSabeel.Domain.Entities.StudentGuardian guardian in Model)
+	{
+		<tr>
+			<td>@guardian.ID</td>
+			<td>
+				@Html.ActionLink(guardian.Name, "Edit", new { guardian.ID })
+			</td>
+			<td>
+				@ManarAlSabeel.Web.HtmlHeplers.Helpers.GetSexCaption(guardian.Sex)
+			</td>
+			<td>
+				@using (@Html.BeginForm("Delete", "StudentGuardian"))
+				{
+					@Html.Hidden("guardianId", guardian.ID)
+					@Html.Hidden("returnUrl", "/")
+					<input class="btn btn-default btn-xs" type="submit"
+						   value="@StringTable.Delete"
+						   onclick="return confirm('@StringTable.AreYouSure');" />
+				}
+			</td>
+		</tr>
+	}
+
+</table>

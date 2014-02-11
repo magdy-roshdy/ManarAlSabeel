@@ -10,49 +10,49 @@ using System.Web.Mvc;
 namespace ManarAlSabeel.Web.Controllers
 {
 	[ForbiddenRedirectAuthorizeAttribute]
-    public class StudentController : Controller
+    public class StudentGuardianController : Controller
     {
 		private ICenterRepository dbRepository;
-		public StudentController(ICenterRepository repo)
+		public StudentGuardianController(ICenterRepository repo)
 		{
 			dbRepository = repo;
 		}
 
-		public ViewResult List()
+        public ActionResult List()
         {
-			return View(dbRepository.GetAllStudents());
+			return View(dbRepository.GetAllStudentGuardians());
         }
 
 		public ViewResult Edit(int id)
 		{
-			Student student = dbRepository.GetAllStudents().FirstOrDefault<Student>(x => x.ID == id);
+			StudentGuardian student = dbRepository.GetAllStudentGuardians().FirstOrDefault<StudentGuardian>(x => x.ID == id);
 			return View(student);
 		}
 
 		[HttpPost]
-		public ActionResult Edit(Student student, int id)
+		public ActionResult Edit(StudentGuardian studentGuardian, int id)
 		{
 			if (ModelState.IsValid)
 			{
-				dbRepository.SaveStudent(student);
-				
+				dbRepository.SaveStudentGuardian(studentGuardian);
+
 				return RedirectToAction("List");
 			}
 			else
 			{
-				return View(student);
+				return View(studentGuardian);
 			}
 		}
 
 		public ViewResult Create()
 		{
-			return View("Edit", new Student());
+			return View("Edit", new StudentGuardian());
 		}
 
 		[HttpPost]
-		public ActionResult Delete(int studentId)
+		public ActionResult Delete(int guardianId)
 		{
-			bool result = dbRepository.DeleteStudent(studentId);
+			bool result = dbRepository.DeleteStudentGuardian(guardianId);
 
 			return RedirectToAction("List");
 		}

@@ -7,7 +7,11 @@
 		<id name="ID" column="GuardianID">
 			<generator class="identity" />
 		</id>
-
+		
+		<many-to-one name="Branch"
+								 class="Branch"
+								 column="GuardianBranchID"/>
+		
 		<property name="Name" column="GuardianName" />
 		<property name="HomePhone" column="GuardianHomePhone" not-null="false" />
 		<property name="MobilePhone" column="GuardianMobilePhone" />
@@ -15,5 +19,7 @@
 		<property name="HomeAddress" column="GuardianHomeAddress" not-null="false" />
 		<property name="Email" column="GuardianEmailAddress" />
 		<property name="Sex" column="GuardianSex" />
+	
+		<filter name="branchFilter" condition=":branch = GuardianBranchID" />
 	</class>
 </hibernate-mapping>

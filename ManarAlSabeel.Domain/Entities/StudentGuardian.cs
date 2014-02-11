@@ -8,6 +8,7 @@ namespace ManarAlSabeel.Domain.Entities
 	public class StudentGuardian
 	{
 		public virtual int ID { get; set; }
+		public virtual Branch Branch { get; set; }
 		public virtual string Name { get; set; }
 		public virtual string HomePhone { get; set; }
 		public virtual string MobilePhone { get; set; }

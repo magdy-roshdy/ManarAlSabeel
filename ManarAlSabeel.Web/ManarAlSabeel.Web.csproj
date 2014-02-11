@@ -120,7 +120,9 @@
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\StudentGuardianController.cs" />
     <Compile Include="Controllers\SystemAdminsController.cs" />
+    <Compile Include="HtmlHeplers\Helpers.cs" />
     <Compile Include="Infrastructure\ForbiddenRedirectAuthorizeAttribute.cs" />
     <Compile Include="Infrastructure\FormsAuthenticationProvider.cs" />
     <Compile Include="Infrastructure\IAuthProvider.cs" />
@@ -192,6 +194,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\HeaderBar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentGuardian\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentGuardian\Edit.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
