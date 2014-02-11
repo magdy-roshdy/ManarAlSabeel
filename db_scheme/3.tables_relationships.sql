@@ -27,6 +27,17 @@ ALTER TABLE [dbo].[Branches] CHECK CONSTRAINT [FK_Managers_Branches]
 GO
 
 /*****************************/
+/*** Table [dbo].[StudentGuardians] ***/
+/*****************************/
+ALTER TABLE [dbo].[StudentGuardians]  WITH CHECK ADD  CONSTRAINT [FK_Branches_StudentGuardians] FOREIGN KEY([GuardianBranchID])
+REFERENCES [dbo].[Branches] ([BranchID])
+GO
+
+ALTER TABLE [dbo].[StudentGuardians] CHECK CONSTRAINT [FK_Branches_StudentGuardians]
+GO
+
+
+/*****************************/
 /*** Table [dbo].[Teachers] ***/
 /*****************************/
 

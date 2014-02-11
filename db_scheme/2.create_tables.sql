@@ -266,6 +266,7 @@ GO
 /****** Object:  Table [dbo].[StudentGuardians]    Script Date: 2/10/2014 2:33:49 PM ******/
 CREATE TABLE [dbo].[StudentGuardians](
 	[GuardianID] [int] IDENTITY(1,1) NOT NULL,
+	[GuardianBranchID] [int] NOT NULL,
 	[GuardianName] [nvarchar](100) NOT NULL,
 	[GuardianHomePhone] [nvarchar](15) NULL,
 	[GuardianMobilePhone] [nvarchar](15) NOT NULL,
