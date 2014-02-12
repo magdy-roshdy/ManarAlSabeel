@@ -124,14 +124,15 @@
     <Compile Include="Controllers\SystemAdminsController.cs" />
     <Compile Include="HtmlHeplers\Helpers.cs" />
     <Compile Include="Infrastructure\ForbiddenRedirectAuthorizeAttribute.cs" />
-    <Compile Include="Infrastructure\FormsAuthenticationProvider.cs" />
-    <Compile Include="Infrastructure\IAuthProvider.cs" />
-    <Compile Include="Infrastructure\SessionBasedDataBaseFilterProvider.cs" />
+    <Compile Include="Infrastructure\Concrete\FormsAuthenticationProvider.cs" />
+    <Compile Include="Infrastructure\Abstract\IAuthProvider.cs" />
+    <Compile Include="Infrastructure\Concrete\ProfileBasedDataBaseFilterProvider.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
     <Compile Include="Infrastructure\SystemAdminsMembershipProvider.cs" />
+    <Compile Include="Infrastructure\SystemAdminsProfileProvider.cs" />
     <Compile Include="Infrastructure\SystemAdminsRolesProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

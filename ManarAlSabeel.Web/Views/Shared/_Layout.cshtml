@@ -15,7 +15,10 @@
 </head>
 <body>
 	
-	@{ Html.RenderPartial("HeaderBar"); }
+	@if(@Request.IsAuthenticated)
+	{
+		Html.RenderPartial("HeaderBar");
+	}
 
 	<div class="container">
 		@RenderBody()

@@ -1,6 +1,8 @@
 ﻿using ManarAlSabeel.Domain.Abstract;
 using ManarAlSabeel.Domain.Concrete;
 using ManarAlSabeel.Domain.Entities;
+using ManarAlSabeel.Web.Infrastructure.Abstract;
+using ManarAlSabeel.Web.Infrastructure.Concrete;
 using NHibernate;
 using Ninject;
 using System;
@@ -42,9 +44,9 @@ namespace ManarAlSabeel.Web.Infrastructure
 				.To<NHibernateCenterRepository>()
 				.WithPropertyValue("SessionFactory", sessionFactory);
 
-			kernel.Inject(new NHibernateCenterRepository(new SessionBasedDataBaseFilterProvider()));
+			kernel.Inject(new NHibernateCenterRepository(new ProfileBasedDataBaseFilterProvider()));
 
-			kernel.Bind<IDataBaseFiltersProvider>().To<SessionBasedDataBaseFilterProvider>();
+			kernel.Bind<IDataBaseFiltersProvider>().To<ProfileBasedDataBaseFilterProvider>();
 			kernel.Bind<IAuthProvider>().To<FormsAuthenticationProvider>();
 		}
 	}

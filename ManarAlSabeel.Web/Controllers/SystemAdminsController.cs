@@ -1,9 +1,11 @@
 ﻿using ManarAlSabeel.Web.Infrastructure;
+using ManarAlSabeel.Web.Infrastructure.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Profile;
 using System.Web.Security;
 
 namespace ManarAlSabeel.Web.Controllers
@@ -28,7 +30,7 @@ namespace ManarAlSabeel.Web.Controllers
 			{
 				if(authProvider.Authenticate(email, password))
 				{
-					return Redirect(returnUrl ?? Url.Action("Index", "Home"));
+					return Redirect(string.Format("{0}?{1}={2}", Url.Action("SetProfileInfo"), "returnUrl", returnUrl));
 				}
 				else
 				{
@@ -47,6 +49,14 @@ namespace ManarAlSabeel.Web.Controllers
 			FormsAuthentication.SignOut();
 
 			return Redirect(Url.Action("Index", "Home"));
+		}
+
+		public ActionResult SetProfileInfo(string returnUrl)
+		{
+			HttpContext.Profile["SexFilter"] = 1;
+			HttpContext.Profile["BranchFilter"] = 1;
+
+			return string.IsNullOrEmpty(returnUrl) ?  Redirect(Url.Action("Index", "Home")) : Redirect(returnUrl);
 		}
     }
 }
