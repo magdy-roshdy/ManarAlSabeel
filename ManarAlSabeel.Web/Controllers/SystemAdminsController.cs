@@ -24,13 +24,13 @@ namespace ManarAlSabeel.Web.Controllers
         }
 
 		[HttpPost]
-		public ActionResult Login(string email, string password, string returnUrl)
+		public ActionResult Login(string email, string password, string ReturnUrl)
 		{
 			if(ModelState.IsValid)
 			{
 				if(authProvider.Authenticate(email, password))
 				{
-					return Redirect(string.Format("{0}?{1}={2}", Url.Action("SetProfileInfo"), "returnUrl", returnUrl));
+					return Redirect(string.Format("{0}?{1}={2}", Url.Action("SetProfileInfo"), "ReturnUrl", ReturnUrl));
 				}
 				else
 				{
@@ -51,12 +51,12 @@ namespace ManarAlSabeel.Web.Controllers
 			return Redirect(Url.Action("Index", "Home"));
 		}
 
-		public ActionResult SetProfileInfo(string returnUrl)
+		public ActionResult SetProfileInfo(string ReturnUrl)
 		{
 			HttpContext.Profile["SexFilter"] = 1;
 			HttpContext.Profile["BranchFilter"] = 1;
 
-			return string.IsNullOrEmpty(returnUrl) ?  Redirect(Url.Action("Index", "Home")) : Redirect(returnUrl);
+			return string.IsNullOrEmpty(ReturnUrl) ? Redirect(Url.Action("Index", "Home")) : Redirect(ReturnUrl);
 		}
     }
 }

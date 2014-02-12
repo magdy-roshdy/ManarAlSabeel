@@ -171,6 +171,9 @@
   <data name="LastStudyDegree" xml:space="preserve">
     <value>آخر شهادة دراسية</value>
   </data>
+  <data name="Login" xml:space="preserve">
+    <value>دخول</value>
+  </data>
   <data name="LoginPageTitle" xml:space="preserve">
     <value>تسجيل الدخول</value>
   </data>

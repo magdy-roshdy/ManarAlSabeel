@@ -20,9 +20,13 @@
 			@Html.Password("password", "", new { @class = "form-control",
 				placeholder = @StringTable.Password, dir="ltr",
 				required="required" })
+			
+			@Html.Hidden("ReturnUrl", HttpContext.Current.Request.Params["ReturnUrl"])
 
 			<br />
-			<button type="submit" class="btn btn-lg btn-primary btn-block">دخول</button>
+			<button type="submit" class="btn btn-lg btn-primary btn-block">
+				@StringTable.Login
+			</button>
 		}
 	</div>
 </div>
