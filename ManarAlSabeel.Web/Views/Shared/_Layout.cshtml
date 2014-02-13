@@ -6,6 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="~/Content/css/bootstrap.rtl.css" rel="stylesheet" media="screen">
 	<link href="~/Content/css/bootstrap-datepicker.css" rel="stylesheet" media="screen">
+
+	<link href="~/Content/css/select2.css" rel="stylesheet" media="screen">
+	<link href="~/Content/css/select2-bootstrap.css" rel="stylesheet" media="screen">
+
 	<link href="~/Content/css/manar-alsabeel-style.css" type="text/css" rel="stylesheet" />
 	<style>
 		body {
@@ -27,14 +31,20 @@
 	<script src="~/Content/js/jquery-1.11.0.min.js"></script>
 	<script src="~/Content/js/bootstrap.min.js"></script>
 	<script src="~/Content/js/bootstrap-datepicker.js"></script>
+	<script src="~/Content/js/select2.min.js"></script>
+	<script src="~/Content/js/select2_locale_ar.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
-			//window.prettyPrint && prettyPrint();
 			var datePickerObj = $('.date-input');
 			datePickerObj.datepicker().on('changeDate', function (ev) {
 				datePickerObj.datepicker('hide');
 			});
-			//alert(datePickerObj);
+
+			//select2
+			$(".select2").select2({
+				placeholder: "Select a State",
+				allowClear: true
+			});
 		});
 	</script>
 </body>

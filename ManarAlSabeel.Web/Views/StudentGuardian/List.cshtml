@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<ManarAlSabeel.Domain.Entities.StudentGuardian>
 
 @{
-	ViewBag.Title = ManarAlSabeel.Web.HtmlHeplers.Helpers.GetPageTitle(@StringTable.StudentGuardiansList);
+	ViewBag.Title = ManarAlSabeel.Web.Heplers.Helpers.GetPageTitle(@StringTable.StudentGuardiansList);
 }
 
 <h2>@StringTable.StudentGuardiansList</h2>
@@ -23,7 +23,7 @@
 				@Html.ActionLink(guardian.Name, "Edit", new { guardian.ID })
 			</td>
 			<td>
-				@ManarAlSabeel.Web.HtmlHeplers.Helpers.GetSexCaption(guardian.Sex)
+				@ManarAlSabeel.Web.Heplers.Helpers.GetSexCaption(guardian.Sex)
 			</td>
 			<td>
 				@using (@Html.BeginForm("Delete", "StudentGuardian"))

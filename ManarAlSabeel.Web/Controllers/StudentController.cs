@@ -26,7 +26,9 @@ namespace ManarAlSabeel.Web.Controllers
 		public ViewResult Edit(int id)
 		{
 			Student student = dbRepository.GetAllStudents().FirstOrDefault<Student>(x => x.ID == id);
-			return View(student);
+			IQueryable<Country> countries = dbRepository.GetAllCountries();
+			IQueryable<StudentGuardian> guardians = dbRepository.GetAllStudentGuardians();
+			return View(new Models.EditUserViewModel { Student = student, Countries = countries, Guardians = guardians });
 		}
 
 		[HttpPost]
@@ -46,7 +48,8 @@ namespace ManarAlSabeel.Web.Controllers
 
 		public ViewResult Create()
 		{
-			return View("Edit", new Student());
+			return View("Edit", new Models.EditUserViewModel { Student = new Student(),
+				Countries = dbRepository.GetAllCountries(), Guardians=dbRepository.GetAllStudentGuardians() });
 		}
 
 		[HttpPost]

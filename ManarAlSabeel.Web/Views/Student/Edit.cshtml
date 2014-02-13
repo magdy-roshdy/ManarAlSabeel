@@ -1,7 +1,7 @@
-﻿@model ManarAlSabeel.Domain.Entities.Student
+﻿@model ManarAlSabeel.Web.Models.EditUserViewModel
 
 @{
-	ViewBag.Title = ManarAlSabeel.Web.HtmlHeplers.Helpers.GetPageTitle(@StringTable.EditStudentInfo);
+	ViewBag.Title = ManarAlSabeel.Web.Heplers.Helpers.GetPageTitle(@StringTable.EditStudentInfo);
 }
 
 <br />
@@ -12,84 +12,95 @@
 		@using (Html.BeginForm("Edit", "Student", FormMethod.Post, new { enctype = "multipart/form-data", role="form" }))
 		{
 			@Html.ValidationSummary()
-
+			
 			<div class="form-group">
 				<label>@StringTable.Name:</label>
-				@Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+				@Html.TextBoxFor(x => x.Student.Name, new { @class = "form-control" })
 			</div>
 
 			<div class="form-group">
 				<label>@StringTable.DateOfBirth:</label>
-				@Html.TextBoxFor(x => x.BirthDate,
+				@Html.TextBoxFor(x => x.Student.BirthDate,
 					new { @class = "form-control date-input", data_date_format = "dd/mm/yyyy",
-						  Value = Model.BirthDate.ToShortDateString()
+						  Value = Model.Student.BirthDate.ToShortDateString(),
+						  dir="ltr"
 						}
 					)
 			</div>
-
+			
+			<div class="form-group">
+				<label>الجنسية الأصلية</label>
+				@Html.DropDownListFor(x => x.Student.OriginalNationality.ID,
+					@ManarAlSabeel.Web.Heplers.Helpers.CountriesToSelectListItems(Model.Countries),
+					new { @class = "form-control select2" })
+			</div>
+			
+			<div class="form-group">
+				<label>الجنسية المكتسبة</label>
+				@Html.DropDownListFor(x => x.Student.AcquiredNationality.ID,
+					@ManarAlSabeel.Web.Heplers.Helpers.CountriesToSelectListItems(Model.Countries, true),
+					new { @class = "form-control select2" })
+			</div>
+			
+			<div class="form-group">
+				<label>ولي الأمر</label>
+				@Html.DropDownListFor(x => x.Student.Guardian.ID,
+					@ManarAlSabeel.Web.Heplers.Helpers.GuardiansToSelectListItems(Model.Guardians),
+					new { @class = "form-control select2" })
+			</div>
+			
 			<div class="form-group">
 				<label>@StringTable.SchoolName:</label>
-				@Html.TextBoxFor(x => x.SchoolName, new { @class = "form-control" })
+				@Html.TextBoxFor(x => x.Student.SchoolName, new { @class = "form-control" })
 			</div>
 			
 			<div class="form-group">
 				<label>@StringTable.SchoolClassName:</label>
-				@Html.TextBoxFor(x => x.SchoolClass, new { @class = "form-control" })
+				@Html.TextBoxFor(x => x.Student.SchoolClass, new { @class = "form-control" })
 			</div>
 
 			<div class="form-group">
 				<label>@StringTable.LastStudyDegree:</label>
-				@Html.TextBoxFor(x => x.LastEducationDegree, new { @class = "form-control" })
+				@Html.TextBoxFor(x => x.Student.LastEducationDegree, new { @class = "form-control" })
 			</div>
 
 			<div class="form-group">
 				<label>@StringTable.CurrentStudySatge:</label>
-				@Html.TextBoxFor(x => x.EducationStage, new { @class = "form-control" })
+				@Html.TextBoxFor(x => x.Student.EducationStage, new { @class = "form-control" })
 			</div>
 
 			<div class="form-group">
 				<label>@StringTable.HowDidYouTheCenter:</label>
-				@Html.TextBoxFor(x => x.HowKnewTheCenter, new { @class = "form-control" })
+				@Html.TextBoxFor(x => x.Student.HowKnewTheCenter, new { @class = "form-control" })
 			</div>
 
 			<div class="form-group">
 				<label>@StringTable.ExpectedPeriodToFinishQuraan:</label>
-				@Html.TextBoxFor(x => x.ExpectedQuraanFinishTime, new { @class = "form-control" })
+				@Html.TextBoxFor(x => x.Student.ExpectedQuraanFinishTime, new { @class = "form-control" })
 			</div>
 
 			<div class="form-group">
 				<label>@StringTable.IsStudentRegisteredInTransportations:</label>
-				@Html.CheckBoxFor(x => x.IsInTransportations)
+				@Html.CheckBoxFor(x => x.Student.IsInTransportations)
 			</div>
 
 			<div class="form-group">
 				<label>@StringTable.Sex:</label>
 				<label>@StringTable.Male</label>
-				@Html.RadioButtonFor(x => x.Sex, ManarAlSabeel.Domain.Entities.Sex.Male)
+				@Html.RadioButtonFor(x => x.Student.Sex, ManarAlSabeel.Domain.Entities.Sex.Male)
 				<label>@StringTable.Female</label>
-				@Html.RadioButtonFor(x => x.Sex, ManarAlSabeel.Domain.Entities.Sex.Female)
+				@Html.RadioButtonFor(x => x.Student.Sex, ManarAlSabeel.Domain.Entities.Sex.Female)
 			</div>
 
 			<div class="form-group">
 				<label>@StringTable.Status:</label>
-				@Html.TextBoxFor(x => x.Staus, new { @class = "form-control" })
+				@Html.TextBoxFor(x => x.Student.Staus, new { @class = "form-control" })
 			</div>
 
 			<hr />
-			@Html.TextBoxFor(x => x.Branch.ID)
-			@Html.TextBoxFor(x => x.Guardian.ID)
-			@Html.TextBoxFor(x => x.OriginalNationality.ID)
-
-			if (Model.AcquiredNationality != null && Model.AcquiredNationality.ID > 0)
-			{
-				@Html.TextBoxFor(x => x.AcquiredNationality.ID)
-			}
-			else
-			{
-				@Html.TextBoxFor(x => x.AcquiredNationality.ID, new { Value = "0" })
-			}
-
-			@Html.TextBoxFor(x => x.ID)
+			@Html.HiddenFor(x => x.Student.Branch.ID)
+			
+			@Html.HiddenFor(x => x.Student.ID)
 			<hr />
 
 			<input type="submit" value="@StringTable.Save"

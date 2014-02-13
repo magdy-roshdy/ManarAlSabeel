@@ -11,12 +11,20 @@ namespace ManarAlSabeel.Web.Infrastructure
 	public class SystemAdminsProfileProvider : ProfileProvider
 	{
 		private IDictionary<string, IDictionary<string, object>> data = new Dictionary<string, IDictionary<string, object>>();
+		public SystemAdminsProfileProvider()
+		{
+			Dictionary<string, object> filter =new Dictionary<string,object>();
+			filter.Add("SexFilter", 1);
+			filter.Add("BranchFilter", 1);
+			data.Add("magdy.roshdy@hotmail.com", filter);
+		}
 
 		public override SettingsPropertyValueCollection GetPropertyValues(SettingsContext context, SettingsPropertyCollection collection)
 		{
 			SettingsPropertyValueCollection result = new SettingsPropertyValueCollection();
 			IDictionary<string, object> userData;
-			bool userDataExists = data.TryGetValue((string)context["UserName"], out userData);
+			string userName = (string)context["UserName"];
+			bool userDataExists = data.TryGetValue(userName, out userData);
 			foreach (SettingsProperty prop in collection)
 			{
 				SettingsPropertyValue spv = new SettingsPropertyValue(prop);
@@ -32,13 +40,13 @@ namespace ManarAlSabeel.Web.Infrastructure
 
 		public override void SetPropertyValues(SettingsContext context, SettingsPropertyValueCollection collection)
 		{
-			string userName = (string)context["UserName"];
-			if (!string.IsNullOrEmpty(userName))
-			{
-				data[userName] = collection
-				.Cast<SettingsPropertyValue>()
-				.ToDictionary(x => x.Name, x => x.PropertyValue);
-			}
+			//string userName = (string)context["UserName"];
+			//if (!string.IsNullOrEmpty(userName))
+			//{
+			//	data[userName] = collection
+			//	.Cast<SettingsPropertyValue>()
+			//	.ToDictionary(x => x.Name, x => x.PropertyValue);
+			//}
 		}
 
 		public override int DeleteInactiveProfiles(ProfileAuthenticationOption authenticationOption, DateTime userInactiveSinceDate)

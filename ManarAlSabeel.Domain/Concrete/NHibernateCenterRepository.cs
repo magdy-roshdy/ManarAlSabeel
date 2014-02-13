@@ -271,5 +271,15 @@ namespace ManarAlSabeel.Domain.Concrete
 
 			return false;
 		}
+
+
+		public IQueryable<Country> GetAllCountries()
+		{
+			var countries = (from country
+			in Session.Query<Country>()
+							select country);
+
+			return countries;
+		}
 	}
 }
