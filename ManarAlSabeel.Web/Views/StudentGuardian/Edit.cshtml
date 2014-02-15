@@ -4,11 +4,11 @@
 @{
 	ViewBag.Title = ManarAlSabeel.Web.Heplers.Helpers.GetPageTitle(@StringTable.EditStudentGuardian);
 
-	Branch _branch = (Model.Branch != null && Model.Branch.ID > 0)
+	Branch _branch = (@HttpContext.Current.Profile["BranchFilter"] != null)
 		?
-		Model.Branch
+		@HttpContext.Current.Profile["BranchFilter"] as Branch
 		:
-		@HttpContext.Current.Profile["BranchFilter"] as Branch;
+		Model.Branch;
 }
 
 <h2>@StringTable.EditStudentGuardian</h2>

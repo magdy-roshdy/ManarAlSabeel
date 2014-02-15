@@ -12,6 +12,12 @@ namespace ManarAlSabeel.Web.Heplers
 	{
 		public static string GetPageTitle(string pageTitle)
 		{
+			Branch currentBranch = HttpContext.Current.Profile["BranchFilter"] as Branch;
+			if (currentBranch != null)
+			{
+				return string.Format("{0} - {1}", currentBranch.Center.Name, pageTitle);
+			}
+
 			return string.Format("{0} - {1}", StringTable.ManarAlSabeel, pageTitle);
 		}
 

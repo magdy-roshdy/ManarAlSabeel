@@ -94,6 +94,10 @@
       <Project>{5909bfe7-93cf-4e5f-be22-6293368af01d}</Project>
       <Name>NHibernate</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ManarAlSabeel.Resources\ManarAlSabeel.Resources.csproj">
+      <Project>{4c3079c8-df5a-4b9f-b29d-092c8f58f093}</Project>
+      <Name>ManarAlSabeel.Resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

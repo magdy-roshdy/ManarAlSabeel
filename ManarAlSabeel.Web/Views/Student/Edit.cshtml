@@ -5,11 +5,11 @@
 	
 	ViewBag.Title = ManarAlSabeel.Web.Heplers.Helpers.GetPageTitle(@StringTable.EditStudentInfo);
 	
-	Branch _branch = (Model.Student.Branch != null && Model.Student.Branch.ID > 0)
+	Branch _branch = (@HttpContext.Current.Profile["BranchFilter"] != null)
 		?
-		Model.Student.Branch
+		@HttpContext.Current.Profile["BranchFilter"] as Branch
 		:
-		@HttpContext.Current.Profile["BranchFilter"] as Branch;
+		Model.Student.Branch;
 }
 
 <br />
@@ -19,11 +19,12 @@
 
 		@using (Html.BeginForm("Edit", "Student", FormMethod.Post, new { enctype = "multipart/form-data", role="form" }))
 		{
-			@Html.ValidationSummary()
+			@Html.ValidationSummary(true)
 			
 			<div class="form-group">
 				<label>@StringTable.Name:</label>
 				@Html.TextBoxFor(x => x.Student.Name, new { @class = "form-control" })
+				@Html.ValidationMessageFor(x => x.Student.Name)
 			</div>
 
 			<div class="form-group">
@@ -32,8 +33,8 @@
 					new { @class = "form-control date-input", data_date_format = "dd/mm/yyyy",
 						  Value = Model.Student.BirthDate.ToShortDateString(),
 						  dir="ltr"
-						}
-					)
+						})
+				@Html.ValidationMessageFor(x => x.Student.BirthDate)
 			</div>
 			
 			<div class="form-group">
