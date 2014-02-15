@@ -1,7 +1,14 @@
 ﻿@model ManarAlSabeel.Domain.Entities.StudentGuardian
+@using ManarAlSabeel.Domain.Entities
 
 @{
 	ViewBag.Title = ManarAlSabeel.Web.Heplers.Helpers.GetPageTitle(@StringTable.EditStudentGuardian);
+
+	Branch _branch = (Model.Branch != null && Model.Branch.ID > 0)
+		?
+		Model.Branch
+		:
+		@HttpContext.Current.Profile["BranchFilter"] as Branch;
 }
 
 <h2>@StringTable.EditStudentGuardian</h2>
@@ -18,6 +25,12 @@
 				@Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
 			</div>
 
+			<div class="form-group">
+				<label>@StringTable.Branch</label>
+				@Html.TextBox("branch", _branch.Name, new { disabled = "disabled", @class = "form-control" })
+				@Html.HiddenFor(x => x.Branch.ID, new { Value = _branch.ID })
+			</div>
+			
 			<div class="form-group">
 				<label>@StringTable.HomePhone:</label>
 				@Html.TextBoxFor(x => x.HomePhone, new { @class = "form-control", dir = "ltr" })
@@ -53,8 +66,7 @@
 
 			
 			<hr />
-			@Html.TextBoxFor(x => x.Branch.ID)
-			@Html.TextBoxFor(x => x.ID)
+			@Html.HiddenFor(x => x.ID)
 			<hr />
 
 			<input type="submit" value="@StringTable.Save"

@@ -30,12 +30,14 @@ namespace ManarAlSabeel.Web.Controllers
 		}
 
 		[HttpPost]
-		public ActionResult Edit(StudentGuardian studentGuardian, int id)
+		public ActionResult Edit(StudentGuardian studentGuardian)
 		{
 			if (ModelState.IsValid)
 			{
-				dbRepository.SaveStudentGuardian(studentGuardian);
+				//enforce profile values over form values
+				studentGuardian.Branch.ID = ((Branch)HttpContext.Profile["BranchFilter"]).ID;
 
+				dbRepository.SaveStudentGuardian(studentGuardian);
 				return RedirectToAction("List");
 			}
 			else

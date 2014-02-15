@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace ManarAlSabeel.Web.Models
 {
-	public class EditUserViewModel
+	public class EditStudentViewModel
 	{
 		public Student Student { get; set; }
 		public IQueryable<Country> Countries { get; set; }

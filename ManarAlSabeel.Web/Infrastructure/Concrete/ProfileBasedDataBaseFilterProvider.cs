@@ -1,4 +1,5 @@
 ﻿using ManarAlSabeel.Domain.Abstract;
+using ManarAlSabeel.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,11 +23,11 @@ namespace ManarAlSabeel.Web.Infrastructure.Concrete
 		}
 
 
-		public int? GetBranchFilter()
+		public Branch GetBranchFilter()
 		{
 			if (HttpContext.Current.Profile[BRANCH_FILTER_NAME] != null)
 			{
-				return (int)HttpContext.Current.Profile[BRANCH_FILTER_NAME];
+				return HttpContext.Current.Profile[BRANCH_FILTER_NAME] as Branch;
 			}
 
 			return null;

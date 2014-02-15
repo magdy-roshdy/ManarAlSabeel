@@ -12,7 +12,9 @@
 			<th>#</th>
 			<th>@StringTable.Name</th>
 			<th>@StringTable.Age</th>
-			<th>-</th>
+			<th>@StringTable.OriginalNationality</th>
+			<th>@StringTable.Guardian</th>
+			<th></th>
 		</tr>
 	</thead>
 	@foreach (ManarAlSabeel.Domain.Entities.Student student in Model)
@@ -23,6 +25,8 @@
 				@Html.ActionLink(student.Name, "Edit", new { student.ID })
 			</td>
 			<td>@student.Age</td>
+			<td>@student.OriginalNationality.Name</td>
+			<td>@student.Guardian.Name</td>
 			<td>
 				@using (@Html.BeginForm("Delete", "Student"))
 				{

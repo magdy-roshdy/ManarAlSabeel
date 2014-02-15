@@ -58,5 +58,16 @@ namespace ManarAlSabeel.Web.Heplers
 
 			return selectListItems;
 		}
+
+		public static string GetBranchCenterHeaderString()
+		{
+			Branch currentBranch = HttpContext.Current.Profile["BranchFilter"] as Branch;
+			if (currentBranch != null)
+			{
+				return string.Format("{0} - {1}", currentBranch.Center.Name, currentBranch.Name);
+			}
+
+			return StringTable.ManarAlSabeel;
+		}
 	}
 }

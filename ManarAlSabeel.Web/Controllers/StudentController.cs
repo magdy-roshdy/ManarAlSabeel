@@ -28,28 +28,43 @@ namespace ManarAlSabeel.Web.Controllers
 			Student student = dbRepository.GetAllStudents().FirstOrDefault<Student>(x => x.ID == id);
 			IQueryable<Country> countries = dbRepository.GetAllCountries();
 			IQueryable<StudentGuardian> guardians = dbRepository.GetAllStudentGuardians();
-			return View(new Models.EditUserViewModel { Student = student, Countries = countries, Guardians = guardians });
+
+			return View(new Models.EditStudentViewModel { Student = student, Countries = countries, Guardians = guardians });
 		}
 
 		[HttpPost]
-		public ActionResult Edit(Student student, int id)
+		public ActionResult Edit(Student student)
 		{
 			if (ModelState.IsValid)
 			{
+				//enforce profile values over form values
+				student.Sex = (Sex)HttpContext.Profile["SexFilter"];
+				student.Branch.ID = ((Branch)HttpContext.Profile["BranchFilter"]).ID;
+
 				dbRepository.SaveStudent(student);
 				
 				return RedirectToAction("List");
 			}
 			else
 			{
-				return View(student);
+				IQueryable<Country> countries = dbRepository.GetAllCountries();
+				IQueryable<StudentGuardian> guardians = dbRepository.GetAllStudentGuardians();
+
+				return View(
+						new Models.EditStudentViewModel { Student = student, Countries = countries, Guardians = guardians }
+					);
 			}
 		}
 
 		public ViewResult Create()
 		{
-			return View("Edit", new Models.EditUserViewModel { Student = new Student(),
-				Countries = dbRepository.GetAllCountries(), Guardians=dbRepository.GetAllStudentGuardians() });
+			return View("Edit", new Models.EditStudentViewModel
+			{
+				Student = new Student { BirthDate = DateTime.Now.Subtract(new TimeSpan(365 * 15, 0, 0, 0)),
+					Sex = (Sex)HttpContext.Profile["SexFilter"] },
+				Countries = dbRepository.GetAllCountries(),
+				Guardians = dbRepository.GetAllStudentGuardians()
+			});
 		}
 
 		[HttpPost]

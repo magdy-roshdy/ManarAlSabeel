@@ -1,4 +1,5 @@
 ﻿using ManarAlSabeel.Domain.Abstract;
+using ManarAlSabeel.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -14,8 +15,12 @@ namespace ManarAlSabeel.Web.Infrastructure
 		public SystemAdminsProfileProvider()
 		{
 			Dictionary<string, object> filter =new Dictionary<string,object>();
+			
+			Branch branch = new Branch { Name = "فرع الشارقة", ID = 1, Center = new Center { Name="مركز منار السبيل", ID=1 } };
+			//Branch branch = new Branch { Name = "فرع عجمان الرئيسي", ID = 3, Center = new Center { Name = "مركز عجمان لتحفيظ القرآن", ID = 2 } };
+
 			filter.Add("SexFilter", 1);
-			filter.Add("BranchFilter", 1);
+			filter.Add("BranchFilter", branch);
 			data.Add("magdy.roshdy@hotmail.com", filter);
 		}
 
@@ -40,13 +45,7 @@ namespace ManarAlSabeel.Web.Infrastructure
 
 		public override void SetPropertyValues(SettingsContext context, SettingsPropertyValueCollection collection)
 		{
-			//string userName = (string)context["UserName"];
-			//if (!string.IsNullOrEmpty(userName))
-			//{
-			//	data[userName] = collection
-			//	.Cast<SettingsPropertyValue>()
-			//	.ToDictionary(x => x.Name, x => x.PropertyValue);
-			//}
+			//
 		}
 
 		public override int DeleteInactiveProfiles(ProfileAuthenticationOption authenticationOption, DateTime userInactiveSinceDate)

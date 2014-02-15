@@ -61,6 +61,33 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to الجنسية المكتسبة.
+        /// </summary>
+        public static string AcquiredNationality {
+            get {
+                return ResourceManager.GetString("AcquiredNationality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to فعال.
+        /// </summary>
+        public static string Active {
+            get {
+                return ResourceManager.GetString("Active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اعلان.
+        /// </summary>
+        public static string Ad {
+            get {
+                return ResourceManager.GetString("Ad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to إضافة طالب.
         /// </summary>
         public static string AddStudent {
@@ -93,6 +120,15 @@ namespace ManarAlSabeel.Resources {
         public static string AreYouSure {
             get {
                 return ResourceManager.GetString("AreYouSure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الفرع.
+        /// </summary>
+        public static string Branch {
+            get {
+                return ResourceManager.GetString("Branch", resourceCulture);
             }
         }
         
@@ -160,11 +196,38 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to مفصول.
+        /// </summary>
+        public static string Expelled {
+            get {
+                return ResourceManager.GetString("Expelled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to أنثى.
         /// </summary>
         public static string Female {
             get {
                 return ResourceManager.GetString("Female", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to صديق.
+        /// </summary>
+        public static string Friend {
+            get {
+                return ResourceManager.GetString("Friend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ولي الأمر.
+        /// </summary>
+        public static string Guardian {
+            get {
+                return ResourceManager.GetString("Guardian", resourceCulture);
             }
         }
         
@@ -201,6 +264,15 @@ namespace ManarAlSabeel.Resources {
         public static string HowDidYouTheCenter {
             get {
                 return ResourceManager.GetString("HowDidYouTheCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to غير فعال.
+        /// </summary>
+        public static string InActive {
+            get {
+                return ResourceManager.GetString("InActive", resourceCulture);
             }
         }
         
@@ -282,6 +354,24 @@ namespace ManarAlSabeel.Resources {
         public static string Name {
             get {
                 return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الجنسية الأصلية.
+        /// </summary>
+        public static string OriginalNationality {
+            get {
+                return ResourceManager.GetString("OriginalNationality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to أخرى.
+        /// </summary>
+        public static string Other {
+            get {
+                return ResourceManager.GetString("Other", resourceCulture);
             }
         }
         

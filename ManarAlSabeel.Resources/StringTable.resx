@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AcquiredNationality" xml:space="preserve">
+    <value>الجنسية المكتسبة</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>فعال</value>
+  </data>
+  <data name="Ad" xml:space="preserve">
+    <value>اعلان</value>
+  </data>
   <data name="AddStudent" xml:space="preserve">
     <value>إضافة طالب</value>
   </data>
@@ -128,6 +137,9 @@
   </data>
   <data name="AreYouSure" xml:space="preserve">
     <value>هل أنت متأكد؟</value>
+  </data>
+  <data name="Branch" xml:space="preserve">
+    <value>الفرع</value>
   </data>
   <data name="CurrentStudySatge" xml:space="preserve">
     <value>المرحلة الدراسية الحالية</value>
@@ -150,8 +162,17 @@
   <data name="ExpectedPeriodToFinishQuraan" xml:space="preserve">
     <value>الفترة المتوقعة لانهاء القرآن</value>
   </data>
+  <data name="Expelled" xml:space="preserve">
+    <value>مفصول</value>
+  </data>
   <data name="Female" xml:space="preserve">
     <value>أنثى</value>
+  </data>
+  <data name="Friend" xml:space="preserve">
+    <value>صديق</value>
+  </data>
+  <data name="Guardian" xml:space="preserve">
+    <value>ولي الأمر</value>
   </data>
   <data name="Guardians" xml:space="preserve">
     <value>أولياء الأمور</value>
@@ -164,6 +185,9 @@
   </data>
   <data name="HowDidYouTheCenter" xml:space="preserve">
     <value>كيف تعرفت على المركز</value>
+  </data>
+  <data name="InActive" xml:space="preserve">
+    <value>غير فعال</value>
   </data>
   <data name="IsStudentRegisteredInTransportations" xml:space="preserve">
     <value>هل هو مسجل بالمواصلات</value>
@@ -191,6 +215,12 @@
   </data>
   <data name="Name" xml:space="preserve">
     <value>الاسم</value>
+  </data>
+  <data name="OriginalNationality" xml:space="preserve">
+    <value>الجنسية الأصلية</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>أخرى</value>
   </data>
   <data name="OtherPhoneNumber" xml:space="preserve">
     <value>رقم هاتف اضافي</value>

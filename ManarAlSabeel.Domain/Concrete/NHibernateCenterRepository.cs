@@ -42,10 +42,10 @@ namespace ManarAlSabeel.Domain.Concrete
 				}
 
 				//branch filter
-				int? branchFilter = filtersProvider.GetBranchFilter();
-				if (branchFilter.HasValue)
+				Branch branchFilter = filtersProvider.GetBranchFilter();
+				if (branchFilter != null)
 				{
-					Session.EnableFilter("branchFilter").SetParameter("branch", branchFilter.Value);
+					Session.EnableFilter("branchFilter").SetParameter("branch", branchFilter.ID);
 				}
 				else
 				{
