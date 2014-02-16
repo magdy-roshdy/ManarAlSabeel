@@ -61,6 +61,24 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to من فضلك أدخل رقم جوال ولي الأمر.
+        /// </summary>
+        public static string GuardianMobileNumberIsRequired {
+            get {
+                return ResourceManager.GetString("GuardianMobileNumberIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to من فضلك أدخل اسم ولي الأمر.
+        /// </summary>
+        public static string GuardianNameIsRequired {
+            get {
+                return ResourceManager.GetString("GuardianNameIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to من فضلك أدخل تاريخ ميلاد الطالب.
         /// </summary>
         public static string StudentBirthdayRequired {

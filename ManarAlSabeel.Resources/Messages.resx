@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="GuardianMobileNumberIsRequired" xml:space="preserve">
+    <value>من فضلك أدخل رقم جوال ولي الأمر</value>
+  </data>
+  <data name="GuardianNameIsRequired" xml:space="preserve">
+    <value>من فضلك أدخل اسم ولي الأمر</value>
+  </data>
   <data name="StudentBirthdayRequired" xml:space="preserve">
     <value>من فضلك أدخل تاريخ ميلاد الطالب</value>
   </data>
