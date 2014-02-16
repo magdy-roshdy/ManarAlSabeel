@@ -20,9 +20,11 @@
 		<property name="BirthDate" column="StudentBirthDate" />
 		<property name="PersonalPhotoPath" column="StudentPersonalPhotoPath"
 							not-null="false" />
+		
 		<many-to-one name="OriginalNationality"
 								 class="Country"
 								 column="StudentOriginNationality"/>
+		
 		<many-to-one name="AcquiredNationality"
 								 class="Country" not-null="false"
 								 column="StudentAcquiredNationality"/>

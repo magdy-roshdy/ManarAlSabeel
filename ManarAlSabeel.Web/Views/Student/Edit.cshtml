@@ -30,7 +30,7 @@
 			<div class="form-group">
 				<label>@StringTable.DateOfBirth:</label>
 				@Html.TextBoxFor(x => x.Student.BirthDate,
-					new { @class = "form-control date-input", data_date_format = "dd/mm/yyyy",
+					new { @class = "form-control date-input",
 						  Value = Model.Student.BirthDate.ToShortDateString(),
 						  dir="ltr"
 						})

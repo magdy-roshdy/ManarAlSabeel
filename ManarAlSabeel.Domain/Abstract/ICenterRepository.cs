@@ -17,7 +17,5 @@ namespace ManarAlSabeel.Domain.Abstract
 		bool DeleteStudentGuardian(int studentGuardianId);
 
 		IQueryable<Country> GetAllCountries();
-
-		void TEMP();
 	}
 }

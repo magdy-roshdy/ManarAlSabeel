@@ -56,7 +56,6 @@ namespace ManarAlSabeel.Domain.Concrete
 			}
 		}
 
-
 		public IQueryable<StudentGuardian> GetAllStudentGuardians()
 		{
 			var guardians = (from guardian
@@ -66,34 +65,6 @@ namespace ManarAlSabeel.Domain.Concrete
 			return guardians;
 		}
 
-		public void TEMP()
-		{
-			//TEMP
-			using (ISession session = Session)
-			{
-				using (ITransaction transaction = session.BeginTransaction())
-				{
-					Student student = new Student();
-					student.Name = "student1";
-					student.Sex = Sex.Male;
-					student.BirthDate = new DateTime(1990, 1, 1);
-					student.IsInTransportations = true;
-					student.Staus = StudentStatus.Active;
-
-					Int64 id = 2;
-					student.Guardian = session.Get<StudentGuardian>(id);
-					student.Branch = session.Get<Branch>(1);
-					student.OriginalNationality = session.Get<Country>(1);
-
-
-					session.SaveOrUpdate(student);
-					transaction.Commit();
-					session.Flush();
-				}
-			}
-		}
-
-
 		public IQueryable<Student> GetAllStudents()
 		{
 			var students = (from student
@@ -102,7 +73,6 @@ namespace ManarAlSabeel.Domain.Concrete
 
 			return students;
 		}
-
 
 		public int? SaveStudent(Student student)
 		{
@@ -179,7 +149,6 @@ namespace ManarAlSabeel.Domain.Concrete
 			return new_id;
 		}
 
-
 		public int? SaveStudentGuardian(StudentGuardian studentGuardian)
 		{
 			int? new_id = null;
@@ -229,7 +198,6 @@ namespace ManarAlSabeel.Domain.Concrete
 			return new_id;
 		}
 
-
 		public bool DeleteStudent(int studentId)
 		{
 			using (ISession session = Session)
@@ -271,7 +239,6 @@ namespace ManarAlSabeel.Domain.Concrete
 
 			return false;
 		}
-
 
 		public IQueryable<Country> GetAllCountries()
 		{

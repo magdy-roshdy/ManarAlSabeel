@@ -1,6 +1,7 @@
 ﻿using ManarAlSabeel.Domain.Abstract;
 using ManarAlSabeel.Domain.Entities;
 using ManarAlSabeel.Web.Infrastructure;
+using ManarAlSabeel.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,15 +13,26 @@ namespace ManarAlSabeel.Web.Controllers
 	[ForbiddenRedirectAuthorizeAttribute]
     public class StudentController : Controller
     {
+		private int PageSize = 25;
 		private ICenterRepository dbRepository;
 		public StudentController(ICenterRepository repo)
 		{
 			dbRepository = repo;
 		}
 
-		public ViewResult List()
+		public ViewResult List(int page = 1)
         {
-			return View(dbRepository.GetAllStudents());
+			PagingInfo pagingInfo = new PagingInfo
+			{
+				CurrentPage = page,
+				ItemsPerPage = PageSize,
+				TotalItems = dbRepository.GetAllStudents().Count()
+			};
+			IQueryable<Student> students = dbRepository.GetAllStudents().Skip((page - 1) * PageSize)
+				.Take(PageSize);
+
+			StudentsListViewModel model = new StudentsListViewModel { Students = students, PagingInfo = pagingInfo };
+			return View(model);
         }
 
 		public ViewResult Edit(int id)
