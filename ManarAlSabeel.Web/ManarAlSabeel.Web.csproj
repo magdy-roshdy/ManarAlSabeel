@@ -137,6 +137,7 @@
     <Compile Include="Infrastructure\SystemAdminsRolesProvider.cs" />
     <Compile Include="Models\EditStudentViewModel.cs" />
     <Compile Include="Models\PagingInfo.cs" />
+    <Compile Include="Models\StudentGuardiansListViewModel.cs" />
     <Compile Include="Models\StudentsListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

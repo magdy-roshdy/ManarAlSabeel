@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ManarAlSabeel.Domain.Entities.StudentGuardian>
+﻿@model ManarAlSabeel.Web.Models.StudentGuardiansListViewModel
 
 @{
 	ViewBag.Title = ManarAlSabeel.Web.Heplers.Helpers.GetPageTitle(@StringTable.StudentGuardiansList);
@@ -15,7 +15,7 @@
 			<th>-</th>
 		</tr>
 	</thead>
-	@foreach (ManarAlSabeel.Domain.Entities.StudentGuardian guardian in Model)
+	@foreach (ManarAlSabeel.Domain.Entities.StudentGuardian guardian in Model.Guardians)
 	{
 		<tr>
 			<td>@guardian.ID</td>
@@ -39,3 +39,7 @@
 	}
 
 </table>
+
+<ul class="pagination">
+	@Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
+</ul>
