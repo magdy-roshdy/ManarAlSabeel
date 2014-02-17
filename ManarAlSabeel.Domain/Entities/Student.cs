@@ -42,6 +42,7 @@ namespace ManarAlSabeel.Domain.Entities
 		public virtual bool IsInTransportations { get; set; }
 		public virtual Sex Sex { get; set; }
 		public virtual StudentStatus Staus { get; set; }
+		public virtual DateTime AddedOn { get; set; }
 
 		public virtual int Age
 		{

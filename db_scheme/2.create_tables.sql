@@ -301,6 +301,7 @@ CREATE TABLE [dbo].[Students](
 	[StudentIsInTransportations] [bit] NOT NULL,
 	[StudentSex] [tinyint] NOT NULL,
 	[StudentStatus] [tinyint] NOT NULL,
+	[StudentAddedOn] [datetime] NOT NULL
  CONSTRAINT [PK_Students] PRIMARY KEY CLUSTERED 
 (
 	[StudentID] ASC

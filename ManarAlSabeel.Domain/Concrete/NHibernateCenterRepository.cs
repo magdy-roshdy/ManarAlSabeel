@@ -126,6 +126,7 @@ namespace ManarAlSabeel.Domain.Concrete
 						student.Branch = session.Get<Branch>(student.Branch.ID);
 						student.Guardian = session.Get<StudentGuardian>(student.Guardian.ID);
 						student.OriginalNationality = session.Get<Country>(student.OriginalNationality.ID);
+						student.AddedOn = DateTime.Now;
 
 						if(student.AcquiredNationality.ID > 0)
 						{

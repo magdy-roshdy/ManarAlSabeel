@@ -11,17 +11,17 @@ namespace ManarAlSabeel.Domain.Entities
 		[Key]
 		public virtual int ID { get; set; }
 
-		[Required]
+		//[Required]
 		public virtual Branch Branch { get; set; }
 
-		[Required(ErrorMessageResourceType = typeof(ManarAlSabeel.Resources.Messages),
-			  ErrorMessageResourceName = "GuardianNameIsRequired")]
+		//[Required(ErrorMessageResourceType = typeof(ManarAlSabeel.Resources.Messages),
+		//	  ErrorMessageResourceName = "GuardianNameIsRequired")]
 		public virtual string Name { get; set; }
 
 		public virtual string HomePhone { get; set; }
 
-		[Required(ErrorMessageResourceType = typeof(ManarAlSabeel.Resources.Messages),
-			  ErrorMessageResourceName = "GuardianMobileNumberIsRequired")]
+		//[Required(ErrorMessageResourceType = typeof(ManarAlSabeel.Resources.Messages),
+		//	  ErrorMessageResourceName = "GuardianMobileNumberIsRequired")]
 		public virtual string MobilePhone { get; set; }
 
 		public virtual string OtherPhone { get; set; }

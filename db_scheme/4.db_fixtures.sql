@@ -137,7 +137,8 @@ INSERT INTO [dbo].[Students]
            ,[StudentExpectedQuraanFinishTime]
            ,[StudentIsInTransportations]
            ,[StudentSex]
-           ,[StudentStatus])
+           ,[StudentStatus]
+		   ,[StudentAddedOn])
      VALUES
            (1
            ,1
@@ -154,7 +155,8 @@ INSERT INTO [dbo].[Students]
            ,12
            ,0
            ,1
-           ,0)
+           ,0
+		   ,getdate())
 GO
 
 INSERT INTO [dbo].[Students]
@@ -173,7 +175,8 @@ INSERT INTO [dbo].[Students]
            ,[StudentExpectedQuraanFinishTime]
            ,[StudentIsInTransportations]
            ,[StudentSex]
-           ,[StudentStatus])
+           ,[StudentStatus]
+		   ,[StudentAddedOn])
      VALUES
            (2
            ,1
@@ -190,7 +193,8 @@ INSERT INTO [dbo].[Students]
            ,12
            ,0
            ,1
-           ,0)
+           ,0
+		   ,getdate())
 GO
 
 	INSERT INTO [dbo].[Students]
@@ -209,7 +213,8 @@ GO
            ,[StudentExpectedQuraanFinishTime]
            ,[StudentIsInTransportations]
            ,[StudentSex]
-           ,[StudentStatus])
+           ,[StudentStatus]
+		   ,[StudentAddedOn])
      VALUES
            (2
            ,1
@@ -226,4 +231,5 @@ GO
            ,12
            ,0
            ,1
-           ,0)
+           ,0
+		   ,getdate())

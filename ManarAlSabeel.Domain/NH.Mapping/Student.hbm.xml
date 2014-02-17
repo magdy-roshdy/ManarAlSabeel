@@ -38,6 +38,7 @@
 		<property name="IsInTransportations" column="StudentIsInTransportations" />
 		<property name="Sex" column="StudentSex" />
 		<property name="Staus" column="StudentStatus" />
+		<property name="AddedOn" column="StudentAddedOn" />
 
 		<filter name="sexFilter" condition=":sex = StudentSex" />
 		<filter name="branchFilter" condition=":branch = StudentBranchID" />
