@@ -9,9 +9,9 @@ GO
 CREATE DATABASE [manar_al_sabeel]
  CONTAINMENT = NONE
  ON  PRIMARY 
-( NAME = N'manar_al_islam', FILENAME = N'D:\Work\Manar Al-Sabeel\db\manar_al_sabeel.mdf' , SIZE = 5120KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+( NAME = N'manar_al_sabeel', FILENAME = N'E:\MSSQL.MSSQLSERVER\DATA\manar_al_sabeel.mdf' , SIZE = 5120KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
  LOG ON 
-( NAME = N'manar_al_islam_log', FILENAME = N'D:\Work\Manar Al-Sabeel\db\manar_al_sabeel_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+( NAME = N'manar_al_sabeel_log', FILENAME = N'E:\MSSQL.MSSQLSERVER\DATA\manar_al_sabeel_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
 GO
 
 ALTER DATABASE [manar_al_sabeel] SET COMPATIBILITY_LEVEL = 110
@@ -110,7 +110,10 @@ GO
 ALTER DATABASE [manar_al_sabeel] SET TARGET_RECOVERY_TIME = 0 SECONDS 
 GO
 
-ALTER DATABASE [manar_al_sabeel] SET  READ_WRITE 
+ALTER DATABASE [manar_al_sabeel] SET  READ_WRITE
+GO
+
+ALTER DATABASE [manar_al_sabeel] COLLATE Arabic_CI_AS ;
 GO
 
 

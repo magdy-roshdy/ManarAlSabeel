@@ -11,7 +11,7 @@ namespace ManarAlSabeel.Web.Infrastructure
 	{
 		public override bool ValidateUser(string username, string password)
 		{
-			return true;
+			return (username == "admin@manaralsabeel.org" && password == "secret");
 		}
 	}
 }

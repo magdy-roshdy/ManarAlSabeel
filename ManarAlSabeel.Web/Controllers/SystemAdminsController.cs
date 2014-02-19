@@ -1,4 +1,5 @@
-﻿using ManarAlSabeel.Web.Infrastructure;
+﻿using ManarAlSabeel.Resources;
+using ManarAlSabeel.Web.Infrastructure;
 using ManarAlSabeel.Web.Infrastructure.Abstract;
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,7 @@ namespace ManarAlSabeel.Web.Controllers
 				}
 				else
 				{
-					ModelState.AddModelError("", "incorrect username or password");
+					ModelState.AddModelError("", Messages.IncorrectLoginData);
 					return View();
 				}
 			}

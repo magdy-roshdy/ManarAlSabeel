@@ -24,10 +24,6 @@ namespace ManarAlSabeel.Web.Infrastructure
 
 		protected override IController GetControllerInstance(System.Web.Routing.RequestContext requestContext, Type controllerType)
 		{
-			//TEMP
-			//new FormsAuthenticationProvider(new NHibernateCenterRepository(new SessionBasedDataBaseFilterProvider()))
-			//	.Authenticate("magdy.roshdy@gmail.com", "password");
-
 			return controllerType == null
 			? null
 			: (IController)kernel.Get(controllerType);

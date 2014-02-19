@@ -123,6 +123,9 @@
   <data name="GuardianNameIsRequired" xml:space="preserve">
     <value>من فضلك أدخل اسم ولي الأمر</value>
   </data>
+  <data name="IncorrectLoginData" xml:space="preserve">
+    <value>خطأ في اسم المستخدم أو كلمة المرور</value>
+  </data>
   <data name="StudentBirthdayRequired" xml:space="preserve">
     <value>من فضلك أدخل تاريخ ميلاد الطالب</value>
   </data>

@@ -21,7 +21,7 @@ namespace ManarAlSabeel.Web.Infrastructure
 
 			filter.Add("SexFilter", 1);
 			filter.Add("BranchFilter", branch);
-			data.Add("magdy.roshdy@hotmail.com", filter);
+			data.Add("admin@manaralsabeel.org", filter);
 		}
 
 		public override SettingsPropertyValueCollection GetPropertyValues(SettingsContext context, SettingsPropertyCollection collection)

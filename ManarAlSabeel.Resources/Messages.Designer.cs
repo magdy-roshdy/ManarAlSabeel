@@ -79,6 +79,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to خطأ في اسم المستخدم أو كلمة المرور.
+        /// </summary>
+        public static string IncorrectLoginData {
+            get {
+                return ResourceManager.GetString("IncorrectLoginData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to من فضلك أدخل تاريخ ميلاد الطالب.
         /// </summary>
         public static string StudentBirthdayRequired {

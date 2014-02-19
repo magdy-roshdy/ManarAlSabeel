@@ -42,7 +42,15 @@
     <Reference Include="HibernatingRhinos.Profiler.Appender">
       <HintPath>..\..\..\..\Software Sources\NHibernate.Profiler-v2.0-Build-2225\HibernatingRhinos.Profiler.Appender.dll</HintPath>
     </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Iesi.Collections.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NHibernate, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject">
       <HintPath>..\..\Libs\Ninject.dll</HintPath>
     </Reference>
@@ -168,10 +176,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\NHibernate_source.code\NHibernate.csproj">
-      <Project>{5909bfe7-93cf-4e5f-be22-6293368af01d}</Project>
-      <Name>NHibernate</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ManarAlSabeel.Domain\ManarAlSabeel.Domain.csproj">
       <Project>{3e17b0a4-6bf0-4d1a-8487-4286dcc76081}</Project>
       <Name>ManarAlSabeel.Domain</Name>
