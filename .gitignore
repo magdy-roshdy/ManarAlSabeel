@@ -1,5 +1,6 @@
 ManarAlSabeel.Web/bin/*
 ManarAlSabeel.Web/obj/*
+ManarAlSabeel.Web/App_Data/*
 
 ManarAlSabeel.Domain/bin/*
 ManarAlSabeel.Domain/obj/*
