@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace ManarAlSabeel.Web.Infrastructure
 {
@@ -20,6 +21,9 @@ namespace ManarAlSabeel.Web.Infrastructure
 		{
 			kernel = new StandardKernel();
 			AddBindings();
+
+			kernel.Inject(Membership.Provider);
+			//kernel.Inject(RoleProvider.);
 		}
 
 		protected override IController GetControllerInstance(System.Web.Routing.RequestContext requestContext, Type controllerType)

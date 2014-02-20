@@ -19,13 +19,22 @@ namespace ManarAlSabeel.Web.Infrastructure.Concrete
 
 		public bool Authenticate(string username, string password)
 		{
-			bool result = Membership.ValidateUser(username, password);
+			bool result = validateLogin(username, password);
 			if (result)
 			{
 				FormsAuthentication.SetAuthCookie(username, false);
 			}
 
 			return result;
+		}
+
+		private bool validateLogin(string email, string password)
+		{
+			return (
+					(email == "admin@manaralsabeel.org" && password == "secret")
+					||
+					(email == "admin.females@manaralsabeel.org" && password == "password")
+					);
 		}
 	}
 }

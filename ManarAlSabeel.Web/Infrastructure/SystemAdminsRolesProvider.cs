@@ -12,8 +12,16 @@ namespace ManarAlSabeel.Web.Infrastructure
 {
 	public class SystemAdminsRolesProvider : ClientRoleProvider
 	{
+		[Inject]
+		public ICenterRepository DBRepository { get; set; }
+
 		public override string[] GetRolesForUser(string username)
 		{
+			try
+			{
+				string x = DBRepository.GetType().ToString();
+			}
+			catch { }
 			return new string[] { "admin", "manager", "superAdmin" };
 		}
 	}
