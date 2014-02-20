@@ -168,6 +168,9 @@
   <data name="Female" xml:space="preserve">
     <value>أنثى</value>
   </data>
+  <data name="Females" xml:space="preserve">
+    <value>إناث</value>
+  </data>
   <data name="Friend" xml:space="preserve">
     <value>صديق</value>
   </data>
@@ -206,6 +209,9 @@
   </data>
   <data name="Male" xml:space="preserve">
     <value>ذكر</value>
+  </data>
+  <data name="Males" xml:space="preserve">
+    <value>ذكور</value>
   </data>
   <data name="ManarAlSabeel" xml:space="preserve">
     <value>مركز منار السبيل</value>

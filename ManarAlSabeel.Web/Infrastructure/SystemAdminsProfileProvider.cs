@@ -14,14 +14,17 @@ namespace ManarAlSabeel.Web.Infrastructure
 		private IDictionary<string, IDictionary<string, object>> data = new Dictionary<string, IDictionary<string, object>>();
 		public SystemAdminsProfileProvider()
 		{
-			Dictionary<string, object> filter =new Dictionary<string,object>();
-			
-			Branch branch = new Branch { Name = "فرع الشارقة", ID = 1, Center = new Center { Name="مركز منار السبيل", ID=1 } };
-			//Branch branch = new Branch { Name = "فرع عجمان الرئيسي", ID = 3, Center = new Center { Name = "مركز عجمان لتحفيظ القرآن", ID = 2 } };
+			Dictionary<string, object> maleFilters = new Dictionary<string, object>();
 
-			filter.Add("SexFilter", 1);
-			filter.Add("BranchFilter", branch);
-			data.Add("admin@manaralsabeel.org", filter);
+			Branch branch = new Branch { Name = "الفرع الرئيسي", ID = 1, Center = new Center { Name = "مركز منار السبيل", ID = 1 } };
+			maleFilters.Add("SexFilter", 1);
+			maleFilters.Add("BranchFilter", branch);
+			data.Add("admin@manaralsabeel.org", maleFilters);
+
+			Dictionary<string, object> femaleFilters = new Dictionary<string, object>();
+			femaleFilters.Add("SexFilter", 0);
+			femaleFilters.Add("BranchFilter", branch);
+			data.Add("admin.females@manaralsabeel.org", femaleFilters);
 		}
 
 		public override SettingsPropertyValueCollection GetPropertyValues(SettingsContext context, SettingsPropertyCollection collection)

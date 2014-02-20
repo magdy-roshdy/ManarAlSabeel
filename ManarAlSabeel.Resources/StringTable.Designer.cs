@@ -214,6 +214,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to إناث.
+        /// </summary>
+        public static string Females {
+            get {
+                return ResourceManager.GetString("Females", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to صديق.
         /// </summary>
         public static string Friend {
@@ -327,6 +336,15 @@ namespace ManarAlSabeel.Resources {
         public static string Male {
             get {
                 return ResourceManager.GetString("Male", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ذكور.
+        /// </summary>
+        public static string Males {
+            get {
+                return ResourceManager.GetString("Males", resourceCulture);
             }
         }
         

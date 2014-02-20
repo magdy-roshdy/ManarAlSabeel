@@ -70,10 +70,21 @@ namespace ManarAlSabeel.Web.Heplers
 			Branch currentBranch = HttpContext.Current.Profile["BranchFilter"] as Branch;
 			if (currentBranch != null)
 			{
-				return string.Format("{0} - {1}", currentBranch.Center.Name, currentBranch.Name);
+				int? sexFilter = HttpContext.Current.Profile["SexFilter"] as int?;
+				return string.Format("{0} - {1} ({2})",
+					currentBranch.Center.Name,
+					currentBranch.Name,
+					sexFilter.HasValue ? GetSexCaption(sexFilter.Value) : string.Empty
+					);
 			}
 
 			return StringTable.ManarAlSabeel;
+		}
+
+		public static string GetSexCaption(int sexCode)
+		{
+			Sex sex = (Sex)sexCode;
+			return (sex == Sex.Male) ? StringTable.Males : StringTable.Females ;
 		}
 	}
 }
