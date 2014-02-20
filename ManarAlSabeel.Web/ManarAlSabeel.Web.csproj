@@ -140,6 +140,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
+    <Compile Include="Infrastructure\SystemAdminsMembershipProvider.cs" />
     <Compile Include="Infrastructure\SystemAdminsProfileProvider.cs" />
     <Compile Include="Infrastructure\SystemAdminsRolesProvider.cs" />
     <Compile Include="Models\EditStudentViewModel.cs" />

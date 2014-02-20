@@ -17,11 +17,6 @@ namespace ManarAlSabeel.Web.Infrastructure
 
 		public override string[] GetRolesForUser(string username)
 		{
-			try
-			{
-				string x = DBRepository.GetType().ToString();
-			}
-			catch { }
 			return new string[] { "admin", "manager", "superAdmin" };
 		}
 	}

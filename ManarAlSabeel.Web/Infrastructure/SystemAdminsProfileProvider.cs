@@ -1,5 +1,6 @@
 ﻿using ManarAlSabeel.Domain.Abstract;
 using ManarAlSabeel.Domain.Entities;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -11,6 +12,9 @@ namespace ManarAlSabeel.Web.Infrastructure
 {
 	public class SystemAdminsProfileProvider : ProfileProvider
 	{
+		[Inject]
+		public ICenterRepository DBRepository { get; set; }
+
 		private IDictionary<string, IDictionary<string, object>> data = new Dictionary<string, IDictionary<string, object>>();
 		public SystemAdminsProfileProvider()
 		{

@@ -31,6 +31,8 @@ namespace ManarAlSabeel.Web.Controllers
 			{
 				if(authProvider.Authenticate(email, password))
 				{
+					FormsAuthentication.SetAuthCookie(email, false);
+
 					return string.IsNullOrEmpty(ReturnUrl) ? Redirect(Url.Action("Index", "Home")) : Redirect(ReturnUrl);
 				}
 				else
