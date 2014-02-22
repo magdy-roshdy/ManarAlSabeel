@@ -130,6 +130,7 @@
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\StudentGuardianController.cs" />
     <Compile Include="Controllers\SystemAdminsController.cs" />
+    <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Heplers\Helpers.cs" />
     <Compile Include="HtmlHelpers\PagingHelpers.cs" />
     <Compile Include="Infrastructure\ForbiddenRedirectAuthorizeAttribute.cs" />
@@ -144,9 +145,11 @@
     <Compile Include="Infrastructure\SystemAdminsProfileProvider.cs" />
     <Compile Include="Infrastructure\SystemAdminsRolesProvider.cs" />
     <Compile Include="Models\EditStudentViewModel.cs" />
+    <Compile Include="Models\EditTeacherViewModel.cs" />
     <Compile Include="Models\PagingInfo.cs" />
     <Compile Include="Models\StudentGuardiansListViewModel.cs" />
     <Compile Include="Models\StudentsListViewModel.cs" />
+    <Compile Include="Models\TeachersListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -209,6 +212,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\StudentGuardian\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Teachers\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Teachers\Edit.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

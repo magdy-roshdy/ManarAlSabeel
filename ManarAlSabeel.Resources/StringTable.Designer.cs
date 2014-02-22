@@ -106,6 +106,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to اضافة مدرس.
+        /// </summary>
+        public static string AddTeacher {
+            get {
+                return ResourceManager.GetString("AddTeacher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to السن.
         /// </summary>
         public static string Age {
@@ -120,6 +129,15 @@ namespace ManarAlSabeel.Resources {
         public static string AreYouSure {
             get {
                 return ResourceManager.GetString("AreYouSure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to محل الميلاد.
+        /// </summary>
+        public static string BirthPlace {
+            get {
+                return ResourceManager.GetString("BirthPlace", resourceCulture);
             }
         }
         
@@ -160,6 +178,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to مطلق.
+        /// </summary>
+        public static string Divorced {
+            get {
+                return ResourceManager.GetString("Divorced", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تعديل بيانات ولي أمر.
         /// </summary>
         public static string EditStudentGuardian {
@@ -174,6 +201,15 @@ namespace ManarAlSabeel.Resources {
         public static string EditStudentInfo {
             get {
                 return ResourceManager.GetString("EditStudentInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعديل بيانات مدرس.
+        /// </summary>
+        public static string EditTeacherInfo {
+            get {
+                return ResourceManager.GetString("EditTeacherInfo", resourceCulture);
             }
         }
         
@@ -246,6 +282,24 @@ namespace ManarAlSabeel.Resources {
         public static string Guardians {
             get {
                 return ResourceManager.GetString("Guardians", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to حنفي.
+        /// </summary>
+        public static string Hanafy {
+            get {
+                return ResourceManager.GetString("Hanafy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to حنبلي.
+        /// </summary>
+        public static string Hanbally {
+            get {
+                return ResourceManager.GetString("Hanbally", resourceCulture);
             }
         }
         
@@ -349,11 +403,47 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to مالكي.
+        /// </summary>
+        public static string Malky {
+            get {
+                return ResourceManager.GetString("Malky", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to مركز منار السبيل.
         /// </summary>
         public static string ManarAlSabeel {
             get {
                 return ResourceManager.GetString("ManarAlSabeel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الحالة الاجتماعية.
+        /// </summary>
+        public static string MaritalStatus {
+            get {
+                return ResourceManager.GetString("MaritalStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تاريخ الزواج.
+        /// </summary>
+        public static string MarriageDate {
+            get {
+                return ResourceManager.GetString("MarriageDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to متزوج.
+        /// </summary>
+        public static string Married {
+            get {
+                return ResourceManager.GetString("Married", resourceCulture);
             }
         }
         
@@ -372,6 +462,15 @@ namespace ManarAlSabeel.Resources {
         public static string Name {
             get {
                 return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الجنسية.
+        /// </summary>
+        public static string Nationality {
+            get {
+                return ResourceManager.GetString("Nationality", resourceCulture);
             }
         }
         
@@ -412,6 +511,24 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to مقدار الحفظ من القرآن.
+        /// </summary>
+        public static string QuraanMemorizationAmount {
+            get {
+                return ResourceManager.GetString("QuraanMemorizationAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to المذهب الديني.
+        /// </summary>
+        public static string ReligiousIdeology {
+            get {
+                return ResourceManager.GetString("ReligiousIdeology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to حفظ.
         /// </summary>
         public static string Save {
@@ -444,6 +561,24 @@ namespace ManarAlSabeel.Resources {
         public static string Sex {
             get {
                 return ResourceManager.GetString("Sex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to شافعي.
+        /// </summary>
+        public static string Shafeey {
+            get {
+                return ResourceManager.GetString("Shafeey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to أعزب.
+        /// </summary>
+        public static string Single {
+            get {
+                return ResourceManager.GetString("Single", resourceCulture);
             }
         }
         
@@ -489,6 +624,42 @@ namespace ManarAlSabeel.Resources {
         public static string StudyStages {
             get {
                 return ResourceManager.GetString("StudyStages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ادارة المدرسون.
+        /// </summary>
+        public static string TeachersAdmin {
+            get {
+                return ResourceManager.GetString("TeachersAdmin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to قائمة المدرسون.
+        /// </summary>
+        public static string TeachersList {
+            get {
+                return ResourceManager.GetString("TeachersList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الوظيفة.
+        /// </summary>
+        public static string TheProfession {
+            get {
+                return ResourceManager.GetString("TheProfession", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to أرمل.
+        /// </summary>
+        public static string Widow {
+            get {
+                return ResourceManager.GetString("Widow", resourceCulture);
             }
         }
     }

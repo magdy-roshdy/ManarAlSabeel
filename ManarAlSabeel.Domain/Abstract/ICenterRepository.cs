@@ -16,6 +16,10 @@ namespace ManarAlSabeel.Domain.Abstract
 		int? SaveStudentGuardian(StudentGuardian studentGuardian);
 		bool DeleteStudentGuardian(int studentGuardianId);
 
+		IQueryable<Teacher> GetAllTeachers();
+		int? SaveTeacher(Teacher teacher);
+		bool DeleteTeacher(int teacherId);
+
 		IQueryable<Country> GetAllCountries();
 	}
 }

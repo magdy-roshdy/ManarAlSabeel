@@ -21,7 +21,7 @@
 			@Html.ValidationSummary()
 
 			<div class="form-group">
-				<label>@StringTable.Name:</label>
+				<label>@StringTable.Name</label>
 				@Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
 				@Html.ValidationMessageFor(x => x.Name)
 			</div>
@@ -33,33 +33,33 @@
 			</div>
 			
 			<div class="form-group">
-				<label>@StringTable.HomePhone:</label>
+				<label>@StringTable.HomePhone</label>
 				@Html.TextBoxFor(x => x.HomePhone, new { @class = "form-control", dir = "ltr" })
 			</div>
 
 			<div class="form-group">
-				<label>@StringTable.MobileNumber:</label>
+				<label>@StringTable.MobileNumber</label>
 				@Html.TextBoxFor(x => x.MobilePhone, new { @class = "form-control", dir = "ltr" })
 				@Html.ValidationMessageFor(x => x.MobilePhone)
 			</div>
 
 			<div class="form-group">
-				<label>@StringTable.OtherPhoneNumber:</label>
+				<label>@StringTable.OtherPhoneNumber</label>
 				@Html.TextBoxFor(x => x.OtherPhone, new { @class = "form-control", dir = "ltr" })
 			</div>
 
 			<div class="form-group">
-				<label>@StringTable.HomeAddress:</label>
+				<label>@StringTable.HomeAddress</label>
 				@Html.TextBoxFor(x => x.HomeAddress, new { @class = "form-control" })
 			</div>
 
 			<div class="form-group">
-				<label>@StringTable.Email:</label>
+				<label>@StringTable.Email</label>
 				@Html.TextBoxFor(x => x.Email, new { @class = "form-control", @type="email", dir="ltr" })
 			</div>
 
 			<div class="form-group">
-				<label>@StringTable.Sex:</label>
+				<label>@StringTable.Sex</label>
 				<label>@StringTable.Male</label>
 				@Html.RadioButtonFor(x => x.Sex, ManarAlSabeel.Domain.Entities.Sex.Male)
 				<label>@StringTable.Female</label>

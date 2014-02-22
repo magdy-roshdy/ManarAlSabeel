@@ -32,6 +32,9 @@
 
 		<many-to-one name="BirthPlace" class="Country"
 								 column="TeacherBirthPlace" />
+	
+		<filter name="sexFilter" condition=":sex = TeacherSex" />
+		<filter name="branchFilter" condition=":branch = TeacherBranchID" />
 	</class>
 
 </hibernate-mapping>

@@ -37,7 +37,7 @@
 		<property name="ExpectedQuraanFinishTime" column="StudentExpectedQuraanFinishTime" not-null="false" />
 		<property name="IsInTransportations" column="StudentIsInTransportations" />
 		<property name="Sex" column="StudentSex" />
-		<property name="Staus" column="StudentStatus" />
+		<property name="Status" column="StudentStatus" />
 		<property name="AddedOn" column="StudentAddedOn" />
 
 		<filter name="sexFilter" condition=":sex = StudentSex" />

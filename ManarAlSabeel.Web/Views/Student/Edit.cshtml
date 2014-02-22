@@ -22,13 +22,13 @@
 			@Html.ValidationSummary(true)
 			
 			<div class="form-group">
-				<label>@StringTable.Name:</label>
+				<label>@StringTable.Name</label>
 				@Html.TextBoxFor(x => x.Student.Name, new { @class = "form-control" })
 				@Html.ValidationMessageFor(x => x.Student.Name)
 			</div>
 
 			<div class="form-group">
-				<label>@StringTable.DateOfBirth:</label>
+				<label>@StringTable.DateOfBirth</label>
 				@Html.TextBoxFor(x => x.Student.BirthDate,
 					new { @class = "form-control date-input",
 						  Value = Model.Student.BirthDate.ToShortDateString(),
@@ -65,32 +65,32 @@
 			</div>
 			
 			<div class="form-group">
-				<label>@StringTable.SchoolName:</label>
+				<label>@StringTable.SchoolName</label>
 				@Html.TextBoxFor(x => x.Student.SchoolName, new { @class = "form-control" })
 			</div>
 			
 			<div class="form-group">
-				<label>@StringTable.SchoolClassName:</label>
+				<label>@StringTable.SchoolClassName</label>
 				@Html.TextBoxFor(x => x.Student.SchoolClass, new { @class = "form-control" })
 			</div>
 
 			<div class="form-group">
-				<label>@StringTable.LastStudyDegree:</label>
+				<label>@StringTable.LastStudyDegree</label>
 				@Html.TextBoxFor(x => x.Student.LastEducationDegree, new { @class = "form-control" })
 			</div>
 
 			<div class="form-group">
-				<label>@StringTable.CurrentStudySatge:</label>
+				<label>@StringTable.CurrentStudySatge</label>
 				@Html.TextBoxFor(x => x.Student.EducationStage, new { @class = "form-control" })
 			</div>
 
 			<div class="form-group">
-				<label>@StringTable.ExpectedPeriodToFinishQuraan:</label>
+				<label>@StringTable.ExpectedPeriodToFinishQuraan</label>
 				@Html.TextBoxFor(x => x.Student.ExpectedQuraanFinishTime, new { @class = "form-control" })
 			</div>
 			
 			<div class="form-group">
-				<label>@StringTable.HowDidYouTheCenter:</label>
+				<label>@StringTable.HowDidYouTheCenter</label>
 
 				@Html.RadioButtonFor(x => x.Student.HowKnewTheCenter, HowKnewTheCenter.Ad)
 				<label>@StringTable.Ad</label>
@@ -104,12 +104,12 @@
 			</div>
 
 			<div class="form-group">
-				<label>@StringTable.IsStudentRegisteredInTransportations:</label>
+				<label>@StringTable.IsStudentRegisteredInTransportations</label>
 				@Html.CheckBoxFor(x => x.Student.IsInTransportations)
 			</div>
 
 			<div class="form-group">
-				<label>@StringTable.Sex:</label>
+				<label>@StringTable.Sex</label>
 
 				@Html.RadioButtonFor(x => x.Student.Sex, ManarAlSabeel.Domain.Entities.Sex.Male, new { disabled = "disabled" })
 				<label>@StringTable.Male</label>
@@ -119,15 +119,15 @@
 			</div>
 
 			<div class="form-group">
-				<label>@StringTable.Status:</label>
+				<label>@StringTable.Status</label>
 
-				@Html.RadioButtonFor(x => x.Student.Staus, StudentStatus.Active)
+				@Html.RadioButtonFor(x => x.Student.Status, StudentStatus.Active)
 				<label>@StringTable.Active</label>
 				
-				@Html.RadioButtonFor(x => x.Student.Staus, StudentStatus.InActive)
+				@Html.RadioButtonFor(x => x.Student.Status, StudentStatus.InActive)
 				<label>@StringTable.InActive</label>
 
-				@Html.RadioButtonFor(x => x.Student.Staus, StudentStatus.Expelled)
+				@Html.RadioButtonFor(x => x.Student.Status, StudentStatus.Expelled)
 				<label>@StringTable.Expelled</label>
 			</div>
 			

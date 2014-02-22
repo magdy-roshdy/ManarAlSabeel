@@ -132,11 +132,17 @@
   <data name="AddStudentGuardian" xml:space="preserve">
     <value>إضافة ولي أمر</value>
   </data>
+  <data name="AddTeacher" xml:space="preserve">
+    <value>اضافة مدرس</value>
+  </data>
   <data name="Age" xml:space="preserve">
     <value>السن</value>
   </data>
   <data name="AreYouSure" xml:space="preserve">
     <value>هل أنت متأكد؟</value>
+  </data>
+  <data name="BirthPlace" xml:space="preserve">
+    <value>محل الميلاد</value>
   </data>
   <data name="Branch" xml:space="preserve">
     <value>الفرع</value>
@@ -150,11 +156,17 @@
   <data name="Delete" xml:space="preserve">
     <value>حـذف</value>
   </data>
+  <data name="Divorced" xml:space="preserve">
+    <value>مطلق</value>
+  </data>
   <data name="EditStudentGuardian" xml:space="preserve">
     <value>تعديل بيانات ولي أمر</value>
   </data>
   <data name="EditStudentInfo" xml:space="preserve">
     <value>تعديل بيات الطالب</value>
+  </data>
+  <data name="EditTeacherInfo" xml:space="preserve">
+    <value>تعديل بيانات مدرس</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>البريد الالكتروني</value>
@@ -179,6 +191,12 @@
   </data>
   <data name="Guardians" xml:space="preserve">
     <value>أولياء الأمور</value>
+  </data>
+  <data name="Hanafy" xml:space="preserve">
+    <value>حنفي</value>
+  </data>
+  <data name="Hanbally" xml:space="preserve">
+    <value>حنبلي</value>
   </data>
   <data name="HomeAddress" xml:space="preserve">
     <value>عنوان المنزل</value>
@@ -213,14 +231,29 @@
   <data name="Males" xml:space="preserve">
     <value>ذكور</value>
   </data>
+  <data name="Malky" xml:space="preserve">
+    <value>مالكي</value>
+  </data>
   <data name="ManarAlSabeel" xml:space="preserve">
     <value>مركز منار السبيل</value>
+  </data>
+  <data name="MaritalStatus" xml:space="preserve">
+    <value>الحالة الاجتماعية</value>
+  </data>
+  <data name="MarriageDate" xml:space="preserve">
+    <value>تاريخ الزواج</value>
+  </data>
+  <data name="Married" xml:space="preserve">
+    <value>متزوج</value>
   </data>
   <data name="MobileNumber" xml:space="preserve">
     <value>رقم الجوال</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>الاسم</value>
+  </data>
+  <data name="Nationality" xml:space="preserve">
+    <value>الجنسية</value>
   </data>
   <data name="OriginalNationality" xml:space="preserve">
     <value>الجنسية الأصلية</value>
@@ -234,6 +267,12 @@
   <data name="Password" xml:space="preserve">
     <value>كلمة المرور</value>
   </data>
+  <data name="QuraanMemorizationAmount" xml:space="preserve">
+    <value>مقدار الحفظ من القرآن</value>
+  </data>
+  <data name="ReligiousIdeology" xml:space="preserve">
+    <value>المذهب الديني</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>حفظ</value>
   </data>
@@ -245,6 +284,12 @@
   </data>
   <data name="Sex" xml:space="preserve">
     <value>الجنس</value>
+  </data>
+  <data name="Shafeey" xml:space="preserve">
+    <value>شافعي</value>
+  </data>
+  <data name="Single" xml:space="preserve">
+    <value>أعزب</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>الحالة</value>
@@ -260,5 +305,17 @@
   </data>
   <data name="StudyStages" xml:space="preserve">
     <value>مراحل الدراسة</value>
+  </data>
+  <data name="TeachersAdmin" xml:space="preserve">
+    <value>ادارة المدرسون</value>
+  </data>
+  <data name="TeachersList" xml:space="preserve">
+    <value>قائمة المدرسون</value>
+  </data>
+  <data name="TheProfession" xml:space="preserve">
+    <value>الوظيفة</value>
+  </data>
+  <data name="Widow" xml:space="preserve">
+    <value>أرمل</value>
   </data>
 </root>

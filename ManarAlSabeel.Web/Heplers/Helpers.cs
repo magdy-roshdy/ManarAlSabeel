@@ -86,5 +86,26 @@ namespace ManarAlSabeel.Web.Heplers
 			Sex sex = (Sex)sexCode;
 			return (sex == Sex.Male) ? StringTable.Males : StringTable.Females ;
 		}
+
+		public static string GetMaritalStatusCaption(MaritalStatus status)
+		{
+			switch(status)
+			{
+				case MaritalStatus.Divorced:
+					return StringTable.Divorced;
+
+				case MaritalStatus.Widow:
+					return StringTable.Widow;
+
+				case MaritalStatus.Single:
+					return StringTable.Single;
+
+				case MaritalStatus.Married:
+					return StringTable.Married;
+
+				default:
+					return "";
+			}
+		}
 	}
 }

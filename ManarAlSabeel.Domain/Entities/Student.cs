@@ -41,7 +41,7 @@ namespace ManarAlSabeel.Domain.Entities
 		public virtual int ExpectedQuraanFinishTime { get; set; }
 		public virtual bool IsInTransportations { get; set; }
 		public virtual Sex Sex { get; set; }
-		public virtual StudentStatus Staus { get; set; }
+		public virtual StudentStatus Status { get; set; }
 		public virtual DateTime AddedOn { get; set; }
 
 		public virtual int Age
@@ -51,7 +51,5 @@ namespace ManarAlSabeel.Domain.Entities
 				return DateTime.Now.Year - this.BirthDate.Year;
 			}
 		}
-
-		
 	}
 }
