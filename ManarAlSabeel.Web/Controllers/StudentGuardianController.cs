@@ -1,5 +1,6 @@
 ﻿using ManarAlSabeel.Domain.Abstract;
 using ManarAlSabeel.Domain.Entities;
+using ManarAlSabeel.Resources;
 using ManarAlSabeel.Web.Infrastructure;
 using ManarAlSabeel.Web.Models;
 using System;
@@ -53,7 +54,10 @@ namespace ManarAlSabeel.Web.Controllers
 				//enforce profile values over form values
 				studentGuardian.Branch.ID = ((Branch)HttpContext.Profile["BranchFilter"]).ID;
 
+				bool newsGuardian = (studentGuardian.ID == 0);
 				dbRepository.SaveStudentGuardian(studentGuardian);
+				TempData["message"] = newsGuardian ? Messages.GuardianCreatedSuccessfully : Messages.EditGuardianSuccessful;
+
 				return RedirectToAction("List");
 			}
 			else
@@ -71,6 +75,7 @@ namespace ManarAlSabeel.Web.Controllers
 		public ActionResult Delete(int guardianId)
 		{
 			bool result = dbRepository.DeleteStudentGuardian(guardianId);
+			TempData["message"] = Messages.GuardianDeletedSuccessfully;
 
 			return RedirectToAction("List");
 		}

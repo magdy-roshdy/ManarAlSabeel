@@ -147,6 +147,9 @@
   <data name="Branch" xml:space="preserve">
     <value>الفرع</value>
   </data>
+  <data name="ChildrenCount" xml:space="preserve">
+    <value>عدد الأبناء</value>
+  </data>
   <data name="CurrentStudySatge" xml:space="preserve">
     <value>المرحلة الدراسية الحالية</value>
   </data>
@@ -190,7 +193,7 @@
     <value>ولي الأمر</value>
   </data>
   <data name="Guardians" xml:space="preserve">
-    <value>أولياء الأمور</value>
+    <value>أولياء الأمــور</value>
   </data>
   <data name="Hanafy" xml:space="preserve">
     <value>حنفي</value>
@@ -301,13 +304,13 @@
     <value>قائمة الطلاب</value>
   </data>
   <data name="StudentManagement" xml:space="preserve">
-    <value>ادارة الطلاب</value>
+    <value>الطــــلاب</value>
   </data>
   <data name="StudyStages" xml:space="preserve">
     <value>مراحل الدراسة</value>
   </data>
   <data name="TeachersAdmin" xml:space="preserve">
-    <value>ادارة المدرسون</value>
+    <value>المدرســـــون</value>
   </data>
   <data name="TeachersList" xml:space="preserve">
     <value>قائمة المدرسون</value>

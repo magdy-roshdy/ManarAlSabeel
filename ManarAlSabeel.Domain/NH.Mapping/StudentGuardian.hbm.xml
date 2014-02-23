@@ -19,6 +19,11 @@
 		<property name="HomeAddress" column="GuardianHomeAddress" not-null="false" />
 		<property name="Email" column="GuardianEmailAddress" />
 		<property name="Sex" column="GuardianSex" />
+
+		<bag name="Children">
+			<key column="StudentGuardianID" />
+			<one-to-many class="Student"/>
+		</bag>
 	
 		<filter name="branchFilter" condition=":branch = GuardianBranchID" />
 	</class>

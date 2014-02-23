@@ -117,46 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="EditGuardianSuccessful" xml:space="preserve">
-    <value>تم تعديل بيانات ولي الأمر بنجاح</value>
-  </data>
-  <data name="EditStudentSuccessful" xml:space="preserve">
-    <value>تم تعديل بيانات الطالب بنجاح</value>
-  </data>
-  <data name="EditTeacherSuccessful" xml:space="preserve">
-    <value>تم تعديل بيانات المدرس بنجاح</value>
-  </data>
-  <data name="GuardianCreatedSuccessfully" xml:space="preserve">
-    <value>تمت عملية انشاء ولي الأمر بنجاح</value>
-  </data>
-  <data name="GuardianDeletedSuccessfully" xml:space="preserve">
-    <value>تم حذف ولي الأمر بنجاح</value>
-  </data>
-  <data name="GuardianMobileNumberIsRequired" xml:space="preserve">
-    <value>من فضلك أدخل رقم جوال ولي الأمر</value>
-  </data>
-  <data name="GuardianNameIsRequired" xml:space="preserve">
-    <value>من فضلك أدخل اسم ولي الأمر</value>
-  </data>
-  <data name="IncorrectLoginData" xml:space="preserve">
-    <value>خطأ في اسم المستخدم أو كلمة المرور</value>
-  </data>
-  <data name="StudentBirthdayRequired" xml:space="preserve">
-    <value>من فضلك أدخل تاريخ ميلاد الطالب</value>
-  </data>
-  <data name="StudentCreatedSuccessfully" xml:space="preserve">
-    <value>تمت عملية انشاء الطالب بنجاح</value>
-  </data>
-  <data name="StudentDeletedSuccessfully" xml:space="preserve">
-    <value>تم حذف الطالب بنجاح</value>
-  </data>
-  <data name="StudentNameRequired" xml:space="preserve">
-    <value>من فضلك أدخل اسم الطالب</value>
-  </data>
-  <data name="TeacherCreatedSuccessfully" xml:space="preserve">
-    <value>تمت عملية انشاء المدرس بنجاح</value>
-  </data>
-  <data name="TeacherDeletedSuccessfully" xml:space="preserve">
-    <value>تم حذف المدرس بنجاح</value>
+  <data name="StudentManagement" xml:space="preserve">
+    <value>الطالبات</value>
   </data>
 </root>

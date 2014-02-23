@@ -27,6 +27,12 @@
 	{
 		Html.RenderPartial("HeaderBar");
 	}
+	
+	@if (TempData["message"] != null)
+	{
+		<br />
+		<div class="alert alert-success" style="width: 45%; margin: 0 auto; text-align:center;">@TempData["message"]</div>
+	}
 
 	<div class="container">
 		@RenderBody()

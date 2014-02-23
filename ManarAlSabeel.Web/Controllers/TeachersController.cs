@@ -1,5 +1,6 @@
 ﻿using ManarAlSabeel.Domain.Abstract;
 using ManarAlSabeel.Domain.Entities;
+using ManarAlSabeel.Resources;
 using ManarAlSabeel.Web.Infrastructure;
 using ManarAlSabeel.Web.Models;
 using System;
@@ -53,7 +54,9 @@ namespace ManarAlSabeel.Web.Controllers
 				teacher.Sex = (Sex)HttpContext.Profile["SexFilter"];
 				teacher.Branch.ID = ((Branch)HttpContext.Profile["BranchFilter"]).ID;
 
+				bool newTeacher = (teacher.ID == 0);
 				dbRepository.SaveTeacher(teacher);
+				TempData["message"] = newTeacher ? Messages.TeacherCreatedSuccessfully : Messages.EditTeacherSuccessful;
 
 				return RedirectToAction("List");
 			}
@@ -85,7 +88,7 @@ namespace ManarAlSabeel.Web.Controllers
 		public ActionResult Delete(int teacherId, string returnUrl)
 		{
 			bool result = dbRepository.DeleteTeacher(teacherId);
-
+			TempData["message"] = Messages.TeacherDeletedSuccessfully;
 			return RedirectToAction("List");
 		}
     }

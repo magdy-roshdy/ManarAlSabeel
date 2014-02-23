@@ -26,11 +26,11 @@ namespace ManarAlSabeel.Domain.Entities
 
 		public virtual string OtherPhone { get; set; }
 		public virtual string HomeAddress { get; set; }
-		
-
 		public virtual string Email { get; set; }
 
 		[Required]
 		public virtual Sex Sex { get; set; }
+
+		public virtual IList<Student> Children { get; set; }
 	}
 }

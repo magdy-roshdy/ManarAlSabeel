@@ -151,6 +151,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to عدد الأبناء.
+        /// </summary>
+        public static string ChildrenCount {
+            get {
+                return ResourceManager.GetString("ChildrenCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to المرحلة الدراسية الحالية.
         /// </summary>
         public static string CurrentStudySatge {
@@ -277,7 +286,7 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to أولياء الأمور.
+        ///   Looks up a localized string similar to أولياء الأمــور.
         /// </summary>
         public static string Guardians {
             get {
@@ -610,7 +619,7 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ادارة الطلاب.
+        ///   Looks up a localized string similar to الطــــلاب.
         /// </summary>
         public static string StudentManagement {
             get {
@@ -628,7 +637,7 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ادارة المدرسون.
+        ///   Looks up a localized string similar to المدرســـــون.
         /// </summary>
         public static string TeachersAdmin {
             get {

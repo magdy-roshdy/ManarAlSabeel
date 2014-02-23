@@ -9,7 +9,6 @@
 <table class="table table-condensed">
 	<thead>
 		<tr>
-			<th>#</th>
 			<th>@StringTable.Name</th>
 			<th>@StringTable.Age</th>
 			<th>@StringTable.OriginalNationality</th>
@@ -20,13 +19,14 @@
 	@foreach (ManarAlSabeel.Domain.Entities.Student student in Model.Students)
 	{
 		<tr>
-			<td>@student.ID</td>
 			<td>
 				@Html.ActionLink(student.Name, "Edit", new { student.ID })
 			</td>
 			<td>@student.Age</td>
 			<td>@student.OriginalNationality.Name</td>
-			<td>@student.Guardian.Name</td>
+			<td>
+				@Html.ActionLink(@student.Guardian.Name, "Edit", "StudentGuardian", new { student.Guardian.ID }, null)
+			</td>
 			<td>
 				@using (@Html.BeginForm("Delete", "Student"))
 				{

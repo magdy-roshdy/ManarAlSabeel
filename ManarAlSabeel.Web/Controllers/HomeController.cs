@@ -4,8 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
+using System.Globalization;
 
 namespace ManarAlSabeel.Web.Controllers
 {
@@ -21,6 +23,9 @@ namespace ManarAlSabeel.Web.Controllers
 		[ForbiddenRedirectAuthorizeAttribute]
 		public ViewResult Index()
 		{
+			//TODO
+			//switch to female culture in Females section based on Profile parameter
+			//Thread.CurrentThread.CurrentUICulture = new CultureInfo("ar-LB");
 			return View();
 		}
     }

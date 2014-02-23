@@ -1,5 +1,6 @@
 ﻿using ManarAlSabeel.Domain.Abstract;
 using ManarAlSabeel.Domain.Entities;
+using ManarAlSabeel.Resources;
 using ManarAlSabeel.Web.Infrastructure;
 using ManarAlSabeel.Web.Models;
 using System;
@@ -20,16 +21,23 @@ namespace ManarAlSabeel.Web.Controllers
 			dbRepository = repo;
 		}
 
-		public ViewResult List(int page = 1)
+		public ViewResult List(int page = 1, int guardianId = 0)
         {
 			PagingInfo pagingInfo = new PagingInfo
 			{
 				CurrentPage = page,
 				ItemsPerPage = PageSize,
-				TotalItems = dbRepository.GetAllStudents().Count()
+				TotalItems = (guardianId > 0) ?
+					dbRepository.GetAllStudents().Where(x => x.Guardian.ID == guardianId).Count()
+					:
+					dbRepository.GetAllStudents().Count()
 			};
-			IQueryable<Student> students = dbRepository.GetAllStudents().Skip((page - 1) * PageSize)
-				.Take(PageSize);
+			IQueryable<Student> students;
+			students = (guardianId > 0) ?
+				dbRepository.GetAllStudents().Where(x => x.Guardian.ID == guardianId).Skip((page - 1) * PageSize).Take(PageSize)
+				:
+				dbRepository.GetAllStudents().Skip((page - 1) * PageSize).Take(PageSize)
+				;
 
 			StudentsListViewModel model = new StudentsListViewModel { Students = students, PagingInfo = pagingInfo };
 			return View(model);
@@ -53,8 +61,10 @@ namespace ManarAlSabeel.Web.Controllers
 				student.Sex = (Sex)HttpContext.Profile["SexFilter"];
 				student.Branch.ID = ((Branch)HttpContext.Profile["BranchFilter"]).ID;
 
+				bool newsStudent = (student.ID == 0);
 				dbRepository.SaveStudent(student);
-				
+				TempData["message"] = newsStudent ? Messages.StudentCreatedSuccessfully : Messages.EditStudentSuccessful;
+
 				return RedirectToAction("List");
 			}
 			else
@@ -83,6 +93,7 @@ namespace ManarAlSabeel.Web.Controllers
 		public ActionResult Delete(int studentId)
 		{
 			bool result = dbRepository.DeleteStudent(studentId);
+			TempData["message"] = Messages.StudentDeletedSuccessfully;
 
 			return RedirectToAction("List");
 		}
