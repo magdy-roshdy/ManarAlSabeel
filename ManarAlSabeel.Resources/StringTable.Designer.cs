@@ -646,7 +646,7 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to قائمة المدرسون.
+        ///   Looks up a localized string similar to قائمة المدرسين.
         /// </summary>
         public static string TeachersList {
             get {
