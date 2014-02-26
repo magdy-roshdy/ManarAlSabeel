@@ -7,6 +7,7 @@ using NHibernate;
 using ManarAlSabeel.Domain.Entities;
 using NHibernate.Linq;
 using System.Web;
+using System.Collections;
 
 namespace ManarAlSabeel.Domain.Concrete
 {
@@ -30,26 +31,29 @@ namespace ManarAlSabeel.Domain.Concrete
 			{
 				ISession Session = SessionFactory.OpenSession();
 
-				//sex filter
-				int? sexFilter = filtersProvider.GetSexFilter();
-				if (sexFilter.HasValue)
+				if (!ignoreFilters)
 				{
-					Session.EnableFilter("sexFilter").SetParameter("sex", sexFilter.Value);
-				}
-				else
-				{
-					Session.DisableFilter("sexFilter");
-				}
+					//sex filter
+					int? sexFilter = filtersProvider.GetSexFilter();
+					if (sexFilter.HasValue)
+					{
+						Session.EnableFilter("sexFilter").SetParameter("sex", sexFilter.Value);
+					}
+					else
+					{
+						Session.DisableFilter("sexFilter");
+					}
 
-				//branch filter
-				Branch branchFilter = filtersProvider.GetBranchFilter();
-				if (branchFilter != null)
-				{
-					Session.EnableFilter("branchFilter").SetParameter("branch", branchFilter.ID);
-				}
-				else
-				{
-					Session.DisableFilter("branchFilter");
+					//branch filter
+					Branch branchFilter = filtersProvider.GetBranchFilter();
+					if (branchFilter != null)
+					{
+						Session.EnableFilter("branchFilter").SetParameter("branch", branchFilter.ID);
+					}
+					else
+					{
+						Session.DisableFilter("branchFilter");
+					}
 				}
 
 				return Session;
@@ -250,7 +254,6 @@ namespace ManarAlSabeel.Domain.Concrete
 			return countries;
 		}
 
-
 		public IQueryable<Teacher> GetAllTeachers()
 		{
 			var teachers = (from teacher
@@ -259,7 +262,6 @@ namespace ManarAlSabeel.Domain.Concrete
 
 			return teachers;
 		}
-
 
 		public int? SaveTeacher(Teacher teacher)
 		{
@@ -319,7 +321,6 @@ namespace ManarAlSabeel.Domain.Concrete
 			return new_id;
 		}
 
-
 		public bool DeleteTeacher(int teacherId)
 		{
 			using (ISession session = Session)
@@ -339,6 +340,23 @@ namespace ManarAlSabeel.Domain.Concrete
 			}
 
 			return false;
+		}
+
+
+		public SystemAdmin AuthenticateSystemAdmin(string email, string password)
+		{
+			return Session.Query<SystemAdmin>().Where(x => x.Email == email && x.Password == password).FirstOrDefault();
+		}
+
+		public SystemAdmin GetSystemAdminByEmail(string email)
+		{
+			return Session.Query<SystemAdmin>().Where(x => x.Email == email).FirstOrDefault();
+		}
+
+		private bool ignoreFilters = false;
+		public void SetFilterIgnore(bool ignore)
+		{
+			ignoreFilters = ignore;
 		}
 	}
 }

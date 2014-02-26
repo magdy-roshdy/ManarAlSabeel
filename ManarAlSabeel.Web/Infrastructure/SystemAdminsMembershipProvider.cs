@@ -1,4 +1,5 @@
 ﻿using ManarAlSabeel.Domain.Abstract;
+using ManarAlSabeel.Domain.Entities;
 using Ninject;
 using System;
 using System.Collections.Generic;
@@ -15,11 +16,8 @@ namespace ManarAlSabeel.Web.Infrastructure
 
 		public override bool ValidateUser(string username, string password)
 		{
-			return (
-					(username == "admin@manaralsabeel.org" && password == "secret")
-					||
-					(username == "admin.females@manaralsabeel.org" && password == "password")
-					);
+			SystemAdmin admin = DBRepository.AuthenticateSystemAdmin(username, password);
+			return (admin != null && admin.IsActive);
 		}
 	}
 }

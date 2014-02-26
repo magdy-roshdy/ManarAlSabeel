@@ -8,6 +8,7 @@ namespace ManarAlSabeel.Domain.Abstract
 {
 	public interface ICenterRepository
 	{
+		void SetFilterIgnore(bool ignore);
 		IQueryable<Student> GetAllStudents();
 		int? SaveStudent(Student student);
 		bool DeleteStudent(int studentId);
@@ -19,6 +20,9 @@ namespace ManarAlSabeel.Domain.Abstract
 		IQueryable<Teacher> GetAllTeachers();
 		int? SaveTeacher(Teacher teacher);
 		bool DeleteTeacher(int teacherId);
+
+		SystemAdmin AuthenticateSystemAdmin(string email, string password);
+		SystemAdmin GetSystemAdminByEmail(string email);
 
 		IQueryable<Country> GetAllCountries();
 	}

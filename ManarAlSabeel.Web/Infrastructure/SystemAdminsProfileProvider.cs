@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Profile;
 
@@ -15,38 +16,54 @@ namespace ManarAlSabeel.Web.Infrastructure
 		[Inject]
 		public ICenterRepository DBRepository { get; set; }
 
-		private IDictionary<string, IDictionary<string, object>> data = new Dictionary<string, IDictionary<string, object>>();
-		public SystemAdminsProfileProvider()
-		{
-			Dictionary<string, object> maleFilters = new Dictionary<string, object>();
-
-			Branch branch = new Branch { Name = "الفرع الرئيسي", ID = 1, Center = new Center { Name = "مركز منار السبيل", ID = 1 } };
-			maleFilters.Add("SexFilter", 1);
-			maleFilters.Add("BranchFilter", branch);
-			data.Add("admin@manaralsabeel.org", maleFilters);
-
-			Dictionary<string, object> femaleFilters = new Dictionary<string, object>();
-			femaleFilters.Add("SexFilter", 0);
-			femaleFilters.Add("BranchFilter", branch);
-			data.Add("admin.females@manaralsabeel.org", femaleFilters);
-		}
-
+		private IDictionary<string, IDictionary<string, object>> dataCache = new Dictionary<string, IDictionary<string, object>>();
 		public override SettingsPropertyValueCollection GetPropertyValues(SettingsContext context, SettingsPropertyCollection collection)
 		{
 			SettingsPropertyValueCollection result = new SettingsPropertyValueCollection();
-			IDictionary<string, object> userData;
-			string userName = (string)context["UserName"];
-			bool userDataExists = data.TryGetValue(userName, out userData);
-			foreach (SettingsProperty prop in collection)
+
+			string userName = null;
+			if(context.ContainsKey("UserName"))
 			{
-				SettingsPropertyValue spv = new SettingsPropertyValue(prop);
-				if (userDataExists)
-				{
-					spv.PropertyValue = userData[prop.Name];
-				}
-				result.Add(spv);
+				userName = context["UserName"] as string;
 			}
 
+			bool? isAuthenticated = null;
+			if (context.ContainsKey("IsAuthenticated"))
+			{
+				isAuthenticated = context["IsAuthenticated"] as bool?;
+			}
+
+			if (!string.IsNullOrEmpty(userName) && isAuthenticated.Value)
+			{
+				IDictionary<string, object> userData;
+				bool dataExistInCache = dataCache.TryGetValue(userName, out userData);
+				if (!dataExistInCache)
+				{
+					//very critical!
+					//profile provider rely on DB to person profile, and DB session rely on profile provider to load filters values
+					//if i will make a DB call from the profile provider i have to switch filter off before the calla and set it back off after
+					DBRepository.SetFilterIgnore(true);
+					SystemAdmin admin = DBRepository.GetSystemAdminByEmail(userName);
+					DBRepository.SetFilterIgnore(false);
+					
+					Dictionary<string, object> filters = new Dictionary<string, object>();
+					filters.Add("BranchFilter", admin.Branch);
+					filters.Add("SexFilter", (int)admin.SexToManage.Value);
+					dataCache.Add(admin.Email, filters);
+
+					dataExistInCache = dataCache.TryGetValue(userName, out userData);
+				}
+
+				if(dataExistInCache)
+				{
+					foreach (SettingsProperty prop in collection)
+					{
+						SettingsPropertyValue spv = new SettingsPropertyValue(prop);
+						spv.PropertyValue = userData[prop.Name];
+						result.Add(spv);
+					}
+				}
+			}
 			return result;
 		}
 

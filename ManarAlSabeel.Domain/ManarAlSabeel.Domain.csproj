@@ -75,6 +75,7 @@
     <Compile Include="Entities\StudentCertificate.cs" />
     <Compile Include="Entities\StudentDocument.cs" />
     <Compile Include="Entities\StudentGuardian.cs" />
+    <Compile Include="Entities\SystemAdmin.cs" />
     <Compile Include="Entities\Teacher.cs" />
     <Compile Include="Entities\TeacherAbsenceLog.cs" />
     <Compile Include="Entities\Track.cs" />
@@ -85,6 +86,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <EmbeddedResource Include="NH.Mapping\SystemAdmin.hbm.xml" />
     <EmbeddedResource Include="NH.Mapping\Filters.hbm.xml" />
     <EmbeddedResource Include="NH.Mapping\Manager.hbm.xml" />
     <EmbeddedResource Include="NH.Mapping\Branch.hbm.xml" />

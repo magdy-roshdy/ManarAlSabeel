@@ -1,13 +1,13 @@
 USE [manar_al_sabeel]
 GO
 
-/****** Object:  Table [dbo].[Countries]    Script Date: 2/10/2014 2:20:01 PM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
+/****** Object:  Table [dbo].[Countries]    Script Date: 2/10/2014 2:20:01 PM ******/
 CREATE TABLE [dbo].[Countries](
 	[CountryID] [int] IDENTITY(1,1) NOT NULL,
 	[CountryName] [nvarchar](50) NOT NULL,
@@ -45,7 +45,6 @@ CREATE TABLE [dbo].[Centers](
 GO
 
 /****** Object:  Table [dbo].[Branches]    Script Date: 2/10/2014 2:22:39 PM ******/
-
 CREATE TABLE [dbo].[Branches](
 	[BranchID] [int] IDENTITY(1,1) NOT NULL,
 	[BranchManagerID] [int] NOT NULL,
@@ -57,6 +56,30 @@ CREATE TABLE [dbo].[Branches](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
+GO
+
+/****** Object:  Table [dbo].[SystemAdmins]    Script Date: 2/24/2014 5:36:10 PM ******/
+CREATE TABLE [dbo].[SystemAdmins](
+	[SystemAdminID] [int] IDENTITY(1,1) NOT NULL,
+	[SystemAdminEmail] [nvarchar](100) NOT NULL,
+	[SystemAdminPassword] [nvarchar](150) NOT NULL,
+	[SystemAdminIsActive] [bit] NOT NULL,
+	[SystemAdminIsSuperAdmin] [bit] NOT NULL,
+	[SystemAdminLoginPersonType] [tinyint] NOT NULL,
+	[SystemAdminBranchID] [int] NULL,
+	[SystemAdminSexToManage] [tinyint] NULL,
+ CONSTRAINT [PK_SystemAdmins] PRIMARY KEY CLUSTERED 
+(
+	[SystemAdminID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[SystemAdmins] ADD  CONSTRAINT [DF_SystemAdmins_SystemAdminIsActive]  DEFAULT ((0)) FOR [SystemAdminIsActive]
+GO
+
+ALTER TABLE [dbo].[SystemAdmins] ADD  CONSTRAINT [DF_SystemAdmins_SystemAdminIsSuperAdmin]  DEFAULT ((0)) FOR [SystemAdminIsSuperAdmin]
 GO
 
 /****** Object:  Table [dbo].[Teachers]    Script Date: 2/10/2014 2:24:08 PM ******/
@@ -139,13 +162,7 @@ CREATE TABLE [dbo].[BehaviorLevels](
 
 GO
 
-USE [manar_al_sabeel]
-GO
-
 /****** Object:  Table [dbo].[Semesters]    Script Date: 2/10/2014 2:27:50 PM ******/
-SET ANSI_NULLS ON
-GO
-
 CREATE TABLE [dbo].[Semesters](
 	[SemesterID] [int] IDENTITY(1,1) NOT NULL,
 	[SemesterBranchID] [int] NOT NULL,
@@ -572,4 +589,3 @@ GO
 
 ALTER TABLE [dbo].[TeacherAbsenceLogs] ADD  CONSTRAINT [DF_TeacherAbsenceLog_AbsenceLogIsHasAnexcuse]  DEFAULT ((0)) FOR [AbsenceLogIsHasAnexcuse]
 GO
-

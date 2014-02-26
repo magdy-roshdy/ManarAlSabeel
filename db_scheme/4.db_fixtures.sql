@@ -1,235 +1,204 @@
 USE [manar_al_sabeel]
 GO
 
-INSERT INTO [dbo].[Countries]
-           ([CountryName])
-     VALUES
-           ('«·«„«—«  «·⁄—»Ì… «·„ Õœ…')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«›€«‰” «‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·»«‰Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·Ã“«∆—')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«‰œÊ—«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«‰€Ê·«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«‰ Ì€Ê«Ê»«—»Êœ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·«—Ã‰ Ì‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«—„Ì‰Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«” —«·Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·‰„”«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«–—»ÌÃ«‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('Ã“—«·»Â«„«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·»Õ—Ì‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»‰€·«œÌ‘')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»«—»«œÊ”')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»Ì·«—Ê”Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»·ÃÌﬂ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»Ì·Ì“')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»‰Ì‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»Ê «‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»Ê·Ì›Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·»Ê”‰… Ê«·Â—”ﬂ')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»Ê ”Ê«‰«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·»—«“Ì·')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»—Ê‰«Ï')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»·€«—Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»Ê—ﬂÌ‰«›«”Ê')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»Ê—Ê‰œÌ')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('ﬂ„»ÊœÌ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·ﬂ«„Ì—Ê‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('ﬂ‰œ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·—√” «·«Œ÷—')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('Ã„ÂÊ—Ì… «›—ÌﬁÌ« «·Ê”ÿÏ')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES (' ‘«œ')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('‘Ì·Ì')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·’Ì‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('ﬂÊ·„»Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('Ã“— «·ﬁ„‹‹‹—')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('Ã„ÂÊ—Ì… «·ﬂÊ‰€Ê')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('Ã„ÂÊ—Ì… «·ﬂÊ‰€Ê «·œÌ„ﬁ—«ÿÌ…')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('ﬂÊ” «—Ìﬂ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('”«Õ· «·⁄«Ã')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('ﬂ—Ê« Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('ﬂÊ»«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('ﬁ»—’')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('Ã„ÂÊ—Ì… «· ‘Ìﬂ')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·œ‰„«—ﬂ')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('ÃÌ»Ê Ì')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('œÊ„Ì‰Ìﬂ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·œÊ„Ì‰Ìﬂ«‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES (' Ì„Ê— «·‘—ﬁÌ…')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·«ﬂÊ«œÊ—')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('„’—')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·”·›«œÊ—')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('€Ì‰Ì« «·«” Ê«∆Ì…')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«” Ê‰Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«ÀÌÊ»Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«—Ì —Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('Ã“—›ÌÃÌ')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('›—‰”«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('›‰·‰œ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·€«»Ê‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('€«„»Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('ÃÊ—ÃÌ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·„«‰Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('€«‰«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·ÌÊ‰«‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('€—«‰«œ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('€Ê« Ì„«·«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('€Ì‰Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('€Ì‰Ì« »Ì”«Ê')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('€ÊÌ«‰«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('Â«Ì Ì')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('Â‰œÊ—«”')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·„Ã—')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«Ì”·‰œ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·Â‰œ')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«‰œÊ‰Ì”Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«Ì—«‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·⁄—«ﬁ')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«Ì—·‰œ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«”—«∆Ì·')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«Ìÿ«·Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('Ã«„Ìﬂ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·Ì«»«‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·«—œ‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('ﬂ«“«Œ” «‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('ﬂÌ‰Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('ﬂÌ—Ì»« Ï')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('ﬂÊ—Ì« «·‘„«·Ì…')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('ﬂÊ—Ì« «·Ã‰Ê»Ì…')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·ﬂÊÌ ')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('ﬁ—€Ì“” «‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('·«Ê”')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('·« ›Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('·»‰«‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('·«Ê”')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('·Ì»Ì—Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('·Ì»Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('·ÌŒ ‰‘ «Ì‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('·Êﬂ”„»Ê—€')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('„ﬁœÊ‰Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('„œ€‘ﬁ—')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('„«·«ÊÏ')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('„«·Ì“Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('Ã“— «·„«·œÌ›')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('„«·Ï')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('Ã“Ì—… „«·ÿ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('Ã“— „«—‘«·')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('„Ê—Ì «‰Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('„Ê—Ì‘ÌÊ”')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('Ã“— „«Ìﬂ—Ê‰Ì“Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('„Ê·œÊ›Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«„«—… „Ê‰«ﬂÊ')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('„‰€Ê·Ì')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('„Ê‰ ‰Ì€—Ê')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·„€—»')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('„Ê“„»Ìﬁ')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»Ê—„«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('‰«„Ì»Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('‰«Ê—Ê')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('‰Ì»«·')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('ÂÊ·‰œ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('‰ÌÊ“Ì·‰œ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('‰Ìﬂ«—«€Ê«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·‰ÌÃ—')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('‰ÌÃÌ—Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·‰—ÊÌÃ')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('”·ÿ‰… ⁄„«‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»«ﬂ” «‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»«·Ê')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»‰„«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»«»Ê« €Ì‰Ì« «·ÃœÌœ…')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»«—«€Ê«Ì')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»Ì—Ê')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('»Ê·‰œ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·»— €«·')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('ﬁÿ—')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('—Ê„«‰Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('—Ê”Ì« «·« Õ«œÌ…')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('—Ê«‰œ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('”«‰ ﬂÌ ” «‰œ ‰Ì›“')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('”«‰ ·Ê ‘Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('”«‰ ›‰”‰ Ê€—Ì‰«œÌ‰“')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('”«„Ê«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('”«‰ „«—Ì‰Ê')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('”«Ê Ê„Ì «‰œ »—‰”Ì»')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·”⁄ÊœÌ…')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·”‰€«·')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('’—»Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('Ã“— ”Ì‘·')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('”Ì—«·ÌÊ‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('”‰€«›Ê—…')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('”·Ê›«ﬂÌ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('”·Ê›Ì‰Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('Ã“— ”Ê·Ê„Ê‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·’Ê„«·')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('Ã‰Ê» «›—ÌﬁÌ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('≈”»«‰Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('”—Ì·«‰ﬂ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·”Êœ«‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('”Ê—Ì‰«„')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('”Ê«“Ì·«‰œ')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·”ÊÌœ')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('”ÊÌ”—«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('”Ê—Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('ÿ«Ãﬂ” «‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES (' ‰“«‰Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES (' «Ì·«‰œ')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES (' Ê€Ê')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES (' Ê‰€«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES (' —Ì‰œ«œ Ê Ê»«€Ê')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES (' ‹Ê‰”')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES (' —ﬂÌ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES (' —ﬂ„«‰” «‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES (' Ê›«·Ê')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«Ê€‰œ«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«Êﬂ—«‰Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·«„«—«  «·⁄—»Ì… «·„ Õœ…')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·„„·ﬂ… «·„ Õœ…')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·Ê·«Ì«  «·„ Õœ… «·«„—ÌﬂÌ…')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«Ê—€Ê«Ì')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«Ê“»«ﬂ” «‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('›«‰Ê« Ê')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·›« Ìﬂ«‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('›‰“ÊÌ·«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('›Ì ‰«„')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·Ì„‰')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('“«„»Ì«')
+INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('“Ì„»«»ÊÏ')
 
-INSERT INTO [dbo].[Countries]
-           ([CountryName])
-     VALUES
-           ('„’—')
-
-INSERT INTO [dbo].[Countries]
-           ([CountryName])
-     VALUES
-           ('”Ê—Ì«')
 GO
 
--------
-
-INSERT INTO [dbo].[Managers]
-           ([ManagerName])
-     VALUES
-           ('œﬂ Ê—. „Õ„œ «·—«‘œÌ')
-
-INSERT INTO [dbo].[Managers]
-           ([ManagerName])
-     VALUES
-           ('œﬂ Ê—. «”„«⁄Ì· ”·Ì„')
+INSERT INTO [dbo].[Managers] ([ManagerName]) VALUES ('«·‘ÌŒ √»Ê √‰” «·ﬁ„—Ì')
 GO
 
----
-
-INSERT INTO [dbo].[Centers]
-           ([CenterManagerID]
-           ,[CenterName])
-     VALUES
-           (1
-           ,'„—ﬂ“ „‰«— «·”»Ì·')
-
-INSERT INTO [dbo].[Centers]
-           ([CenterManagerID]
-           ,[CenterName])
-     VALUES
-           (2
-           ,'„—ﬂ“ ⁄Ã„«‰ · Õ›ÌŸ «·ﬁ—¬‰')
+INSERT INTO [dbo].[Centers] ([CenterName], [CenterManagerID]) VALUES ('„—ﬂ“ „‰«— «·”»Ì·', 1)
 GO
 
----
-
-INSERT INTO [dbo].[Branches]
-           ([BranchManagerID]
-           ,[BranchCenterID]
-           ,[BranchName])
-     VALUES
-           (1
-           ,1
-           ,'›—⁄ «·‘«—ﬁ…')
-
-INSERT INTO [dbo].[Branches]
-           ([BranchManagerID]
-           ,[BranchCenterID]
-           ,[BranchName])
-     VALUES
-           (1
-           ,1
-           ,'›—⁄ œ»Ì')
-
-INSERT INTO [dbo].[Branches]
-           ([BranchManagerID]
-           ,[BranchCenterID]
-           ,[BranchName])
-     VALUES
-           (2
-           ,2
-           ,'›—⁄ ⁄Ã„«‰ «·—∆Ì”Ì')
+INSERT INTO [dbo].[Branches] ([BranchName], [BranchCenterID], [BranchManagerID]) VALUES ('«·›—⁄ «·—∆Ì”Ì', 1, 1)
 GO
-
-----
-
-INSERT INTO [dbo].[StudentGuardians]
-           ([GuardianName]
-		   ,[GuardianBranchID]
-           ,[GuardianHomePhone]
-           ,[GuardianMobilePhone]
-           ,[GuardianOtherPhone]
-           ,[GuardianHomeAddress]
-           ,[GuardianEmailAddress]
-           ,[GuardianSex])
-     VALUES
-           ('—‘œÌ „Õ„Êœ «·‘Õ« '
-		   ,1
-           ,'041234567'
-           ,'055123456'
-           ,null
-           ,null
-           ,'roshdy@gmail.com'
-           ,1)
-GO
-
-INSERT INTO [dbo].[StudentGuardians]
-           ([GuardianName]
-		   ,[GuardianBranchID]
-           ,[GuardianHomePhone]
-           ,[GuardianMobilePhone]
-           ,[GuardianOtherPhone]
-           ,[GuardianHomeAddress]
-           ,[GuardianEmailAddress]
-           ,[GuardianSex])
-     VALUES
-           ('”«„Ì „Õ„œ ⁄»œ «··Â'
-		   ,1
-           ,'031122334'
-           ,'0551122334'
-           ,null
-           ,null
-           ,'samy@gmail.com'
-           ,1)
-GO
-
----------
-
-INSERT INTO [dbo].[Students]
-           ([StudentGuardianID]
-           ,[StudentBranchID]
-           ,[StudentName]
-           ,[StudentBirthDate]
-           ,[StudentPersonalPhotoPath]
-           ,[StudentOriginNationality]
-           ,[StudentAcquiredNationality]
-           ,[StudentSchoolName]
-           ,[StudentLastEducationDegree]
-           ,[StudentEducationStage]
-           ,[StudentSchoolClass]
-           ,[StudentHowYouKnewTheCenter]
-           ,[StudentExpectedQuraanFinishTime]
-           ,[StudentIsInTransportations]
-           ,[StudentSex]
-           ,[StudentStatus]
-		   ,[StudentAddedOn])
-     VALUES
-           (1
-           ,1
-           ,'„ÃœÌ —‘œÌ „Õ„Êœ'
-           ,'12/09/1983'
-           ,null
-           ,1
-           ,null
-           ,'«·„·ﬂ ›Âœ'
-           ,null
-           ,null
-           ,NULL
-           ,1
-           ,12
-           ,0
-           ,1
-           ,0
-		   ,getdate())
-GO
-
-INSERT INTO [dbo].[Students]
-           ([StudentGuardianID]
-           ,[StudentBranchID]
-           ,[StudentName]
-           ,[StudentBirthDate]
-           ,[StudentPersonalPhotoPath]
-           ,[StudentOriginNationality]
-           ,[StudentAcquiredNationality]
-           ,[StudentSchoolName]
-           ,[StudentLastEducationDegree]
-           ,[StudentEducationStage]
-           ,[StudentSchoolClass]
-           ,[StudentHowYouKnewTheCenter]
-           ,[StudentExpectedQuraanFinishTime]
-           ,[StudentIsInTransportations]
-           ,[StudentSex]
-           ,[StudentStatus]
-		   ,[StudentAddedOn])
-     VALUES
-           (2
-           ,1
-           ,'⁄»œ «·—Õ„‰ ”«„Ì'
-           ,'12/11/1985'
-           ,null
-           ,2
-           ,null
-           ,'«·‰“Â… «·ÃœÌœ…'
-           ,null
-           ,null
-           ,NULL
-           ,1
-           ,12
-           ,0
-           ,1
-           ,0
-		   ,getdate())
-GO
-
-	INSERT INTO [dbo].[Students]
-           ([StudentGuardianID]
-           ,[StudentBranchID]
-           ,[StudentName]
-           ,[StudentBirthDate]
-           ,[StudentPersonalPhotoPath]
-           ,[StudentOriginNationality]
-           ,[StudentAcquiredNationality]
-           ,[StudentSchoolName]
-           ,[StudentLastEducationDegree]
-           ,[StudentEducationStage]
-           ,[StudentSchoolClass]
-           ,[StudentHowYouKnewTheCenter]
-           ,[StudentExpectedQuraanFinishTime]
-           ,[StudentIsInTransportations]
-           ,[StudentSex]
-           ,[StudentStatus]
-		   ,[StudentAddedOn])
-     VALUES
-           (2
-           ,1
-           ,'ﬂ—Ì„ „Õ„œ «·œÌ»'
-           ,'12/11/1985'
-           ,null
-           ,2
-           ,null
-           ,'«·«”ﬂ‰œ—Ì… «·⁄”ﬂ—Ì…'
-           ,null
-           ,null
-           ,NULL
-           ,1
-           ,12
-           ,0
-           ,1
-           ,0
-		   ,getdate())

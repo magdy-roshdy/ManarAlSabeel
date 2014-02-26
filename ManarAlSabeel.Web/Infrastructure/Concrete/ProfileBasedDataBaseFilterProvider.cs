@@ -14,10 +14,14 @@ namespace ManarAlSabeel.Web.Infrastructure.Concrete
 
 		public int? GetSexFilter()
 		{
-			if (HttpContext.Current.Profile[SEX_FILTER_NAME] != null)
+			try
 			{
-				return (int)HttpContext.Current.Profile[SEX_FILTER_NAME];
+				if (HttpContext.Current.Profile[SEX_FILTER_NAME] != null)
+				{
+					return (int)HttpContext.Current.Profile[SEX_FILTER_NAME];
+				}
 			}
+			catch { }
 
 			return null;
 		}
@@ -25,10 +29,14 @@ namespace ManarAlSabeel.Web.Infrastructure.Concrete
 
 		public Branch GetBranchFilter()
 		{
-			if (HttpContext.Current.Profile[BRANCH_FILTER_NAME] != null)
+			try
 			{
-				return HttpContext.Current.Profile[BRANCH_FILTER_NAME] as Branch;
+				if (HttpContext.Current.Profile[BRANCH_FILTER_NAME] != null)
+				{
+					return HttpContext.Current.Profile[BRANCH_FILTER_NAME] as Branch;
+				}
 			}
+			catch { }
 
 			return null;
 		}
