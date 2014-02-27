@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ManarAlSabeel.Domain"
+                   namespace="ManarAlSabeel.Domain.Entities">
+	<class name="Semester" table="Semesters">
+
+		<id name="ID" column="SemesterID">
+			<generator class="identity"/>
+		</id>
+		<property name="Name" column="SemesterName" />
+		<property name="StartDate" column="SemesterStartDate" />
+		<property name="EndDate" column="SemesterEndDate" />
+		<property name="IsTheCurrent" column="SemesterIsTheCurrent" />
+
+		<many-to-one name="Branch" class="Branch"
+								 column="SemesterBranchID" />
+
+		<filter name="branchFilter" condition=":branch = SemesterBranchID" />
+	</class>
+</hibernate-mapping>

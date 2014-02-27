@@ -25,38 +25,43 @@ namespace ManarAlSabeel.Domain.Concrete
 			private get;
 		}
 
+		private void setSexFilter(ISession session)
+		{
+			int? sexFilter = filtersProvider.GetSexFilter();
+			if (sexFilter.HasValue)
+			{
+				session.EnableFilter("sexFilter").SetParameter("sex", sexFilter.Value);
+			}
+			else
+			{
+				session.DisableFilter("sexFilter");
+			}
+		}
+
+		private void setBranchFilter(ISession session)
+		{
+			Branch branchFilter = filtersProvider.GetBranchFilter();
+			if (branchFilter != null)
+			{
+				session.EnableFilter("branchFilter").SetParameter("branch", branchFilter.ID);
+			}
+			else
+			{
+				session.DisableFilter("branchFilter");
+			}
+		}
+
 		private ISession Session
 		{
 			get
 			{
-				ISession Session = SessionFactory.OpenSession();
-
-				if (!ignoreFilters)
+				ISession _session = SessionFactory.OpenSession();
+				if (!this.ignoreFilters)
 				{
-					//sex filter
-					int? sexFilter = filtersProvider.GetSexFilter();
-					if (sexFilter.HasValue)
-					{
-						Session.EnableFilter("sexFilter").SetParameter("sex", sexFilter.Value);
-					}
-					else
-					{
-						Session.DisableFilter("sexFilter");
-					}
-
-					//branch filter
-					Branch branchFilter = filtersProvider.GetBranchFilter();
-					if (branchFilter != null)
-					{
-						Session.EnableFilter("branchFilter").SetParameter("branch", branchFilter.ID);
-					}
-					else
-					{
-						Session.DisableFilter("branchFilter");
-					}
+					setSexFilter(_session);
+					setBranchFilter(_session);
 				}
-
-				return Session;
+				return _session;
 			}
 		}
 
@@ -342,7 +347,6 @@ namespace ManarAlSabeel.Domain.Concrete
 			return false;
 		}
 
-
 		public SystemAdmin AuthenticateSystemAdmin(string email, string password)
 		{
 			return Session.Query<SystemAdmin>().Where(x => x.Email == email && x.Password == password).FirstOrDefault();
@@ -357,6 +361,83 @@ namespace ManarAlSabeel.Domain.Concrete
 		public void SetFilterIgnore(bool ignore)
 		{
 			ignoreFilters = ignore;
+		}
+
+
+		public IQueryable<Semester> GetAllSemesters(bool orderByStartDate = true)
+		{
+			if(orderByStartDate)
+				return Session.Query<Semester>().OrderByDescending(x => x.StartDate);
+			else
+				return Session.Query<Semester>();
+		}
+
+
+		public int? SaveSemester(Semester semester)
+		{
+			int? new_id = null;
+			if (semester.ID > 0) //edit
+			{
+				new_id = semester.ID;
+				using (ISession session = Session)
+				{
+					using (ITransaction transaction = session.BeginTransaction())
+					{
+						Semester db_semester = session.Get<Semester>(semester.ID);
+
+						db_semester.Branch = session.Get<Branch>(semester.Branch.ID);
+						db_semester.Name = semester.Name;
+						db_semester.StartDate = semester.StartDate;
+						db_semester.EndDate = semester.EndDate;
+
+						session.SaveOrUpdate(db_semester);
+						transaction.Commit();
+
+						session.Flush();
+					}
+				}
+			}
+			else //new
+			{
+				using (ISession session = Session)
+				{
+					using (ITransaction transaction = session.BeginTransaction())
+					{
+						semester.Branch = session.Get<Branch>(semester.Branch.ID);
+
+						session.Save(semester);
+						transaction.Commit();
+
+						session.Flush();
+
+						new_id = semester.ID;
+					}
+				}
+			}
+
+			return new_id;
+		}
+
+
+		public bool DeleteSemeter(int semesterId)
+		{
+			using (ISession session = Session)
+			{
+				using (ITransaction transaction = session.BeginTransaction())
+				{
+					Semester db_semester = session.Get<Semester>(semesterId);
+					if (db_semester != null)
+					{
+						session.Delete(db_semester);
+						transaction.Commit();
+						session.Flush();
+
+						return true;
+					}
+				}
+			}
+
+			return false;
 		}
 	}
 }

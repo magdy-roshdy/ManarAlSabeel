@@ -30,6 +30,7 @@
 					new
 					{
 						@class = "form-control date-input",
+						data_date_format="dd/mm/yyyy",
 						Value = Model.Teacher.BirthDate.ToShortDateString(),
 						dir = "ltr"
 					})
@@ -62,6 +63,7 @@
 					new
 					{
 						@class = "form-control date-input",
+						data_date_format="dd/mm/yyyy",
 						Value = Model.Teacher.MarriageDate.HasValue ?
 							Model.Teacher.MarriageDate.Value.ToShortDateString()
 							:
@@ -153,7 +155,6 @@
 			</div>
 			
 			@Html.HiddenFor(x => x.Teacher.ID)
-			<hr />
 
 			<input type="submit" value="@StringTable.Save"
 				   class="btn btn-lg btn-primary btn-block" />

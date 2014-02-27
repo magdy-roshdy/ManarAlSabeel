@@ -194,7 +194,7 @@ INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('“Ì„»«»ÊÏ')
 
 GO
 
-INSERT INTO [dbo].[Managers] ([ManagerName]) VALUES ('«·‘ÌŒ √»Ê √‰” «·ﬁ„—Ì')
+INSERT INTO [dbo].[Managers] ([ManagerName]) VALUES ('«·‘ÌŒ „‰Â«Ã «»‰ ”⁄œ')
 GO
 
 INSERT INTO [dbo].[Centers] ([CenterName], [CenterManagerID]) VALUES ('„—ﬂ“ „‰«— «·”»Ì·', 1)

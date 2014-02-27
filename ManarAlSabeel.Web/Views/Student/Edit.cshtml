@@ -31,6 +31,7 @@
 				<label>@StringTable.DateOfBirth</label>
 				@Html.TextBoxFor(x => x.Student.BirthDate,
 					new { @class = "form-control date-input",
+						data_date_format="dd/mm/yyyy",
 						  Value = Model.Student.BirthDate.ToShortDateString(),
 						  dir="ltr"
 						})
@@ -132,7 +133,6 @@
 			</div>
 			
 			@Html.HiddenFor(x => x.Student.ID)
-			<hr />
 
 			<input type="submit" value="@StringTable.Save"
 				   class="btn btn-lg btn-primary btn-block" />

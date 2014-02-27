@@ -24,6 +24,10 @@ namespace ManarAlSabeel.Domain.Abstract
 		SystemAdmin AuthenticateSystemAdmin(string email, string password);
 		SystemAdmin GetSystemAdminByEmail(string email);
 
+		IQueryable<Semester> GetAllSemesters(bool orderByStartDate = true);
+		int? SaveSemester(Semester semester);
+		bool DeleteSemeter(int semesterId);
+
 		IQueryable<Country> GetAllCountries();
 	}
 }
