@@ -286,7 +286,7 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to أولياء الأمــور.
+        ///   Looks up a localized string similar to أولياء الأمـور.
         /// </summary>
         public static string Guardians {
             get {
@@ -619,7 +619,7 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to الطــــلاب.
+        ///   Looks up a localized string similar to الطـلاب.
         /// </summary>
         public static string StudentManagement {
             get {
@@ -637,7 +637,7 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to المدرســـــون.
+        ///   Looks up a localized string similar to المدرسـون.
         /// </summary>
         public static string TeachersAdmin {
             get {
