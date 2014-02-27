@@ -126,6 +126,9 @@
   <data name="Ad" xml:space="preserve">
     <value>اعلان</value>
   </data>
+  <data name="AddSemester" xml:space="preserve">
+    <value>اضافة دورة تعليمية</value>
+  </data>
   <data name="AddStudent" xml:space="preserve">
     <value>إضافة طالب</value>
   </data>
@@ -162,6 +165,9 @@
   <data name="Divorced" xml:space="preserve">
     <value>مطلق</value>
   </data>
+  <data name="EditSemester" xml:space="preserve">
+    <value>تعديل بيانات دورة تعليمية</value>
+  </data>
   <data name="EditStudentGuardian" xml:space="preserve">
     <value>تعديل بيانات ولي أمر</value>
   </data>
@@ -173,6 +179,9 @@
   </data>
   <data name="Email" xml:space="preserve">
     <value>البريد الالكتروني</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>تاريخ الانتهاء</value>
   </data>
   <data name="ExpectedPeriodToFinishQuraan" xml:space="preserve">
     <value>الفترة المتوقعة لانهاء القرآن</value>
@@ -193,7 +202,7 @@
     <value>ولي الأمر</value>
   </data>
   <data name="Guardians" xml:space="preserve">
-    <value>أولياء الأمــور</value>
+    <value>أولياء الأمـور</value>
   </data>
   <data name="Hanafy" xml:space="preserve">
     <value>حنفي</value>
@@ -212,6 +221,9 @@
   </data>
   <data name="InActive" xml:space="preserve">
     <value>غير فعال</value>
+  </data>
+  <data name="IsCurrentSemetser" xml:space="preserve">
+    <value>الدورة التعليمية الحالية</value>
   </data>
   <data name="IsStudentRegisteredInTransportations" xml:space="preserve">
     <value>هل هو مسجل بالمواصلات</value>
@@ -285,6 +297,12 @@
   <data name="SchoolName" xml:space="preserve">
     <value>اسم المدرسة</value>
   </data>
+  <data name="Semesters" xml:space="preserve">
+    <value>الدورات التعليمية</value>
+  </data>
+  <data name="SemestersList" xml:space="preserve">
+    <value>قائمة الدورات التعليمية</value>
+  </data>
   <data name="Sex" xml:space="preserve">
     <value>الجنس</value>
   </data>
@@ -293,6 +311,9 @@
   </data>
   <data name="Single" xml:space="preserve">
     <value>أعزب</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>تاريخ البداية</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>الحالة</value>
@@ -304,16 +325,16 @@
     <value>قائمة الطلاب</value>
   </data>
   <data name="StudentManagement" xml:space="preserve">
-    <value>الطــــلاب</value>
+    <value>الطلاب</value>
   </data>
   <data name="StudyStages" xml:space="preserve">
     <value>مراحل الدراسة</value>
   </data>
   <data name="TeachersAdmin" xml:space="preserve">
-    <value>المدرســـــون</value>
+    <value>المدرسـون</value>
   </data>
   <data name="TeachersList" xml:space="preserve">
-    <value>قائمة المدرسين</value>
+    <value>قائمة المدرسون</value>
   </data>
   <data name="TheProfession" xml:space="preserve">
     <value>الوظيفة</value>

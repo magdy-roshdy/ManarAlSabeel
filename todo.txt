@@ -3,6 +3,7 @@
 * link NHibernate and Iesi.Collections to thier Github repos
 * convert column "StudentExpectedQuraanFinishTime" into string at DB
 * use special ViewModel at Student edit form so you will use only GuardianId instead of the entire object
+* make IsCurrentSemester date based not DB based, and remove the column from DB table
 
 - add Custom Profile Provider to hold user's data
 - add Branch_ID to Guardians table

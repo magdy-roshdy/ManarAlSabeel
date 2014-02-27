@@ -61,6 +61,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تم تعديل بيانات الدورة العلمية بنجاح.
+        /// </summary>
+        public static string EditedSemesterInfoSuccessful {
+            get {
+                return ResourceManager.GetString("EditedSemesterInfoSuccessful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تم تعديل بيانات ولي الأمر بنجاح.
         /// </summary>
         public static string EditGuardianSuccessful {
@@ -129,6 +138,51 @@ namespace ManarAlSabeel.Resources {
         public static string IncorrectLoginData {
             get {
                 return ResourceManager.GetString("IncorrectLoginData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تمت عملية انشاء الدورة العلمية بنجاح.
+        /// </summary>
+        public static string SemesterCreatedSuccessfully {
+            get {
+                return ResourceManager.GetString("SemesterCreatedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تم حذف الدورة التعليمية بنجاح.
+        /// </summary>
+        public static string SemesterDeletedSuccessfully {
+            get {
+                return ResourceManager.GetString("SemesterDeletedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to من فضلك أدخل تاريخ انتهاء الدورة التعلمية.
+        /// </summary>
+        public static string SemesterEndDateIsRequired {
+            get {
+                return ResourceManager.GetString("SemesterEndDateIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to من فضلك أدخل اسم الدورة التعلمية.
+        /// </summary>
+        public static string SemesterNameIsRequired {
+            get {
+                return ResourceManager.GetString("SemesterNameIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to من فضلك أدخل تاريخ بداية الدورة التعلمية.
+        /// </summary>
+        public static string SemesterStartDateIsRequired {
+            get {
+                return ResourceManager.GetString("SemesterStartDateIsRequired", resourceCulture);
             }
         }
         

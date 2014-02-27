@@ -1,0 +1,49 @@
+﻿@model ManarAlSabeel.Web.Models.SemestersListViewModel
+
+@{
+	ViewBag.Title = ManarAlSabeel.Web.Heplers.Helpers.GetPageTitle(@StringTable.SemestersList);
+}
+
+<h2>@StringTable.SemestersList</h2>
+
+<table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>@StringTable.Name</th>
+			<th>@StringTable.StartDate</th>
+			<th>@StringTable.EndDate</th>
+			<th></th>
+		</tr>
+	</thead>
+	@foreach (ManarAlSabeel.Domain.Entities.Semester semester in Model.Semesters)
+	{
+		var style = (semester.IsTheCurrent && Model.Semesters.Count() > 1) ? "background: #DEEEF4;" : string.Empty;
+
+		<tr style="@style">
+			<td>
+				@Html.ActionLink(semester.Name, "Edit", new { semester.ID })
+			</td>
+			<td>
+				@semester.StartDate.ToShortDateString()
+			</td>
+			<td>
+				@semester.EndDate.ToShortDateString()
+			</td>
+			<td>
+				@using (@Html.BeginForm("Delete", "Semester"))
+				{
+					@Html.Hidden("semesterId", semester.ID)
+					@Html.Hidden("returnUrl", "/")
+					<input class="btn btn-default btn-xs" type="submit"
+						   value="@StringTable.Delete"
+						   onclick="return confirm('@StringTable.AreYouSure');" />
+				}
+			</td>
+		</tr>
+	}
+
+</table>
+
+<ul class="pagination">
+	@Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
+</ul>
