@@ -16,8 +16,14 @@ namespace ManarAlSabeel.Web.Infrastructure
 
 		public override bool ValidateUser(string username, string password)
 		{
-			SystemAdmin admin = DBRepository.AuthenticateSystemAdmin(username, password);
-			return (admin != null && admin.IsActive);
+			SystemAdmin admin = DBRepository.GetSystemAdminByEmail(username);
+			
+			if (admin == null)
+				return false;
+			if (!admin.IsActive)
+				return false;
+
+			return  SecurityHelper.VerifyHash(password, admin.Password);
 		}
 	}
 }

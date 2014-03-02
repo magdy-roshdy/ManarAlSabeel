@@ -142,6 +142,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
+    <Compile Include="Infrastructure\SecurityHelper.cs" />
     <Compile Include="Infrastructure\SystemAdminsMembershipProvider.cs" />
     <Compile Include="Infrastructure\SystemAdminsProfileProvider.cs" />
     <Compile Include="Infrastructure\SystemAdminsRolesProvider.cs" />
