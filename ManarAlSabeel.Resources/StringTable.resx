@@ -153,6 +153,9 @@
   <data name="Branch" xml:space="preserve">
     <value>الفرع</value>
   </data>
+  <data name="CenterAdministration" xml:space="preserve">
+    <value>ادارة المركز</value>
+  </data>
   <data name="ChildrenCount" xml:space="preserve">
     <value>عدد الأبناء</value>
   </data>
@@ -299,6 +302,9 @@
   </data>
   <data name="Password" xml:space="preserve">
     <value>كلمة المرور</value>
+  </data>
+  <data name="PeopleAdministration" xml:space="preserve">
+    <value>ادارة الأفراد</value>
   </data>
   <data name="QuraanMemorizationAmount" xml:space="preserve">
     <value>مقدار الحفظ من القرآن</value>

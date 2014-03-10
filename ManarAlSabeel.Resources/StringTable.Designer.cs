@@ -169,6 +169,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ادارة المركز.
+        /// </summary>
+        public static string CenterAdministration {
+            get {
+                return ResourceManager.GetString("CenterAdministration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to عدد الأبناء.
         /// </summary>
         public static string ChildrenCount {
@@ -606,6 +615,15 @@ namespace ManarAlSabeel.Resources {
         public static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ادارة الأفراد.
+        /// </summary>
+        public static string PeopleAdministration {
+            get {
+                return ResourceManager.GetString("PeopleAdministration", resourceCulture);
             }
         }
         
