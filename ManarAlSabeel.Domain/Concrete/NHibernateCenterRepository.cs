@@ -439,5 +439,87 @@ namespace ManarAlSabeel.Domain.Concrete
 
 			return false;
 		}
+
+
+		public IQueryable<Class> GetAllClasses()
+		{
+			var classes = (from calss
+			in Session.Query<Class>()
+							select calss);
+
+			return classes;
+		}
+
+
+		public int? SaveClass(Class aClass)
+		{
+			int? new_id = null;
+			if (aClass.ID > 0) //edit
+			{
+				new_id = aClass.ID;
+				using (ISession session = Session)
+				{
+					using (ITransaction transaction = session.BeginTransaction())
+					{
+						Class db_class = session.Get<Class>(aClass.ID);
+
+						db_class.Name = aClass.Name;
+						db_class.Semester = session.Get<Semester>(aClass.Semester.ID);
+						db_class.Branch = session.Get<Branch>(aClass.Branch.ID);
+						db_class.Teacher = session.Get<Teacher>(aClass.Teacher.ID);
+						db_class.TeachingPeriod = aClass.TeachingPeriod;
+						db_class.Sex = aClass.Sex;
+
+						session.SaveOrUpdate(db_class);
+						transaction.Commit();
+
+						session.Flush();
+					}
+				}
+			}
+			else //new
+			{
+				using (ISession session = Session)
+				{
+					using (ITransaction transaction = session.BeginTransaction())
+					{
+						aClass.Semester = session.Get<Semester>(aClass.Semester.ID);
+						aClass.Branch = session.Get<Branch>(aClass.Branch.ID);
+						aClass.Teacher = session.Get<Teacher>(aClass.Teacher.ID);
+
+						session.Save(aClass);
+						transaction.Commit();
+
+						session.Flush();
+
+						new_id = aClass.ID;
+					}
+				}
+			}
+
+			return new_id;
+		}
+
+
+		public bool DeleteClass(int classId)
+		{
+			using (ISession session = Session)
+			{
+				using (ITransaction transaction = session.BeginTransaction())
+				{
+					Class db_class = session.Get<Class>(classId);
+					if (db_class != null)
+					{
+						session.Delete(db_class);
+						transaction.Commit();
+						session.Flush();
+
+						return true;
+					}
+				}
+			}
+
+			return false;
+		}
 	}
 }

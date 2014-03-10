@@ -25,6 +25,9 @@ namespace ManarAlSabeel.Domain.Entities
 			  ErrorMessageResourceName = "SemesterEndDateIsRequired")]
 		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
 		public virtual DateTime EndDate { get; set; }
+
 		public virtual bool IsTheCurrent { get; set; }
+
+		public virtual IList<Class> Classes { get; set; }
 	}
 }

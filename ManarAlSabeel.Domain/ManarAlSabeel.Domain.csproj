@@ -86,6 +86,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <EmbeddedResource Include="NH.Mapping\Class.hbm.xml" />
     <EmbeddedResource Include="NH.Mapping\Semester.hbm.xml" />
     <EmbeddedResource Include="NH.Mapping\SystemAdmin.hbm.xml" />
     <EmbeddedResource Include="NH.Mapping\Filters.hbm.xml" />

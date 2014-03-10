@@ -126,6 +126,9 @@
   <data name="Ad" xml:space="preserve">
     <value>اعلان</value>
   </data>
+  <data name="AddClass" xml:space="preserve">
+    <value>اضافة فصل</value>
+  </data>
   <data name="AddSemester" xml:space="preserve">
     <value>اضافة دورة تعليمية</value>
   </data>
@@ -153,6 +156,12 @@
   <data name="ChildrenCount" xml:space="preserve">
     <value>عدد الأبناء</value>
   </data>
+  <data name="Classes" xml:space="preserve">
+    <value>فصول التدريس</value>
+  </data>
+  <data name="ClassesList" xml:space="preserve">
+    <value>قائمة فصول الدراسة</value>
+  </data>
   <data name="CurrentStudySatge" xml:space="preserve">
     <value>المرحلة الدراسية الحالية</value>
   </data>
@@ -164,6 +173,9 @@
   </data>
   <data name="Divorced" xml:space="preserve">
     <value>مطلق</value>
+  </data>
+  <data name="EditClass" xml:space="preserve">
+    <value>تعديل بيانات فصل تدريس</value>
   </data>
   <data name="EditSemester" xml:space="preserve">
     <value>تعديل بيانات دورة تعليمية</value>
@@ -182,6 +194,9 @@
   </data>
   <data name="EndDate" xml:space="preserve">
     <value>تاريخ الانتهاء</value>
+  </data>
+  <data name="Evening" xml:space="preserve">
+    <value>مسائي</value>
   </data>
   <data name="ExpectedPeriodToFinishQuraan" xml:space="preserve">
     <value>الفترة المتوقعة لانهاء القرآن</value>
@@ -264,6 +279,9 @@
   <data name="MobileNumber" xml:space="preserve">
     <value>رقم الجوال</value>
   </data>
+  <data name="Morning" xml:space="preserve">
+    <value>صباحي</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>الاسم</value>
   </data>
@@ -296,6 +314,9 @@
   </data>
   <data name="SchoolName" xml:space="preserve">
     <value>اسم المدرسة</value>
+  </data>
+  <data name="Semester" xml:space="preserve">
+    <value>الدورة التدريبية</value>
   </data>
   <data name="Semesters" xml:space="preserve">
     <value>الدورات التعليمية</value>
@@ -330,11 +351,17 @@
   <data name="StudyStages" xml:space="preserve">
     <value>مراحل الدراسة</value>
   </data>
+  <data name="Teacher" xml:space="preserve">
+    <value>المدرس</value>
+  </data>
   <data name="TeachersAdmin" xml:space="preserve">
     <value>المدرسـون</value>
   </data>
   <data name="TeachersList" xml:space="preserve">
     <value>قائمة المدرسين</value>
+  </data>
+  <data name="TeachingPeriod" xml:space="preserve">
+    <value>فترة التدريس</value>
   </data>
   <data name="TheProfession" xml:space="preserve">
     <value>الوظيفة</value>

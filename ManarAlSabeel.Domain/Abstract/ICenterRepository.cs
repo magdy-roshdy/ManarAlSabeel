@@ -28,6 +28,10 @@ namespace ManarAlSabeel.Domain.Abstract
 		int? SaveSemester(Semester semester);
 		bool DeleteSemeter(int semesterId);
 
+		IQueryable<Class> GetAllClasses();
+		int? SaveClass(Class aClass);
+		bool DeleteClass(int classId);
+
 		IQueryable<Country> GetAllCountries();
 	}
 }

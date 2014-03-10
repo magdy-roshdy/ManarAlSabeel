@@ -1,5 +1,6 @@
 ﻿using ManarAlSabeel.Domain.Entities;
 using ManarAlSabeel.Resources;
+using ManarAlSabeel.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,6 +66,40 @@ namespace ManarAlSabeel.Web.Heplers
 			return selectListItems;
 		}
 
+		public static List<SelectListItem> TeachersToSelectListItems(IQueryable<Teacher> teachers, bool addEmptyItem = false)
+		{
+			List<SelectListItem> selectListItems = new List<SelectListItem>();
+
+			if (addEmptyItem)
+			{
+				selectListItems.Add(new SelectListItem { Text = "", Value = "0" });
+			}
+
+			foreach (Teacher teacher in teachers)
+			{
+				selectListItems.Add(new SelectListItem { Text = teacher.Name, Value = teacher.ID.ToString() });
+			}
+
+			return selectListItems;
+		}
+
+		public static List<SelectListItem> SemestersToSelectListItems(IQueryable<Semester> semesters, bool addEmptyItem = false)
+		{
+			List<SelectListItem> selectListItems = new List<SelectListItem>();
+
+			if (addEmptyItem)
+			{
+				selectListItems.Add(new SelectListItem { Text = "", Value = "0" });
+			}
+
+			foreach (Semester semester in semesters)
+			{
+				selectListItems.Add(new SelectListItem { Text = semester.Name, Value = semester.ID.ToString() });
+			}
+
+			return selectListItems;
+		}
+
 		public static string GetBranchCenterHeaderString()
 		{
 			Branch currentBranch = HttpContext.Current.Profile["BranchFilter"] as Branch;
@@ -104,8 +139,30 @@ namespace ManarAlSabeel.Web.Heplers
 					return StringTable.Married;
 
 				default:
-					return "";
+					return string.Empty;
 			}
+		}
+
+		public static string GetClassPeriodCaption(ClassTeachingPeriod period)
+		{
+			switch(period)
+			{
+				case ClassTeachingPeriod.Morning:
+					return StringTable.Morning;
+
+				case ClassTeachingPeriod.Evening:
+					return StringTable.Evening;
+
+				default:
+					return string.Empty;
+			}
+		}
+
+		public static BranchViewModel ConvertToBranchViewModel(Branch branch)
+		{
+			if (branch == null) return null;
+
+			return new BranchViewModel { ID = branch.ID, Name = branch.Name };
 		}
 	}
 }

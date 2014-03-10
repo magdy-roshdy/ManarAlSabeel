@@ -177,4 +177,16 @@
   <data name="SemesterDeletedSuccessfully" xml:space="preserve">
     <value>تم حذف الدورة التعليمية بنجاح</value>
   </data>
+  <data name="ClassCreatedSuccessfully" xml:space="preserve">
+    <value>تم انشاء فصل التدريس بنجاح</value>
+  </data>
+  <data name="EditedClassInfoSuccessful" xml:space="preserve">
+    <value>تم تعديل بيانات فصل التدريس بنجاح</value>
+  </data>
+  <data name="ClassDeletedSuccessfully" xml:space="preserve">
+    <value>تم حذف فصل التدريس بنجاح</value>
+  </data>
+  <data name="ClassNameIsRequired" xml:space="preserve">
+    <value>من فضلك أدخل اسم الفصل الدراسي</value>
+  </data>
 </root>

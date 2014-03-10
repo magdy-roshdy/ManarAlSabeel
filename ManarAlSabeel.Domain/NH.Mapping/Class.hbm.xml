@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ManarAlSabeel.Domain"
+                   namespace="ManarAlSabeel.Domain.Entities">
+	<class name="Class" table="Classes">
+
+		<id name="ID" column="ClassID">
+			<generator class="identity"/>
+		</id>
+		<property name="Name" column="ClassName" />
+		<property name="TeachingPeriod" column="ClassTeachingPeriod" />
+		<property name="Sex" column="ClassSex" />
+
+		<many-to-one name="Semester" class="Semester"
+								 column="ClassSemesterID" />
+		<many-to-one name="Teacher" class="Teacher"
+								 column="ClassTeacherID" />
+		<many-to-one name="Branch" class="Branch"
+								 column="ClassBranchID" />
+
+		<filter name="sexFilter" condition=":sex = ClassSex" />
+		<!-- branchId already exists in class's Semester, but i added it to apply NH filter -->
+		<filter name="branchFilter" condition=":branch = ClassBranchID" />
+	</class>
+</hibernate-mapping>

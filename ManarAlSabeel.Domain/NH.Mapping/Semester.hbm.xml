@@ -15,6 +15,11 @@
 		<many-to-one name="Branch" class="Branch"
 								 column="SemesterBranchID" />
 
+		<bag name="Classes">
+			<key column="ClassSemesterID" />
+			<one-to-many class="Class"/>
+		</bag>
+
 		<filter name="branchFilter" condition=":branch = SemesterBranchID" />
 	</class>
 </hibernate-mapping>

@@ -61,6 +61,42 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تم انشاء فصل التدريس بنجاح.
+        /// </summary>
+        public static string ClassCreatedSuccessfully {
+            get {
+                return ResourceManager.GetString("ClassCreatedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تم حذف فصل التدريس بنجاح.
+        /// </summary>
+        public static string ClassDeletedSuccessfully {
+            get {
+                return ResourceManager.GetString("ClassDeletedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to من فضلك أدخل اسم الفصل الدراسي.
+        /// </summary>
+        public static string ClassNameIsRequired {
+            get {
+                return ResourceManager.GetString("ClassNameIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تم تعديل بيانات فصل التدريس بنجاح.
+        /// </summary>
+        public static string EditedClassInfoSuccessful {
+            get {
+                return ResourceManager.GetString("EditedClassInfoSuccessful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تم تعديل بيانات الدورة العلمية بنجاح.
         /// </summary>
         public static string EditedSemesterInfoSuccessful {

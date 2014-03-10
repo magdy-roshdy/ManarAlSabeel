@@ -9,7 +9,7 @@ namespace ManarAlSabeel.Web.Infrastructure
 {
 	public class SecurityHelper
 	{
-		public static string ComputeHash(string plainText, byte[] saltBytes, string hashAlgorithm = "")
+		public static string ComputeHash(string plainText, byte[] saltBytes = null, string hashAlgorithm = "")
 		{
 			if (saltBytes == null)
 			{
