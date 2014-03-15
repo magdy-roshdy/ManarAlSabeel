@@ -45,36 +45,99 @@ namespace ManarAlSabeel.Web.Controllers
 
 		public ViewResult Edit(int id)
 		{
-			Student student = dbRepository.GetAllStudents().FirstOrDefault<Student>(x => x.ID == id);
-			IQueryable<Country> countries = dbRepository.GetAllCountries();
-			IQueryable<StudentGuardian> guardians = dbRepository.GetAllStudentGuardians();
+			Student studentEntity = dbRepository.GetAllStudents().FirstOrDefault<Student>(x => x.ID == id);
+			EditStudentViewModel studentViewModel = null;
 
-			return View(new Models.EditStudentViewModel { Student = student, Countries = countries, Guardians = guardians });
+			if (studentEntity != null)
+			{
+
+				studentViewModel = new EditStudentViewModel();
+
+				studentViewModel.ID = studentEntity.ID;
+				studentViewModel.Name = studentEntity.Name;
+				studentViewModel.BirthDate = studentEntity.BirthDate;
+				studentViewModel.EducationStage = studentEntity.EducationStage;
+				studentViewModel.ExpectedQuraanFinishTime = studentEntity.ExpectedQuraanFinishTime;
+				studentViewModel.HowKnewTheCenter = studentEntity.HowKnewTheCenter;
+				studentViewModel.IsInTransportations = studentEntity.IsInTransportations;
+				studentViewModel.LastEducationDegree = studentEntity.LastEducationDegree;
+				studentViewModel.PersonalPhotoPath = studentEntity.PersonalPhotoPath;
+				studentViewModel.SchoolClass = studentEntity.SchoolClass;
+				studentViewModel.SchoolName = studentEntity.SchoolName;
+				studentViewModel.Sex = studentEntity.Sex;
+				studentViewModel.Status = studentEntity.Status;
+
+				studentViewModel.OriginalNationalityID = studentEntity.OriginalNationality.ID;
+				studentViewModel.OriginalNationalityName = studentEntity.OriginalNationality.Name;
+
+				if (studentEntity.AcquiredNationality != null && studentEntity.AcquiredNationality.ID != 0)
+				{
+					studentViewModel.AcquiredNationalityID = studentEntity.AcquiredNationality.ID;
+					studentViewModel.AcquiredNationalityName = studentEntity.AcquiredNationality.Name;
+				}
+
+				studentViewModel.BranchID = studentEntity.Branch.ID;
+				studentViewModel.BranchName = studentEntity.Branch.Name;
+
+				studentViewModel.GuardianID = studentEntity.Guardian.ID;
+				studentViewModel.GuardianName = studentEntity.Guardian.Name;
+
+				studentViewModel.Countries = dbRepository.GetAllCountries();
+				studentViewModel.Guardians = dbRepository.GetAllStudentGuardians();
+			}
+
+			return View(studentViewModel);
 		}
 
 		[HttpPost]
-		public ActionResult Edit(Student student)
+		public ActionResult Edit(EditStudentViewModel studentViewModel)
 		{
 			if (ModelState.IsValid)
 			{
+				Student studentEntity = new Student();
 				//enforce profile values over form values
-				student.Sex = (Sex)HttpContext.Profile["SexFilter"];
-				student.Branch.ID = ((Branch)HttpContext.Profile["BranchFilter"]).ID;
+				studentEntity.Sex = (Sex)HttpContext.Profile["SexFilter"];
+				studentEntity.Branch = new Branch();
+				studentEntity.Branch.ID = ((Branch)HttpContext.Profile["BranchFilter"]).ID;
 
-				bool newsStudent = (student.ID == 0);
-				dbRepository.SaveStudent(student);
+				studentEntity.ID = studentViewModel.ID;
+				
+				studentEntity.AcquiredNationality = new Country();
+				studentEntity.AcquiredNationality.ID = studentViewModel.AcquiredNationalityID;
+
+				studentEntity.OriginalNationality = new Country();
+				studentEntity.OriginalNationality.ID = studentViewModel.OriginalNationalityID;
+
+				studentEntity.Guardian = new StudentGuardian();
+				studentEntity.Guardian.ID = studentViewModel.GuardianID;
+
+				studentEntity.BirthDate = studentViewModel.BirthDate;
+				studentEntity.EducationStage = studentViewModel.EducationStage;
+				studentEntity.ExpectedQuraanFinishTime = studentViewModel.ExpectedQuraanFinishTime;
+				studentEntity.HowKnewTheCenter = studentViewModel.HowKnewTheCenter;
+				studentEntity.IsInTransportations = studentViewModel.IsInTransportations;
+				studentEntity.LastEducationDegree = studentViewModel.LastEducationDegree;
+				studentEntity.Name = studentViewModel.Name;
+				studentEntity.PersonalPhotoPath = studentViewModel.PersonalPhotoPath;
+				studentEntity.SchoolClass = studentViewModel.SchoolClass;
+				studentEntity.SchoolName = studentViewModel.SchoolName;
+				studentEntity.Status = studentViewModel.Status;
+
+				studentEntity.AddedOn = DateTime.Now;
+
+				dbRepository.SaveStudent(studentEntity);
+
+				bool newsStudent = (studentViewModel.ID == 0);
 				TempData["message"] = newsStudent ? Messages.StudentCreatedSuccessfully : Messages.EditStudentSuccessful;
 
 				return RedirectToAction("List");
 			}
 			else
 			{
-				IQueryable<Country> countries = dbRepository.GetAllCountries();
-				IQueryable<StudentGuardian> guardians = dbRepository.GetAllStudentGuardians();
+				studentViewModel.Countries = dbRepository.GetAllCountries();
+				studentViewModel.Guardians = dbRepository.GetAllStudentGuardians();
 
-				return View(
-						new Models.EditStudentViewModel { Student = student, Countries = countries, Guardians = guardians }
-					);
+				return View(studentViewModel);
 			}
 		}
 
@@ -82,8 +145,8 @@ namespace ManarAlSabeel.Web.Controllers
 		{
 			return View("Edit", new Models.EditStudentViewModel
 			{
-				Student = new Student { BirthDate = DateTime.Now.Subtract(new TimeSpan(365 * 15, 0, 0, 0)),
-					Sex = (Sex)HttpContext.Profile["SexFilter"] },
+				BirthDate = DateTime.Now.Subtract(new TimeSpan(365 * 15, 0, 0, 0)),
+				Sex = (Sex)HttpContext.Profile["SexFilter"],
 				Countries = dbRepository.GetAllCountries(),
 				Guardians = dbRepository.GetAllStudentGuardians()
 			});

@@ -37,33 +37,53 @@ namespace ManarAlSabeel.Web.Controllers
 
 		public ViewResult Edit(int id)
 		{
-			Semester semester = dbRepository.GetAllSemesters().FirstOrDefault<Semester>(x => x.ID == id);
-			return View(semester);
+			SemesterEditViewModel semesterViewModel = null;
+			Semester semesterEntity = dbRepository.GetAllSemesters().FirstOrDefault<Semester>(x => x.ID == id);
+			if(semesterEntity != null)
+			{
+				semesterViewModel = new SemesterEditViewModel();
+				semesterViewModel.ID = semesterEntity.ID;
+				semesterViewModel.Name = semesterEntity.Name;
+				semesterViewModel.StartDate = semesterEntity.StartDate;
+				semesterViewModel.EndDate = semesterEntity.EndDate;
+				semesterViewModel.IsTheCurrent = semesterEntity.IsTheCurrent;
+			}
+
+			return View(semesterViewModel);
 		}
 
 		[HttpPost]
-		public ActionResult Edit(Semester semester)
+		public ActionResult Edit(SemesterEditViewModel semesterViewModel)
 		{
 			if (ModelState.IsValid)
 			{
+				Semester semesterEntity = new Semester();
 				//enforce profile values over form values
-				semester.Branch.ID = ((Branch)HttpContext.Profile["BranchFilter"]).ID;
+				semesterEntity.Branch = new Branch();
+				semesterEntity.Branch.ID = ((Branch)HttpContext.Profile["BranchFilter"]).ID;
 
-				bool newsSemester = (semester.ID == 0);
-				dbRepository.SaveSemester(semester);
+				semesterEntity.Name = semesterViewModel.Name;
+				semesterEntity.StartDate = semesterViewModel.StartDate;
+				semesterEntity.EndDate = semesterViewModel.EndDate;
+				semesterEntity.IsTheCurrent = semesterViewModel.IsTheCurrent;
+				semesterEntity.ID = semesterViewModel.ID;
+
+				dbRepository.SaveSemester(semesterEntity);
+
+				bool newsSemester = (semesterViewModel.ID == 0);
 				TempData["message"] = newsSemester ? Messages.SemesterCreatedSuccessfully : Messages.EditedSemesterInfoSuccessful;
 
 				return RedirectToAction("List");
 			}
 			else
 			{
-				return View(semester);
+				return View(semesterViewModel);
 			}
 		}
 
 		public ViewResult Create()
 		{
-			return View("Edit", new Semester { StartDate = DateTime.Now, EndDate = DateTime.Now.AddDays(6 * 30) });
+			return View("Edit", new SemesterEditViewModel { StartDate = DateTime.Now, EndDate = DateTime.Now.AddDays(6 * 30) });
 		}
 
 		[HttpPost]

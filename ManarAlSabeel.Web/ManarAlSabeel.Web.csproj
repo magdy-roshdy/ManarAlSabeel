@@ -151,9 +151,11 @@
     <Compile Include="Models\ClassEditViewModel.cs" />
     <Compile Include="Models\ClassesListViewModel.cs" />
     <Compile Include="Models\EditStudentViewModel.cs" />
-    <Compile Include="Models\EditTeacherViewModel.cs" />
+    <Compile Include="Models\TeacherEditViewModel.cs" />
     <Compile Include="Models\PagingInfo.cs" />
+    <Compile Include="Models\SemesterEditViewModel.cs" />
     <Compile Include="Models\SemestersListViewModel.cs" />
+    <Compile Include="Models\StudentGuardianEditViewModel.cs" />
     <Compile Include="Models\StudentGuardiansListViewModel.cs" />
     <Compile Include="Models\StudentsListViewModel.cs" />
     <Compile Include="Models\TeachersListViewModel.cs" />

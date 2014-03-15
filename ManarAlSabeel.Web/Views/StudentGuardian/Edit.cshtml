@@ -1,14 +1,14 @@
-﻿@model ManarAlSabeel.Domain.Entities.StudentGuardian
+﻿@model ManarAlSabeel.Web.Models.StudentGuardianEditViewModel
 @using ManarAlSabeel.Domain.Entities
 
 @{
 	ViewBag.Title = ManarAlSabeel.Web.Heplers.Helpers.GetPageTitle(@StringTable.EditStudentGuardian);
 
-	Branch _branch = (@HttpContext.Current.Profile["BranchFilter"] != null)
+	ManarAlSabeel.Web.Models.BranchViewModel _branch = (@HttpContext.Current.Profile["BranchFilter"] != null)
 		?
-		@HttpContext.Current.Profile["BranchFilter"] as Branch
+		ManarAlSabeel.Web.Heplers.Helpers.ConvertToBranchViewModel(@HttpContext.Current.Profile["BranchFilter"] as Branch)
 		:
-		Model.Branch;
+		new ManarAlSabeel.Web.Models.BranchViewModel { ID = Model.BranchID, Name = Model.BranchName };
 }
 
 <h2>@StringTable.EditStudentGuardian</h2>
@@ -29,7 +29,7 @@
 			<div class="form-group">
 				<label>@StringTable.Branch</label>
 				@Html.TextBox("branch", _branch.Name, new { disabled = "disabled", @class = "form-control" })
-				@Html.HiddenFor(x => x.Branch.ID, new { Value = _branch.ID })
+				@Html.HiddenFor(x => x.BranchID, new { Value = _branch.ID })
 			</div>
 			
 			<div class="form-group">

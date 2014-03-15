@@ -42,33 +42,63 @@ namespace ManarAlSabeel.Web.Controllers
 
 		public ViewResult Edit(int id)
 		{
-			StudentGuardian student = dbRepository.GetAllStudentGuardians().FirstOrDefault<StudentGuardian>(x => x.ID == id);
-			return View(student);
+			StudentGuardianEditViewModel studentViewModel = null;
+			StudentGuardian studentEntity = dbRepository.GetAllStudentGuardians().FirstOrDefault<StudentGuardian>(x => x.ID == id);
+			if (studentEntity != null)
+			{
+				studentViewModel = new StudentGuardianEditViewModel();
+				studentViewModel.ID = studentEntity.ID;
+				studentViewModel.Name = studentEntity.Name;
+				studentViewModel.HomeAddress = studentEntity.HomeAddress;
+				studentViewModel.HomePhone = studentEntity.HomePhone;
+				studentViewModel.MobilePhone = studentEntity.MobilePhone;
+				studentViewModel.OtherPhone = studentEntity.OtherPhone;
+				studentViewModel.Sex = studentEntity.Sex;
+				studentViewModel.Email = studentEntity.Email;
+
+				studentViewModel.BranchID = studentEntity.Branch.ID;
+				studentViewModel.BranchName = studentEntity.Branch.Name;
+			}
+
+			return View(studentViewModel);
 		}
 
 		[HttpPost]
-		public ActionResult Edit(StudentGuardian studentGuardian)
+		public ActionResult Edit(StudentGuardianEditViewModel studentGuardianViewModel)
 		{
 			if (ModelState.IsValid)
 			{
+				StudentGuardian studentGuardianEntity = new StudentGuardian();
 				//enforce profile values over form values
-				studentGuardian.Branch.ID = ((Branch)HttpContext.Profile["BranchFilter"]).ID;
+				studentGuardianEntity.Branch = new Branch();
+				studentGuardianEntity.Branch.ID = ((Branch)HttpContext.Profile["BranchFilter"]).ID;
 
-				bool newsGuardian = (studentGuardian.ID == 0);
-				dbRepository.SaveStudentGuardian(studentGuardian);
+				studentGuardianEntity.ID = studentGuardianViewModel.ID;
+				studentGuardianEntity.Name = studentGuardianViewModel.Name;
+				studentGuardianEntity.Email = studentGuardianViewModel.Email;
+				studentGuardianEntity.HomeAddress = studentGuardianViewModel.HomeAddress;
+				studentGuardianEntity.HomePhone = studentGuardianViewModel.HomePhone;
+				studentGuardianEntity.MobilePhone = studentGuardianViewModel.MobilePhone;
+				studentGuardianEntity.OtherPhone = studentGuardianViewModel.OtherPhone;
+				studentGuardianEntity.Sex = studentGuardianViewModel.Sex;
+
+
+				dbRepository.SaveStudentGuardian(studentGuardianEntity);
+
+				bool newsGuardian = (studentGuardianViewModel.ID == 0);
 				TempData["message"] = newsGuardian ? Messages.GuardianCreatedSuccessfully : Messages.EditGuardianSuccessful;
 
 				return RedirectToAction("List");
 			}
 			else
 			{
-				return View(studentGuardian);
+				return View(studentGuardianViewModel);
 			}
 		}
 
 		public ViewResult Create()
 		{
-			return View("Edit", new StudentGuardian());
+			return View("Edit", new StudentGuardianEditViewModel());
 		}
 
 		[HttpPost]
