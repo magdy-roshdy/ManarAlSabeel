@@ -1,3 +1,6 @@
+USE [manar_al_sabeel]
+GO
+
 /*****************************/
 /*** Table [dbo].[Centers] ***/
 /*****************************/
@@ -208,6 +211,13 @@ REFERENCES [dbo].[Tracks] ([TrackID])
 GO
 
 ALTER TABLE [dbo].[RegisteredStudents] CHECK CONSTRAINT [FK_Tracks_RegisteredStudents]
+GO
+
+ALTER TABLE [dbo].[RegisteredStudents]  WITH CHECK ADD  CONSTRAINT [FK_Branches_RegisteredStudents] FOREIGN KEY([RegisteredStudentsBranchID])
+REFERENCES [dbo].[Branches] ([BranchID])
+GO
+
+ALTER TABLE [dbo].[RegisteredStudents] CHECK CONSTRAINT [FK_Branches_RegisteredStudents]
 GO
 
 /*****************************/

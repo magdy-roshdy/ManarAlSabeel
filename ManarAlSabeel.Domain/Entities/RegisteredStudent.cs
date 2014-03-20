@@ -10,9 +10,12 @@ namespace ManarAlSabeel.Domain.Entities
 		public virtual int ID { get; set; }
 
 		public virtual Student Student { get; set; }
-		public virtual Semester Semester { get; set; }
 		public virtual Class Class { get; set; }
 		public virtual Track Track { get; set; }
+
+		//Branch and Sex properties are added only because of NH filters!
+		public virtual Branch Branch { get; set; }
+		public virtual Sex Sex { get; set; }
 
 		public virtual DateTime Date { get; set; }
 		public virtual string Comments { get; set; }

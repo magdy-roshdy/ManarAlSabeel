@@ -26,7 +26,13 @@ namespace ManarAlSabeel.Domain.Entities
 		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
 		public virtual DateTime EndDate { get; set; }
 
-		public virtual bool IsTheCurrent { get; set; }
+		public virtual bool IsTheCurrent
+		{
+			get
+			{
+				return false;
+			}
+		}
 
 		public virtual IList<Class> Classes { get; set; }
 	}

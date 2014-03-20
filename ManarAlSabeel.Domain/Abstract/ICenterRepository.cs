@@ -32,6 +32,10 @@ namespace ManarAlSabeel.Domain.Abstract
 		int? SaveClass(Class aClass);
 		bool DeleteClass(int classId);
 
+		IQueryable<Track> GetAllTracks();
+
+		IQueryable<RegisteredStudent> GetAllRegisteredStudents();
+
 		IQueryable<Country> GetAllCountries();
 	}
 }

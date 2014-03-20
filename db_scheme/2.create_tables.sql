@@ -169,7 +169,6 @@ CREATE TABLE [dbo].[Semesters](
 	[SemesterName] [nvarchar](50) NOT NULL,
 	[SemesterStartDate] [date] NOT NULL,
 	[SemesterEndDate] [date] NOT NULL,
-	[SemesterIsTheCurrent] [bit] NOT NULL,
  CONSTRAINT [PK_Semester] PRIMARY KEY CLUSTERED 
 (
 	[SemesterID] ASC
@@ -342,6 +341,8 @@ CREATE TABLE [dbo].[RegisteredStudents](
 	[RegisteredStudentsStudentID] [int] NOT NULL,
 	[RegisteredStudentsClassID] [int] NOT NULL,
 	[RegisteredStudentsTrackID] [int] NOT NULL,
+	[RegisteredStudentsBranchID] [int] NOT NULL,
+	[RegisteredStudentsSex] [tinyint] NOT NULL,
 	[RegisteredStudentsDate] [date] NOT NULL,
 	[RegisteredStudentsComments] [nvarchar](250) NULL,
  CONSTRAINT [PK_SemesterRegistration] PRIMARY KEY CLUSTERED 

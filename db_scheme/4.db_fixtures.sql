@@ -202,3 +202,7 @@ GO
 
 INSERT INTO [dbo].[Branches] ([BranchName], [BranchCenterID], [BranchManagerID]) VALUES ('«·›—⁄ «·—∆Ì”Ì', 1, 1)
 GO
+
+INSERT INTO [dbo].[Tracks] ([TrackBranchID], [TrackName]) VALUES (1, '«·œÊ—… «· √”Ì”…')
+INSERT INTO [dbo].[Tracks] ([TrackBranchID], [TrackName]) VALUES (1, 'œ—Ê…«· Õ›ÌŸ')
+GO

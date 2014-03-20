@@ -10,7 +10,6 @@
 		<property name="Name" column="SemesterName" />
 		<property name="StartDate" column="SemesterStartDate" />
 		<property name="EndDate" column="SemesterEndDate" />
-		<property name="IsTheCurrent" column="SemesterIsTheCurrent" />
 
 		<many-to-one name="Branch" class="Branch"
 								 column="SemesterBranchID" />

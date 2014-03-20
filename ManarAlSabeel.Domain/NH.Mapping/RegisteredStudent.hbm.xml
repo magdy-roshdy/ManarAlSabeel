@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ManarAlSabeel.Domain"
+                   namespace="ManarAlSabeel.Domain.Entities">
+	<class name="RegisteredStudent" table="RegisteredStudents">
+
+		<id name="ID" column="RegisteredStudentID">
+			<generator class="identity" />
+		</id>
+
+		<many-to-one name="Student"
+								 class="Student"
+								 column="RegisteredStudentsStudentID" />
+
+		<many-to-one name="Class"
+								 class="Class"
+								 column="RegisteredStudentsClassID" />
+
+		<many-to-one name="Track"
+								 class="Track"
+								 column="RegisteredStudentsTrackID" />
+
+		<many-to-one name="Branch"
+								 class="Branch"
+								 column="RegisteredStudentsBranchID" />
+
+		<property name="Date" column="RegisteredStudentsDate" />
+		<property name="Comments" column="RegisteredStudentsComments" />
+		<property name="Sex" column="RegisteredStudentsSex" />
+		
+		<filter name="sexFilter" condition=":sex = RegisteredStudentsSex" />
+		<filter name="branchFilter" condition=":branch = RegisteredStudentsBranchID" />
+	</class>
+</hibernate-mapping>

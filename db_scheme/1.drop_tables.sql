@@ -9,6 +9,8 @@ ALTER TABLE [dbo].[Branches] DROP [FK_Managers_Branches]
 
 ALTER TABLE [dbo].[StudentGuardians] DROP [FK_Branches_StudentGuardians]
 
+ALTER TABLE [dbo].[RegisteredStudents] DROP [FK_Branches_RegisteredStudents]
+
 ALTER TABLE [dbo].[SystemAdmins] DROP [FK_Branches_SystemAdmins]
 
 ALTER TABLE [dbo].[Teachers] DROP [FK_Branches_Teachers]

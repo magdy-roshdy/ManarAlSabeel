@@ -46,7 +46,6 @@ namespace ManarAlSabeel.Web.Controllers
 				semesterViewModel.Name = semesterEntity.Name;
 				semesterViewModel.StartDate = semesterEntity.StartDate;
 				semesterViewModel.EndDate = semesterEntity.EndDate;
-				semesterViewModel.IsTheCurrent = semesterEntity.IsTheCurrent;
 			}
 
 			return View(semesterViewModel);
@@ -65,7 +64,6 @@ namespace ManarAlSabeel.Web.Controllers
 				semesterEntity.Name = semesterViewModel.Name;
 				semesterEntity.StartDate = semesterViewModel.StartDate;
 				semesterEntity.EndDate = semesterViewModel.EndDate;
-				semesterEntity.IsTheCurrent = semesterViewModel.IsTheCurrent;
 				semesterEntity.ID = semesterViewModel.ID;
 
 				dbRepository.SaveSemester(semesterEntity);

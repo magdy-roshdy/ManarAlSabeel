@@ -51,24 +51,21 @@ namespace ManarAlSabeel.Domain.Concrete
 			}
 		}
 
-		private ISession Session
+		private ISession getSession()
 		{
-			get
+			ISession _session = SessionFactory.OpenSession();
+			if (!this.ignoreFilters)
 			{
-				ISession _session = SessionFactory.OpenSession();
-				if (!this.ignoreFilters)
-				{
-					setSexFilter(_session);
-					setBranchFilter(_session);
-				}
-				return _session;
+				setSexFilter(_session);
+				setBranchFilter(_session);
 			}
+			return _session;
 		}
 
 		public IQueryable<StudentGuardian> GetAllStudentGuardians()
 		{
 			var guardians = (from guardian
-			in Session.Query<StudentGuardian>()
+			in getSession().Query<StudentGuardian>()
 							 select guardian);
 
 			return guardians;
@@ -77,7 +74,7 @@ namespace ManarAlSabeel.Domain.Concrete
 		public IQueryable<Student> GetAllStudents()
 		{
 			var students = (from student
-			in Session.Query<Student>()
+			in getSession().Query<Student>()
 						select student);
 
 			return students;
@@ -89,7 +86,7 @@ namespace ManarAlSabeel.Domain.Concrete
 			if (student.ID > 0) //edit
 			{
 				new_id = student.ID;
-				using (ISession session = Session)
+				using (ISession session = getSession())
 				{
 					using (ITransaction transaction = session.BeginTransaction())
 					{
@@ -128,7 +125,7 @@ namespace ManarAlSabeel.Domain.Concrete
 			}
 			else //new
 			{
-				using (ISession session = Session)
+				using (ISession session = getSession())
 				{
 					using (ITransaction transaction = session.BeginTransaction())
 					{
@@ -165,7 +162,7 @@ namespace ManarAlSabeel.Domain.Concrete
 			if (studentGuardian.ID > 0) //edit
 			{
 				new_id = studentGuardian.ID;
-				using (ISession session = Session)
+				using (ISession session = getSession())
 				{
 					using (ITransaction transaction = session.BeginTransaction())
 					{
@@ -190,7 +187,7 @@ namespace ManarAlSabeel.Domain.Concrete
 			}
 			else //new
 			{
-				using (ISession session = Session)
+				using (ISession session = getSession())
 				{
 					using (ITransaction transaction = session.BeginTransaction())
 					{
@@ -210,7 +207,7 @@ namespace ManarAlSabeel.Domain.Concrete
 
 		public bool DeleteStudent(int studentId)
 		{
-			using (ISession session = Session)
+			using (ISession session = getSession())
 			{
 				using (ITransaction transaction = session.BeginTransaction())
 				{
@@ -231,7 +228,7 @@ namespace ManarAlSabeel.Domain.Concrete
 
 		public bool DeleteStudentGuardian(int studentGuardianId)
 		{
-			using (ISession session = Session)
+			using (ISession session = getSession())
 			{
 				using (ITransaction transaction = session.BeginTransaction())
 				{
@@ -253,7 +250,7 @@ namespace ManarAlSabeel.Domain.Concrete
 		public IQueryable<Country> GetAllCountries()
 		{
 			var countries = (from country
-			in Session.Query<Country>()
+			in getSession().Query<Country>()
 							select country);
 
 			return countries;
@@ -262,7 +259,7 @@ namespace ManarAlSabeel.Domain.Concrete
 		public IQueryable<Teacher> GetAllTeachers()
 		{
 			var teachers = (from teacher
-			in Session.Query<Teacher>()
+			in getSession().Query<Teacher>()
 							select teacher);
 
 			return teachers;
@@ -274,7 +271,7 @@ namespace ManarAlSabeel.Domain.Concrete
 			if (teacher.ID > 0) //edit
 			{
 				new_id = teacher.ID;
-				using (ISession session = Session)
+				using (ISession session = getSession())
 				{
 					using (ITransaction transaction = session.BeginTransaction())
 					{
@@ -305,7 +302,7 @@ namespace ManarAlSabeel.Domain.Concrete
 			}
 			else //new
 			{
-				using (ISession session = Session)
+				using (ISession session = getSession())
 				{
 					using (ITransaction transaction = session.BeginTransaction())
 					{
@@ -328,7 +325,7 @@ namespace ManarAlSabeel.Domain.Concrete
 
 		public bool DeleteTeacher(int teacherId)
 		{
-			using (ISession session = Session)
+			using (ISession session = getSession())
 			{
 				using (ITransaction transaction = session.BeginTransaction())
 				{
@@ -349,12 +346,12 @@ namespace ManarAlSabeel.Domain.Concrete
 
 		public SystemAdmin AuthenticateSystemAdmin(string email, string password)
 		{
-			return Session.Query<SystemAdmin>().Where(x => x.Email == email && x.Password == password).FirstOrDefault();
+			return getSession().Query<SystemAdmin>().Where(x => x.Email == email && x.Password == password).FirstOrDefault();
 		}
 
 		public SystemAdmin GetSystemAdminByEmail(string email)
 		{
-			return Session.Query<SystemAdmin>().Where(x => x.Email == email).FirstOrDefault();
+			return getSession().Query<SystemAdmin>().Where(x => x.Email == email).FirstOrDefault();
 		}
 
 		private bool ignoreFilters = false;
@@ -367,9 +364,9 @@ namespace ManarAlSabeel.Domain.Concrete
 		public IQueryable<Semester> GetAllSemesters(bool orderByStartDate = true)
 		{
 			if(orderByStartDate)
-				return Session.Query<Semester>().OrderByDescending(x => x.StartDate);
+				return getSession().Query<Semester>().OrderByDescending(x => x.StartDate);
 			else
-				return Session.Query<Semester>();
+				return getSession().Query<Semester>();
 		}
 
 
@@ -379,7 +376,7 @@ namespace ManarAlSabeel.Domain.Concrete
 			if (semester.ID > 0) //edit
 			{
 				new_id = semester.ID;
-				using (ISession session = Session)
+				using (ISession session = getSession())
 				{
 					using (ITransaction transaction = session.BeginTransaction())
 					{
@@ -399,7 +396,7 @@ namespace ManarAlSabeel.Domain.Concrete
 			}
 			else //new
 			{
-				using (ISession session = Session)
+				using (ISession session = getSession())
 				{
 					using (ITransaction transaction = session.BeginTransaction())
 					{
@@ -421,7 +418,7 @@ namespace ManarAlSabeel.Domain.Concrete
 
 		public bool DeleteSemeter(int semesterId)
 		{
-			using (ISession session = Session)
+			using (ISession session = getSession())
 			{
 				using (ITransaction transaction = session.BeginTransaction())
 				{
@@ -444,7 +441,7 @@ namespace ManarAlSabeel.Domain.Concrete
 		public IQueryable<Class> GetAllClasses()
 		{
 			var classes = (from calss
-			in Session.Query<Class>()
+			in getSession().Query<Class>()
 							select calss);
 
 			return classes;
@@ -457,7 +454,7 @@ namespace ManarAlSabeel.Domain.Concrete
 			if (aClass.ID > 0) //edit
 			{
 				new_id = aClass.ID;
-				using (ISession session = Session)
+				using (ISession session = getSession())
 				{
 					using (ITransaction transaction = session.BeginTransaction())
 					{
@@ -479,7 +476,7 @@ namespace ManarAlSabeel.Domain.Concrete
 			}
 			else //new
 			{
-				using (ISession session = Session)
+				using (ISession session = getSession())
 				{
 					using (ITransaction transaction = session.BeginTransaction())
 					{
@@ -503,7 +500,7 @@ namespace ManarAlSabeel.Domain.Concrete
 
 		public bool DeleteClass(int classId)
 		{
-			using (ISession session = Session)
+			using (ISession session = getSession())
 			{
 				using (ITransaction transaction = session.BeginTransaction())
 				{
@@ -520,6 +517,24 @@ namespace ManarAlSabeel.Domain.Concrete
 			}
 
 			return false;
+		}
+
+
+		public IQueryable<Track> GetAllTracks()
+		{
+			return getSession().Query<Track>();
+		}
+
+
+		public IQueryable<RegisteredStudent> GetAllRegisteredStudents()
+		{
+			IQueryable<RegisteredStudent> x = getSession().Query<RegisteredStudent>();
+
+			IList<RegisteredStudent> s = x.ToList();
+
+			var xyz = getSession().CreateCriteria<RegisteredStudent>().List().Count;
+
+			return x;
 		}
 	}
 }
