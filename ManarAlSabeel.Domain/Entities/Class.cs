@@ -15,5 +15,7 @@ namespace ManarAlSabeel.Domain.Entities
 		public virtual Semester Semester { get; set; }
 		public virtual Branch Branch { get; set; }
 		public virtual Teacher Teacher { get; set; }
+
+		public virtual IList<RegisteredStudent> RegisteredStudents { get; set; }
 	}
 }

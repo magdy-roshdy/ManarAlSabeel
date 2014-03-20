@@ -8,16 +8,17 @@ using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using System.Globalization;
+using ManarAlSabeel.Domain.Entities;
 
 namespace ManarAlSabeel.Web.Controllers
 {
 	[Authorize]
     public class HomeController : Controller
     {
-		private ICenterRepository repository;
+		private ICenterRepository dbRepository;
 		public HomeController(ICenterRepository repo)
 		{
-			repository = repo;
+			dbRepository = repo;
 		}
 
 		[ForbiddenRedirectAuthorizeAttribute]
@@ -26,7 +27,11 @@ namespace ManarAlSabeel.Web.Controllers
 			//TODO
 			//switch to female culture in Females section based on Profile parameter
 			//Thread.CurrentThread.CurrentUICulture = new CultureInfo("ar-LB");
-			return View();
+
+			List<Semester> semesters = dbRepository.GetAllSemesters().ToList();
+			Semester current = semesters.FirstOrDefault(x => x.IsTheCurrent);
+
+			return View(current);
 		}
     }
 }

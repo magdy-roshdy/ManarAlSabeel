@@ -189,4 +189,10 @@
   <data name="ClassNameIsRequired" xml:space="preserve">
     <value>من فضلك أدخل اسم الفصل الدراسي</value>
   </data>
+  <data name="NoStudentsInTheClass" xml:space="preserve">
+    <value>لا يوجد طلاب بالفصل الدراسي</value>
+  </data>
+  <data name="ThereIsNoCurrentSemester" xml:space="preserve">
+    <value>لا يوجد دورة حالية في الوقت الحالي بالمركز</value>
+  </data>
 </root>

@@ -354,6 +354,9 @@
   <data name="StudentManagement" xml:space="preserve">
     <value>الطلاب</value>
   </data>
+  <data name="Students" xml:space="preserve">
+    <value>طلاب</value>
+  </data>
   <data name="StudyStages" xml:space="preserve">
     <value>مراحل الدراسة</value>
   </data>

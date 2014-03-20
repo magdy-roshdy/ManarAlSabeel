@@ -1,7 +1,99 @@
-﻿@{
+﻿@model ManarAlSabeel.Domain.Entities.Semester
+@{
 	ViewBag.Title = ManarAlSabeel.Web.Heplers.Helpers.GetPageTitle("");
 }
+<br /><br />
+<style type="text/css">
+	.class-panel {
+		float: right;
+		width: 260px;
+		margin: 6px;
+		min-height: 155px;
+	}
 
-<h1>
-	مرحبا ، اختر من القائمة العلوية
-</h1>
+	.class-panel-heading {
+		font-weight: bold;
+	}
+
+	.no-students {
+		font-style: italic;
+		color: #CC4836;
+	}
+
+	.track-name-heading {
+		margin-bottom: 1px;
+		font-family: Arial;
+		font-size: 12pt;
+		font-weight: bold;
+	}
+
+	.devider {
+		background: #C1BCB9;
+		height: 1px;
+		margin-bottom: 1px;
+		margin-top: 1px;
+	}
+
+	.students-count {
+		text-align: left;
+		height: 3px;
+		margin-bottom: 10px;
+		font-style: italic;
+		font-size: 10pt;
+	}
+
+	.semester-name {
+		color: #033633;;
+	}
+</style>
+<div class="panel panel-default">
+	<div class="panel-body">
+		@if (Model == null)
+		{
+			<div>
+				<h2>
+					@Messages.ThereIsNoCurrentSemester
+				</h2>
+			</div>
+		}
+		else
+		{
+			<div>
+				<h2 class="semester-name">@Model.Name</h2>
+			</div>
+			<div>
+				@foreach (ManarAlSabeel.Domain.Entities.Class _class in Model.Classes.OrderBy(x => x.TeachingPeriod))
+				{
+					<div class="panel panel-default class-panel">
+						<div class="panel-heading class-panel-heading">
+							@string.Format("{0} ({1})", _class.Name, ManarAlSabeel.Web.Heplers.Helpers.GetClassPeriodCaption(_class.TeachingPeriod))
+						</div>
+						<div class="panel-body">
+							@if (_class.RegisteredStudents.Count > 0)
+							{
+								var studentsTrackGroups = _class.RegisteredStudents.GroupBy(x => x.Track);
+
+								foreach (var group in studentsTrackGroups)
+								{
+									<div class="track-name-heading">
+										@group.Key.Name
+									</div>
+									<div class="devider">&nbsp;</div>
+									<div class="students-count">
+										@string.Format("{0} {1}", @group.Count(), StringTable.Students)
+									</div>
+								}
+							}
+							else
+							{
+								<div class="no-students">
+									@Messages.NoStudentsInTheClass
+								</div>
+							}
+						</div>
+					</div>
+				}
+			</div>
+		}
+	</div>
+</div>

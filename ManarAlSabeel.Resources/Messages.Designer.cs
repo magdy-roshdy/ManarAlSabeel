@@ -178,6 +178,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to لا يوجد طلاب بالفصل الدراسي.
+        /// </summary>
+        public static string NoStudentsInTheClass {
+            get {
+                return ResourceManager.GetString("NoStudentsInTheClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تمت عملية انشاء الدورة العلمية بنجاح.
         /// </summary>
         public static string SemesterCreatedSuccessfully {
@@ -273,6 +282,15 @@ namespace ManarAlSabeel.Resources {
         public static string TeacherDeletedSuccessfully {
             get {
                 return ResourceManager.GetString("TeacherDeletedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لا يوجد دورة حالية في الوقت الحالي بالمركز.
+        /// </summary>
+        public static string ThereIsNoCurrentSemester {
+            get {
+                return ResourceManager.GetString("ThereIsNoCurrentSemester", resourceCulture);
             }
         }
     }

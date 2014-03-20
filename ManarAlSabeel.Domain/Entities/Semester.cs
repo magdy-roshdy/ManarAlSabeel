@@ -30,7 +30,18 @@ namespace ManarAlSabeel.Domain.Entities
 		{
 			get
 			{
-				return false;
+				int startDateCompare = DateTime.Compare(this.StartDate, DateTime.Now);
+				int endtDateCompare = DateTime.Compare(DateTime.Now, this.EndDate);
+				if ((startDateCompare == 0 || startDateCompare < 0)
+					&& endtDateCompare == 0 || endtDateCompare < 0)
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+				
 			}
 		}
 

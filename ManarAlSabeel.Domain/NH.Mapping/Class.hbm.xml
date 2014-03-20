@@ -18,8 +18,12 @@
 		<many-to-one name="Branch" class="Branch"
 								 column="ClassBranchID" />
 
+		<bag name="RegisteredStudents">
+			<key column="RegisteredStudentsClassID" />
+			<one-to-many class="RegisteredStudent"/>
+		</bag>
+
 		<filter name="sexFilter" condition=":sex = ClassSex" />
-		<!-- branchId already exists in class's Semester, but i added it to apply NH filter -->
 		<filter name="branchFilter" condition=":branch = ClassBranchID" />
 	</class>
 </hibernate-mapping>

@@ -150,6 +150,7 @@
     <Compile Include="Models\ClassEditViewModel.cs" />
     <Compile Include="Models\ClassesListViewModel.cs" />
     <Compile Include="Models\EditStudentViewModel.cs" />
+    <Compile Include="Models\HomeDashbaordViewModel.cs" />
     <Compile Include="Models\RegisteredStudentListViewModel.cs" />
     <Compile Include="Models\TeacherEditViewModel.cs" />
     <Compile Include="Models\PagingInfo.cs" />
