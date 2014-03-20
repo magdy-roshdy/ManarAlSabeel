@@ -78,6 +78,7 @@ ALTER TABLE [dbo].[StudentStageChangeLogs] DROP [FK_Stages_StudentStageChangeLog
 
 ALTER TABLE [dbo].[TeacherAbsenceLogs] DROP [FK_Teachers_TeacherAbsenceLogs]
 GO
+
 --tables drop
 
 DROP TABLE [dbo].[TeacherAbsenceLogs]

@@ -177,9 +177,6 @@ CREATE TABLE [dbo].[Semesters](
 
 GO
 
-ALTER TABLE [dbo].[Semesters] ADD  CONSTRAINT [DF_Semester_SemesterIsActive]  DEFAULT ((0)) FOR [SemesterIsTheCurrent]
-GO
-
 /****** Object:  Table [dbo].[ExamGradeTypes]    Script Date: 2/10/2014 2:29:46 PM ******/
 CREATE TABLE [dbo].[ExamGradeTypes](
 	[GradeID] [int] IDENTITY(1,1) NOT NULL,
