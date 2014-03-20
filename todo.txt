@@ -2,9 +2,8 @@
 * make datePicker and css localization based
 * link NHibernate and Iesi.Collections to thier Github repos
 * convert column "StudentExpectedQuraanFinishTime" into string at DB
-* use special ViewModel at Student edit form so you will use only GuardianId instead of the entire object
-* make IsCurrentSemester date based not DB based, and remove the column from DB table
-* Remove BranchID from class table, the branch is already in class's semester
 
 - add Custom Profile Provider to hold user's data
 - add Branch_ID to Guardians table
+- use special ViewModel at Student edit form so you will use only GuardianId instead of the entire object
+- make IsCurrentSemester date based not DB based, and remove the column from DB table
