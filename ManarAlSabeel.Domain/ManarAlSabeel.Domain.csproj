@@ -34,6 +34,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\Iesi.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="NHibernate, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -103,10 +107,6 @@
     <EmbeddedResource Include="NH.Mapping\StudentGuardian.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\NHibernate_source.code\NHibernate.csproj">
-      <Project>{5909bfe7-93cf-4e5f-be22-6293368af01d}</Project>
-      <Name>NHibernate</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ManarAlSabeel.Resources\ManarAlSabeel.Resources.csproj">
       <Project>{4c3079c8-df5a-4b9f-b29d-092c8f58f093}</Project>
       <Name>ManarAlSabeel.Resources</Name>

@@ -178,6 +178,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to لا يوجد فصول دراسة في الدورة الحالية.
+        /// </summary>
+        public static string NoClassesInCurrentSemester {
+            get {
+                return ResourceManager.GetString("NoClassesInCurrentSemester", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to لا يوجد طلاب بالفصل الدراسي.
         /// </summary>
         public static string NoStudentsInTheClass {

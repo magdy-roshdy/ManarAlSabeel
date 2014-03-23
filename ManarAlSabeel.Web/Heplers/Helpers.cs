@@ -164,5 +164,10 @@ namespace ManarAlSabeel.Web.Heplers
 
 			return new BranchViewModel { ID = branch.ID, Name = branch.Name };
 		}
+
+		public static Sex? GetProfileSex()
+		{
+			return ((Sex)HttpContext.Current.Profile["SexFilter"]) as Sex?;
+		}
 	}
 }

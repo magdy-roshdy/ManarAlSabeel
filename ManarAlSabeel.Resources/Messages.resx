@@ -195,4 +195,7 @@
   <data name="ThereIsNoCurrentSemester" xml:space="preserve">
     <value>لا يوجد دورة حالية في الوقت الحالي بالمركز</value>
   </data>
+  <data name="NoClassesInCurrentSemester" xml:space="preserve">
+    <value>لا يوجد فصول دراسة في الدورة الحالية</value>
+  </data>
 </root>
