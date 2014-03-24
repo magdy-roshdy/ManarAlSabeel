@@ -1,6 +1,7 @@
 ﻿using ManarAlSabeel.Domain.Abstract;
 using ManarAlSabeel.Domain.Entities;
 using ManarAlSabeel.Resources;
+using ManarAlSabeel.Web.Heplers;
 using ManarAlSabeel.Web.Infrastructure;
 using ManarAlSabeel.Web.Models;
 using System;
@@ -59,7 +60,7 @@ namespace ManarAlSabeel.Web.Controllers
 				Semester semesterEntity = new Semester();
 				//enforce profile values over form values
 				semesterEntity.Branch = new Branch();
-				semesterEntity.Branch.ID = ((Branch)HttpContext.Profile["BranchFilter"]).ID;
+				semesterEntity.Branch.ID = Helpers.GetProfileBranch().ID;
 
 				semesterEntity.Name = semesterViewModel.Name;
 				semesterEntity.StartDate = semesterViewModel.StartDate;

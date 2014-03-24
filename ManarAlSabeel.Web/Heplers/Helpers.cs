@@ -13,7 +13,7 @@ namespace ManarAlSabeel.Web.Heplers
 	{
 		public static string GetPageTitle(string pageTitle)
 		{
-			Branch currentBranch = HttpContext.Current.Profile["BranchFilter"] as Branch;
+			Branch currentBranch = Helpers.GetProfileBranch();
 			if (currentBranch != null)
 			{
 				return string.Format("{0} - {1}", currentBranch.Center.Name, pageTitle);
@@ -102,24 +102,23 @@ namespace ManarAlSabeel.Web.Heplers
 
 		public static string GetBranchCenterHeaderString()
 		{
-			Branch currentBranch = HttpContext.Current.Profile["BranchFilter"] as Branch;
+			Branch currentBranch = Helpers.GetProfileBranch();
 			if (currentBranch != null)
 			{
-				int? sexFilter = HttpContext.Current.Profile["SexFilter"] as int?;
+				Sex? sexFilter = Helpers.GetProfileSex();
 				return string.Format("{0} - {1} ({2})",
 					currentBranch.Center.Name,
 					currentBranch.Name,
-					sexFilter.HasValue ? GetSexCaption(sexFilter.Value) : string.Empty
+					sexFilter.HasValue ? Helpers.GetPluralSexCaption(sexFilter.Value) : string.Empty
 					);
 			}
 
 			return StringTable.ManarAlSabeel;
 		}
 
-		public static string GetSexCaption(int sexCode)
+		public static string GetPluralSexCaption(Sex sexCode)
 		{
-			Sex sex = (Sex)sexCode;
-			return (sex == Sex.Male) ? StringTable.Males : StringTable.Females ;
+			return (sexCode == Sex.Male) ? StringTable.Males : StringTable.Females;
 		}
 
 		public static string GetMaritalStatusCaption(MaritalStatus status)
@@ -167,7 +166,14 @@ namespace ManarAlSabeel.Web.Heplers
 
 		public static Sex? GetProfileSex()
 		{
-			return ((Sex)HttpContext.Current.Profile["SexFilter"]) as Sex?;
+			SystemAdmin admin = HttpContext.Current.Profile["SystemAdmin"] as SystemAdmin;
+			return (admin == null) ? null : admin.SexToManage;
+		}
+
+		public static Branch GetProfileBranch()
+		{
+			SystemAdmin admin = HttpContext.Current.Profile["SystemAdmin"] as SystemAdmin;
+			return (admin == null) ? null : admin.Branch;
 		}
 	}
 }

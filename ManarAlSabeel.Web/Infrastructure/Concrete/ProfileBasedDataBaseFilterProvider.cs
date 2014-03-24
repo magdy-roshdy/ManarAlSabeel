@@ -1,5 +1,6 @@
 ﻿using ManarAlSabeel.Domain.Abstract;
 using ManarAlSabeel.Domain.Entities;
+using ManarAlSabeel.Web.Heplers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,16 +10,13 @@ namespace ManarAlSabeel.Web.Infrastructure.Concrete
 {
 	public class ProfileBasedDataBaseFilterProvider : IDataBaseFiltersProvider
 	{
-		const string SEX_FILTER_NAME = "SexFilter";
-		const string BRANCH_FILTER_NAME = "BranchFilter";
-
 		public int? GetSexFilter()
 		{
 			try
 			{
-				if (HttpContext.Current.Profile[SEX_FILTER_NAME] != null)
+				if (Helpers.GetProfileSex() != null)
 				{
-					return (int)HttpContext.Current.Profile[SEX_FILTER_NAME];
+					return (int)Helpers.GetProfileSex();
 				}
 			}
 			catch { }
@@ -31,9 +29,9 @@ namespace ManarAlSabeel.Web.Infrastructure.Concrete
 		{
 			try
 			{
-				if (HttpContext.Current.Profile[BRANCH_FILTER_NAME] != null)
+				if (Helpers.GetProfileBranch() != null)
 				{
-					return HttpContext.Current.Profile[BRANCH_FILTER_NAME] as Branch;
+					return Helpers.GetProfileBranch();
 				}
 			}
 			catch { }

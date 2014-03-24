@@ -1,6 +1,7 @@
 ﻿using ManarAlSabeel.Domain.Abstract;
 using ManarAlSabeel.Domain.Entities;
 using ManarAlSabeel.Resources;
+using ManarAlSabeel.Web.Heplers;
 using ManarAlSabeel.Web.Infrastructure;
 using ManarAlSabeel.Web.Models;
 using System;
@@ -71,7 +72,7 @@ namespace ManarAlSabeel.Web.Controllers
 				StudentGuardian studentGuardianEntity = new StudentGuardian();
 				//enforce profile values over form values
 				studentGuardianEntity.Branch = new Branch();
-				studentGuardianEntity.Branch.ID = ((Branch)HttpContext.Profile["BranchFilter"]).ID;
+				studentGuardianEntity.Branch.ID = Helpers.GetProfileBranch().ID;
 
 				studentGuardianEntity.ID = studentGuardianViewModel.ID;
 				studentGuardianEntity.Name = studentGuardianViewModel.Name;

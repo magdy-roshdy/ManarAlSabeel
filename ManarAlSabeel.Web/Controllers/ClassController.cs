@@ -1,6 +1,7 @@
 ﻿using ManarAlSabeel.Domain.Abstract;
 using ManarAlSabeel.Domain.Entities;
 using ManarAlSabeel.Resources;
+using ManarAlSabeel.Web.Heplers;
 using ManarAlSabeel.Web.Infrastructure;
 using ManarAlSabeel.Web.Models;
 using System;
@@ -81,8 +82,8 @@ namespace ManarAlSabeel.Web.Controllers
 				classEntity.Semester = new Semester { ID = aClass.SemesterID };
 				classEntity.TeachingPeriod = aClass.TeachingPeriod;
 
-				classEntity.Branch = new Branch { ID = ((Branch)HttpContext.Profile["BranchFilter"]).ID };
-				classEntity.Sex = (Sex)HttpContext.Profile["SexFilter"];
+				classEntity.Branch = new Branch { ID = Helpers.GetProfileBranch().ID };
+				classEntity.Sex = Helpers.GetProfileSex().Value;
 
 				dbRepository.SaveClass(classEntity);
 				TempData["message"] = newsClass ? Messages.ClassCreatedSuccessfully : Messages.EditedClassInfoSuccessful;
@@ -102,9 +103,9 @@ namespace ManarAlSabeel.Web.Controllers
 								{
 									Teachers = dbRepository.GetAllTeachers(),
 									Semesters = dbRepository.GetAllSemesters(),
-									Sex = (Sex)HttpContext.Profile["SexFilter"]
+									Sex = Helpers.GetProfileSex().Value
 								}
-								);
+					);
 		}
 
 		[HttpPost]

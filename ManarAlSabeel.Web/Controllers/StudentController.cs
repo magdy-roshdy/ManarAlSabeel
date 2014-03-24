@@ -1,6 +1,7 @@
 ﻿using ManarAlSabeel.Domain.Abstract;
 using ManarAlSabeel.Domain.Entities;
 using ManarAlSabeel.Resources;
+using ManarAlSabeel.Web.Heplers;
 using ManarAlSabeel.Web.Infrastructure;
 using ManarAlSabeel.Web.Models;
 using System;
@@ -96,9 +97,9 @@ namespace ManarAlSabeel.Web.Controllers
 			{
 				Student studentEntity = new Student();
 				//enforce profile values over form values
-				studentEntity.Sex = (Sex)HttpContext.Profile["SexFilter"];
+				studentEntity.Sex = Helpers.GetProfileSex().Value;
 				studentEntity.Branch = new Branch();
-				studentEntity.Branch.ID = ((Branch)HttpContext.Profile["BranchFilter"]).ID;
+				studentEntity.Branch.ID = Helpers.GetProfileBranch().ID;
 
 				studentEntity.ID = studentViewModel.ID;
 				
@@ -146,7 +147,7 @@ namespace ManarAlSabeel.Web.Controllers
 			return View("Edit", new Models.EditStudentViewModel
 			{
 				BirthDate = DateTime.Now.Subtract(new TimeSpan(365 * 15, 0, 0, 0)),
-				Sex = (Sex)HttpContext.Profile["SexFilter"],
+				Sex = Helpers.GetProfileSex().Value,
 				Countries = dbRepository.GetAllCountries(),
 				Guardians = dbRepository.GetAllStudentGuardians()
 			});

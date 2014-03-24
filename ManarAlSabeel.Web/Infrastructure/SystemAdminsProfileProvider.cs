@@ -16,7 +16,7 @@ namespace ManarAlSabeel.Web.Infrastructure
 		[Inject]
 		public ICenterRepository DBRepository { get; set; }
 
-		private IDictionary<string, IDictionary<string, object>> dataCache = new Dictionary<string, IDictionary<string, object>>();
+		private IDictionary<string, IDictionary<string, object>> profilePropertiesCache = new Dictionary<string, IDictionary<string, object>>();
 		public override SettingsPropertyValueCollection GetPropertyValues(SettingsContext context, SettingsPropertyCollection collection)
 		{
 			SettingsPropertyValueCollection result = new SettingsPropertyValueCollection();
@@ -36,22 +36,22 @@ namespace ManarAlSabeel.Web.Infrastructure
 			if (!string.IsNullOrEmpty(userName) && isAuthenticated.Value)
 			{
 				IDictionary<string, object> userData;
-				bool dataExistInCache = dataCache.TryGetValue(userName, out userData);
+				bool dataExistInCache = profilePropertiesCache.TryGetValue(userName, out userData);
 				if (!dataExistInCache)
 				{
 					//very critical!
+					//--------------
 					//profile provider rely on DB to person profile, and DB session rely on profile provider to load filters values
 					//if i will make a DB call from the profile provider i have to switch filter off before the calla and set it back off after
 					DBRepository.SetFilterIgnore(true);
 					SystemAdmin admin = DBRepository.GetSystemAdminByEmail(userName);
 					DBRepository.SetFilterIgnore(false);
 					
-					Dictionary<string, object> filters = new Dictionary<string, object>();
-					filters.Add("BranchFilter", admin.Branch);
-					filters.Add("SexFilter", (int)admin.SexToManage.Value);
-					dataCache.Add(admin.Email, filters);
+					Dictionary<string, object> profileProperties = new Dictionary<string, object>();
+					profileProperties.Add("SystemAdmin", admin);
+					profilePropertiesCache.Add(admin.Email, profileProperties);
 
-					dataExistInCache = dataCache.TryGetValue(userName, out userData);
+					dataExistInCache = profilePropertiesCache.TryGetValue(userName, out userData);
 				}
 
 				if(dataExistInCache)
