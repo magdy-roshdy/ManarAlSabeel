@@ -6,11 +6,7 @@
 	
 	ViewBag.Title = ManarAlSabeel.Web.Heplers.Helpers.GetPageTitle(@StringTable.EditStudentInfo);
 
-	ManarAlSabeel.Web.Models.BranchViewModel _branch = (Helpers.GetProfileBranch() != null)
-		?
-		ManarAlSabeel.Web.Heplers.Helpers.ConvertToBranchViewModel(Helpers.GetProfileBranch() as Branch)
-		:
-		new ManarAlSabeel.Web.Models.BranchViewModel { ID = Model.BranchID, Name = Model.BranchName };
+	ManarAlSabeel.Web.Models.BranchViewModel _branch = Helpers.GetBranchViewModel(Model.BranchID, Model.BranchName);
 }
 
 <h2>@StringTable.EditStudentInfo</h2>

@@ -175,5 +175,16 @@ namespace ManarAlSabeel.Web.Heplers
 			SystemAdmin admin = HttpContext.Current.Profile["SystemAdmin"] as SystemAdmin;
 			return (admin == null) ? null : admin.Branch;
 		}
+
+		public static BranchViewModel GetBranchViewModel(int? id, string name)
+		{
+			if (Helpers.GetProfileBranch() != null)
+				return ConvertToBranchViewModel(Helpers.GetProfileBranch());
+			else
+				if (id.HasValue && !string.IsNullOrEmpty(name))
+					return new BranchViewModel { ID = id.Value, Name = name };
+				else
+					return null;
+		}
 	}
 }

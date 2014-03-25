@@ -1,16 +1,13 @@
 ﻿@model ManarAlSabeel.Web.Models.ClassEditViewModel
 @using ManarAlSabeel.Domain.Entities
 @using ManarAlSabeel.Web.Heplers
+@using ManarAlSabeel.Web.Models
 
 @{
 
-	ViewBag.Title = ManarAlSabeel.Web.Heplers.Helpers.GetPageTitle(@StringTable.EditClass);
+	ViewBag.Title = Helpers.GetPageTitle(@StringTable.EditClass);
 
-	ManarAlSabeel.Web.Models.BranchViewModel _branch = (Helpers.GetProfileBranch() != null)
-		?
-		ManarAlSabeel.Web.Heplers.Helpers.ConvertToBranchViewModel(Helpers.GetProfileBranch() as Branch)
-		:
-		new ManarAlSabeel.Web.Models.BranchViewModel { ID=Model.BranchID, Name=Model.BranchName };
+	BranchViewModel _branch = Helpers.GetBranchViewModel(Model.BranchID, Model.BranchName);
 }
 
 <h2>@StringTable.EditClass</h2>
@@ -31,7 +28,7 @@
 			<div class="form-group">
 				<label>@StringTable.Teacher</label>
 				@Html.DropDownListFor(x => x.TeacherID,
-								@ManarAlSabeel.Web.Heplers.Helpers.TeachersToSelectListItems(Model.Teachers),
+								@Helpers.TeachersToSelectListItems(Model.Teachers),
 					new { @class = "form-control select2" })
 			</div>
 			
