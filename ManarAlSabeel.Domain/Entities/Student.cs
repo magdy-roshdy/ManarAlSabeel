@@ -9,28 +9,13 @@ namespace ManarAlSabeel.Domain.Entities
 {
 	public class Student
 	{
-		[Key]
 		public virtual int ID { get; set; }
-		
-		[Required]
 		public virtual StudentGuardian Guardian { get; set; }
-
-		[Required]
 		public virtual Branch Branch { get; set; }
 
-		[Required(ErrorMessageResourceType = typeof(ManarAlSabeel.Resources.Messages),
-			  ErrorMessageResourceName = "StudentNameRequired")]
 		public virtual string Name { get; set; }
-
-		[Required(ErrorMessageResourceType = typeof(ManarAlSabeel.Resources.Messages),
-			  ErrorMessageResourceName = "StudentBirthdayRequired")]
-		[DataType(DataType.Date)]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
 		public virtual DateTime BirthDate { get; set; }
-
 		public virtual string PersonalPhotoPath { get; set; }
-
-		[Required]
 		public virtual Country OriginalNationality { get; set; }
 		public virtual Country AcquiredNationality { get; set; }
 		public virtual string SchoolName { get; set; }

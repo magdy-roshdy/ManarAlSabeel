@@ -1,19 +1,32 @@
 ﻿using ManarAlSabeel.Domain.Entities;
+using ManarAlSabeel.Resources;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace ManarAlSabeel.Web.Models
 {
-	public class EditStudentViewModel
+	public class StudentEditViewModel
 	{
 		public int ID { get; set; }
+
+		[Required(ErrorMessageResourceType = typeof(Messages),
+			  ErrorMessageResourceName = "StudentNameRequired")]
 		public string  Name { get; set; }
+
+		[Required(ErrorMessageResourceType = typeof(Messages),
+			  ErrorMessageResourceName = "StudentBirthdayRequired")]
+		[DataType(DataType.Date)]
+		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
 		public DateTime BirthDate { get; set; }
+
 		public string PersonalPhotoPath { get; set; }
 
+		[Required(ErrorMessageResourceType = typeof(Messages),
+			  ErrorMessageResourceName = "GuardianIsRequired")]
 		public int GuardianID { get; set; }
 		public string GuardianName { get; set; }
 
@@ -31,7 +44,11 @@ namespace ManarAlSabeel.Web.Models
 		public string EducationStage { get; set; }
 		public string SchoolClass { get; set; }
 		public HowKnewTheCenter HowKnewTheCenter { get; set; }
+
+		[Required(ErrorMessageResourceType = typeof(Messages),
+			  ErrorMessageResourceName = "ExpectedTimeToFinishQuraanRequired")]
 		public int ExpectedQuraanFinishTime { get; set; }
+
 		public bool IsInTransportations { get; set; }
 		public Sex Sex { get; set; }
 		public StudentStatus Status { get; set; }

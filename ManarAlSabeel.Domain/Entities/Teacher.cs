@@ -13,18 +13,10 @@ namespace ManarAlSabeel.Domain.Entities
 		public virtual string Name { get; set; }
 		public virtual Sex Sex { get; set; }
 		public virtual Country Nationality { get; set; }
-
-		[DataType(DataType.Date)]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
 		public virtual DateTime BirthDate { get; set; }
-
 		public virtual Country BirthPlace { get; set; }
 		public virtual MaritalStatus MaritalStatus { get; set; }
-
-		[DataType(DataType.Date)]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
 		public virtual DateTime? MarriageDate { get; set; }
-
 		public virtual string Profession { get; set; }
 		public virtual ReligiousIdeology? ReligiousIdeology { get; set; }
 		public virtual string MobileNumber { get; set; }

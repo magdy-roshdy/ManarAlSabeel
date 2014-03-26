@@ -21,11 +21,15 @@ namespace ManarAlSabeel.Web.Models
 		public string SemesterName { get; set; }
 		public int SemesterID { get; set; }
 
-		public string BranchName { get; set; }
+		[Required(ErrorMessageResourceType = typeof(ManarAlSabeel.Resources.Messages),
+			  ErrorMessageResourceName = "ClassSemesterIsRequired")]
 		public int BranchID { get; set; }
+		public string BranchName { get; set; }
 
-		public string TeacherName { get; set; }
+		[Required(ErrorMessageResourceType = typeof(ManarAlSabeel.Resources.Messages),
+			  ErrorMessageResourceName = "ClassTeacherIsRequired")]
 		public int TeacherID { get; set; }
+		public string TeacherName { get; set; }
 
 		public IQueryable<Teacher> Teachers { get; set; }
 		public IQueryable<Semester> Semesters { get; set; }

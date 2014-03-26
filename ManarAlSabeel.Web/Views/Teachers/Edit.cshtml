@@ -13,7 +13,7 @@
 
 		@using (Html.BeginForm("Edit", "Teachers", FormMethod.Post, new { enctype = "multipart/form-data", role = "form" }))
 		{
-			@Html.ValidationSummary()
+			@Html.ValidationSummary(true)
 
 			<div class="form-group">
 				<label>@StringTable.Name:</label>
@@ -39,6 +39,7 @@
 				@Html.DropDownListFor(x => x.NationalityID,
 					@ManarAlSabeel.Web.Heplers.Helpers.CountriesToSelectListItems(Model.Countries),
 					new { @class = "form-control select2" })
+				@Html.ValidationMessageFor(x => x.NationalityID)
 			</div>
 			
 			<div class="form-group">
@@ -52,6 +53,7 @@
 				@Html.DropDownListFor(x => x.BirthPlaceID,
 					@ManarAlSabeel.Web.Heplers.Helpers.CountriesToSelectListItems(Model.Countries),
 					new { @class = "form-control select2" })
+				@Html.ValidationMessageFor(x => x.BirthPlaceID)
 			</div>
 			
 			<div class="form-group">

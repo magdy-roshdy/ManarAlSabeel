@@ -47,12 +47,12 @@ namespace ManarAlSabeel.Web.Controllers
 		public ViewResult Edit(int id)
 		{
 			Student studentEntity = dbRepository.GetAllStudents().FirstOrDefault<Student>(x => x.ID == id);
-			EditStudentViewModel studentViewModel = null;
+			StudentEditViewModel studentViewModel = null;
 
 			if (studentEntity != null)
 			{
 
-				studentViewModel = new EditStudentViewModel();
+				studentViewModel = new StudentEditViewModel();
 
 				studentViewModel.ID = studentEntity.ID;
 				studentViewModel.Name = studentEntity.Name;
@@ -91,7 +91,7 @@ namespace ManarAlSabeel.Web.Controllers
 		}
 
 		[HttpPost]
-		public ActionResult Edit(EditStudentViewModel studentViewModel)
+		public ActionResult Edit(StudentEditViewModel studentViewModel)
 		{
 			if (ModelState.IsValid)
 			{
@@ -144,7 +144,7 @@ namespace ManarAlSabeel.Web.Controllers
 
 		public ViewResult Create()
 		{
-			return View("Edit", new Models.EditStudentViewModel
+			return View("Edit", new Models.StudentEditViewModel
 			{
 				BirthDate = DateTime.Now.Subtract(new TimeSpan(365 * 15, 0, 0, 0)),
 				Sex = Helpers.GetProfileSex().Value,

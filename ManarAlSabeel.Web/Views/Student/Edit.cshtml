@@ -1,4 +1,4 @@
-﻿@model ManarAlSabeel.Web.Models.EditStudentViewModel
+﻿@model ManarAlSabeel.Web.Models.StudentEditViewModel
 @using ManarAlSabeel.Domain.Entities
 @using ManarAlSabeel.Web.Heplers
 
@@ -85,6 +85,7 @@
 			<div class="form-group">
 				<label>@StringTable.ExpectedPeriodToFinishQuraan</label>
 				@Html.TextBoxFor(x => x.ExpectedQuraanFinishTime, new { @class = "form-control" })
+				@Html.ValidationMessageFor(x => x.ExpectedQuraanFinishTime)
 			</div>
 			
 			<div class="form-group">

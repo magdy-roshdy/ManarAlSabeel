@@ -61,6 +61,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to من فضلك أدخل مقدار حفظ المدرس.
+        /// </summary>
+        public static string AmountOfMemorizationIsRequired {
+            get {
+                return ResourceManager.GetString("AmountOfMemorizationIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تم انشاء فصل التدريس بنجاح.
         /// </summary>
         public static string ClassCreatedSuccessfully {
@@ -84,6 +93,24 @@ namespace ManarAlSabeel.Resources {
         public static string ClassNameIsRequired {
             get {
                 return ResourceManager.GetString("ClassNameIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to من فضلك اختر الدورة العلمية.
+        /// </summary>
+        public static string ClassSemesterIsRequired {
+            get {
+                return ResourceManager.GetString("ClassSemesterIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to من فضلك اختر مدرس الفصل.
+        /// </summary>
+        public static string ClassTeacherIsRequired {
+            get {
+                return ResourceManager.GetString("ClassTeacherIsRequired", resourceCulture);
             }
         }
         
@@ -133,6 +160,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to من أفضلك أدخل الوقت المتوقع لانهاء القرآن.
+        /// </summary>
+        public static string ExpectedTimeToFinishQuraanRequired {
+            get {
+                return ResourceManager.GetString("ExpectedTimeToFinishQuraanRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تمت عملية انشاء ولي الأمر بنجاح.
         /// </summary>
         public static string GuardianCreatedSuccessfully {
@@ -147,6 +183,15 @@ namespace ManarAlSabeel.Resources {
         public static string GuardianDeletedSuccessfully {
             get {
                 return ResourceManager.GetString("GuardianDeletedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to من فضلك اختر ولي أمر الطلب.
+        /// </summary>
+        public static string GuardianIsRequired {
+            get {
+                return ResourceManager.GetString("GuardianIsRequired", resourceCulture);
             }
         }
         
@@ -277,6 +322,24 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to من فضلك أدخل تاريخ ميلاد المدرس.
+        /// </summary>
+        public static string TeacherBirthdateIsRequired {
+            get {
+                return ResourceManager.GetString("TeacherBirthdateIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to من فضلك اختر محل ميلاد المدرس.
+        /// </summary>
+        public static string TeacherBirthPlaceIsRequired {
+            get {
+                return ResourceManager.GetString("TeacherBirthPlaceIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تمت عملية انشاء المدرس بنجاح.
         /// </summary>
         public static string TeacherCreatedSuccessfully {
@@ -291,6 +354,33 @@ namespace ManarAlSabeel.Resources {
         public static string TeacherDeletedSuccessfully {
             get {
                 return ResourceManager.GetString("TeacherDeletedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to من فضلك أدخل رقم جوال المدرس.
+        /// </summary>
+        public static string TeacherMobileNumberIsRequired {
+            get {
+                return ResourceManager.GetString("TeacherMobileNumberIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to من فضلك أدخل اسم المدرس.
+        /// </summary>
+        public static string TeacherNameIsRequired {
+            get {
+                return ResourceManager.GetString("TeacherNameIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to من فضلك اختر الجنسية.
+        /// </summary>
+        public static string TeacherNationalityIsRequired {
+            get {
+                return ResourceManager.GetString("TeacherNationalityIsRequired", resourceCulture);
             }
         }
         

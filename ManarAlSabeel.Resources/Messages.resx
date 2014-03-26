@@ -198,4 +198,34 @@
   <data name="NoClassesInCurrentSemester" xml:space="preserve">
     <value>لا يوجد فصول دراسة في الدورة الحالية</value>
   </data>
+  <data name="ClassSemesterIsRequired" xml:space="preserve">
+    <value>من فضلك اختر الدورة العلمية</value>
+  </data>
+  <data name="ClassTeacherIsRequired" xml:space="preserve">
+    <value>من فضلك اختر مدرس الفصل</value>
+  </data>
+  <data name="ExpectedTimeToFinishQuraanRequired" xml:space="preserve">
+    <value>من أفضلك أدخل الوقت المتوقع لانهاء القرآن</value>
+  </data>
+  <data name="GuardianIsRequired" xml:space="preserve">
+    <value>من فضلك اختر ولي أمر الطلب</value>
+  </data>
+  <data name="AmountOfMemorizationIsRequired" xml:space="preserve">
+    <value>من فضلك أدخل مقدار حفظ المدرس</value>
+  </data>
+  <data name="TeacherBirthdateIsRequired" xml:space="preserve">
+    <value>من فضلك أدخل تاريخ ميلاد المدرس</value>
+  </data>
+  <data name="TeacherBirthPlaceIsRequired" xml:space="preserve">
+    <value>من فضلك اختر محل ميلاد المدرس</value>
+  </data>
+  <data name="TeacherMobileNumberIsRequired" xml:space="preserve">
+    <value>من فضلك أدخل رقم جوال المدرس</value>
+  </data>
+  <data name="TeacherNameIsRequired" xml:space="preserve">
+    <value>من فضلك أدخل اسم المدرس</value>
+  </data>
+  <data name="TeacherNationalityIsRequired" xml:space="preserve">
+    <value>من فضلك اختر الجنسية</value>
+  </data>
 </root>
