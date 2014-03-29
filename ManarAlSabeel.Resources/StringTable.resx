@@ -129,6 +129,9 @@
   <data name="AddClass" xml:space="preserve">
     <value>اضافة فصل</value>
   </data>
+  <data name="AddRegisteredStudent" xml:space="preserve">
+    <value>تسجيل طالب جديد</value>
+  </data>
   <data name="AddSemester" xml:space="preserve">
     <value>اضافة دورة تعليمية</value>
   </data>
@@ -159,6 +162,9 @@
   <data name="ChildrenCount" xml:space="preserve">
     <value>عدد الأبناء</value>
   </data>
+  <data name="Class" xml:space="preserve">
+    <value>الفصل الدراسي</value>
+  </data>
   <data name="Classes" xml:space="preserve">
     <value>فصول التدريس</value>
   </data>
@@ -174,11 +180,17 @@
   <data name="Delete" xml:space="preserve">
     <value>حـذف</value>
   </data>
+  <data name="DeleteRegisteredStudent" xml:space="preserve">
+    <value>حذف تسجيل الطالب</value>
+  </data>
   <data name="Divorced" xml:space="preserve">
     <value>مطلق</value>
   </data>
   <data name="EditClass" xml:space="preserve">
     <value>تعديل بيانات فصل تدريس</value>
+  </data>
+  <data name="EditRegisteredStudent" xml:space="preserve">
+    <value>تعديل بيانات طالب مسجل</value>
   </data>
   <data name="EditSemester" xml:space="preserve">
     <value>تعديل بيانات دورة تعليمية</value>
@@ -309,6 +321,9 @@
   <data name="QuraanMemorizationAmount" xml:space="preserve">
     <value>مقدار الحفظ من القرآن</value>
   </data>
+  <data name="RegisteredStudentsList" xml:space="preserve">
+    <value>قائمة الطلاب المسجلون</value>
+  </data>
   <data name="ReligiousIdeology" xml:space="preserve">
     <value>المذهب الديني</value>
   </data>
@@ -345,6 +360,9 @@
   <data name="Status" xml:space="preserve">
     <value>الحالة</value>
   </data>
+  <data name="Student" xml:space="preserve">
+    <value>الطالب</value>
+  </data>
   <data name="StudentGuardiansList" xml:space="preserve">
     <value>قائمة أولياء الأمور</value>
   </data>
@@ -374,6 +392,9 @@
   </data>
   <data name="TheProfession" xml:space="preserve">
     <value>الوظيفة</value>
+  </data>
+  <data name="Track" xml:space="preserve">
+    <value>الحلقة التدريسية</value>
   </data>
   <data name="Widow" xml:space="preserve">
     <value>أرمل</value>

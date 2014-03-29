@@ -35,6 +35,8 @@ namespace ManarAlSabeel.Domain.Abstract
 		IQueryable<Track> GetAllTracks();
 
 		IQueryable<RegisteredStudent> GetAllRegisteredStudents();
+		int? SaveRegisteredStudent(RegisteredStudent registeredStudent);
+		bool DeleteRegisteredStudent(int registeredStudentId);
 
 		IQueryable<Country> GetAllCountries();
 	}

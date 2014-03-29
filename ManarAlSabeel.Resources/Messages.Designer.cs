@@ -241,6 +241,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تم حذف تسجيل الطالب بنجاح.
+        /// </summary>
+        public static string RegisteredStudentDeletedSuccessfully {
+            get {
+                return ResourceManager.GetString("RegisteredStudentDeletedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تمت عملية انشاء الدورة العلمية بنجاح.
         /// </summary>
         public static string SemesterCreatedSuccessfully {
@@ -318,6 +327,24 @@ namespace ManarAlSabeel.Resources {
         public static string StudentNameRequired {
             get {
                 return ResourceManager.GetString("StudentNameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تم تسجيل الطالب بنجاح.
+        /// </summary>
+        public static string StudentRegisteredSuccesfully {
+            get {
+                return ResourceManager.GetString("StudentRegisteredSuccesfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تم تعديل بيانات تسجيل الطالب بنجاح.
+        /// </summary>
+        public static string StudentRegistrationEditedSuccesfully {
+            get {
+                return ResourceManager.GetString("StudentRegistrationEditedSuccesfully", resourceCulture);
             }
         }
         

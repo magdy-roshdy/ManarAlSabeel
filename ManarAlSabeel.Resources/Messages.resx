@@ -228,4 +228,13 @@
   <data name="TeacherNationalityIsRequired" xml:space="preserve">
     <value>من فضلك اختر الجنسية</value>
   </data>
+  <data name="StudentRegisteredSuccesfully" xml:space="preserve">
+    <value>تم تسجيل الطالب بنجاح</value>
+  </data>
+  <data name="StudentRegistrationEditedSuccesfully" xml:space="preserve">
+    <value>تم تعديل بيانات تسجيل الطالب بنجاح</value>
+  </data>
+  <data name="RegisteredStudentDeletedSuccessfully" xml:space="preserve">
+    <value>تم حذف تسجيل الطالب بنجاح</value>
+  </data>
 </root>

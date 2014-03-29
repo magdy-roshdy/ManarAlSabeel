@@ -6,7 +6,7 @@ using System.Web;
 
 namespace ManarAlSabeel.Web.Models
 {
-	public class RegisteredStudentListViewModel
+	public class RegisteredStudentsListViewModel
 	{
 		public IQueryable<RegisteredStudent> RegisteredStudents { get; set; }
 		public PagingInfo PagingInfo { get; set; }

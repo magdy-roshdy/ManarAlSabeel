@@ -1,0 +1,52 @@
+﻿@model ManarAlSabeel.Web.Models.RegisteredStudentsListViewModel
+@using ManarAlSabeel.Domain.Entities
+
+@{
+	ViewBag.Title = ManarAlSabeel.Web.Heplers.Helpers.GetPageTitle(@StringTable.RegisteredStudentsList);
+}
+
+<h2>@StringTable.RegisteredStudentsList</h2>
+
+<table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>@StringTable.Name</th>
+			<th>@StringTable.Semester</th>
+			<th>@StringTable.Class</th>
+			<th>@StringTable.Track</th>
+			<th></th>
+		</tr>
+	</thead>
+	@foreach (RegisteredStudent registeredStudent in Model.RegisteredStudents)
+	{
+		<tr>
+			<td>
+				@Html.ActionLink(registeredStudent.Student.Name, "Edit", new { registeredStudent.ID })
+			</td>
+			<td>
+				@registeredStudent.Class.Semester.Name
+			</td>
+			<td>
+				@registeredStudent.Class.Name
+			</td>
+			<td>
+				@registeredStudent.Track.Name
+			</td>
+			<td>
+				@using (@Html.BeginForm("Delete", "RegisteredStudent"))
+				{
+					@Html.Hidden("registeredStudentId", registeredStudent.ID)
+					@Html.Hidden("returnUrl", "/")
+					<input class="btn btn-default btn-xs" type="submit"
+						   value="@StringTable.DeleteRegisteredStudent"
+						   onclick="return confirm('@StringTable.AreYouSure');" />
+				}
+			</td>
+		</tr>
+	}
+
+</table>
+
+<ul class="pagination">
+	@Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
+</ul>

@@ -536,5 +536,56 @@ namespace ManarAlSabeel.Domain.Concrete
 
 			return x;
 		}
+
+
+		public int? SaveRegisteredStudent(RegisteredStudent registeredStudent)
+		{
+			using (ISession session = getSession())
+			{
+				using (ITransaction transaction = session.BeginTransaction())
+				{
+					RegisteredStudent registeredStudent_db = (registeredStudent.ID == 0)
+					?
+					new RegisteredStudent { Date = DateTime.Now }
+					:
+					session.Get<RegisteredStudent>(registeredStudent.ID);
+
+					registeredStudent_db.Student = session.Get<Student>(registeredStudent.Student.ID);
+					registeredStudent_db.Track = session.Get<Track>(registeredStudent.Track.ID);
+					registeredStudent_db.Class = session.Get<Class>(registeredStudent.Class.ID);
+					registeredStudent_db.Branch = session.Get<Branch>(registeredStudent.Branch.ID);
+					registeredStudent_db.Sex = registeredStudent.Sex;
+
+					session.SaveOrUpdate(registeredStudent_db);
+					transaction.Commit();
+
+					session.Flush();
+
+					return registeredStudent_db.ID;
+				}
+			}
+		}
+
+
+		public bool DeleteRegisteredStudent(int registeredStudentId)
+		{
+			using (ISession session = getSession())
+			{
+				using (ITransaction transaction = session.BeginTransaction())
+				{
+					RegisteredStudent db_registeredStudent = session.Get<RegisteredStudent>(registeredStudentId);
+					if (db_registeredStudent != null)
+					{
+						session.Delete(db_registeredStudent);
+						transaction.Commit();
+						session.Flush();
+
+						return true;
+					}
+				}
+			}
+
+			return false;
+		}
 	}
 }

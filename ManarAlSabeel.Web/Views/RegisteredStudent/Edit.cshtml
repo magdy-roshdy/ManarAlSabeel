@@ -1,0 +1,60 @@
+﻿@model ManarAlSabeel.Web.Models.RegisteredStudentEditViewModel
+@using ManarAlSabeel.Domain.Entities
+@using ManarAlSabeel.Web.Heplers
+@using ManarAlSabeel.Web.Models
+
+@{
+
+	ViewBag.Title = Helpers.GetPageTitle(@StringTable.EditClass);
+
+	BranchViewModel _branch = Helpers.GetBranchViewModel(Model.BranchID, Model.BranchName);
+}
+
+<h2>@StringTable.EditRegisteredStudent</h2>
+
+<div class="panel panel-default" style="width: 45%; margin: 0 auto;">
+	<div class="panel-body">
+
+		@using (Html.BeginForm("Edit", "RegisteredStudent", FormMethod.Post, new { role = "form" }))
+		{
+			@Html.ValidationSummary(true)
+
+			<div class="form-group">
+				<label>@StringTable.Student</label>
+				@Html.DropDownListFor(x => x.StudentID,
+							@Helpers.StudentsToSelectListItems(Model.Students),
+					new { @class = "form-control select2" })
+				@Html.ValidationMessageFor(x => x.StudentID)
+			</div>
+
+			<div class="form-group">
+				<label>@StringTable.Class</label>
+				@Html.DropDownListFor(x => x.ClassID,
+							@Helpers.ClassesToSelectListItems(Model.Classes),
+					new { @class = "form-control select2" })
+				@Html.ValidationMessageFor(x => x.ClassID)
+			</div>
+
+			<div class="form-group">
+				<label>@StringTable.Track</label>
+				@Html.DropDownListFor(x => x.TrackID,
+							@Helpers.TrackesToSelectListItems(Model.Tracks),
+					new { @class = "form-control select2" })
+				@Html.ValidationMessageFor(x => x.TrackID)
+			</div>
+
+			<div class="form-group">
+				<label>@StringTable.Branch</label>
+				@Html.TextBox("branch", _branch.Name, new { disabled = "disabled", @class = "form-control" })
+				@Html.HiddenFor(x => x.BranchID, new { Value = _branch.ID })
+			</div>
+
+			
+
+			@Html.HiddenFor(x => x.ID)
+
+			<input type="submit" value="@StringTable.Save"
+				   class="btn btn-lg btn-primary btn-block" />
+		}
+	</div>
+</div>

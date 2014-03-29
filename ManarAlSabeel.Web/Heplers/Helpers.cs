@@ -100,6 +100,59 @@ namespace ManarAlSabeel.Web.Heplers
 			return selectListItems;
 		}
 
+		public static List<SelectListItem> StudentsToSelectListItems(IQueryable<Student> students, bool addEmptyItem = false)
+		{
+			List<SelectListItem> selectListItems = new List<SelectListItem>();
+
+			if (addEmptyItem)
+			{
+				selectListItems.Add(new SelectListItem { Text = "", Value = "0" });
+			}
+
+			foreach (Student student in students)
+			{
+				selectListItems.Add(new SelectListItem { Text = student.Name, Value = student.ID.ToString() });
+			}
+
+			return selectListItems;
+		}
+
+		public static List<SelectListItem> ClassesToSelectListItems(IQueryable<Class> classes, bool addEmptyItem = false)
+		{
+			List<SelectListItem> selectListItems = new List<SelectListItem>();
+
+			if (addEmptyItem)
+			{
+				selectListItems.Add(new SelectListItem { Text = "", Value = "0" });
+			}
+
+			foreach (Class _class in classes)
+			{
+				selectListItems.Add(new SelectListItem { Text = _class.Name, Value = _class.ID.ToString() });
+			}
+
+			return selectListItems;
+		}
+
+		public static List<SelectListItem> TrackesToSelectListItems(IQueryable<Track> trackes, bool addEmptyItem = false)
+		{
+			List<SelectListItem> selectListItems = new List<SelectListItem>();
+
+			if (addEmptyItem)
+			{
+				selectListItems.Add(new SelectListItem { Text = "", Value = "0" });
+			}
+
+			foreach (Track track in trackes)
+			{
+				selectListItems.Add(new SelectListItem { Text = track.Name, Value = track.ID.ToString() });
+			}
+
+			return selectListItems;
+		}
+
+		
+
 		public static string GetBranchCenterHeaderString()
 		{
 			Branch currentBranch = Helpers.GetProfileBranch();

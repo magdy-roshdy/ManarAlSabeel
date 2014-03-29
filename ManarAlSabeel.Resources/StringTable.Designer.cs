@@ -97,6 +97,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تسجيل طالب جديد.
+        /// </summary>
+        public static string AddRegisteredStudent {
+            get {
+                return ResourceManager.GetString("AddRegisteredStudent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to اضافة دورة تعليمية.
         /// </summary>
         public static string AddSemester {
@@ -187,6 +196,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to الفصل الدراسي.
+        /// </summary>
+        public static string Class {
+            get {
+                return ResourceManager.GetString("Class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to فصول التدريس.
         /// </summary>
         public static string Classes {
@@ -232,6 +250,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to حذف تسجيل الطالب.
+        /// </summary>
+        public static string DeleteRegisteredStudent {
+            get {
+                return ResourceManager.GetString("DeleteRegisteredStudent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to مطلق.
         /// </summary>
         public static string Divorced {
@@ -246,6 +273,15 @@ namespace ManarAlSabeel.Resources {
         public static string EditClass {
             get {
                 return ResourceManager.GetString("EditClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعديل بيانات طالب مسجل.
+        /// </summary>
+        public static string EditRegisteredStudent {
+            get {
+                return ResourceManager.GetString("EditRegisteredStudent", resourceCulture);
             }
         }
         
@@ -637,6 +673,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to قائمة الطلاب المسجلون.
+        /// </summary>
+        public static string RegisteredStudentsList {
+            get {
+                return ResourceManager.GetString("RegisteredStudentsList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to المذهب الديني.
         /// </summary>
         public static string ReligiousIdeology {
@@ -745,6 +790,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to الطالب.
+        /// </summary>
+        public static string Student {
+            get {
+                return ResourceManager.GetString("Student", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to قائمة أولياء الأمور.
         /// </summary>
         public static string StudentGuardiansList {
@@ -831,6 +885,15 @@ namespace ManarAlSabeel.Resources {
         public static string TheProfession {
             get {
                 return ResourceManager.GetString("TheProfession", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الحلقة التدريسية.
+        /// </summary>
+        public static string Track {
+            get {
+                return ResourceManager.GetString("Track", resourceCulture);
             }
         }
         
