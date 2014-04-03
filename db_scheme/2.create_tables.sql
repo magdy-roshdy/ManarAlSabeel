@@ -337,7 +337,7 @@ CREATE TABLE [dbo].[RegisteredStudents](
 	[RegisteredStudentID] [int] IDENTITY(1,1) NOT NULL,
 	[RegisteredStudentsStudentID] [int] NOT NULL,
 	[RegisteredStudentsClassID] [int] NOT NULL,
-	[RegisteredStudentsTrackID] [int] NOT NULL,
+	[RegisteredStudentsStageID] [int] NOT NULL,
 	[RegisteredStudentsBranchID] [int] NOT NULL,
 	[RegisteredStudentsSex] [tinyint] NOT NULL,
 	[RegisteredStudentsDate] [date] NOT NULL,

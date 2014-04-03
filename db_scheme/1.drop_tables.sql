@@ -40,7 +40,7 @@ ALTER TABLE [dbo].[Students] DROP [FK_StudentGuardians_Students]
 
 ALTER TABLE [dbo].[RegisteredStudents] DROP [FK_Classes_RegisteredStudents]
 ALTER TABLE [dbo].[RegisteredStudents] DROP [FK_Students_RegisteredStudents]
-ALTER TABLE [dbo].[RegisteredStudents] DROP [FK_Tracks_RegisteredStudents]
+ALTER TABLE [dbo].[RegisteredStudents] DROP [FK_Stages_RegisteredStudents]
 
 ALTER TABLE [dbo].[AdmissionInterviews] DROP [FK_Students_AdmissionInterviews]
 

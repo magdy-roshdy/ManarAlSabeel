@@ -1,6 +1,8 @@
 USE [manar_al_sabeel]
 GO
 
+DECLARE @uae_id int;
+
 INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«›€«‰” «‰')
 INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·»«‰Ì«')
 INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·Ã“«∆—')
@@ -180,6 +182,8 @@ INSERT INTO [dbo].[Countries] ([CountryName]) VALUES (' Ê›«·Ê')
 INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«Ê€‰œ«')
 INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«Êﬂ—«‰Ì«')
 INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·«„«—«  «·⁄—»Ì… «·„ Õœ…')
+SET @uae_id = @@IDENTITY;
+
 INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·„„·ﬂ… «·„ Õœ…')
 INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·Ê·«Ì«  «·„ Õœ… «·«„—ÌﬂÌ…')
 INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«Ê—€Ê«Ì')
@@ -192,17 +196,248 @@ INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«·Ì„‰')
 INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('“«„»Ì«')
 INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('“Ì„»«»ÊÏ')
 
-GO
 
 INSERT INTO [dbo].[Managers] ([ManagerName]) VALUES ('«·‘ÌŒ „‰Â«Ã «»‰ ”⁄œ')
-GO
+DECLARE @manager_id int;
+SET @manager_id = @@IDENTITY
 
-INSERT INTO [dbo].[Centers] ([CenterName], [CenterManagerID]) VALUES ('„—ﬂ“ „‰«— «·”»Ì·', 1)
-GO
+INSERT INTO [dbo].[Centers] ([CenterName], [CenterManagerID]) VALUES ('„—ﬂ“ „‰«— «·”»Ì·', @manager_id)
+DECLARE @center_id int;
+SET @center_id = @@IDENTITY
 
-INSERT INTO [dbo].[Branches] ([BranchName], [BranchCenterID], [BranchManagerID]) VALUES ('«·›—⁄ «·—∆Ì”Ì', 1, 1)
-GO
+INSERT INTO [dbo].[Branches] ([BranchName], [BranchCenterID], [BranchManagerID]) VALUES ('«·›—⁄ «·—∆Ì”Ì', @center_id, @manager_id)
+DECLARE @branch_id int;
+SET @branch_id = @@IDENTITY
 
-INSERT INTO [dbo].[Tracks] ([TrackBranchID], [TrackName]) VALUES (1, '«·œÊ—… «· √”Ì”…')
-INSERT INTO [dbo].[Tracks] ([TrackBranchID], [TrackName]) VALUES (1, 'œ—Ê…«· Õ›ÌŸ')
-GO
+INSERT INTO [dbo].[Tracks] ([TrackBranchID], [TrackName]) VALUES (@branch_id, '«·œÊ—… «· √”Ì”…')
+DECLARE @tasees_trackID int;
+SET @tasees_trackID = @@IDENTITY
+
+INSERT INTO [dbo].[Tracks] ([TrackBranchID], [TrackName]) VALUES (@branch_id, 'œ—Ê…«· Õ›ÌŸ')
+DECLARE @tahfeez_trackID int;
+SET @tahfeez_trackID = @@IDENTITY
+
+--tahfeez stages
+INSERT INTO [dbo].[Stages]
+           ([StageTrackID]
+           ,[StageName]
+           ,[LevelsCount])
+     VALUES
+           (@tahfeez_trackID
+           ,'«·Ã“¡ «·√Ê· Ê«·À«‰Ì'
+           ,3)
+
+INSERT INTO [dbo].[Stages]
+           ([StageTrackID]
+           ,[StageName]
+           ,[LevelsCount])
+     VALUES
+           (@tahfeez_trackID
+           ,'«·Ã“¡ «·À«·À Ê«·—«»⁄'
+           ,3)
+
+INSERT INTO [dbo].[Stages]
+           ([StageTrackID]
+           ,[StageName]
+           ,[LevelsCount])
+     VALUES
+           (@tahfeez_trackID
+           ,'«·Ã“¡ «·Œ«„” Ê«·”«œ”'
+           ,3)
+
+INSERT INTO [dbo].[Stages]
+           ([StageTrackID]
+           ,[StageName]
+           ,[LevelsCount])
+     VALUES
+           (@tahfeez_trackID
+           ,'«·Ã“¡ «·”«»⁄ Ê«·À«„‰'
+           ,3)
+
+INSERT INTO [dbo].[Stages]
+           ([StageTrackID]
+           ,[StageName]
+           ,[LevelsCount])
+     VALUES
+           (@tahfeez_trackID
+           ,'«·Ã“¡ «· «”⁄ Ê«·⁄«‘—'
+           ,3)
+
+INSERT INTO [dbo].[Stages]
+           ([StageTrackID]
+           ,[StageName]
+           ,[LevelsCount])
+     VALUES
+           (@tahfeez_trackID
+           ,'«·Ã“¡ «·Õ«œÌ ⁄‘— Ê«·«À‰« ⁄‘—'
+           ,3)
+
+INSERT INTO [dbo].[Stages]
+           ([StageTrackID]
+           ,[StageName]
+           ,[LevelsCount])
+     VALUES
+           (@tahfeez_trackID
+           ,'«·Ã“¡ «·À«·À ⁄‘— Ê«·—«»⁄ ⁄‘—'
+           ,3)
+
+INSERT INTO [dbo].[Stages]
+           ([StageTrackID]
+           ,[StageName]
+           ,[LevelsCount])
+     VALUES
+           (@tahfeez_trackID
+           ,'«·Ã“¡ «·Œ«„” ⁄‘— Ê«·”«œ” ⁄‘—'
+           ,3)
+
+INSERT INTO [dbo].[Stages]
+           ([StageTrackID]
+           ,[StageName]
+           ,[LevelsCount])
+     VALUES
+           (@tahfeez_trackID
+           ,'«·Ã“¡ «·”«»⁄ ⁄‘— Ê«·À«„‰ ⁄‘—'
+           ,3)
+
+INSERT INTO [dbo].[Stages]
+           ([StageTrackID]
+           ,[StageName]
+           ,[LevelsCount])
+     VALUES
+           (@tahfeez_trackID
+           ,'«·Ã“¡ «· «”⁄ ⁄‘— Ê«·⁄‘—Ê‰'
+           ,3)
+
+INSERT INTO [dbo].[Stages]
+           ([StageTrackID]
+           ,[StageName]
+           ,[LevelsCount])
+     VALUES
+           (@tahfeez_trackID
+           ,'«·Ã“¡ «·Ê«Õœ Ê«·⁄‘—Ê‰ Ê«·«À‰« Ê«·⁄‘—Ê‰'
+           ,3)
+
+INSERT INTO [dbo].[Stages]
+           ([StageTrackID]
+           ,[StageName]
+           ,[LevelsCount])
+     VALUES
+           (@tahfeez_trackID
+           ,'«·Ã“¡ «·À«·À Ê«·⁄‘—Ê‰ Ê«·—«»⁄ Ê«·⁄‘—Ê‰'
+           ,3)
+
+INSERT INTO [dbo].[Stages]
+           ([StageTrackID]
+           ,[StageName]
+           ,[LevelsCount])
+     VALUES
+           (@tahfeez_trackID
+           ,'«·Ã“¡ «·Œ«„” Ê«·⁄‘—Ê‰ Ê«·”«œ” Ê«·⁄‘—Ê‰'
+           ,3)
+
+INSERT INTO [dbo].[Stages]
+           ([StageTrackID]
+           ,[StageName]
+           ,[LevelsCount])
+     VALUES
+           (@tahfeez_trackID
+           ,'«·Ã“¡ «·”«»⁄ Ê«·⁄‘—Ê‰ Ê«·À«„‰ Ê«·⁄‘—Ê‰'
+           ,3)
+
+INSERT INTO [dbo].[Stages]
+           ([StageTrackID]
+           ,[StageName]
+           ,[LevelsCount])
+     VALUES
+           (@tahfeez_trackID
+           ,'«·Ã“¡ «·À«„‰ Ê«·⁄‘—Ê‰ Ê«·À·«ÀÊ‰'
+           ,3)
+
+--taasess stages
+INSERT INTO [dbo].[Stages]
+           ([StageTrackID]
+           ,[StageName]
+           ,[LevelsCount])
+     VALUES
+           (@tasees_trackID
+           ,'œ—” «·Õ—Ê› «·„› ÊÕ…'
+           ,1)
+
+INSERT INTO [dbo].[Stages]
+           ([StageTrackID]
+           ,[StageName]
+           ,[LevelsCount])
+     VALUES
+           (@tasees_trackID
+           ,'œ—” «·Õ—Ê› «·„ﬂ”Ê—…'
+           ,1)
+
+INSERT INTO [dbo].[Stages]
+           ([StageTrackID]
+           ,[StageName]
+           ,[LevelsCount])
+     VALUES
+           (@tasees_trackID
+           ,'œ—” «·Õ—Ê› «·„÷„Ê„…'
+           ,1)
+
+--students
+INSERT INTO [dbo].[StudentGuardians]
+           ([GuardianBranchID]
+           ,[GuardianName]
+           ,[GuardianHomePhone]
+           ,[GuardianMobilePhone]
+           ,[GuardianOtherPhone]
+           ,[GuardianHomeAddress]
+           ,[GuardianEmailAddress]
+           ,[GuardianSex])
+     VALUES
+           (@branch_id
+           ,'Ê·Ì «·√„—'
+           ,NULL
+           ,'0501234567'
+           ,NULL
+           ,NULL
+           ,'email@hotmail.com'
+           ,1)
+DECLARE @guardian_id int;
+SET @guardian_id = @@IDENTITY;
+
+INSERT INTO [dbo].[Students]
+           ([StudentGuardianID]
+           ,[StudentBranchID]
+           ,[StudentName]
+           ,[StudentBirthDate]
+           ,[StudentPersonalPhotoPath]
+           ,[StudentOriginNationality]
+           ,[StudentAcquiredNationality]
+           ,[StudentSchoolName]
+           ,[StudentLastEducationDegree]
+           ,[StudentEducationStage]
+           ,[StudentSchoolClass]
+           ,[StudentHowYouKnewTheCenter]
+           ,[StudentExpectedQuraanFinishTime]
+           ,[StudentIsInTransportations]
+           ,[StudentSex]
+           ,[StudentStatus]
+           ,[StudentAddedOn])
+     VALUES
+           (@guardian_id
+           ,@branch_id
+           ,'«·ÿ«·» «·√Ê·'
+           ,CONVERT(date, '12/10/1990', 103)
+           ,NULL
+           ,@uae_id
+           ,NULL
+           ,NULL
+           ,NULL
+           ,NULL
+           ,NULL
+           ,1
+           ,12
+           ,0
+           ,1
+           ,1
+           ,GETDATE())
+
+

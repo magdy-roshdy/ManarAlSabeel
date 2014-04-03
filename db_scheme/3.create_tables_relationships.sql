@@ -206,11 +206,11 @@ GO
 ALTER TABLE [dbo].[RegisteredStudents] CHECK CONSTRAINT [FK_Students_RegisteredStudents]
 GO
 
-ALTER TABLE [dbo].[RegisteredStudents]  WITH CHECK ADD  CONSTRAINT [FK_Tracks_RegisteredStudents] FOREIGN KEY([RegisteredStudentsTrackID])
-REFERENCES [dbo].[Tracks] ([TrackID])
+ALTER TABLE [dbo].[RegisteredStudents]  WITH CHECK ADD  CONSTRAINT [FK_Stages_RegisteredStudents] FOREIGN KEY([RegisteredStudentsStageID])
+REFERENCES [dbo].[Stages] ([StageID])
 GO
 
-ALTER TABLE [dbo].[RegisteredStudents] CHECK CONSTRAINT [FK_Tracks_RegisteredStudents]
+ALTER TABLE [dbo].[RegisteredStudents] CHECK CONSTRAINT [FK_Stages_RegisteredStudents]
 GO
 
 ALTER TABLE [dbo].[RegisteredStudents]  WITH CHECK ADD  CONSTRAINT [FK_Branches_RegisteredStudents] FOREIGN KEY([RegisteredStudentsBranchID])
