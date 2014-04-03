@@ -134,7 +134,7 @@ namespace ManarAlSabeel.Web.Heplers
 			return selectListItems;
 		}
 
-		public static List<SelectListItem> TrackesToSelectListItems(IQueryable<Track> trackes, bool addEmptyItem = false)
+		public static List<SelectListItem> StagesToSelectListItems(IQueryable<Stage> stages, bool addEmptyItem = false)
 		{
 			List<SelectListItem> selectListItems = new List<SelectListItem>();
 
@@ -143,9 +143,9 @@ namespace ManarAlSabeel.Web.Heplers
 				selectListItems.Add(new SelectListItem { Text = "", Value = "0" });
 			}
 
-			foreach (Track track in trackes)
+			foreach (Stage stage in stages)
 			{
-				selectListItems.Add(new SelectListItem { Text = track.Name, Value = track.ID.ToString() });
+				selectListItems.Add(new SelectListItem { Text = stage.Name, Value = stage.ID.ToString() });
 			}
 
 			return selectListItems;

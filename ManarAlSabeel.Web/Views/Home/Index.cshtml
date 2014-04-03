@@ -91,7 +91,7 @@
 								}
 								@if (studentsList.Count() > 0)
 								{
-									var studentsTrackGroups = studentsList.GroupBy(x => x.Track);
+									var studentsTrackGroups = studentsList.GroupBy(x => x.Stage.Track);
 
 									foreach (var group in studentsTrackGroups)
 									{

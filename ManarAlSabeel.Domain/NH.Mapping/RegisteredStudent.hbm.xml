@@ -16,9 +16,9 @@
 								 class="Class"
 								 column="RegisteredStudentsClassID" />
 
-		<many-to-one name="Track"
-								 class="Track"
-								 column="RegisteredStudentsTrackID" />
+		<many-to-one name="Stage"
+								 class="Stage"
+								 column="RegisteredStudentsStageID" />
 
 		<many-to-one name="Branch"
 								 class="Branch"

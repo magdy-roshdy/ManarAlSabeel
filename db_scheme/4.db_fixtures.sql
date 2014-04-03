@@ -441,3 +441,70 @@ INSERT INTO [dbo].[Students]
            ,GETDATE())
 
 
+INSERT INTO [dbo].[Teachers]
+           ([TeacherBranchID]
+           ,[TeacherName]
+           ,[TeacherNationality]
+           ,[TeacherBirthDate]
+           ,[TeacherBirthPlace]
+           ,[TeacherMaritalStatus]
+           ,[TeacherMarriageDate]
+           ,[TeacherProfission]
+           ,[TeacherReligiousIdeology]
+           ,[TeacherMobile]
+           ,[TeacherHomeNumber]
+           ,[TeacherEmail]
+           ,[TeacherMemorizedQuraanAmount]
+           ,[TeacherIsSupervisor]
+           ,[TeacherSex]
+           ,[TeacherStatus])
+     VALUES
+           (@branch_id
+           ,'«·„œ—” «·√Ê·'
+           ,@uae_id
+           ,CONVERT(date, '01/01/1980', 103)
+           ,@uae_id
+           ,0
+           ,NULL
+           ,NULL
+           ,0
+           ,'0501234567'
+           ,NULL
+           ,'email@hotmail.com'
+           ,'30'
+           ,0
+           ,1
+           ,1)
+
+DECLARE @teacher_id int;
+SET @teacher_id = @@IDENTITY;
+
+
+INSERT INTO [dbo].[Semesters]
+           ([SemesterBranchID]
+           ,[SemesterName]
+           ,[SemesterStartDate]
+           ,[SemesterEndDate])
+     VALUES
+           (@branch_id
+           ,'«·œÊ—… «·⁄·„Ì… «·√Ê·Ï'
+           ,GETDATE()
+           ,DATEADD(month, 4, GETDATE()))
+
+DECLARE @semester_id int;
+SET @semester_id = @@IDENTITY;
+
+INSERT INTO [dbo].[Classes]
+           ([ClassSemesterID]
+           ,[ClassBranchID]
+           ,[ClassTeacherID]
+           ,[ClassName]
+           ,[ClassTeachingPeriod]
+           ,[ClassSex])
+     VALUES
+           (@semester_id
+           ,@branch_id
+           ,@teacher_id
+           ,'«·›’· «·√Ê·'
+           ,0
+           ,1)

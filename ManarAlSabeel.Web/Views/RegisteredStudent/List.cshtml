@@ -13,7 +13,7 @@
 			<th>@StringTable.Name</th>
 			<th>@StringTable.Semester</th>
 			<th>@StringTable.Class</th>
-			<th>@StringTable.Track</th>
+			<th>@StringTable.Stage</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -30,7 +30,7 @@
 				@registeredStudent.Class.Name
 			</td>
 			<td>
-				@registeredStudent.Track.Name
+				@registeredStudent.Stage.Name
 			</td>
 			<td>
 				@using (@Html.BeginForm("Delete", "RegisteredStudent"))

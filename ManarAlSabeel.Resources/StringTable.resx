@@ -354,6 +354,9 @@
   <data name="Single" xml:space="preserve">
     <value>أعزب</value>
   </data>
+  <data name="Stage" xml:space="preserve">
+    <value>المرحلة الدراسية</value>
+  </data>
   <data name="StartDate" xml:space="preserve">
     <value>تاريخ البداية</value>
   </data>

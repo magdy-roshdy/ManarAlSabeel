@@ -11,7 +11,7 @@ namespace ManarAlSabeel.Domain.Entities
 
 		public virtual Student Student { get; set; }
 		public virtual Class Class { get; set; }
-		public virtual Track Track { get; set; }
+		public virtual Stage Stage { get; set; }
 
 		//Branch and Sex properties are added only because of NH filters!
 		public virtual Branch Branch { get; set; }

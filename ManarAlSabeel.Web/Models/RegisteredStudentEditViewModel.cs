@@ -10,7 +10,7 @@ namespace ManarAlSabeel.Web.Models
 	{
 		public int ID { get; set; }
 		public int StudentID { get; set; }
-		public int TrackID { get; set; }
+		public int StageID { get; set; }
 		public int ClassID { get; set; }
 
 		public int BranchID { get; set; }
@@ -18,6 +18,6 @@ namespace ManarAlSabeel.Web.Models
 
 		public IQueryable<Class> Classes { get; set; }
 		public IQueryable<Student> Students { get; set; }
-		public IQueryable<Track> Tracks { get; set; }
+		public IQueryable<Stage> Stages { get; set; }
 	}
 }

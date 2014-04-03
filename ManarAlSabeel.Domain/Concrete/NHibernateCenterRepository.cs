@@ -551,7 +551,7 @@ namespace ManarAlSabeel.Domain.Concrete
 					session.Get<RegisteredStudent>(registeredStudent.ID);
 
 					registeredStudent_db.Student = session.Get<Student>(registeredStudent.Student.ID);
-					registeredStudent_db.Track = session.Get<Track>(registeredStudent.Track.ID);
+					registeredStudent_db.Stage = session.Get<Stage>(registeredStudent.Stage.ID);
 					registeredStudent_db.Class = session.Get<Class>(registeredStudent.Class.ID);
 					registeredStudent_db.Branch = session.Get<Branch>(registeredStudent.Branch.ID);
 					registeredStudent_db.Sex = registeredStudent.Sex;
@@ -586,6 +586,19 @@ namespace ManarAlSabeel.Domain.Concrete
 			}
 
 			return false;
+		}
+
+
+		public IQueryable<Stage> GetAllStages()
+		{
+			if(ignoreFilters)
+			{
+				return getSession().Query<Stage>();
+			}
+			else
+			{
+				return getSession().Query<Stage>().Where(x => x.Track.Branch.ID == filtersProvider.GetBranchFilter().ID);
+			}
 		}
 	}
 }

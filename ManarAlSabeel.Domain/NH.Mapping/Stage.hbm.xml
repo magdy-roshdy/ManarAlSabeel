@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ManarAlSabeel.Domain"
+                   namespace="ManarAlSabeel.Domain.Entities">
+	<class name="Stage" table="Stages">
+
+		<id name="ID" column="StageID">
+			<generator class="identity"/>
+		</id>
+		
+		<property name="Name" column="StageName" />
+		<property name="LevelsCount" column="LevelsCount" />
+
+		<many-to-one name="Track" class="Track"
+								 column="StageTrackID" />
+	</class>
+</hibernate-mapping>

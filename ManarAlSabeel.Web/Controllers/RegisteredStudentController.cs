@@ -50,11 +50,11 @@ namespace ManarAlSabeel.Web.Controllers
 				viewModel.ID = registeredStudentEntity.ID;
 				viewModel.ClassID = registeredStudentEntity.Class.ID;
 				viewModel.StudentID = registeredStudentEntity.Student.ID;
-				viewModel.TrackID = registeredStudentEntity.Track.ID;
+				viewModel.StageID = registeredStudentEntity.Stage.ID;
 
 				viewModel.Classes = dbRepository.GetAllClasses();
 				viewModel.Students = dbRepository.GetAllStudents();
-				viewModel.Tracks = dbRepository.GetAllTracks();
+				viewModel.Stages = dbRepository.GetAllStages();
 			}
 
 			return View(viewModel);
@@ -70,7 +70,7 @@ namespace ManarAlSabeel.Web.Controllers
 				RegisteredStudent registeredStudentEntity = new RegisteredStudent();
 				registeredStudentEntity.ID = registeredStudent.ID;
 				registeredStudentEntity.Class = new Class { ID = registeredStudent.ClassID };
-				registeredStudentEntity.Track = new Track { ID = registeredStudent.TrackID };
+				registeredStudentEntity.Stage = new Stage { ID = registeredStudent.StageID };
 				registeredStudentEntity.Student = new Student { ID = registeredStudent.StudentID };
 
 				registeredStudentEntity.Branch = new Branch { ID = Helpers.GetProfileBranch().ID };
@@ -92,7 +92,7 @@ namespace ManarAlSabeel.Web.Controllers
 			RegisteredStudentEditViewModel viewModel = new RegisteredStudentEditViewModel();
 			viewModel.Classes = dbRepository.GetAllClasses();
 			viewModel.Students = dbRepository.GetAllStudents();
-			viewModel.Tracks = dbRepository.GetAllTracks();
+			viewModel.Stages = dbRepository.GetAllStages();
 
 			return View("Edit", viewModel);
 		}

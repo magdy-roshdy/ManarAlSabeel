@@ -38,6 +38,8 @@ namespace ManarAlSabeel.Domain.Abstract
 		int? SaveRegisteredStudent(RegisteredStudent registeredStudent);
 		bool DeleteRegisteredStudent(int registeredStudentId);
 
+		IQueryable<Stage> GetAllStages();
+
 		IQueryable<Country> GetAllCountries();
 	}
 }

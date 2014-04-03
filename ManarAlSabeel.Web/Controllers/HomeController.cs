@@ -24,13 +24,7 @@ namespace ManarAlSabeel.Web.Controllers
 		[ForbiddenRedirectAuthorizeAttribute]
 		public ViewResult Index()
 		{
-			//TODO
-			//switch to female culture in Females section based on Profile parameter
-			//Thread.CurrentThread.CurrentUICulture = new CultureInfo("ar-LB");
-
-			List<Semester> semesters = dbRepository.GetAllSemesters().ToList();
-			Semester current = semesters.FirstOrDefault(x => x.IsTheCurrent);
-
+			Semester current = dbRepository.GetAllSemesters().ToList().FirstOrDefault(x => x.IsTheCurrent);
 			return View(current);
 		}
     }

@@ -772,6 +772,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to المرحلة الدراسية.
+        /// </summary>
+        public static string Stage {
+            get {
+                return ResourceManager.GetString("Stage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تاريخ البداية.
         /// </summary>
         public static string StartDate {
