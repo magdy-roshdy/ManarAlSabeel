@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ManarAlSabeel.Domain"
+                   namespace="ManarAlSabeel.Domain.Entities">
+	<class name="Exam" table="Exams">
+
+		<id name="ID" column="ExamID">
+			<generator class="identity" />
+		</id>
+
+		<many-to-one name="RegisteredStudent"
+								 class="RegisteredStudent"
+								 column="ExamRegisteredStudentID" />
+
+		<many-to-one name="Type"
+								 class="ExamType"
+								 column="ExamTypeID" />
+
+		<many-to-one name="Supervisor"
+								 class="Teacher"
+								 column="ExamSupervisorID" />
+
+		<many-to-one name="ExternalSupervisor"
+										 class="ExternalSupervisor"
+										 column="ExamExternalSupervisorID" />
+
+		<many-to-one name="Grade"
+												 class="ExamGrade"
+												 column="ExamGradeID" />
+		
+		<property name="Date" column="ExamDate" />
+		<property name="BonusPoints" column="ExamBonusPoints" />
+		<property name="Comments" column="ExamComments" not-null="true" />
+	</class>
+</hibernate-mapping>

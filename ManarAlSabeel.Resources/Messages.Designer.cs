@@ -331,6 +331,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to عفوا ، تم تسجيل هذا الطالب في هذه الدورة العلمية من قبل.
+        /// </summary>
+        public static string StudentRegisteredBefore {
+            get {
+                return ResourceManager.GetString("StudentRegisteredBefore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تم تسجيل الطالب بنجاح.
         /// </summary>
         public static string StudentRegisteredSuccesfully {

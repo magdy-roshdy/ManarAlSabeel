@@ -51,22 +51,6 @@ namespace ManarAlSabeel.Domain.Entities
 		InActive = 1
 	}
 
-	public enum ExamTypes
-	{
-		Review = 0,
-		Final = 1,
-		Sudden = 2
-	}
-
-	public enum ExamGrades
-	{
-		Excellent = 0,
-		VeryGood = 1,
-		Good = 2,
-		Accepted = 3,
-		Failed = 4
-	}
-
 	public enum ClassTeachingPeriod
 	{
 		Morning = 0,

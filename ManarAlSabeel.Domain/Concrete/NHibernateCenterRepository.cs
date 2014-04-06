@@ -544,21 +544,33 @@ namespace ManarAlSabeel.Domain.Concrete
 			{
 				using (ITransaction transaction = session.BeginTransaction())
 				{
-					RegisteredStudent registeredStudent_db = (registeredStudent.ID == 0)
-					?
-					new RegisteredStudent { Date = DateTime.Now }
-					:
-					session.Get<RegisteredStudent>(registeredStudent.ID);
+					bool newRegistration = (registeredStudent.ID == 0);
+
+					RegisteredStudent registeredStudent_db = newRegistration ?
+						new RegisteredStudent { Date = DateTime.Now }
+						: session.Get<RegisteredStudent>(registeredStudent.ID);
 
 					registeredStudent_db.Student = session.Get<Student>(registeredStudent.Student.ID);
 					registeredStudent_db.Stage = session.Get<Stage>(registeredStudent.Stage.ID);
 					registeredStudent_db.Class = session.Get<Class>(registeredStudent.Class.ID);
 					registeredStudent_db.Branch = session.Get<Branch>(registeredStudent.Branch.ID);
 					registeredStudent_db.Sex = registeredStudent.Sex;
-
 					session.SaveOrUpdate(registeredStudent_db);
-					transaction.Commit();
 
+					//save the stage log
+					if (newRegistration)
+					{
+						StudentStageChangeLog log = new StudentStageChangeLog();
+						log.RegisteredStudent = registeredStudent_db;
+						log.Stage = registeredStudent_db.Stage;
+						log.StageLevel = 1;
+						log.Date = DateTime.Now;
+						log.Exam = null;
+
+						session.SaveOrUpdate(log);
+					}
+
+					transaction.Commit();
 					session.Flush();
 
 					return registeredStudent_db.ID;
@@ -599,6 +611,14 @@ namespace ManarAlSabeel.Domain.Concrete
 			{
 				return getSession().Query<Stage>().Where(x => x.Track.Branch.ID == filtersProvider.GetBranchFilter().ID);
 			}
+		}
+
+
+		public bool IsStudentInSemester(int studentId, int semesterId)
+		{
+			 return (getSession().Query<RegisteredStudent>()
+				 .Where(x => x.Student.ID == studentId && x.Class.Semester.ID == semesterId)
+				 .Count() > 0);
 		}
 	}
 }

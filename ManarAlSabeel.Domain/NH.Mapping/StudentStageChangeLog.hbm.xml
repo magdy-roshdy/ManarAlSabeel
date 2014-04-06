@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ManarAlSabeel.Domain"
+                   namespace="ManarAlSabeel.Domain.Entities">
+	<class name="StudentStageChangeLog" table="StudentStageChangeLogs">
+
+		<id name="ID" column="StudentStageChangeLogID">
+			<generator class="identity" />
+		</id>
+
+		<many-to-one name="RegisteredStudent"
+								 class="RegisteredStudent"
+								 column="StagesLogRegisteredStudentID" />
+
+		<many-to-one name="Exam"
+								 class="Exam"
+								 column="StagesLogExamID" not-null="false" />
+
+		<many-to-one name="Stage"
+								 class="Stage"
+								 column="StudentStagesLogStageID" />
+
+
+		<property name="StageLevel" column="StudentStagesLogStageLevel" />
+		<property name="Date" column="StudentStagesLogChangeDate" />
+		<property name="Comments" column="StudentStagesLogComments" not-null="false" />
+	</class>
+</hibernate-mapping>

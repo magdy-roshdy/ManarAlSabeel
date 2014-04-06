@@ -40,6 +40,8 @@ namespace ManarAlSabeel.Domain.Abstract
 
 		IQueryable<Stage> GetAllStages();
 
+		bool IsStudentInSemester(int studentId, int semesterId);
+
 		IQueryable<Country> GetAllCountries();
 	}
 }

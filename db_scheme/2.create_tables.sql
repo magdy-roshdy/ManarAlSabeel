@@ -558,7 +558,7 @@ CREATE TABLE [dbo].[StudentStageChangeLogs](
 	[StudentStagesLogStageID] [int] NOT NULL,
 	[StudentStagesLogStageLevel] [int] NOT NULL,
 	[StudentStagesLogChangeDate] [date] NOT NULL,
-	[StudentStagesLogIsActiveStage] [bit] NOT NULL,
+	[StudentStagesLogComments] [nvarchar](350) NULL,
  CONSTRAINT [PK_StudentStageChangeLog] PRIMARY KEY CLUSTERED 
 (
 	[StudentStageChangeLogID] ASC

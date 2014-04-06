@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ManarAlSabeel.Domain"
+                   namespace="ManarAlSabeel.Domain.Entities">
+	<class name="ExamType" table="ExamTypes">
+
+		<id name="ID" column="ExamTypeID">
+			<generator class="identity" />
+		</id>
+
+		<property name="Name" column="ExamTypeName" />
+	</class>
+</hibernate-mapping>
+	

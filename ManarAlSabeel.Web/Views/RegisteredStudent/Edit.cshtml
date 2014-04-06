@@ -17,7 +17,7 @@
 
 		@using (Html.BeginForm("Edit", "RegisteredStudent", FormMethod.Post, new { role = "form" }))
 		{
-			@Html.ValidationSummary(true)
+			@Html.ValidationSummary()
 
 			<div class="form-group">
 				<label>@StringTable.Student</label>

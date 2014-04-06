@@ -237,4 +237,7 @@
   <data name="RegisteredStudentDeletedSuccessfully" xml:space="preserve">
     <value>تم حذف تسجيل الطالب بنجاح</value>
   </data>
+  <data name="StudentRegisteredBefore" xml:space="preserve">
+    <value>عفوا ، تم تسجيل هذا الطالب في هذه الدورة العلمية من قبل</value>
+  </data>
 </root>
