@@ -564,9 +564,6 @@ CREATE TABLE [dbo].[StudentStageChangeLogs](
 
 GO
 
-ALTER TABLE [dbo].[StudentStageChangeLogs] ADD  CONSTRAINT [DF_StudentStageChangeLog_StudentStagesLogIsActiveStage]  DEFAULT ((1)) FOR [StudentStagesLogIsActiveStage]
-GO
-
 /****** Object:  Table [dbo].[TeacherAbsenceLogs]    Script Date: 2/10/2014 2:45:43 PM ******/
 CREATE TABLE [dbo].[TeacherAbsenceLogs](
 	[TeacherAbsenceLogID] [int] IDENTITY(1,1) NOT NULL,
