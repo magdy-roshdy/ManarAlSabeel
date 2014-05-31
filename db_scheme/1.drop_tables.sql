@@ -1,6 +1,3 @@
-USE [manar_al_sabeel]
-GO
-
 --drop repationships
 ALTER TABLE [dbo].[Centers] DROP [FK_Managers_Centers]
 

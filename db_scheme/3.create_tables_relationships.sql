@@ -1,5 +1,3 @@
-USE [manar_al_sabeel]
-GO
 
 /*****************************/
 /*** Table [dbo].[Centers] ***/

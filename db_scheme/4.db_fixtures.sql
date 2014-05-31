@@ -1,6 +1,3 @@
-USE [manar_al_sabeel]
-GO
-
 DECLARE @uae_id int;
 
 INSERT INTO [dbo].[Countries] ([CountryName]) VALUES ('«›€«‰” «‰')

@@ -1,6 +1,3 @@
-USE [manar_al_sabeel]
-GO
-
 SET ANSI_NULLS ON
 GO
 
