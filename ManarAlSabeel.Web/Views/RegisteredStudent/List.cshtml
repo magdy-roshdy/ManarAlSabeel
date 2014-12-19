@@ -14,6 +14,8 @@
 			<th>@StringTable.Semester</th>
 			<th>@StringTable.Class</th>
 			<th>@StringTable.Stage</th>
+			<th>@StringTable.ExamsCount</th>
+			<th></th>
 			<th></th>
 		</tr>
 	</thead>
@@ -31,6 +33,20 @@
 			</td>
 			<td>
 				@registeredStudent.Stage.Name
+			</td>
+			<td>
+				@Html.ActionLink(registeredStudent.Exams.Where(x => x.RegisteredStudent.ID == registeredStudent.ID).Count().ToString(),
+					"List", "Exam",
+					new { registeredStudentID = registeredStudent.ID }, null)
+			</td>
+			<td>
+				@using (@Html.BeginForm("Create", "Exam"))
+				{
+					@Html.Hidden("registeredStudentId", registeredStudent.ID)
+					@Html.Hidden("returnUrl", "/")
+					<input class="btn btn-default btn-xs" type="submit"
+						   value="@StringTable.AddExam" />
+				}
 			</td>
 			<td>
 				@using (@Html.BeginForm("Delete", "RegisteredStudent"))

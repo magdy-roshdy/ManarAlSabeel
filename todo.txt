@@ -2,8 +2,13 @@
 * make datePicker and css localization based
 * link NHibernate and Iesi.Collections to thier Github repos
 * convert column "StudentExpectedQuraanFinishTime" into string at DB
+* add GetAllItems<T> at datarepository and make GetAll**** use it instead
+* remove StudentID from AdmissionInterviews and add allow-null InterviewID at Students table [invistage that first]
 
 - add Custom Profile Provider to hold user's data
 - add Branch_ID to Guardians table
 - use special ViewModel at Student edit form so you will use only GuardianId instead of the entire object
 - make IsCurrentSemester date based not DB based, and remove the column from DB table
+- make "Comitee" in AdmissionInterview as list of Teachers only.
+- make the "edit" pages switch between "Add" and "Edit" titles based on function.
+- put the student name between brackets in AdmissionInterview Edit page

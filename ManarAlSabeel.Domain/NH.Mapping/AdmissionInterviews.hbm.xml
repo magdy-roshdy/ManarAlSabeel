@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ManarAlSabeel.Domain"
+                   namespace="ManarAlSabeel.Domain.Entities">
+	<class name="AdmissionInterview" table="AdmissionInterviews">
+
+		<id name="ID" column="InterviewID">
+			<generator class="identity"/>
+		</id>
+		
+		<property name="Date" column="InterviewDate" />
+		<property name="MemorizationAmount" column="InterviewMemorizationAmount" />
+		<property name="Result" column="InterviewResult" />
+		<property name="Notes" column="InterviewNotes" />
+		
+		<bag name="Committee">
+			<key column="InterviewID" />
+			<one-to-many class="AdmissionInterviewCommittee"/>
+		</bag>
+
+	</class>
+
+</hibernate-mapping>

@@ -11,6 +11,19 @@
 
 <h2>@StringTable.EditStudentInfo</h2>
 
+@if(Model.ID > 0 )
+{
+	if (Model.AdmissionInterviewID.HasValue)
+	{
+	
+		@Html.ActionLink(@StringTable.ShowStudentAdmissionInterview, "Edit", "AdmissionInterview", new { Id = Model.AdmissionInterviewID, studentId = Model.ID }, null)
+	}
+	else
+	{
+		@Html.ActionLink(@StringTable.AddStudentAdmissiondInterview, "Create", "AdmissionInterview", new { studentId = Model.ID }, null)
+	}
+}
+
 <div class="panel panel-default" style="width: 45%; margin: 0 auto;">
 	<div class="panel-body">
 
@@ -129,6 +142,14 @@
 				@Html.RadioButtonFor(x => x.Status, StudentStatus.Expelled)
 				<label>@StringTable.Expelled</label>
 			</div>
+			
+			if (Model.ID == 0)
+			{
+				<div class="form-group">
+					<label>@StringTable.AddAdmissionInterviewNow</label>
+					@Html.CheckBoxFor(x => x.AddAdmissionInterviewNow)
+				</div>
+			}
 			
 			@Html.HiddenFor(x => x.ID)
 

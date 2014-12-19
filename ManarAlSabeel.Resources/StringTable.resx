@@ -126,8 +126,14 @@
   <data name="Ad" xml:space="preserve">
     <value>اعلان</value>
   </data>
+  <data name="AddAdmissionInterviewNow" xml:space="preserve">
+    <value>اضافة مقابلة قبول الطالب الآن</value>
+  </data>
   <data name="AddClass" xml:space="preserve">
     <value>اضافة فصل</value>
+  </data>
+  <data name="AddExam" xml:space="preserve">
+    <value>اضافة امتحان</value>
   </data>
   <data name="AddRegisteredStudent" xml:space="preserve">
     <value>تسجيل طالب جديد</value>
@@ -138,11 +144,29 @@
   <data name="AddStudent" xml:space="preserve">
     <value>إضافة طالب</value>
   </data>
+  <data name="AddStudentAdmissiondInterview" xml:space="preserve">
+    <value>اضافة مقابلة قبول للطالب</value>
+  </data>
   <data name="AddStudentGuardian" xml:space="preserve">
     <value>إضافة ولي أمر</value>
   </data>
   <data name="AddTeacher" xml:space="preserve">
     <value>اضافة مدرس</value>
+  </data>
+  <data name="AdmissionInterviewDate" xml:space="preserve">
+    <value>تاريخ المقابلة</value>
+  </data>
+  <data name="AdmissionInterviewMemorizationAmount" xml:space="preserve">
+    <value>مقدار الحفظ</value>
+  </data>
+  <data name="AdmissionInterviewNotes" xml:space="preserve">
+    <value>ملاحظات المقابلة</value>
+  </data>
+  <data name="AdmissionInterviewPage" xml:space="preserve">
+    <value>صفحة مقابلة قبول الطالب</value>
+  </data>
+  <data name="AdmissionInterviewResult" xml:space="preserve">
+    <value>نتيجة المقابلة</value>
   </data>
   <data name="Age" xml:space="preserve">
     <value>السن</value>
@@ -213,11 +237,35 @@
   <data name="Evening" xml:space="preserve">
     <value>مسائي</value>
   </data>
+  <data name="ExamBonusPoints" xml:space="preserve">
+    <value>درجات اضافية</value>
+  </data>
+  <data name="ExamComments" xml:space="preserve">
+    <value>ملاحظة على الامتحان</value>
+  </data>
+  <data name="ExamDate" xml:space="preserve">
+    <value>تاريخ الامتحان</value>
+  </data>
+  <data name="ExamGrade" xml:space="preserve">
+    <value>تقدير الامتحان</value>
+  </data>
+  <data name="ExamsCount" xml:space="preserve">
+    <value>عدد الامتحانات</value>
+  </data>
+  <data name="ExamSupervisor" xml:space="preserve">
+    <value>مشرف الامتحان</value>
+  </data>
+  <data name="ExamType" xml:space="preserve">
+    <value>نوع الامتحان</value>
+  </data>
   <data name="ExpectedPeriodToFinishQuraan" xml:space="preserve">
     <value>الفترة المتوقعة لانهاء القرآن</value>
   </data>
   <data name="Expelled" xml:space="preserve">
     <value>مفصول</value>
+  </data>
+  <data name="ExternalSupervisor" xml:space="preserve">
+    <value>المشرف الخارجي</value>
   </data>
   <data name="Female" xml:space="preserve">
     <value>أنثى</value>
@@ -337,7 +385,7 @@
     <value>اسم المدرسة</value>
   </data>
   <data name="Semester" xml:space="preserve">
-    <value>الدورة التدريبية</value>
+    <value>الدورة التعليمية</value>
   </data>
   <data name="Semesters" xml:space="preserve">
     <value>الدورات التعليمية</value>
@@ -350,6 +398,9 @@
   </data>
   <data name="Shafeey" xml:space="preserve">
     <value>شافعي</value>
+  </data>
+  <data name="ShowStudentAdmissionInterview" xml:space="preserve">
+    <value>عرض مقابلة قبول الطالب</value>
   </data>
   <data name="Single" xml:space="preserve">
     <value>أعزب</value>

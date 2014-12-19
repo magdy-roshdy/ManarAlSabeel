@@ -210,7 +210,7 @@ INSERT INTO [dbo].[Tracks] ([TrackBranchID], [TrackName]) VALUES (@branch_id, '«
 DECLARE @tasees_trackID int;
 SET @tasees_trackID = @@IDENTITY
 
-INSERT INTO [dbo].[Tracks] ([TrackBranchID], [TrackName]) VALUES (@branch_id, 'œ—Ê…«· Õ›ÌŸ')
+INSERT INTO [dbo].[Tracks] ([TrackBranchID], [TrackName]) VALUES (@branch_id, 'œ—Ê… «· Õ›ÌŸ')
 DECLARE @tahfeez_trackID int;
 SET @tahfeez_trackID = @@IDENTITY
 
@@ -505,3 +505,60 @@ INSERT INTO [dbo].[Classes]
            ,'«·›’· «·√Ê·'
            ,0
            ,1)
+
+
+INSERT INTO [dbo].[ExternalSupervisors]
+           ([ExternalSupervisorName]
+           ,[ExternalSupervisorSex])
+     VALUES
+           (N'«·„‘—› «·Œ«—ÃÌ «·√Ê·',
+		   1)
+
+INSERT INTO [dbo].[ExternalSupervisors]
+           ([ExternalSupervisorName]
+           ,[ExternalSupervisorSex])
+     VALUES
+           (N'«·„‘—›… «·Œ«—ÃÌ… «·√Ê·Ï',
+		   0)
+
+
+INSERT INTO [dbo].[ExamTypes]
+           ([ExamTypeName])
+     VALUES
+           (N'«„ Õ«‰ —Ê Ì‰Ì')
+
+INSERT INTO [dbo].[ExamTypes]
+           ([ExamTypeName])
+     VALUES
+           (N'«„ Õ«‰ ‰Â«Ì… „—Õ·…')
+
+INSERT INTO [dbo].[ExamTypes]
+           ([ExamTypeName])
+     VALUES
+           (N'«„ Õ«‰ «·Ã„⁄Ì…')
+
+
+INSERT INTO [dbo].[ExamGradeTypes]
+           ([GradeName])
+     VALUES
+           (N'—«”»')
+
+INSERT INTO [dbo].[ExamGradeTypes]
+           ([GradeName])
+     VALUES
+           (N'„ﬁ»Ê·')
+
+INSERT INTO [dbo].[ExamGradeTypes]
+           ([GradeName])
+     VALUES
+           (N'ÃÌœ')
+
+INSERT INTO [dbo].[ExamGradeTypes]
+           ([GradeName])
+     VALUES
+           (N'ÃÌœ Ãœ«')
+
+INSERT INTO [dbo].[ExamGradeTypes]
+           ([GradeName])
+     VALUES
+           (N'„„ «“')

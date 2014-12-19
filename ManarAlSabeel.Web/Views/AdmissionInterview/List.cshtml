@@ -1,0 +1,13 @@
+﻿@model ManarAlSabeel.Web.Models.AdmissionInterviewsListViewModel
+@using ManarAlSabeel.Domain.Entities;
+
+@{
+    ViewBag.Title = "List";
+}
+
+@foreach (AdmissionInterview interview in Model.Interviews)
+{
+	<p>@interview.Student.Name</p>
+	<p>@interview.Date.ToShortDateString()</p>
+	<p>@interview.Committee.FirstOrDefault().InterviewAttendee.Name</p>
+}

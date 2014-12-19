@@ -19,5 +19,7 @@ namespace ManarAlSabeel.Domain.Entities
 
 		public virtual DateTime Date { get; set; }
 		public virtual string Comments { get; set; }
+
+		public virtual IList<Exam> Exams { get; set; }
 	}
 }

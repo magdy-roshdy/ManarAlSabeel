@@ -56,5 +56,9 @@ namespace ManarAlSabeel.Web.Models
 
 		public IQueryable<Country> Countries { get; set; }
 		public IQueryable<StudentGuardian> Guardians { get; set; }
+
+		public int? AdmissionInterviewID { get; set; }
+
+		public bool AddAdmissionInterviewNow { get; set; }
 	}
 }

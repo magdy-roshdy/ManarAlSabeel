@@ -29,6 +29,10 @@
 								 class="Country" not-null="false"
 								 column="StudentAcquiredNationality"/>
 
+		<many-to-one name="AdmissionInterview"
+								 class="AdmissionInterview" not-null="false"
+								 column="AdmissionInterviewID"/>
+
 		<property name="SchoolName" column="StudentSchoolName" not-null="false" />
 		<property name="LastEducationDegree" column="StudentLastEducationDegree" not-null="false" />
 		<property name="EducationStage" column="StudentEducationStage" not-null="false" />

@@ -28,6 +28,11 @@
 		<property name="Comments" column="RegisteredStudentsComments" />
 		<property name="Sex" column="RegisteredStudentsSex" />
 		
+		<bag name="Exams">
+			<key column="ExamRegisteredStudentID" />
+			<one-to-many class="Exam" />
+		</bag>
+		
 		<filter name="sexFilter" condition=":sex = RegisteredStudentsSex" />
 		<filter name="branchFilter" condition=":branch = RegisteredStudentsBranchID" />
 	</class>

@@ -85,6 +85,11 @@ namespace ManarAlSabeel.Web.Controllers
 
 				studentViewModel.Countries = dbRepository.GetAllCountries();
 				studentViewModel.Guardians = dbRepository.GetAllStudentGuardians();
+
+				if (studentEntity.AdmissionInterview != null)
+				{
+					studentViewModel.AdmissionInterviewID = studentEntity.AdmissionInterview.ID;
+				}
 			}
 
 			return View(studentViewModel);
@@ -131,7 +136,10 @@ namespace ManarAlSabeel.Web.Controllers
 				bool newsStudent = (studentViewModel.ID == 0);
 				TempData["message"] = newsStudent ? Messages.StudentCreatedSuccessfully : Messages.EditStudentSuccessful;
 
-				return RedirectToAction("List");
+				if (studentViewModel.AddAdmissionInterviewNow)
+					return RedirectToAction("Create", "AdmissionInterview", new { studentId = studentEntity.ID });
+				else
+					return RedirectToAction("List");
 			}
 			else
 			{

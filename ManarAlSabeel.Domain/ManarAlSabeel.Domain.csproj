@@ -53,6 +53,7 @@
     <Compile Include="Abstract\IDataBaseFiltersProvider.cs" />
     <Compile Include="Concrete\NHibernateCenterRepository.cs" />
     <Compile Include="Entities\AdmissionInterview.cs" />
+    <Compile Include="Entities\AdmissionInterviewCommittee.cs" />
     <Compile Include="Entities\Branch.cs" />
     <Compile Include="Entities\Center.cs" />
     <Compile Include="Entities\Class.cs" />
@@ -87,6 +88,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <EmbeddedResource Include="NH.Mapping\AdmissionInterviewCommittee.hbm.xml" />
+    <EmbeddedResource Include="NH.Mapping\AdmissionInterviews.hbm.xml" />
     <EmbeddedResource Include="NH.Mapping\ExamGrade.hbm.xml" />
     <EmbeddedResource Include="NH.Mapping\ExternalSupervisor.hbm.xml" />
     <EmbeddedResource Include="NH.Mapping\Exam.hbm.xml" />

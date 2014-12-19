@@ -8,6 +8,7 @@ using ManarAlSabeel.Domain.Entities;
 using NHibernate.Linq;
 using System.Web;
 using System.Collections;
+using NHibernate.Criterion;
 
 namespace ManarAlSabeel.Domain.Concrete
 {
@@ -17,6 +18,12 @@ namespace ManarAlSabeel.Domain.Concrete
 		public NHibernateCenterRepository(IDataBaseFiltersProvider filtersProvider)
 		{
 			this.filtersProvider = filtersProvider;
+		}
+
+		private bool ignoreFilters = false;
+		public void SetFilterIgnore(bool ignore)
+		{
+			ignoreFilters = ignore;
 		}
 
 		public ISessionFactory SessionFactory
@@ -73,11 +80,7 @@ namespace ManarAlSabeel.Domain.Concrete
 
 		public IQueryable<Student> GetAllStudents()
 		{
-			var students = (from student
-			in getSession().Query<Student>()
-						select student);
-
-			return students;
+			return getSession().Query<Student>();
 		}
 
 		public int? SaveStudent(Student student)
@@ -354,13 +357,6 @@ namespace ManarAlSabeel.Domain.Concrete
 			return getSession().Query<SystemAdmin>().Where(x => x.Email == email).FirstOrDefault();
 		}
 
-		private bool ignoreFilters = false;
-		public void SetFilterIgnore(bool ignore)
-		{
-			ignoreFilters = ignore;
-		}
-
-
 		public IQueryable<Semester> GetAllSemesters(bool orderByStartDate = true)
 		{
 			if(orderByStartDate)
@@ -368,7 +364,6 @@ namespace ManarAlSabeel.Domain.Concrete
 			else
 				return getSession().Query<Semester>();
 		}
-
 
 		public int? SaveSemester(Semester semester)
 		{
@@ -415,7 +410,6 @@ namespace ManarAlSabeel.Domain.Concrete
 			return new_id;
 		}
 
-
 		public bool DeleteSemeter(int semesterId)
 		{
 			using (ISession session = getSession())
@@ -437,7 +431,6 @@ namespace ManarAlSabeel.Domain.Concrete
 			return false;
 		}
 
-
 		public IQueryable<Class> GetAllClasses()
 		{
 			var classes = (from calss
@@ -446,7 +439,6 @@ namespace ManarAlSabeel.Domain.Concrete
 
 			return classes;
 		}
-
 
 		public int? SaveClass(Class aClass)
 		{
@@ -497,7 +489,6 @@ namespace ManarAlSabeel.Domain.Concrete
 			return new_id;
 		}
 
-
 		public bool DeleteClass(int classId)
 		{
 			using (ISession session = getSession())
@@ -519,12 +510,10 @@ namespace ManarAlSabeel.Domain.Concrete
 			return false;
 		}
 
-
 		public IQueryable<Track> GetAllTracks()
 		{
 			return getSession().Query<Track>();
 		}
-
 
 		public IQueryable<RegisteredStudent> GetAllRegisteredStudents()
 		{
@@ -536,7 +525,6 @@ namespace ManarAlSabeel.Domain.Concrete
 
 			return x;
 		}
-
 
 		public int? SaveRegisteredStudent(RegisteredStudent registeredStudent)
 		{
@@ -578,7 +566,6 @@ namespace ManarAlSabeel.Domain.Concrete
 			}
 		}
 
-
 		public bool DeleteRegisteredStudent(int registeredStudentId)
 		{
 			using (ISession session = getSession())
@@ -600,7 +587,6 @@ namespace ManarAlSabeel.Domain.Concrete
 			return false;
 		}
 
-
 		public IQueryable<Stage> GetAllStages()
 		{
 			if(ignoreFilters)
@@ -613,12 +599,104 @@ namespace ManarAlSabeel.Domain.Concrete
 			}
 		}
 
-
 		public bool IsStudentInSemester(int studentId, int semesterId)
 		{
 			 return (getSession().Query<RegisteredStudent>()
 				 .Where(x => x.Student.ID == studentId && x.Class.Semester.ID == semesterId)
 				 .Count() > 0);
+		}
+
+		public IQueryable<AdmissionInterview> GetAllAdmissionInterviews()
+		{
+			return getSession().Query<AdmissionInterview>();
+		}
+
+		public int? SaveAddmissionInterview(AdmissionInterview interview, int? studentId = null)
+		{
+			using (ISession session = getSession())
+			{
+				using (ITransaction transaction = session.BeginTransaction())
+				{
+					bool newRegistration = (interview.ID == 0);
+
+					AdmissionInterview interview_db = newRegistration ?
+						new AdmissionInterview { Date = DateTime.Now }
+						: session.Get<AdmissionInterview>(interview.ID);
+
+					interview_db.MemorizationAmount = interview.MemorizationAmount;
+					interview_db.Date = interview.Date;
+					interview_db.Notes = interview.Notes;
+					interview_db.Result = interview.Result;
+
+					session.SaveOrUpdate(interview_db);
+
+					//save the stage log
+					if (studentId.HasValue && studentId.Value > 0)
+					{
+						Student student = session.Get<Student>(studentId.Value);
+						student.AdmissionInterview = interview_db;
+
+						session.SaveOrUpdate(student);
+					}
+
+					transaction.Commit();
+					session.Flush();
+
+					return interview_db.ID;
+				}
+			}
+		}
+
+		public IQueryable<Exam> GetAllExams()
+		{
+			return getSession().Query<Exam>();
+		}
+
+		public IQueryable<ExternalSupervisor> GetAllExternalSupervisors()
+		{
+			return getSession().Query<ExternalSupervisor>();
+		}
+
+		public IQueryable<ExamType> GetAllExamTypes()
+		{
+			return getSession().Query<ExamType>();
+		}
+
+		public IQueryable<ExamGrade> GetAllExamGrades()
+		{
+			return getSession().Query<ExamGrade>();
+		}
+
+		public int? SaveExam(Exam exam)
+		{
+			using (ISession session = getSession())
+			{
+				using (ITransaction transaction = session.BeginTransaction())
+				{
+					bool newExam = (exam.ID == 0);
+
+					Exam exam_db = newExam ?
+						new Exam { Date = DateTime.Now }
+						: session.Get<Exam>(exam.ID);
+
+					exam_db.Supervisor = session.Get<Teacher>(exam.Supervisor.ID);
+					if(exam.ExternalSupervisor != null)
+						exam_db.ExternalSupervisor = session.Get<ExternalSupervisor>(exam.ExternalSupervisor.ID);
+					exam_db.Type = session.Get<ExamType>(exam.Type.ID);
+					exam_db.Grade = session.Get<ExamGrade>(exam.Grade.ID);
+					exam_db.RegisteredStudent = session.Get<RegisteredStudent>(exam.RegisteredStudent.ID);
+					exam_db.BonusPoints = exam.BonusPoints;
+					exam_db.Comments = exam.Comments;
+					exam_db.Date = exam.Date;
+
+					session.SaveOrUpdate(exam_db);
+
+					transaction.Commit();
+					session.Flush();
+
+					return exam_db.ID;
+				}
+			}
 		}
 	}
 }

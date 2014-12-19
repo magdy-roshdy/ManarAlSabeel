@@ -151,7 +151,56 @@ namespace ManarAlSabeel.Web.Heplers
 			return selectListItems;
 		}
 
-		
+		public static List<SelectListItem> ExternalSupervisorToSelectListItems(IQueryable<ExternalSupervisor> stages, bool addEmptyItem = false)
+		{
+			List<SelectListItem> selectListItems = new List<SelectListItem>();
+
+			if (addEmptyItem)
+			{
+				selectListItems.Add(new SelectListItem { Text = "", Value = "0" });
+			}
+
+			foreach (ExternalSupervisor supervisor in stages)
+			{
+				selectListItems.Add(new SelectListItem { Text = supervisor.Name, Value = supervisor.ID.ToString() });
+			}
+
+			return selectListItems;
+		}
+
+		public static List<SelectListItem> ExamTypesToSelectListItems(IQueryable<ExamType> types, bool addEmptyItem = false)
+		{
+			List<SelectListItem> selectListItems = new List<SelectListItem>();
+
+			if (addEmptyItem)
+			{
+				selectListItems.Add(new SelectListItem { Text = "", Value = "0" });
+			}
+
+			foreach (ExamType examTypes in types)
+			{
+				selectListItems.Add(new SelectListItem { Text = examTypes.Name, Value = examTypes.ID.ToString() });
+			}
+
+			return selectListItems;
+		}
+
+		public static List<SelectListItem> ExamGradesToSelectListItems(IQueryable<ExamGrade> examGrades, bool addEmptyItem = false)
+		{
+			List<SelectListItem> selectListItems = new List<SelectListItem>();
+
+			if (addEmptyItem)
+			{
+				selectListItems.Add(new SelectListItem { Text = "", Value = "0" });
+			}
+
+			foreach (ExamGrade examGrade in examGrades)
+			{
+				selectListItems.Add(new SelectListItem { Text = examGrade.Name, Value = examGrade.ID.ToString() });
+			}
+
+			return selectListItems;
+		}
 
 		public static string GetBranchCenterHeaderString()
 		{

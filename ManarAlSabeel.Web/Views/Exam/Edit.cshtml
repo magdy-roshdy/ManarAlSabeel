@@ -1,0 +1,73 @@
+﻿@model ManarAlSabeel.Web.Models.ExamEditViewModel
+@using ManarAlSabeel.Domain.Entities
+@using ManarAlSabeel.Web.Heplers
+@using ManarAlSabeel.Web.Models
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>@StringTable.EditRegisteredStudent</h2>
+
+<div class="panel panel-default" style="width: 45%; margin: 0 auto;">
+	<div class="panel-body">
+
+		@using (Html.BeginForm("Edit", "Exam", FormMethod.Post, new { role = "form" }))
+		{
+			<div class="form-group">
+				<label>@StringTable.ExamDate</label>
+				@Html.TextBoxFor(x => x.Date,
+					new { @class = "form-control date-input", dir = "ltr", Value = Model.Date.ToShortDateString(), data_date_format = "dd/mm/yyyy" })
+				@Html.ValidationMessageFor(x => x.Date)
+			</div>
+			
+			<div class="form-group">
+				<label>@StringTable.ExamSupervisor</label>
+				@Html.DropDownListFor(x => x.SupervisorID,
+							@Helpers.TeachersToSelectListItems(Model.Teachers),
+					new { @class = "form-control select2" })
+				@Html.ValidationMessageFor(x => x.SupervisorID)
+			</div>
+			
+			<div class="form-group">
+				<label>@StringTable.ExternalSupervisor</label>
+				@Html.DropDownListFor(x => x.ExternalSupervisorID,
+					@Helpers.ExternalSupervisorToSelectListItems(Model.ExternalSupervisors, true),
+					new { @class = "form-control select2" })
+			</div>
+			
+			<div class="form-group">
+				<label>@StringTable.ExamType</label>
+				@Html.DropDownListFor(x => x.ExamTypeID,
+					@Helpers.ExamTypesToSelectListItems(Model.ExamTypes),
+					new { @class = "form-control select2" })
+				@Html.ValidationMessageFor(x => x.ExamTypeID)
+			</div>
+			
+			<div class="form-group">
+				<label>@StringTable.ExamGrade</label>
+				@Html.DropDownListFor(x => x.ExamGradeID,
+					@Helpers.ExamGradesToSelectListItems(Model.ExamGrades),
+					new { @class = "form-control select2" })
+				@Html.ValidationMessageFor(x => x.ExamGradeID)
+			</div>
+			
+			<div class="form-group">
+				<label>@StringTable.ExamBonusPoints</label>
+				@Html.TextBoxFor(x => x.BonusPoints, new { @class = "form-control" })
+			</div>
+			
+			<div class="form-group">
+				<label>@StringTable.ExamComments</label>
+				@Html.TextBoxFor(x => x.Comments, new { @class = "form-control" })
+				@Html.ValidationMessageFor(x => x.Comments)
+			</div>
+
+			@Html.HiddenFor(x => x.ID)
+			@Html.HiddenFor(x => x.RegistredStudentID)
+
+			<input type="submit" value="@StringTable.Save"
+				   class="btn btn-lg btn-primary btn-block" />
+		}
+	</div>
+</div>

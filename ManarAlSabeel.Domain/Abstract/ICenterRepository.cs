@@ -43,5 +43,16 @@ namespace ManarAlSabeel.Domain.Abstract
 		bool IsStudentInSemester(int studentId, int semesterId);
 
 		IQueryable<Country> GetAllCountries();
+
+		IQueryable<AdmissionInterview> GetAllAdmissionInterviews();
+		int? SaveAddmissionInterview(AdmissionInterview interview, int? studentId = null);
+
+		IQueryable<Exam> GetAllExams();
+
+		IQueryable<ExternalSupervisor> GetAllExternalSupervisors();
+		IQueryable<ExamType> GetAllExamTypes();
+		IQueryable<ExamGrade> GetAllExamGrades();
+
+		int? SaveExam(Exam exam);
 	}
 }

@@ -240,4 +240,28 @@
   <data name="StudentRegisteredBefore" xml:space="preserve">
     <value>عفوا ، تم تسجيل هذا الطالب في هذه الدورة العلمية من قبل</value>
   </data>
+  <data name="InterviewDateIsRequired" xml:space="preserve">
+    <value>من فضلك أدخل تاريخ المقابلة</value>
+  </data>
+  <data name="InterviewResultIsRequired" xml:space="preserve">
+    <value>من فضلك أدخل نتيجة المقابلة</value>
+  </data>
+  <data name="MemorizationAmountIsRequired" xml:space="preserve">
+    <value>من أفضلك أدخل مقدار حفظ الطالب عند المقابلة</value>
+  </data>
+  <data name="AdmissionInterviewCreated" xml:space="preserve">
+    <value>تم انشاء مقابلة قبول الطالب بنجاح</value>
+  </data>
+  <data name="AdmissionInterviewUpdated" xml:space="preserve">
+    <value>تم تعديل بيانات مقابلة قبول الطالب بنجاح</value>
+  </data>
+  <data name="ExamDateIsRequired" xml:space="preserve">
+    <value>من فضلك أدخل تاريخ الامتحان</value>
+  </data>
+  <data name="ExamCommentsIsRequired" xml:space="preserve">
+    <value>من فضلك أدخل ملاحظة الامتحان</value>
+  </data>
+  <data name="ExamAdded" xml:space="preserve">
+    <value>تم اضافة بيانات الامتحان بنجاح</value>
+  </data>
 </root>

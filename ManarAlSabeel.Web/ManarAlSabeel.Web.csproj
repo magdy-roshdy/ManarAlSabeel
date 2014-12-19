@@ -129,7 +129,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AdmissionInterviewController.cs" />
     <Compile Include="Controllers\ClassController.cs" />
+    <Compile Include="Controllers\ExamController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegisteredStudentController.cs" />
     <Compile Include="Controllers\SemesterController.cs" />
@@ -151,9 +153,12 @@
     <Compile Include="Infrastructure\SystemAdminsMembershipProvider.cs" />
     <Compile Include="Infrastructure\SystemAdminsProfileProvider.cs" />
     <Compile Include="Infrastructure\SystemAdminsRolesProvider.cs" />
+    <Compile Include="Models\AdmissionInterviewEditModel.cs" />
+    <Compile Include="Models\AdmissionInterviewsListViewModel.cs" />
     <Compile Include="Models\BranchViewModel.cs" />
     <Compile Include="Models\ClassEditViewModel.cs" />
     <Compile Include="Models\ClassesListViewModel.cs" />
+    <Compile Include="Models\ExamEditViewModel.cs" />
     <Compile Include="Models\RegisteredStudentEditViewModel.cs" />
     <Compile Include="Models\RegisteredStudentsListViewModel.cs" />
     <Compile Include="Models\StudentEditViewModel.cs" />
@@ -252,6 +257,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\RegisteredStudent\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AdmissionInterview\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AdmissionInterview\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Exam\Edit.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
