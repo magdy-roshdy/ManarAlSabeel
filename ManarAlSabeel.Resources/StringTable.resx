@@ -453,4 +453,25 @@
   <data name="Widow" xml:space="preserve">
     <value>أرمل</value>
   </data>
+  <data name="Edit" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="ViewRegisteredStudentPage" xml:space="preserve">
+    <value>عرض صفحة تسجيل الطالب</value>
+  </data>
+  <data name="AddDisciplinaryActivity" xml:space="preserve">
+    <value>اضافة نشاط تأديبي</value>
+  </data>
+  <data name="DisciplinaryActivitiesCount" xml:space="preserve">
+    <value>عدد الأنشطة التأديبية</value>
+  </data>
+  <data name="EditExamPageTitle" xml:space="preserve">
+    <value>تعديل بانات امتحان</value>
+  </data>
+  <data name="EditExam" xml:space="preserve">
+    <value>تعديل بيانات الامتحان</value>
+  </data>
+  <data name="ExamsListPageTitle" xml:space="preserve">
+    <value>قائمة امتحانات طالب مسجل</value>
+  </data>
 </root>

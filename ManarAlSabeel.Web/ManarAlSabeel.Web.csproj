@@ -159,6 +159,7 @@
     <Compile Include="Models\ClassEditViewModel.cs" />
     <Compile Include="Models\ClassesListViewModel.cs" />
     <Compile Include="Models\ExamEditViewModel.cs" />
+    <Compile Include="Models\ExamsListViewModel.cs" />
     <Compile Include="Models\RegisteredStudentEditViewModel.cs" />
     <Compile Include="Models\RegisteredStudentsListViewModel.cs" />
     <Compile Include="Models\StudentEditViewModel.cs" />
@@ -266,6 +267,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Exam\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Exam\List.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

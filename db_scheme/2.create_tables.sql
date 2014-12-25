@@ -7,7 +7,7 @@ GO
 /****** Object:  Table [dbo].[Countries]    Script Date: 2/10/2014 2:20:01 PM ******/
 CREATE TABLE [dbo].[Countries](
 	[CountryID] [int] IDENTITY(1,1) NOT NULL,
-	[CountryName] [nvarchar](50) NOT NULL,
+	[CountryName] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
  CONSTRAINT [PK_Country] PRIMARY KEY CLUSTERED 
 (
 	[CountryID] ASC
@@ -19,7 +19,7 @@ GO
 /****** Object:  Table [dbo].[Managers]    Script Date: 2/10/2014 2:20:29 PM ******/
 CREATE TABLE [dbo].[Managers](
 	[ManagerID] [int] IDENTITY(1,1) NOT NULL,
-	[ManagerName] [nvarchar](50) NOT NULL,
+	[ManagerName] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
  CONSTRAINT [PK_Managers] PRIMARY KEY CLUSTERED 
 (
 	[ManagerID] ASC
@@ -32,7 +32,7 @@ GO
 CREATE TABLE [dbo].[Centers](
 	[CenterID] [int] IDENTITY(1,1) NOT NULL,
 	[CenterManagerID] [int] NOT NULL,
-	[CenterName] [nvarchar](100) NOT NULL,
+	[CenterName] [nvarchar](100)  COLLATE Arabic_CI_AS NOT NULL,
  CONSTRAINT [PK_Center] PRIMARY KEY CLUSTERED 
 (
 	[CenterID] ASC
@@ -46,7 +46,7 @@ CREATE TABLE [dbo].[Branches](
 	[BranchID] [int] IDENTITY(1,1) NOT NULL,
 	[BranchManagerID] [int] NOT NULL,
 	[BranchCenterID] [int] NOT NULL,
-	[BranchName] [nvarchar](50) NOT NULL,
+	[BranchName] [nvarchar](50)  COLLATE Arabic_CI_AS NOT NULL,
  CONSTRAINT [PK_Branch] PRIMARY KEY CLUSTERED 
 (
 	[BranchID] ASC
@@ -58,13 +58,14 @@ GO
 /****** Object:  Table [dbo].[SystemAdmins]    Script Date: 2/24/2014 5:36:10 PM ******/
 CREATE TABLE [dbo].[SystemAdmins](
 	[SystemAdminID] [int] IDENTITY(1,1) NOT NULL,
-	[SystemAdminEmail] [nvarchar](100) NOT NULL,
-	[SystemAdminPassword] [nvarchar](150) NOT NULL,
+	[SystemAdminEmail] [nvarchar](100) COLLATE Arabic_CI_AS NOT NULL,
+	[SystemAdminPassword] [nvarchar](150) COLLATE Arabic_CI_AS NOT NULL,
 	[SystemAdminIsActive] [bit] NOT NULL,
 	[SystemAdminIsSuperAdmin] [bit] NOT NULL,
 	[SystemAdminLoginPersonType] [tinyint] NOT NULL,
 	[SystemAdminBranchID] [int] NULL,
 	[SystemAdminSexToManage] [tinyint] NULL,
+	[SystemAdminLastLogin] [datetime] NULL,
  CONSTRAINT [PK_SystemAdmins] PRIMARY KEY CLUSTERED 
 (
 	[SystemAdminID] ASC
@@ -83,18 +84,18 @@ GO
 CREATE TABLE [dbo].[Teachers](
 	[TeacherID] [int] IDENTITY(1,1) NOT NULL,
 	[TeacherBranchID] [int] NOT NULL,
-	[TeacherName] [nvarchar](100) NOT NULL,
+	[TeacherName] [nvarchar](100) COLLATE Arabic_CI_AS NOT NULL,
 	[TeacherNationality] [int] NOT NULL,
 	[TeacherBirthDate] [date] NOT NULL,
 	[TeacherBirthPlace] [int] NOT NULL,
 	[TeacherMaritalStatus] [tinyint] NOT NULL,
 	[TeacherMarriageDate] [date] NULL,
-	[TeacherProfission] [nvarchar](100) NULL,
+	[TeacherProfission] [nvarchar](100) COLLATE Arabic_CI_AS NULL,
 	[TeacherReligiousIdeology] [tinyint] NULL,
-	[TeacherMobile] [nvarchar](15) NOT NULL,
-	[TeacherHomeNumber] [nvarchar](15) NULL,
-	[TeacherEmail] [nvarchar](250) NULL,
-	[TeacherMemorizedQuraanAmount] [nvarchar](50) NOT NULL,
+	[TeacherMobile] [nvarchar](15) COLLATE Arabic_CI_AS NOT NULL,
+	[TeacherHomeNumber] [nvarchar](15) COLLATE Arabic_CI_AS NULL,
+	[TeacherEmail] [nvarchar](250) COLLATE Arabic_CI_AS NULL,
+	[TeacherMemorizedQuraanAmount] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
 	[TeacherIsSupervisor] [bit] NOT NULL,
 	[TeacherSex] [tinyint] NOT NULL,
 	[TeacherStatus] [tinyint] NOT NULL,
@@ -119,7 +120,7 @@ CREATE TABLE [dbo].[Classes](
 	[ClassSemesterID] [int] NOT NULL,
 	[ClassBranchID] [int] NOT NULL,
 	[ClassTeacherID] [int] NOT NULL,
-	[ClassName] [nvarchar](50) NOT NULL,
+	[ClassName] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
 	[ClassTeachingPeriod] [tinyint] NOT NULL,
 	[ClassSex] [tinyint] NOT NULL,
  CONSTRAINT [PK_Class] PRIMARY KEY CLUSTERED 
@@ -137,7 +138,7 @@ GO
 CREATE TABLE [dbo].[Tracks](
 	[TrackID] [int] IDENTITY(1,1) NOT NULL,
 	[TrackBranchID] [int] NOT NULL,
-	[TrackName] [varchar](50) NOT NULL,
+	[TrackName] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
  CONSTRAINT [PK_Track] PRIMARY KEY CLUSTERED 
 (
 	[TrackID] ASC
@@ -149,7 +150,7 @@ GO
 /****** Object:  Table [dbo].[BehaviorLevels]    Script Date: 2/10/2014 2:27:21 PM ******/
 CREATE TABLE [dbo].[BehaviorLevels](
 	[BehaviorLevelID] [int] IDENTITY(1,1) NOT NULL,
-	[BehaviorLevelName] [nvarchar](50) NOT NULL,
+	[BehaviorLevelName] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
 	[BehaviorLevelOrder] [tinyint] NOT NULL,
  CONSTRAINT [PK_BehaviorLevel] PRIMARY KEY CLUSTERED 
 (
@@ -163,7 +164,7 @@ GO
 CREATE TABLE [dbo].[Semesters](
 	[SemesterID] [int] IDENTITY(1,1) NOT NULL,
 	[SemesterBranchID] [int] NOT NULL,
-	[SemesterName] [nvarchar](50) NOT NULL,
+	[SemesterName] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
 	[SemesterStartDate] [date] NOT NULL,
 	[SemesterEndDate] [date] NOT NULL,
  CONSTRAINT [PK_Semester] PRIMARY KEY CLUSTERED 
@@ -177,7 +178,7 @@ GO
 /****** Object:  Table [dbo].[ExamGradeTypes]    Script Date: 2/10/2014 2:29:46 PM ******/
 CREATE TABLE [dbo].[ExamGradeTypes](
 	[GradeID] [int] IDENTITY(1,1) NOT NULL,
-	[GradeName] [nvarchar](50) NOT NULL,
+	[GradeName] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
  CONSTRAINT [PK_Grade] PRIMARY KEY CLUSTERED 
 (
 	[GradeID] ASC
@@ -190,7 +191,7 @@ GO
 
 CREATE TABLE [dbo].[ExamTypes](
 	[ExamTypeID] [tinyint] IDENTITY(1,1) NOT NULL,
-	[ExamTypeName] [nvarchar](50) NOT NULL,
+	[ExamTypeName] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
  CONSTRAINT [PK_ExamType] PRIMARY KEY CLUSTERED 
 (
 	[ExamTypeID] ASC
@@ -202,7 +203,7 @@ GO
 /****** Object:  Table [dbo].[ExternalSupervisors]    Script Date: 2/10/2014 2:30:31 PM ******/
 CREATE TABLE [dbo].[ExternalSupervisors](
 	[ExternalSupervisorID] [int] IDENTITY(1,1) NOT NULL,
-	[ExternalSupervisorName] [nvarchar](100) NOT NULL,
+	[ExternalSupervisorName] [nvarchar](100) COLLATE Arabic_CI_AS NOT NULL,
 	[ExternalSupervisorSex] [tinyint] NOT NULL,
  CONSTRAINT [PK_ExternalSupervisor] PRIMARY KEY CLUSTERED 
 (
@@ -215,7 +216,7 @@ GO
 /****** Object:  Table [dbo].[ProgressAxes]    Script Date: 2/10/2014 2:30:52 PM ******/
 CREATE TABLE [dbo].[ProgressAxes](
 	[ProgressAxisID] [int] IDENTITY(1,1) NOT NULL,
-	[ProgressAxisName] [nvarchar](50) NOT NULL,
+	[ProgressAxisName] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
 	[ProgressAxisTrackID] [int] NOT NULL,
  CONSTRAINT [PK_ProgressAxis] PRIMARY KEY CLUSTERED 
 (
@@ -228,7 +229,7 @@ GO
 /****** Object:  Table [dbo].[LearningProgressUnits]    Script Date: 2/10/2014 2:31:35 PM ******/
 CREATE TABLE [dbo].[LearningProgressUnits](
 	[LearningProgressUnitID] [int] IDENTITY(1,1) NOT NULL,
-	[LearningProgressUnitName] [nvarchar](50) NOT NULL,
+	[LearningProgressUnitName] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
 	[LearningProgressUnitTrackID] [int] NOT NULL,
 	[LearningProgressUnitHasSubUnits] [bit] NOT NULL,
 	[LearningProgressUnitSubUnitsCount] [int] NULL,
@@ -249,7 +250,7 @@ GO
 /****** Object:  Table [dbo].[LearningProgressSubUnits]    Script Date: 2/10/2014 2:32:21 PM ******/
 CREATE TABLE [dbo].[LearningProgressSubUnits](
 	[LearningProgressSubUnitID] [int] IDENTITY(1,1) NOT NULL,
-	[LearningProgressSubUnitName] [nvarchar](50) NOT NULL,
+	[LearningProgressSubUnitName] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
 	[ProgressSubUnitParentUnitID] [int] NOT NULL,
  CONSTRAINT [PK_LearningProgressSubUnit] PRIMARY KEY CLUSTERED 
 (
@@ -263,7 +264,7 @@ GO
 CREATE TABLE [dbo].[Stages](
 	[StageID] [int] IDENTITY(1,1) NOT NULL,
 	[StageTrackID] [int] NOT NULL,
-	[StageName] [nvarchar](50) NOT NULL,
+	[StageName] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
 	[LevelsCount] [tinyint] NOT NULL,
  CONSTRAINT [PK_Stage] PRIMARY KEY CLUSTERED 
 (
@@ -277,12 +278,12 @@ GO
 CREATE TABLE [dbo].[StudentGuardians](
 	[GuardianID] [int] IDENTITY(1,1) NOT NULL,
 	[GuardianBranchID] [int] NOT NULL,
-	[GuardianName] [nvarchar](100) NOT NULL,
-	[GuardianHomePhone] [nvarchar](15) NULL,
-	[GuardianMobilePhone] [nvarchar](15) NOT NULL,
-	[GuardianOtherPhone] [nvarchar](15) NULL,
-	[GuardianHomeAddress] [nvarchar](250) NULL,
-	[GuardianEmailAddress] [nvarchar](250) NULL,
+	[GuardianName] [nvarchar](100) COLLATE Arabic_CI_AS NOT NULL,
+	[GuardianHomePhone] [nvarchar](15) COLLATE Arabic_CI_AS NULL,
+	[GuardianMobilePhone] [nvarchar](15) COLLATE Arabic_CI_AS NOT NULL,
+	[GuardianOtherPhone] [nvarchar](15) COLLATE Arabic_CI_AS NULL,
+	[GuardianHomeAddress] [nvarchar](250) COLLATE Arabic_CI_AS NULL,
+	[GuardianEmailAddress] [nvarchar](250) COLLATE Arabic_CI_AS NULL,
 	[GuardianSex] [tinyint] NOT NULL,
  CONSTRAINT [PK_Guardian] PRIMARY KEY CLUSTERED 
 (
@@ -297,21 +298,22 @@ CREATE TABLE [dbo].[Students](
 	[StudentID] [int] IDENTITY(1,1) NOT NULL,
 	[StudentGuardianID] [int] NOT NULL,
 	[StudentBranchID] [int] NOT NULL,
-	[StudentName] [nvarchar](100) NOT NULL,
+	[StudentName] [nvarchar](100) COLLATE Arabic_CI_AS NOT NULL,
 	[StudentBirthDate] [date] NOT NULL,
-	[StudentPersonalPhotoPath] [nvarchar](150) NULL,
+	[StudentPersonalPhotoPath] [nvarchar](150) COLLATE Arabic_CI_AS NULL,
 	[StudentOriginNationality] [int] NOT NULL,
 	[StudentAcquiredNationality] [int] NULL,
-	[StudentSchoolName] [nvarchar](100) NULL,
-	[StudentLastEducationDegree] [nvarchar](100) NULL,
-	[StudentEducationStage] [nvarchar](50) NULL,
-	[StudentSchoolClass] [nvarchar](50) NULL,
+	[StudentSchoolName] [nvarchar](100) COLLATE Arabic_CI_AS NULL,
+	[StudentLastEducationDegree] [nvarchar](100) COLLATE Arabic_CI_AS NULL,
+	[StudentEducationStage] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
+	[StudentSchoolClass] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
 	[StudentHowYouKnewTheCenter] [int] NULL,
 	[StudentExpectedQuraanFinishTime] [int] NULL,
 	[StudentIsInTransportations] [bit] NOT NULL,
 	[StudentSex] [tinyint] NOT NULL,
 	[StudentStatus] [tinyint] NOT NULL,
-	[StudentAddedOn] [datetime] NOT NULL
+	[StudentAddedOn] [datetime] NOT NULL,
+	[AdmissionInterviewID] [int] NULL,
  CONSTRAINT [PK_Students] PRIMARY KEY CLUSTERED 
 (
 	[StudentID] ASC
@@ -338,7 +340,7 @@ CREATE TABLE [dbo].[RegisteredStudents](
 	[RegisteredStudentsBranchID] [int] NOT NULL,
 	[RegisteredStudentsSex] [tinyint] NOT NULL,
 	[RegisteredStudentsDate] [date] NOT NULL,
-	[RegisteredStudentsComments] [nvarchar](250) NULL,
+	[RegisteredStudentsComments] [nvarchar](250) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_SemesterRegistration] PRIMARY KEY CLUSTERED 
 (
 	[RegisteredStudentID] ASC
@@ -350,11 +352,10 @@ GO
 /****** Object:  Table [dbo].[AdmissionInterviews]    Script Date: 2/10/2014 2:36:00 PM ******/
 CREATE TABLE [dbo].[AdmissionInterviews](
 	[InterviewID] [int] IDENTITY(1,1) NOT NULL,
-	[InterviewStudentID] [int] NOT NULL,
 	[InterviewDate] [datetime] NOT NULL,
-	[InterviewMemorizationAmount] [nvarchar](50) NOT NULL,
-	[InterviewResult] [nvarchar](50) NOT NULL,
-	[InterviewNotes] [nvarchar](50) NULL,
+	[InterviewMemorizationAmount] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
+	[InterviewResult] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
+	[InterviewNotes] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_Interview] PRIMARY KEY CLUSTERED 
 (
 	[InterviewID] ASC
@@ -369,9 +370,9 @@ CREATE TABLE [dbo].[DisciplinaryActivitiesLog](
 	[DisciplinaryActivityID] [int] IDENTITY(1,1) NOT NULL,
 	[ActivityRegisteredStudentID] [int] NOT NULL,
 	[DisciplinaryActivityDate] [date] NOT NULL,
-	[DisciplinaryActivityReason] [nvarchar](100) NOT NULL,
-	[DisciplinaryActivityDetails] [nvarchar](250) NOT NULL,
-	[DisciplinaryActivityComments] [nvarchar](250) NULL,
+	[DisciplinaryActivityReason] [nvarchar](100) COLLATE Arabic_CI_AS NOT NULL,
+	[DisciplinaryActivityDetails] [nvarchar](250) COLLATE Arabic_CI_AS NOT NULL,
+	[DisciplinaryActivityComments] [nvarchar](250) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_DisciplinaryExercise] PRIMARY KEY CLUSTERED 
 (
 	[DisciplinaryActivityID] ASC
@@ -390,7 +391,7 @@ CREATE TABLE [dbo].[Exams](
 	[ExamGradeID] [int] NOT NULL,
 	[ExamDate] [datetime] NOT NULL,
 	[ExamBonusPoints] [tinyint] NOT NULL,
-	[ExamComments] [nvarchar](250) NULL,
+	[ExamComments] [nvarchar](250) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_Exam] PRIMARY KEY CLUSTERED 
 (
 	[ExamID] ASC
@@ -420,7 +421,7 @@ CREATE TABLE [dbo].[LearningProgressLogs](
 	[LearningProgressLogID] [int] IDENTITY(1,1) NOT NULL,
 	[LearningProgressLogExamID] [int] NOT NULL,
 	[LearningProgressLogAxesID] [int] NOT NULL,
-	[LearningProgressComments] [nvarchar](100) NULL,
+	[LearningProgressComments] [nvarchar](100) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_LearningProgressLog] PRIMARY KEY CLUSTERED 
 (
 	[LearningProgressLogID] ASC
@@ -451,7 +452,7 @@ CREATE TABLE [dbo].[StudentAbsenceLogs](
 	[StudentAbsenceLogDate] [datetime] NOT NULL,
 	[StudentAbsenceLoggedByID] [int] NOT NULL,
 	[StudentAbsenceLogIsHasExcuse] [bit] NOT NULL,
-	[StudentAbsenceLogExcuseDetails] [nvarchar](150) NULL,
+	[StudentAbsenceLogExcuseDetails] [nvarchar](150) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_StudentAbsenceLog] PRIMARY KEY CLUSTERED 
 (
 	[StudentAbsenceLogID] ASC
@@ -468,7 +469,7 @@ CREATE TABLE [dbo].[StudentBehaviorEvaluations](
 	[BehaviorEvaluationLogID] [int] IDENTITY(1,1) NOT NULL,
 	[BehaviorEvaluationExamID] [int] NOT NULL,
 	[BehaviorEvaluationLevelID] [int] NOT NULL,
-	[BehaviorEvaluationComments] [nvarchar](250) NULL,
+	[BehaviorEvaluationComments] [nvarchar](250) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_BehaviorEvaluation] PRIMARY KEY CLUSTERED 
 (
 	[BehaviorEvaluationLogID] ASC
@@ -481,7 +482,7 @@ GO
 /****** Object:  Table [dbo].[StudentCertificateTypes]    Script Date: 2/10/2014 2:42:23 PM ******/
 CREATE TABLE [dbo].[StudentCertificateTypes](
 	[CertificateTypeID] [tinyint] IDENTITY(1,1) NOT NULL,
-	[CertificateTypeName] [nvarchar](50) NOT NULL,
+	[CertificateTypeName] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
  CONSTRAINT [PK_CertificateType] PRIMARY KEY CLUSTERED 
 (
 	[CertificateTypeID] ASC
@@ -507,7 +508,7 @@ GO
 /****** Object:  Table [dbo].[StudentDocumentTypes]    Script Date: 2/10/2014 2:43:17 PM ******/
 CREATE TABLE [dbo].[StudentDocumentTypes](
 	[DocumentTypeID] [tinyint] IDENTITY(1,1) NOT NULL,
-	[DocumentTypeName] [nvarchar](50) NOT NULL,
+	[DocumentTypeName] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
  CONSTRAINT [PK_DocumentType] PRIMARY KEY CLUSTERED 
 (
 	[DocumentTypeID] ASC
@@ -520,8 +521,8 @@ GO
 CREATE TABLE [dbo].[StudentDocuments](
 	[StudentDocumentID] [int] IDENTITY(1,1) NOT NULL,
 	[DocumentStudentID] [int] NOT NULL,
-	[StudentDocumentName] [nvarchar](50) NOT NULL,
-	[StudentDocumentFilePath] [nvarchar](300) NOT NULL,
+	[StudentDocumentName] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
+	[StudentDocumentFilePath] [nvarchar](300) COLLATE Arabic_CI_AS NOT NULL,
 	[StudentDocumentType] [tinyint] NULL,
  CONSTRAINT [PK_Document] PRIMARY KEY CLUSTERED 
 (
@@ -537,8 +538,8 @@ CREATE TABLE [dbo].[StudentExpelLogs](
 	[StudentExpelLogID] [int] IDENTITY(1,1) NOT NULL,
 	[ExpelRegisteredStudentID] [int] NOT NULL,
 	[StudentExpelDate] [date] NOT NULL,
-	[StudentExpelReason] [nvarchar](150) NOT NULL,
-	[StudentExpelComments] [nvarchar](250) NULL,
+	[StudentExpelReason] [nvarchar](150) COLLATE Arabic_CI_AS NOT NULL,
+	[StudentExpelComments] [nvarchar](250) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_StudentExpelLog] PRIMARY KEY CLUSTERED 
 (
 	[StudentExpelLogID] ASC
@@ -555,7 +556,7 @@ CREATE TABLE [dbo].[StudentStageChangeLogs](
 	[StudentStagesLogStageID] [int] NOT NULL,
 	[StudentStagesLogStageLevel] [int] NOT NULL,
 	[StudentStagesLogChangeDate] [date] NOT NULL,
-	[StudentStagesLogComments] [nvarchar](350) NULL,
+	[StudentStagesLogComments] [nvarchar](350) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_StudentStageChangeLog] PRIMARY KEY CLUSTERED 
 (
 	[StudentStageChangeLogID] ASC
@@ -570,7 +571,7 @@ CREATE TABLE [dbo].[TeacherAbsenceLogs](
 	[AbsenceLogTeacherID] [int] NOT NULL,
 	[TeacherAbsenceLogDate] [date] NOT NULL,
 	[AbsenceLogIsHasAnexcuse] [bit] NOT NULL,
-	[AbsenceLogExcuseDetails] [nvarchar](100) NULL,
+	[AbsenceLogExcuseDetails] [nvarchar](100) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_TeacherAbsenceLog] PRIMARY KEY CLUSTERED 
 (
 	[TeacherAbsenceLogID] ASC

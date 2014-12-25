@@ -15,5 +15,6 @@ namespace ManarAlSabeel.Domain.Entities
 		public virtual int LoginPersonType { get; set; }
 		public virtual Branch Branch { get; set; }
 		public virtual Sex? SexToManage { get; set; }
+		public virtual DateTime LastLogin { get; set; }
 	}
 }

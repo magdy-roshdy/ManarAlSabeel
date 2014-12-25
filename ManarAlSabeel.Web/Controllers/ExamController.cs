@@ -20,6 +20,17 @@ namespace ManarAlSabeel.Web.Controllers
 			dbRepository = repo;
 		}
 
+		public ViewResult List(int? registeredStudentId)
+		{
+			IQueryable<Exam> exams = null;
+			if (registeredStudentId.HasValue)
+				exams = dbRepository.GetAllExams().Where(exam => exam.RegisteredStudent.ID == registeredStudentId.Value).OrderBy(exam => exam.Date);
+			else
+				exams = dbRepository.GetAllExams().Where(exam => exam.ID == 0);
+
+			return View(new ExamsListViewModel { Exams = exams });
+		}
+
 		public ViewResult Create(int registeredStudentId)
 		{
 			ExamEditViewModel examEditViewModel = new ExamEditViewModel();
@@ -36,21 +47,26 @@ namespace ManarAlSabeel.Web.Controllers
 
 		public ViewResult Edit(int id)
 		{
-			ExamEditViewModel examViewModel = null;
+			ExamEditViewModel examEditViewModel = null;
 			Exam examEntity = dbRepository.GetAllExams().FirstOrDefault<Exam>(x => x.ID == id);
 			if (examEntity != null)
 			{
-				examViewModel = new ExamEditViewModel();
-				examViewModel.ID = examEntity.ID;
-				examViewModel.RegistredStudentID = examEntity.RegisteredStudent.ID;
-				examViewModel.SupervisorID = examEntity.Supervisor.ID;
-				examViewModel.ExternalSupervisorID = (examEntity.ExternalSupervisor != null) ? examEntity.ExternalSupervisor.ID : 0;
-				examViewModel.Date = examEntity.Date;
-				examViewModel.Comments = examEntity.Comments;
-				examViewModel.BonusPoints = examEntity.BonusPoints;
+				examEditViewModel = new ExamEditViewModel();
+				examEditViewModel.ID = examEntity.ID;
+				examEditViewModel.RegistredStudentID = examEntity.RegisteredStudent.ID;
+				examEditViewModel.SupervisorID = examEntity.Supervisor.ID;
+				examEditViewModel.ExternalSupervisorID = (examEntity.ExternalSupervisor != null) ? examEntity.ExternalSupervisor.ID : 0;
+				examEditViewModel.Date = examEntity.Date;
+				examEditViewModel.Comments = examEntity.Comments;
+				examEditViewModel.BonusPoints = examEntity.BonusPoints;
+
+				examEditViewModel.Teachers = dbRepository.GetAllTeachers();
+				examEditViewModel.ExternalSupervisors = dbRepository.GetAllExternalSupervisors();
+				examEditViewModel.ExamTypes = dbRepository.GetAllExamTypes();
+				examEditViewModel.ExamGrades = dbRepository.GetAllExamGrades();
 			}
 
-			return View(examViewModel);
+			return View(examEditViewModel);
 		}
 
 		[HttpPost]
@@ -75,9 +91,9 @@ namespace ManarAlSabeel.Web.Controllers
 				examEntity.Date = exam.Date;
 
 				dbRepository.SaveExam(examEntity);
-				TempData["message"] = Messages.ExamAdded;
+				TempData["message"] = newsExam ? Messages.ExamAdded : Messages.ExamEditedSuccessfully;
 
-				return RedirectToAction("List", "RegisteredStudent");
+				return RedirectToAction("Edit", "RegisteredStudent", new { id = exam.RegistredStudentID });
 			}
 			else
 			{

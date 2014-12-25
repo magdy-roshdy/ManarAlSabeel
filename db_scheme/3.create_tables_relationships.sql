@@ -187,6 +187,13 @@ GO
 ALTER TABLE [dbo].[Students] CHECK CONSTRAINT [FK_StudentGuardians_Students]
 GO
 
+ALTER TABLE [dbo].[Students]  WITH CHECK ADD CONSTRAINT [FK_AdmissionInterviews_Students] FOREIGN KEY([AdmissionInterviewID])
+REFERENCES [dbo].[AdmissionInterviews] (InterviewID)
+GO
+
+ALTER TABLE [dbo].[Students] CHECK CONSTRAINT [FK_AdmissionInterviews_Students]
+GO
+
 /*****************************/
 /*** Table [dbo].[RegisteredStudents] ***/
 /*****************************/
@@ -216,16 +223,6 @@ REFERENCES [dbo].[Branches] ([BranchID])
 GO
 
 ALTER TABLE [dbo].[RegisteredStudents] CHECK CONSTRAINT [FK_Branches_RegisteredStudents]
-GO
-
-/*****************************/
-/*** Table [dbo].[AdmissionInterviews] ***/
-/*****************************/
-ALTER TABLE [dbo].[AdmissionInterviews]  WITH CHECK ADD  CONSTRAINT [FK_Students_AdmissionInterviews] FOREIGN KEY([InterviewStudentID])
-REFERENCES [dbo].[Students] ([StudentID])
-GO
-
-ALTER TABLE [dbo].[AdmissionInterviews] CHECK CONSTRAINT [FK_Students_AdmissionInterviews]
 GO
 
 /*****************************/

@@ -205,6 +205,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تم تعديل بيانات الامتحان بنجاح.
+        /// </summary>
+        public static string ExamEditedSuccessfully {
+            get {
+                return ResourceManager.GetString("ExamEditedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to من أفضلك أدخل الوقت المتوقع لانهاء القرآن.
         /// </summary>
         public static string ExpectedTimeToFinishQuraanRequired {

@@ -52,6 +52,8 @@ namespace ManarAlSabeel.Web.Controllers
 				viewModel.StudentID = registeredStudentEntity.Student.ID;
 				viewModel.StageID = registeredStudentEntity.Stage.ID;
 
+				viewModel.ExamsCount = registeredStudentEntity.Exams.Count;
+
 				viewModel.Classes = dbRepository.GetAllClasses();
 				viewModel.Students = dbRepository.GetAllStudents();
 				viewModel.Stages = dbRepository.GetAllStages();

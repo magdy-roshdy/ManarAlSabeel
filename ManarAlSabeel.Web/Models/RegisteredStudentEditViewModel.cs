@@ -16,6 +16,9 @@ namespace ManarAlSabeel.Web.Models
 		public int BranchID { get; set; }
 		public string BranchName { get; set; }
 
+		public int ExamsCount { get; set; }
+		public int DisciplinaryActivitiesCount { get; set; }
+
 		public IQueryable<Class> Classes { get; set; }
 		public IQueryable<Student> Students { get; set; }
 		public IQueryable<Stage> Stages { get; set; }

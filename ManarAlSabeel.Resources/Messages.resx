@@ -264,4 +264,7 @@
   <data name="ExamAdded" xml:space="preserve">
     <value>تم اضافة بيانات الامتحان بنجاح</value>
   </data>
+  <data name="ExamEditedSuccessfully" xml:space="preserve">
+    <value>تم تعديل بيانات الامتحان بنجاح</value>
+  </data>
 </root>

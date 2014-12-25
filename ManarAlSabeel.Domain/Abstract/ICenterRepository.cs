@@ -21,8 +21,8 @@ namespace ManarAlSabeel.Domain.Abstract
 		int? SaveTeacher(Teacher teacher);
 		bool DeleteTeacher(int teacherId);
 
-		SystemAdmin AuthenticateSystemAdmin(string email, string password);
 		SystemAdmin GetSystemAdminByEmail(string email);
+		void UpdateSystemAdminLastLogin(int adminId, DateTime lastLogin);
 
 		IQueryable<Semester> GetAllSemesters(bool orderByStartDate = true);
 		int? SaveSemester(Semester semester);

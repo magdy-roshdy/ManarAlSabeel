@@ -42,7 +42,7 @@ namespace ManarAlSabeel.Web.Infrastructure
 					//very critical!
 					//--------------
 					//profile provider rely on DB to person profile, and DB session rely on profile provider to load filters values
-					//if i will make a DB call from the profile provider i have to switch filter off before the calla and set it back off after
+					//if i will make a DB call from the profile provider i have to switch filter off before the call and set it back on after
 					DBRepository.SetFilterIgnore(true);
 					SystemAdmin admin = DBRepository.GetSystemAdminByEmail(userName);
 					DBRepository.SetFilterIgnore(false);

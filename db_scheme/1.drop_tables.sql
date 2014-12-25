@@ -34,12 +34,11 @@ ALTER TABLE [dbo].[Students] DROP [FK__Countries_Students]
 ALTER TABLE [dbo].[Students] DROP [FK__Countries_Students_2]
 ALTER TABLE [dbo].[Students] DROP [FK_Branches_Students]
 ALTER TABLE [dbo].[Students] DROP [FK_StudentGuardians_Students]
+ALTER TABLE [dbo].[Students] DROP [FK_AdmissionInterviews_Students]
 
 ALTER TABLE [dbo].[RegisteredStudents] DROP [FK_Classes_RegisteredStudents]
 ALTER TABLE [dbo].[RegisteredStudents] DROP [FK_Students_RegisteredStudents]
 ALTER TABLE [dbo].[RegisteredStudents] DROP [FK_Stages_RegisteredStudents]
-
-ALTER TABLE [dbo].[AdmissionInterviews] DROP [FK_Students_AdmissionInterviews]
 
 ALTER TABLE [dbo].[DisciplinaryActivitiesLog] DROP [FK_RegisteredStudents_DisciplinaryActivitiesLog]
 

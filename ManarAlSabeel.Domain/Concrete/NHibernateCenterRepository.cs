@@ -347,15 +347,28 @@ namespace ManarAlSabeel.Domain.Concrete
 			return false;
 		}
 
-		public SystemAdmin AuthenticateSystemAdmin(string email, string password)
-		{
-			return getSession().Query<SystemAdmin>().Where(x => x.Email == email && x.Password == password).FirstOrDefault();
-		}
-
 		public SystemAdmin GetSystemAdminByEmail(string email)
 		{
-			return getSession().Query<SystemAdmin>().Where(x => x.Email == email).FirstOrDefault();
+			return getSession().Query<SystemAdmin>().Where(x => x.Email == email).FirstOrDefault();		
 		}
+		public void UpdateSystemAdminLastLogin(int adminId, DateTime lastLogin)
+		{
+			using (ISession session = getSession())
+			{
+				using (ITransaction transaction = session.BeginTransaction())
+				{
+					SystemAdmin admin = session.Get<SystemAdmin>(adminId);
+					if(admin != null)
+					{
+						admin.LastLogin = lastLogin;
+						session.Save(admin);
+
+						transaction.Commit();
+					}
+				}
+			}
+		}
+
 
 		public IQueryable<Semester> GetAllSemesters(bool orderByStartDate = true)
 		{
@@ -575,6 +588,11 @@ namespace ManarAlSabeel.Domain.Concrete
 					RegisteredStudent db_registeredStudent = session.Get<RegisteredStudent>(registeredStudentId);
 					if (db_registeredStudent != null)
 					{
+						IQueryable<StudentStageChangeLog> studentLogs = session.Query<StudentStageChangeLog>().Where(stageLog => stageLog.RegisteredStudent.ID == db_registeredStudent.ID);
+
+						foreach (StudentStageChangeLog _log in studentLogs)
+							session.Delete(_log);
+
 						session.Delete(db_registeredStudent);
 						transaction.Commit();
 						session.Flush();

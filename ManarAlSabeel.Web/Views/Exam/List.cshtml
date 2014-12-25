@@ -1,0 +1,40 @@
+﻿@model ManarAlSabeel.Web.Models.ExamsListViewModel
+@using ManarAlSabeel.Domain.Entities
+
+@{
+	ViewBag.Title = ManarAlSabeel.Web.Heplers.Helpers.GetPageTitle(@StringTable.ExamsListPageTitle);
+}
+
+<h2>@StringTable.ExamsListPageTitle</h2>
+
+<style type="text/css">
+	.registered-student-div {
+		float: right;
+		width: 200px;
+		margin: 2px;
+	}
+
+	.registered-student-name {
+		font-family: Arial;
+		font-weight: bold;
+		font-size: 13pt;
+	}
+</style>
+
+<div>
+	@foreach (Exam exam in Model.Exams)
+	{
+		<div class="registered-student-div panel panel-default">
+			<div class="panel-body">
+				<div>@exam.Date.ToShortDateString()</div>
+				<div>@exam.Type.Name</div>
+				<div>@exam.Grade.Name</div>
+			</div>
+			<div class="panel-footer">
+				<div>
+					@Html.ActionLink(StringTable.EditExam, "Edit", new { @exam.ID })
+				</div>
+			</div>
+		</div>
+	}
+</div>

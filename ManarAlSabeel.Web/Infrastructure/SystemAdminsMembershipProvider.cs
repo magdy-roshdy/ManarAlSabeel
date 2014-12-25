@@ -23,7 +23,13 @@ namespace ManarAlSabeel.Web.Infrastructure
 			if (!admin.IsActive)
 				return false;
 
-			return  SecurityHelper.VerifyHash(password, admin.Password);
+			bool isValid = SecurityHelper.VerifyHash(password, admin.Password);
+			if(isValid)
+			{
+				DBRepository.UpdateSystemAdminLastLogin(admin.ID, DateTime.Now);
+			}
+
+			return isValid;
 		}
 	}
 }

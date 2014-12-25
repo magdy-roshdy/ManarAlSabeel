@@ -106,6 +106,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to اضافة نشاط تأديبي.
+        /// </summary>
+        public static string AddDisciplinaryActivity {
+            get {
+                return ResourceManager.GetString("AddDisciplinaryActivity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to اضافة امتحان.
         /// </summary>
         public static string AddExam {
@@ -331,6 +340,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to عدد الأنشطة التأديبية.
+        /// </summary>
+        public static string DisciplinaryActivitiesCount {
+            get {
+                return ResourceManager.GetString("DisciplinaryActivitiesCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to مطلق.
         /// </summary>
         public static string Divorced {
@@ -340,11 +358,38 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تعديل.
+        /// </summary>
+        public static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تعديل بيانات فصل تدريس.
         /// </summary>
         public static string EditClass {
             get {
                 return ResourceManager.GetString("EditClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعديل بيانات الامتحان.
+        /// </summary>
+        public static string EditExam {
+            get {
+                return ResourceManager.GetString("EditExam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعديل بانات امتحان.
+        /// </summary>
+        public static string EditExamPageTitle {
+            get {
+                return ResourceManager.GetString("EditExamPageTitle", resourceCulture);
             }
         }
         
@@ -462,6 +507,15 @@ namespace ManarAlSabeel.Resources {
         public static string ExamsCount {
             get {
                 return ResourceManager.GetString("ExamsCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to قائمة امتحانات طالب مسجل.
+        /// </summary>
+        public static string ExamsListPageTitle {
+            get {
+                return ResourceManager.GetString("ExamsListPageTitle", resourceCulture);
             }
         }
         
@@ -1056,6 +1110,15 @@ namespace ManarAlSabeel.Resources {
         public static string Track {
             get {
                 return ResourceManager.GetString("Track", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to عرض صفحة تسجيل الطالب.
+        /// </summary>
+        public static string ViewRegisteredStudentPage {
+            get {
+                return ResourceManager.GetString("ViewRegisteredStudentPage", resourceCulture);
             }
         }
         
