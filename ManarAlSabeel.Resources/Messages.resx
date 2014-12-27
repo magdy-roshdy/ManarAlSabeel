@@ -267,4 +267,7 @@
   <data name="ExamEditedSuccessfully" xml:space="preserve">
     <value>تم تعديل بيانات الامتحان بنجاح</value>
   </data>
+  <data name="ThereIsNoRegisteredStudentsInSemester" xml:space="preserve">
+    <value>لا يوجد طلاب مسجلون بالدورة</value>
+  </data>
 </root>

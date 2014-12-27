@@ -2,64 +2,68 @@
 @using ManarAlSabeel.Domain.Entities
 
 @{
-	ViewBag.Title = ManarAlSabeel.Web.Heplers.Helpers.GetPageTitle(@StringTable.RegisteredStudentsList);
+	ViewBag.Title = ManarAlSabeel.Web.Heplers.Helpers.GetPageTitle(@StringTable.SemesterRegisteredStudentsList);
 }
 
 <style type="text/css">
 	.registered-student-div
 	{
 		float: right;
-		width: 200px;
-		margin: 2px;
+		width: 310px;
+		margin: 4px;
 	}
 
 	.registered-student-name
 	{
 		font-family: Arial;
 		font-weight: bold;
-		font-size: 13pt;
+		font-size: 14pt;
 	}
+
+	.registered-student-subdetails-div 
+	{
+		font-size: 10pt;
+		color: #808080;
+	}
+
 </style>
-<script type="text/javascript">
-	function onDeleteClick()
-	{
-		if (confirm('@StringTable.AreYouSure')) {
-			$('deleteForm').submit();
+
+<h2>@StringTable.SemesterRegisteredStudentsList [@Model.SemesterName]</h2>
+@if(Model.RegisteredStudents.Count() > 0)
+{
+	<div>
+		@foreach (RegisteredStudent registeredStudent in Model.RegisteredStudents)
+		{
+			<div class="registered-student-div panel panel-default">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-4">
+							<img alt=""
+								 src="../content/images/default-male-profile.png" />
+						</div>
+						<div class="col-md-8">
+							<div class="registered-student-name">@registeredStudent.Student.Name</div>
+							<div class="registered-student-subdetails-div">
+								<div>@registeredStudent.Class.Name</div>
+								<div>@registeredStudent.Stage.Name</div>
+								<div>@StringTable.DateOfRegister @registeredStudent.Date.ToShortDateString()</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer">
+					@Html.ActionLink(StringTable.ViewRegisteredStudentPage, "Edit", new { registeredStudent.ID })	
+				</div>
+			</div>
 		}
-
-		return false;
-	}
-</script>
-<h2>@StringTable.RegisteredStudentsList</h2>
-
-<div>
-	@foreach (RegisteredStudent registeredStudent in Model.RegisteredStudents)
-	{
-		<div class="registered-student-div panel panel-default">
-			<div class="panel-body">
-				<div class="registered-student-name">@registeredStudent.Student.Name</div>
-				<div style="margin-right: 10px; font-size: 10pt; color: #808080;">
-					<div>@registeredStudent.Class.Semester.Name</div>
-					<div>@registeredStudent.Class.Name</div>
-					<div>@registeredStudent.Stage.Name</div>
-				</div>
-			</div>
-			<div class="panel-footer">
-				<div>
-					@Html.ActionLink(StringTable.ViewRegisteredStudentPage, "Edit", new { registeredStudent.ID })
-				</div>
-				@using (@Html.BeginForm("Delete", "RegisteredStudent"))
-				{
-					@Html.Hidden("registeredStudentId", registeredStudent.ID)
-					@Html.Hidden("returnUrl", "/")
-					<input class="btn btn-default btn-xs" type="submit"
-						   value="@StringTable.DeleteRegisteredStudent"
-						   onclick="return confirm('@StringTable.AreYouSure');" />
-				}
-			</div>
-		</div>
-	}
-</div>
+	</div>
+}
+else
+{
+	<div>
+		<h3>@Messages.ThereIsNoRegisteredStudentsInSemester</h3>
+	</div>
+}
 <!--
 <div>
 	<ul class="pagination">

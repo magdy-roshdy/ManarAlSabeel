@@ -22,7 +22,7 @@ namespace ManarAlSabeel.Web.Controllers
 			dbRepository = repo;
 		}
 
-		public ViewResult List(int page = 1)
+		public ViewResult List(int? semesterId, int page = 1)
 		{
 			PagingInfo pagingInfo = new PagingInfo
 			{
@@ -30,10 +30,20 @@ namespace ManarAlSabeel.Web.Controllers
 				ItemsPerPage = PageSize,
 				TotalItems = dbRepository.GetAllClasses().Count()
 			};
+			RegisteredStudentsListViewModel model = new RegisteredStudentsListViewModel();
+			IQueryable<RegisteredStudent> students = null;
+			if (semesterId.HasValue)
+			{
+				students = dbRepository.GetAllRegisteredStudents().Where(student => student.Class.Semester.ID == semesterId).Skip((page - 1) * PageSize).Take(PageSize);
+				Semester semster = dbRepository.GetAllSemesters().Where(s => s.ID == semesterId.Value).FirstOrDefault();
+				if (semster != null)
+					model.SemesterName = semster.Name;
+			}
+			else
+				students = dbRepository.GetAllRegisteredStudents().Where(student => student.ID == 0);
 
-			IQueryable<RegisteredStudent> students =
-				dbRepository.GetAllRegisteredStudents().Skip((page - 1) * PageSize).Take(PageSize);
-			RegisteredStudentsListViewModel model = new RegisteredStudentsListViewModel { RegisteredStudents = students, PagingInfo = pagingInfo };
+			model.RegisteredStudents = students;
+			model.PagingInfo = pagingInfo;
 
 			return View(model);
 		}

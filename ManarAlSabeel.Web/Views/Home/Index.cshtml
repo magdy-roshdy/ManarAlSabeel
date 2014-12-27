@@ -66,54 +66,13 @@
 		else
 		{
 			<div>
-				<h2 class="semester-name">@Model.Name</h2>
+				<h2 class="semester-name">@StringTable.CurrentSemester [@Model.Name]</h2>
 			</div>
 			<div>
-				@{
-					IList<Class> classesList = Model.Classes.Where(x => x.Sex == Helpers.GetProfileSex().Value).ToList();
-				}
-
-				@if (classesList.Count == 0)
-				{
-					<div>@Messages.NoClassesInCurrentSemester</div>
-				}
-				else
-				{
-					foreach (ManarAlSabeel.Domain.Entities.Class _class in classesList.OrderBy(x => x.TeachingPeriod))
-					{
-						<div class="panel panel-default class-panel">
-							<div class="panel-heading class-panel-heading">
-								@string.Format("{0} ({1})", _class.Name, ManarAlSabeel.Web.Heplers.Helpers.GetClassPeriodCaption(_class.TeachingPeriod))
-							</div>
-							<div class="panel-body">
-								@{
-									IList<RegisteredStudent> studentsList = _class.RegisteredStudents.Where(x => x.Sex == Helpers.GetProfileSex().Value).ToList();
-								}
-								@if (studentsList.Count() > 0)
-								{
-									var studentsTrackGroups = studentsList.GroupBy(x => x.Stage.Track);
-
-									foreach (var group in studentsTrackGroups)
-									{
-										<div class="track-name-heading">
-											@group.Key.Name
-										</div>
-										<div class="devider">&nbsp;</div>
-										<div class="students-count">
-											@string.Format("{0} {1}", @group.Count(), StringTable.Students)
-										</div>
-									}
-								}
-								else
-								{
-									<div class="no-students">
-										@Messages.NoStudentsInTheClass
-									</div>
-								}
-							</div>
-						</div>
-					}
-				}
+				@Html.ActionLink(@StringTable.SemesterRegisteredStudentsList, "List", "RegisteredStudent", new { semesterId = Model.ID }, null)
+			</div>
+			<div>
+				@Html.ActionLink(@StringTable.AddRegisteredStudentToSemester, "Create", "RegisteredStudent", new { semesterId = Model.ID }, null)
 			</div>
 		}
 	</div>

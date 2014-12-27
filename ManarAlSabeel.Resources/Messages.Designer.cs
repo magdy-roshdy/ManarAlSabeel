@@ -509,5 +509,14 @@ namespace ManarAlSabeel.Resources {
                 return ResourceManager.GetString("ThereIsNoCurrentSemester", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لا يوجد طلاب مسجلون بالدورة.
+        /// </summary>
+        public static string ThereIsNoRegisteredStudentsInSemester {
+            get {
+                return ResourceManager.GetString("ThereIsNoRegisteredStudentsInSemester", resourceCulture);
+            }
+        }
     }
 }

@@ -135,8 +135,8 @@
   <data name="AddExam" xml:space="preserve">
     <value>اضافة امتحان</value>
   </data>
-  <data name="AddRegisteredStudent" xml:space="preserve">
-    <value>تسجيل طالب جديد</value>
+  <data name="AddRegisteredStudentToSemester" xml:space="preserve">
+    <value>تسجيل طالب جديد بالدورة</value>
   </data>
   <data name="AddSemester" xml:space="preserve">
     <value>اضافة دورة تعليمية</value>
@@ -249,8 +249,8 @@
   <data name="ExamGrade" xml:space="preserve">
     <value>تقدير الامتحان</value>
   </data>
-  <data name="ExamsCount" xml:space="preserve">
-    <value>عدد الامتحانات</value>
+  <data name="Exams" xml:space="preserve">
+    <value>الامتحانات</value>
   </data>
   <data name="ExamSupervisor" xml:space="preserve">
     <value>مشرف الامتحان</value>
@@ -369,8 +369,8 @@
   <data name="QuraanMemorizationAmount" xml:space="preserve">
     <value>مقدار الحفظ من القرآن</value>
   </data>
-  <data name="RegisteredStudentsList" xml:space="preserve">
-    <value>قائمة الطلاب المسجلون</value>
+  <data name="SemesterRegisteredStudentsList" xml:space="preserve">
+    <value>قائمة الطلاب المسجلون بالدورة</value>
   </data>
   <data name="ReligiousIdeology" xml:space="preserve">
     <value>المذهب الديني</value>
@@ -462,8 +462,8 @@
   <data name="AddDisciplinaryActivity" xml:space="preserve">
     <value>اضافة نشاط تأديبي</value>
   </data>
-  <data name="DisciplinaryActivitiesCount" xml:space="preserve">
-    <value>عدد الأنشطة التأديبية</value>
+  <data name="DisciplinaryActivities" xml:space="preserve">
+    <value>الأنشطة التأديبية</value>
   </data>
   <data name="EditExamPageTitle" xml:space="preserve">
     <value>تعديل بانات امتحان</value>
@@ -473,5 +473,17 @@
   </data>
   <data name="ExamsListPageTitle" xml:space="preserve">
     <value>قائمة امتحانات طالب مسجل</value>
+  </data>
+  <data name="CurrentSemester" xml:space="preserve">
+    <value>الدورة العلمية الحالية</value>
+  </data>
+  <data name="DateOfRegister" xml:space="preserve">
+    <value>تاريخ التسجيل</value>
+  </data>
+  <data name="StudentAbsencePage" xml:space="preserve">
+    <value>صفحة غياب الطالب</value>
+  </data>
+  <data name="StudentPage" xml:space="preserve">
+    <value>صفحة بيانات الطالب</value>
   </data>
 </root>
