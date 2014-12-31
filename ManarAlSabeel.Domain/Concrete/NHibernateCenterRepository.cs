@@ -118,6 +118,7 @@ namespace ManarAlSabeel.Domain.Concrete
 						db_student.SchoolName = student.SchoolName;
 						db_student.Sex = student.Sex;
 						db_student.Status = student.Status;
+						db_student.ProfilePhotoName = student.ProfilePhotoName;
 
 						session.SaveOrUpdate(db_student);
 						transaction.Commit();

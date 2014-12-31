@@ -3,13 +3,13 @@
 @using ManarAlSabeel.Web.Heplers
 
 @{
-	
-	ViewBag.Title = ManarAlSabeel.Web.Heplers.Helpers.GetPageTitle(@StringTable.EditStudentInfo);
+	string pageTitle = (Model.ID == 0) ? StringTable.AddStudent : StringTable.EditStudentInfo;
+	ViewBag.Title = ManarAlSabeel.Web.Heplers.Helpers.GetPageTitle(pageTitle);
 
 	ManarAlSabeel.Web.Models.BranchViewModel _branch = Helpers.GetBranchViewModel(Model.BranchID, Model.BranchName);
 }
 
-<h2>@StringTable.EditStudentInfo</h2>
+<h2>@pageTitle</h2>
 
 @if(Model.ID > 0 )
 {
@@ -24,138 +24,162 @@
 	}
 }
 
-<div class="panel panel-default" style="width: 45%; margin: 0 auto;">
-	<div class="panel-body">
+<div class="panel panel-default" style="width: 75%; margin: 0 auto;">
+	@using (Html.BeginForm("Edit", "Student", FormMethod.Post, new { enctype = "multipart/form-data", role="form" }))
+	{
+		@Html.ValidationSummary(true)
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>@StringTable.Name</label>
+						@Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+						@Html.ValidationMessageFor(x => x.Name)
+					</div>
 
-		@using (Html.BeginForm("Edit", "Student", FormMethod.Post, new { enctype = "multipart/form-data", role="form" }))
-		{
-			@Html.ValidationSummary(true)
-			
-			<div class="form-group">
-				<label>@StringTable.Name</label>
-				@Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
-				@Html.ValidationMessageFor(x => x.Name)
-			</div>
+					<div class="form-group">
+						<label>@StringTable.DateOfBirth</label>
+						@Html.TextBoxFor(x => x.BirthDate,
+					new
+					{
+						@class = "form-control date-input",
+						data_date_format = "dd/mm/yyyy",
+						Value = Model.BirthDate.ToShortDateString(),
+						dir = "ltr"
+					})
+						@Html.ValidationMessageFor(x => x.BirthDate)
+					</div>
 
-			<div class="form-group">
-				<label>@StringTable.DateOfBirth</label>
-				@Html.TextBoxFor(x => x.BirthDate,
-					new { @class = "form-control date-input",
-						data_date_format="dd/mm/yyyy",
-						  Value = Model.BirthDate.ToShortDateString(),
-						  dir="ltr"
-						})
-				@Html.ValidationMessageFor(x => x.BirthDate)
-			</div>
-			
-			<div class="form-group">
-				<label>@StringTable.OriginalNationality</label>
-				@Html.DropDownListFor(x => x.OriginalNationalityID,
+					<div class="form-group">
+						<label>@StringTable.OriginalNationality</label>
+						@Html.DropDownListFor(x => x.OriginalNationalityID,
 					@ManarAlSabeel.Web.Heplers.Helpers.CountriesToSelectListItems(Model.Countries),
 					new { @class = "form-control select2" })
-			</div>
-			
-			<div class="form-group">
-				<label>@StringTable.AcquiredNationality</label>
-				@Html.DropDownListFor(x => x.AcquiredNationalityID,
+					</div>
+
+					<div class="form-group">
+						<label>@StringTable.AcquiredNationality</label>
+						@Html.DropDownListFor(x => x.AcquiredNationalityID,
 					@ManarAlSabeel.Web.Heplers.Helpers.CountriesToSelectListItems(Model.Countries, true),
 					new { @class = "form-control select2" })
-			</div>
-			
-			<div class="form-group">
-				<label>@StringTable.Guardian</label>
-				@Html.DropDownListFor(x => x.GuardianID,
+					</div>
+
+					<div class="form-group">
+						<label>@StringTable.Guardian</label>
+						@Html.DropDownListFor(x => x.GuardianID,
 					@ManarAlSabeel.Web.Heplers.Helpers.GuardiansToSelectListItems(Model.Guardians),
 					new { @class = "form-control select2" })
-			</div>
-			
-			<div class="form-group">
-				<label>@StringTable.Branch</label>
-				@Html.TextBox("branch", _branch.Name, new { disabled = "disabled", @class = "form-control" })
-				@Html.HiddenFor(x => x.BranchID, new { Value = _branch.ID })
-			</div>
-			
-			<div class="form-group">
-				<label>@StringTable.SchoolName</label>
-				@Html.TextBoxFor(x => x.SchoolName, new { @class = "form-control" })
-			</div>
-			
-			<div class="form-group">
-				<label>@StringTable.SchoolClassName</label>
-				@Html.TextBoxFor(x => x.SchoolClass, new { @class = "form-control" })
-			</div>
+					</div>
 
-			<div class="form-group">
-				<label>@StringTable.LastStudyDegree</label>
-				@Html.TextBoxFor(x => x.LastEducationDegree, new { @class = "form-control" })
-			</div>
+					<div class="form-group">
+						<label>@StringTable.Branch</label>
+						@Html.TextBox("branch", _branch.Name, new { disabled = "disabled", @class = "form-control" })
+						@Html.HiddenFor(x => x.BranchID, new { Value = _branch.ID })
+					</div>
 
-			<div class="form-group">
-				<label>@StringTable.CurrentStudySatge</label>
-				@Html.TextBoxFor(x => x.EducationStage, new { @class = "form-control" })
-			</div>
-
-			<div class="form-group">
-				<label>@StringTable.ExpectedPeriodToFinishQuraan</label>
-				@Html.TextBoxFor(x => x.ExpectedQuraanFinishTime, new { @class = "form-control" })
-				@Html.ValidationMessageFor(x => x.ExpectedQuraanFinishTime)
-			</div>
-			
-			<div class="form-group">
-				<label>@StringTable.HowDidYouTheCenter</label>
-
-				@Html.RadioButtonFor(x => x.HowKnewTheCenter, HowKnewTheCenter.Ad)
-				<label>@StringTable.Ad</label>
-				
-				@Html.RadioButtonFor(x => x.HowKnewTheCenter, HowKnewTheCenter.Friend)
-				<label>@StringTable.Friend</label>
-				
-				@Html.RadioButtonFor(x => x.HowKnewTheCenter, HowKnewTheCenter.Other)
-				<label>@StringTable.Other</label>
-				
-			</div>
-
-			<div class="form-group">
-				<label>@StringTable.IsStudentRegisteredInTransportations</label>
-				@Html.CheckBoxFor(x => x.IsInTransportations)
-			</div>
-
-			<div class="form-group">
-				<label>@StringTable.Sex</label>
-
-				@Html.RadioButtonFor(x => x.Sex, ManarAlSabeel.Domain.Entities.Sex.Male, new { disabled = "disabled" })
-				<label>@StringTable.Male</label>
-				
-				@Html.RadioButtonFor(x => x.Sex, ManarAlSabeel.Domain.Entities.Sex.Female, new { disabled = "disabled" })
-				<label>@StringTable.Female</label>
-			</div>
-
-			<div class="form-group">
-				<label>@StringTable.Status</label>
-
-				@Html.RadioButtonFor(x => x.Status, StudentStatus.Active)
-				<label>@StringTable.Active</label>
-				
-				@Html.RadioButtonFor(x => x.Status, StudentStatus.InActive)
-				<label>@StringTable.InActive</label>
-
-				@Html.RadioButtonFor(x => x.Status, StudentStatus.Expelled)
-				<label>@StringTable.Expelled</label>
-			</div>
-			
-			if (Model.ID == 0)
-			{
-				<div class="form-group">
-					<label>@StringTable.AddAdmissionInterviewNow</label>
-					@Html.CheckBoxFor(x => x.AddAdmissionInterviewNow)
+					<div class="form-group">
+						<label>@StringTable.SchoolName</label>
+						@Html.TextBoxFor(x => x.SchoolName, new { @class = "form-control" })
+					</div>
 				</div>
-			}
-			
+
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>@StringTable.SchoolClassName</label>
+						@Html.TextBoxFor(x => x.SchoolClass, new { @class = "form-control" })
+					</div>
+
+					<div class="form-group">
+						<label>@StringTable.LastStudyDegree</label>
+						@Html.TextBoxFor(x => x.LastEducationDegree, new { @class = "form-control" })
+					</div>
+
+					<div class="form-group">
+						<label>@StringTable.CurrentStudySatge</label>
+						@Html.TextBoxFor(x => x.EducationStage, new { @class = "form-control" })
+					</div>
+
+					<div class="form-group">
+						<label>@StringTable.ExpectedPeriodToFinishQuraan</label>
+						@Html.TextBoxFor(x => x.ExpectedQuraanFinishTime, new { @class = "form-control" })
+						@Html.ValidationMessageFor(x => x.ExpectedQuraanFinishTime)
+					</div>
+
+					<div class="form-group">
+						<label>@StringTable.HowDidYouTheCenter</label>
+						<br />
+						@Html.RadioButtonFor(x => x.HowKnewTheCenter, HowKnewTheCenter.Ad)
+						<label>@StringTable.Ad</label>
+
+						@Html.RadioButtonFor(x => x.HowKnewTheCenter, HowKnewTheCenter.Friend)
+						<label>@StringTable.Friend</label>
+
+						@Html.RadioButtonFor(x => x.HowKnewTheCenter, HowKnewTheCenter.Other)
+						<label>@StringTable.Other</label>
+
+					</div>
+
+					<div class="form-group">
+						<label>@StringTable.IsStudentRegisteredInTransportations</label>
+						@Html.CheckBoxFor(x => x.IsInTransportations)
+					</div>
+
+					<div class="form-group">
+						<label>@StringTable.Sex</label>
+
+						@Html.RadioButtonFor(x => x.Sex, ManarAlSabeel.Domain.Entities.Sex.Male, new { disabled = "disabled" })
+						<label>@StringTable.Male</label>
+
+						@Html.RadioButtonFor(x => x.Sex, ManarAlSabeel.Domain.Entities.Sex.Female, new { disabled = "disabled" })
+						<label>@StringTable.Female</label>
+					</div>
+
+					<div class="form-group">
+						<label>@StringTable.Status</label>
+
+						@Html.RadioButtonFor(x => x.Status, StudentStatus.Active)
+						<label>@StringTable.Active</label>
+
+						@Html.RadioButtonFor(x => x.Status, StudentStatus.InActive)
+						<label>@StringTable.InActive</label>
+
+						@Html.RadioButtonFor(x => x.Status, StudentStatus.Expelled)
+						<label>@StringTable.Expelled</label>
+					</div>
+					@if (Model.ID == 0)
+					{
+						<div class="form-group">
+							<label>@StringTable.AddAdmissionInterviewNow</label>
+							@Html.CheckBoxFor(x => x.AddAdmissionInterviewNow)
+						</div>
+					}
+				</div>
+
+				<!-- photo column -->
+				<div class="col-md-4">
+					<p style="text-align: center; font-weight: bold;">@StringTable.StudentPhoto</p>
+					<div style="border: solid 1px #808080; width: 149px; height: 165px; margin: 0 auto;">
+						@if (string.IsNullOrEmpty(Model.ProfilePhotoName))
+						{ 
+							<img src="/Content/images/default-male-profile-large.jpg"
+								 width="149" height="165" alt="" />
+						}
+						else
+						{
+							<img src="@Helpers.GetStudntFullPhotoPath(Model.ProfilePhotoName)" width="149" height="165" alt="" />
+						}
+					</div>
+					<br />
+					<div style="width: 60%; margin: 0 auto;">
+						<p style="text-align: center">@StringTable.SelectStudentPhoto</p>
+						<input type="file" name="studentPhoto" id="studentPhoto" />
+					</div>
+				</div>
+			</div>
 			@Html.HiddenFor(x => x.ID)
 
 			<input type="submit" value="@StringTable.Save"
 				   class="btn btn-lg btn-primary btn-block" />
-		}
-
-	</div>
+		</div>
+	}
 </div>

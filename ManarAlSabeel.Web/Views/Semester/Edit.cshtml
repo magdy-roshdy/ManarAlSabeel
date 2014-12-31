@@ -3,13 +3,12 @@
 @using ManarAlSabeel.Web.Heplers
 
 @{
-
+	string pageTitle = (Model.ID == 0) ? StringTable.AddSemester : StringTable.EditSemester;
 	ViewBag.Title = ManarAlSabeel.Web.Heplers.Helpers.GetPageTitle(@StringTable.EditSemester);
-
 	ManarAlSabeel.Web.Models.BranchViewModel _branch = Helpers.GetBranchViewModel(Model.BranchID, Model.BranchName);
 }
 
-<h2>@StringTable.EditSemester</h2>
+<h2>@pageTitle</h2>
 
 <div class="panel panel-default" style="width: 45%; margin: 0 auto;">
 	<div class="panel-body">

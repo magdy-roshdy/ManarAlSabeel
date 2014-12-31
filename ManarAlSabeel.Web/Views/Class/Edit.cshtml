@@ -4,13 +4,12 @@
 @using ManarAlSabeel.Web.Models
 
 @{
-
+	string pageTitle = (Model.ClassID == 0) ? StringTable.AddClass : StringTable.EditClass;
 	ViewBag.Title = Helpers.GetPageTitle(@StringTable.EditClass);
-
 	BranchViewModel _branch = Helpers.GetBranchViewModel(Model.BranchID, Model.BranchName);
 }
 
-<h2>@StringTable.EditClass</h2>
+<h2>@pageTitle</h2>
 
 <div class="panel panel-default" style="width: 45%; margin: 0 auto;">
 	<div class="panel-body">

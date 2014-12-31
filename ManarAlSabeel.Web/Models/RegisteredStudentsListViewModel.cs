@@ -9,6 +9,7 @@ namespace ManarAlSabeel.Web.Models
 	public class RegisteredStudentsListViewModel
 	{
 		public IQueryable<RegisteredStudent> RegisteredStudents { get; set; }
+		public string SemesterName { get; set; }
 		public PagingInfo PagingInfo { get; set; }
 	}
 }

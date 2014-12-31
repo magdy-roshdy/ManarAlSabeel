@@ -29,6 +29,7 @@ namespace ManarAlSabeel.Domain.Entities
 		public virtual StudentStatus Status { get; set; }
 		public virtual DateTime AddedOn { get; set; }
 		public virtual AdmissionInterview AdmissionInterview { get; set; }
+		public virtual string ProfilePhotoName { get; set; }
 
 		public virtual int Age
 		{

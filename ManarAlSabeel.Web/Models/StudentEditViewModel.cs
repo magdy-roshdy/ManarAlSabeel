@@ -53,6 +53,7 @@ namespace ManarAlSabeel.Web.Models
 		public Sex Sex { get; set; }
 		public StudentStatus Status { get; set; }
 		public DateTime AddedOn { get; set; }
+		public string ProfilePhotoName { get; set; }
 
 		public IQueryable<Country> Countries { get; set; }
 		public IQueryable<StudentGuardian> Guardians { get; set; }

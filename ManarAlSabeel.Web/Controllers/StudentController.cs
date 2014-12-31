@@ -6,6 +6,8 @@ using ManarAlSabeel.Web.Infrastructure;
 using ManarAlSabeel.Web.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -51,7 +53,6 @@ namespace ManarAlSabeel.Web.Controllers
 
 			if (studentEntity != null)
 			{
-
 				studentViewModel = new StudentEditViewModel();
 
 				studentViewModel.ID = studentEntity.ID;
@@ -67,6 +68,7 @@ namespace ManarAlSabeel.Web.Controllers
 				studentViewModel.SchoolName = studentEntity.SchoolName;
 				studentViewModel.Sex = studentEntity.Sex;
 				studentViewModel.Status = studentEntity.Status;
+				studentViewModel.ProfilePhotoName = studentEntity.ProfilePhotoName;
 
 				studentViewModel.OriginalNationalityID = studentEntity.OriginalNationality.ID;
 				studentViewModel.OriginalNationalityName = studentEntity.OriginalNationality.Name;
@@ -100,6 +102,8 @@ namespace ManarAlSabeel.Web.Controllers
 		{
 			if (ModelState.IsValid)
 			{
+				bool newsStudent = (studentViewModel.ID == 0);
+
 				Student studentEntity = new Student();
 				//enforce profile values over form values
 				studentEntity.Sex = Helpers.GetProfileSex().Value;
@@ -129,11 +133,27 @@ namespace ManarAlSabeel.Web.Controllers
 				studentEntity.SchoolName = studentViewModel.SchoolName;
 				studentEntity.Status = studentViewModel.Status;
 
-				studentEntity.AddedOn = DateTime.Now;
+				if (newsStudent)
+					studentEntity.AddedOn = DateTime.Now;
 
 				dbRepository.SaveStudent(studentEntity);
 
-				bool newsStudent = (studentViewModel.ID == 0);
+				//save profile photo
+				if (Request != null)
+				{
+					HttpPostedFileBase photoFile = Request.Files["studentPhoto"];
+					if(photoFile.ContentLength > 0)
+					{
+						string fileName = string.Format("student_{0}{1}", studentEntity.ID, Path.GetExtension(photoFile.FileName));
+						var savePath = Path.Combine(Server.MapPath(ConfigurationManager.AppSettings["StudentsImagesPath"]),
+							fileName);
+						photoFile.SaveAs(savePath);
+
+						studentEntity.ProfilePhotoName = fileName;
+						dbRepository.SaveStudent(studentEntity);
+					}
+				}
+
 				TempData["message"] = newsStudent ? Messages.StudentCreatedSuccessfully : Messages.EditStudentSuccessful;
 
 				if (studentViewModel.AddAdmissionInterviewNow)
