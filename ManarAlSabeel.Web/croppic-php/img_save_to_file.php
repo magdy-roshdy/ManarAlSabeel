@@ -28,7 +28,7 @@
 
 		  $response = array(
 			"status" => 'success',
-			"url" => '../croppic-php/'.$imagePath.$_FILES["img"]["name"],
+			"url" => '../../croppic-php/'.$imagePath.$_FILES["img"]["name"],
 			"width" => $width,
 			"height" => $height,
 			"file_name" => $imagePath.$_FILES["img"]["name"]

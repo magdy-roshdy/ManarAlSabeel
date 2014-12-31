@@ -403,7 +403,7 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to تعديل بانات امتحان.
+        ///   Looks up a localized string similar to تعديل بيانات امتحان.
         /// </summary>
         public static string EditExamPageTitle {
             get {
@@ -934,7 +934,7 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to قائمة الطلاب المسجلون بالدورة.
+        ///   Looks up a localized string similar to قائمة الطلاب المسجلين بالدورة.
         /// </summary>
         public static string SemesterRegisteredStudentsList {
             get {

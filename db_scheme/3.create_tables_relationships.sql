@@ -187,7 +187,7 @@ GO
 ALTER TABLE [dbo].[Students] CHECK CONSTRAINT [FK_StudentGuardians_Students]
 GO
 
-ALTER TABLE [dbo].[Students]  WITH CHECK ADD CONSTRAINT [FK_AdmissionInterviews_Students] FOREIGN KEY([AdmissionInterviewID])
+ALTER TABLE [dbo].[Students]  WITH CHECK ADD CONSTRAINT [FK_AdmissionInterviews_Students] FOREIGN KEY([StudentAdmissionInterviewID])
 REFERENCES [dbo].[AdmissionInterviews] (InterviewID)
 GO
 

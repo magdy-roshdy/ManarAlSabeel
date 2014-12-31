@@ -155,9 +155,25 @@
 					}
 				</div>
 
+				<!-- photo column -->
 				<div class="col-md-4">
-					<input type="button" value="Upload" id="uploadButton" />
-					<div id="cropContainerModal" style="width: 145px; height:165px;"></div>
+					<p style="text-align: center; font-weight: bold;">صورة الطالب</p>
+					<div style="border: solid 1px #808080; width: 149px; height: 165px; margin: 0 auto;">
+						@if (string.IsNullOrEmpty(Model.ProfilePhotoName))
+						{ 
+							<img src="/Content/images/default-male-profile-large.jpg"
+								 width="149" height="165" alt="" />
+						}
+						else
+						{
+							<img src="@Helpers.GetStudntFullPhotoPath(Model.ProfilePhotoName)" width="149" height="165" alt="" />
+						}
+					</div>
+					<br />
+					<div style="width: 60%; margin: 0 auto;">
+						<p style="text-align: center">اختر صورة الطالب</p>
+						<input type="file" name="studentPhoto" id="studentPhoto" />
+					</div>
 				</div>
 			</div>
 			@Html.HiddenFor(x => x.ID)
@@ -167,17 +183,3 @@
 		</div>
 	}
 </div>
-
-<link href="~/Content/css/croppic.css" rel="stylesheet" media="screen">
-<script src="~/Content/js/croppic.js"></script>
-<script type="text/javascript">
-	var croppicContainerModalOptions = {
-		uploadUrl: '../croppic-php/img_save_to_file.php',
-		cropUrl: '../croppic-php/img_crop_to_file.php',
-		modal: true,
-		customUploadButtonId: 'uploadButton',
-		imgEyecandyOpacity: 0.4,
-		loaderHtml: '<div>loading ...</div>'
-	}
-	var cropContainerModal = new Croppic('cropContainerModal', croppicContainerModalOptions);
-</script>

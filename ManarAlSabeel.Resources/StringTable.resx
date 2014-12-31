@@ -370,7 +370,7 @@
     <value>مقدار الحفظ من القرآن</value>
   </data>
   <data name="SemesterRegisteredStudentsList" xml:space="preserve">
-    <value>قائمة الطلاب المسجلون بالدورة</value>
+    <value>قائمة الطلاب المسجلين بالدورة</value>
   </data>
   <data name="ReligiousIdeology" xml:space="preserve">
     <value>المذهب الديني</value>
@@ -466,7 +466,7 @@
     <value>الأنشطة التأديبية</value>
   </data>
   <data name="EditExamPageTitle" xml:space="preserve">
-    <value>تعديل بانات امتحان</value>
+    <value>تعديل بيانات امتحان</value>
   </data>
   <data name="EditExam" xml:space="preserve">
     <value>تعديل بيانات الامتحان</value>

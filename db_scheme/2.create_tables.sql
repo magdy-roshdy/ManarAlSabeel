@@ -313,7 +313,8 @@ CREATE TABLE [dbo].[Students](
 	[StudentSex] [tinyint] NOT NULL,
 	[StudentStatus] [tinyint] NOT NULL,
 	[StudentAddedOn] [datetime] NOT NULL,
-	[AdmissionInterviewID] [int] NULL,
+	[StudentAdmissionInterviewID] [int] NULL,
+	[StudentProfilePhotoName] [nvarchar](50) NULL,
  CONSTRAINT [PK_Students] PRIMARY KEY CLUSTERED 
 (
 	[StudentID] ASC

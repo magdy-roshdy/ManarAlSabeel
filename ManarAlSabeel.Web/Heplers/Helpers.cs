@@ -3,6 +3,8 @@ using ManarAlSabeel.Resources;
 using ManarAlSabeel.Web.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -287,6 +289,18 @@ namespace ManarAlSabeel.Web.Heplers
 					return new BranchViewModel { ID = id.Value, Name = name };
 				else
 					return null;
+		}
+
+		public static string GetStudntFullPhotoPath(string photoName)
+		{
+			string fullPath = string.Empty;
+			if (!string.IsNullOrEmpty(photoName))
+			{
+				fullPath = Path.Combine(ConfigurationManager.AppSettings["StudentsImagesPath"],
+					photoName);
+			}
+
+			return fullPath;
 		}
 	}
 }

@@ -31,7 +31,7 @@
 
 		<many-to-one name="AdmissionInterview"
 								 class="AdmissionInterview" not-null="false"
-								 column="AdmissionInterviewID"/>
+								 column="StudentAdmissionInterviewID"/>
 
 		<property name="SchoolName" column="StudentSchoolName" not-null="false" />
 		<property name="LastEducationDegree" column="StudentLastEducationDegree" not-null="false" />
@@ -43,6 +43,7 @@
 		<property name="Sex" column="StudentSex" />
 		<property name="Status" column="StudentStatus" />
 		<property name="AddedOn" column="StudentAddedOn" />
+		<property name="ProfilePhotoName" column="StudentProfilePhotoName" not-null="false" />
 
 		<filter name="sexFilter" condition=":sex = StudentSex" />
 		<filter name="branchFilter" condition=":branch = StudentBranchID" />

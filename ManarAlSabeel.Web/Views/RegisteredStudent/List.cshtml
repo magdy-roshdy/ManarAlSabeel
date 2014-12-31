@@ -1,5 +1,6 @@
 ﻿@model ManarAlSabeel.Web.Models.RegisteredStudentsListViewModel
 @using ManarAlSabeel.Domain.Entities
+@using ManarAlSabeel.Web.Heplers
 
 @{
 	ViewBag.Title = ManarAlSabeel.Web.Heplers.Helpers.GetPageTitle(@StringTable.SemesterRegisteredStudentsList);
@@ -38,8 +39,17 @@
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-md-4">
-							<img alt=""
-								 src="../content/images/default-male-profile.png" />
+							@if (string.IsNullOrEmpty(registeredStudent.Student.ProfilePhotoName))
+							{
+								<img alt="" width="90" height="100"
+									 src="../content/images/default-male-profile.png" />
+							}
+						   else
+						   {
+								<img src="@Helpers.GetStudntFullPhotoPath(registeredStudent.Student.ProfilePhotoName)"
+									 width="90" height="100" alt="" />
+							}
+							
 						</div>
 						<div class="col-md-8">
 							<div class="registered-student-name">@registeredStudent.Student.Name</div>

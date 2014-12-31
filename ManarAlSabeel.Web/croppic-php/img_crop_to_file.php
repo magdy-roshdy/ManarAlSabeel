@@ -16,7 +16,7 @@ $cropH = $_POST['cropH'];
 
 $jpeg_quality = 100;
 
-$output_filename = "../croppic-php/temp/cropped.jpg";
+$output_filename = "../../croppic-php/temp/cropped.jpg";
 
 
 $response = array(
