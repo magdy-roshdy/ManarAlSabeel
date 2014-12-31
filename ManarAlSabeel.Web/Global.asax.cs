@@ -23,9 +23,6 @@ namespace ManarAlSabeel.Web
 
 			//DependencyResolver.SetResolver(new NinjectDependencyResolver());
 			ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
-
-			//NHibernate Profiler
-			log4net.Config.XmlConfigurator.Configure();
 		}
 	}
 }
