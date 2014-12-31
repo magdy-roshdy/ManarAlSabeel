@@ -157,7 +157,7 @@
 
 				<!-- photo column -->
 				<div class="col-md-4">
-					<p style="text-align: center; font-weight: bold;">صورة الطالب</p>
+					<p style="text-align: center; font-weight: bold;">@StringTable.StudentPhoto</p>
 					<div style="border: solid 1px #808080; width: 149px; height: 165px; margin: 0 auto;">
 						@if (string.IsNullOrEmpty(Model.ProfilePhotoName))
 						{ 
@@ -171,7 +171,7 @@
 					</div>
 					<br />
 					<div style="width: 60%; margin: 0 auto;">
-						<p style="text-align: center">اختر صورة الطالب</p>
+						<p style="text-align: center">@StringTable.SelectStudentPhoto</p>
 						<input type="file" name="studentPhoto" id="studentPhoto" />
 					</div>
 				</div>

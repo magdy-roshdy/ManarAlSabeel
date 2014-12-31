@@ -486,4 +486,10 @@
   <data name="StudentPage" xml:space="preserve">
     <value>صفحة بيانات الطالب</value>
   </data>
+  <data name="SelectStudentPhoto" xml:space="preserve">
+    <value>اختر صورة الطالب</value>
+  </data>
+  <data name="StudentPhoto" xml:space="preserve">
+    <value>صورة الطالب</value>
+  </data>
 </root>

@@ -925,6 +925,15 @@ namespace ManarAlSabeel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to اختر صورة الطالب.
+        /// </summary>
+        public static string SelectStudentPhoto {
+            get {
+                return ResourceManager.GetString("SelectStudentPhoto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to الدورة التعليمية.
         /// </summary>
         public static string Semester {
@@ -1074,6 +1083,15 @@ namespace ManarAlSabeel.Resources {
         public static string StudentPage {
             get {
                 return ResourceManager.GetString("StudentPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to صورة الطالب.
+        /// </summary>
+        public static string StudentPhoto {
+            get {
+                return ResourceManager.GetString("StudentPhoto", resourceCulture);
             }
         }
         
