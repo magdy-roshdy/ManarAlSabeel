@@ -270,4 +270,19 @@
   <data name="ThereIsNoRegisteredStudentsInSemester" xml:space="preserve">
     <value>لا يوجد طلاب مسجلون بالدورة</value>
   </data>
+  <data name="DisciplinaryActivityAdded" xml:space="preserve">
+    <value>تمت إضافة النشاط التأديبي بنجاح</value>
+  </data>
+  <data name="DisciplinaryActivityDateIsRequired" xml:space="preserve">
+    <value>من فضلك أدخل تاريخ النشاط التأديبي</value>
+  </data>
+  <data name="DisciplinaryActivityDetailsIsRequired" xml:space="preserve">
+    <value>من فضلك أدخل تفاصيل النشاط التأديبي</value>
+  </data>
+  <data name="DisciplinaryActivityEditedSuccessfully" xml:space="preserve">
+    <value>تم تعديل النشاط التأديبي بنجاح</value>
+  </data>
+  <data name="DisciplinaryActivityReasonIsRequired" xml:space="preserve">
+    <value>من فضلك أدخل سبب النشاط التأديبي</value>
+  </data>
 </root>

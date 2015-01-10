@@ -54,5 +54,8 @@ namespace ManarAlSabeel.Domain.Abstract
 		IQueryable<ExamGrade> GetAllExamGrades();
 
 		int? SaveExam(Exam exam);
+
+        int? SaveDisciplinaryActivity(DisciplinaryActivityLog disciplinaryActivity);
+        IQueryable<DisciplinaryActivityLog> GetStudentDisciplinaryActivities();
 	}
 }

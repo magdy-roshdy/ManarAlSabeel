@@ -126,6 +126,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AdmissionInterviewController.cs" />
     <Compile Include="Controllers\ClassController.cs" />
+    <Compile Include="Controllers\DisciplinaryActivityController.cs" />
     <Compile Include="Controllers\ExamController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegisteredStudentController.cs" />
@@ -153,6 +154,8 @@
     <Compile Include="Models\BranchViewModel.cs" />
     <Compile Include="Models\ClassEditViewModel.cs" />
     <Compile Include="Models\ClassesListViewModel.cs" />
+    <Compile Include="Models\DisciplinaryActivitiesListModel.cs" />
+    <Compile Include="Models\DisciplinaryActivityEitViewModel.cs" />
     <Compile Include="Models\ExamEditViewModel.cs" />
     <Compile Include="Models\ExamsListViewModel.cs" />
     <Compile Include="Models\RegisteredStudentEditViewModel.cs" />
@@ -266,6 +269,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Exam\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DisciplinaryActivity\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DisciplinaryActivity\List.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

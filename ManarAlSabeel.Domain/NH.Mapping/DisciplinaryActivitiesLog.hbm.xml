@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ManarAlSabeel.Domain"
+                   namespace="ManarAlSabeel.Domain.Entities">
+	<class name="DisciplinaryActivityLog" table="DisciplinaryActivitiesLog">
+
+		<id name="ID" column="DisciplinaryActivityID">
+			<generator class="identity"/>
+		</id>
+		<property name="Date" column="DisciplinaryActivityDate" />
+		<property name="Reason" column="DisciplinaryActivityReason" />
+		<property name="Details" column="DisciplinaryActivityDetails" />
+    <property name="Comments" column="DisciplinaryActivityComments" />
+    
+		<many-to-one name="RegisteredStudent" class="RegisteredStudent"
+								 column="ActivityRegisteredStudentID" />
+
+		
+
+	</class>
+</hibernate-mapping>
