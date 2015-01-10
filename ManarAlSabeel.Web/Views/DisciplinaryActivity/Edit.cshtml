@@ -1,0 +1,48 @@
+﻿@model ManarAlSabeel.Web.Models.DisciplinaryActivityEitViewModel
+@using ManarAlSabeel.Domain.Entities
+@using ManarAlSabeel.Web.Heplers
+@using ManarAlSabeel.Web.Models
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>@StringTable.EditDisciplinaryActivityPageTitle</h2>
+
+<div class="panel panel-default" style="width: 45%; margin: 0 auto;">
+	<div class="panel-body">
+
+		@using (Html.BeginForm("Edit", "DisciplinaryActivity", FormMethod.Post, new { role = "form" }))
+		{
+			<div class="form-group">
+				<label>@StringTable.DisciplinaryActivityDate</label>
+				@Html.TextBoxFor(x => x.Date,
+					new { @class = "form-control date-input", dir = "ltr", Value = Model.Date.ToShortDateString(), data_date_format = "dd/mm/yyyy" })
+				@Html.ValidationMessageFor(x => x.Date)
+			</div>
+			
+			<div class="form-group">
+				<label>@StringTable.DisciplinaryActivityReason</label>
+                @Html.TextBoxFor(x => x.Reason, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Reason)
+				
+			</div>
+			
+			<div class="form-group">
+				<label>@StringTable.DisciplinaryActivityDetails</label>
+				@Html.TextBoxFor(x => x.Details, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Details)
+			</div>
+			
+			<div class="form-group">
+				<label>@StringTable.DisciplinaryActivityComments</label>
+				@Html.TextBoxFor(x => x.Comments, new { @class = "form-control" })
+			</div>
+			
+			@Html.HiddenFor(x => x.ID)
+			@Html.HiddenFor(x => x.RegistredStudentID)
+
+			<input type="submit" value="@StringTable.Save"
+				   class="btn btn-lg btn-primary btn-block" />
+		}
+	</div>
+</div>

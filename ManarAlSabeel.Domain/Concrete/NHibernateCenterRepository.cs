@@ -717,5 +717,39 @@ namespace ManarAlSabeel.Domain.Concrete
 				}
 			}
 		}
-	}
+
+
+        public int? SaveDisciplinaryActivity(DisciplinaryActivityLog disciplinaryActivity)
+        {
+            using (ISession session = getSession())
+            {
+                using (ITransaction transaction = session.BeginTransaction())
+                {
+                    bool newDisciplinaryActivity = (disciplinaryActivity.ID == 0);
+
+                    DisciplinaryActivityLog disciplinaryActivity_db = newDisciplinaryActivity ?
+                        new DisciplinaryActivityLog { Date = DateTime.Now }
+                        : session.Get<DisciplinaryActivityLog>(disciplinaryActivity.ID);
+
+                    disciplinaryActivity_db.Comments = disciplinaryActivity.Comments;
+                    disciplinaryActivity_db.Date = disciplinaryActivity.Date;
+                    disciplinaryActivity_db.Details = disciplinaryActivity.Details;
+                    disciplinaryActivity_db.Reason = disciplinaryActivity.Reason;
+                    disciplinaryActivity_db.RegisteredStudent = session.Get<RegisteredStudent>(disciplinaryActivity.RegisteredStudent.ID);
+
+                    session.SaveOrUpdate(disciplinaryActivity_db);
+
+                    transaction.Commit();
+                    session.Flush();
+
+                    return disciplinaryActivity_db.ID;
+                }
+            }
+        }
+
+        public IQueryable<DisciplinaryActivityLog> GetStudentDisciplinaryActivities()
+        {
+            return getSession().Query<DisciplinaryActivityLog>();
+        }
+    }
 }

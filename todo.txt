@@ -12,3 +12,4 @@
 - make "Comitee" in AdmissionInterview as list of Teachers only.
 - make the "edit" pages switch between "Add" and "Edit" titles based on function.
 - put the student name between brackets in AdmissionInterview Edit page
+- test
