@@ -33,12 +33,14 @@
 				<div class="col-md-4">
 					<span class="glyphicon glyphicon-thumbs-down"></span>
 					<span>
-						@string.Format("{0} ({1})", StringTable.DisciplinaryActivities, Model.DisciplinaryActivitiesCount)
+                        @Html.ActionLink(string.Format("{0} ({1})", StringTable.DisciplinaryActivities, Model.DisciplinaryActivitiesCount),
+							"List", "DisciplinaryActivity", new { registeredStudentId = Model.ID }, null)
+						
 					</span>
 					<br />
 					<span class="glyphicon glyphicon-screenshot"></span>
 					<span>
-						@StringTable.AddDisciplinaryActivity
+						@Html.ActionLink(StringTable.AddDisciplinaryActivity, "Create", "DisciplinaryActivity", new { registeredStudentId = Model.ID }, null)
 					</span>
 				</div>
 				<div class="col-md-4">

@@ -21,5 +21,7 @@ namespace ManarAlSabeel.Domain.Entities
 		public virtual string Comments { get; set; }
 
 		public virtual IList<Exam> Exams { get; set; }
+
+        public virtual IList<DisciplinaryActivityLog> DisciplinaryActivities { get; set; }
 	}
 }

@@ -88,6 +88,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <EmbeddedResource Include="NH.Mapping\DisciplinaryActivitiesLog.hbm.xml" />
     <EmbeddedResource Include="NH.Mapping\AdmissionInterviewCommittee.hbm.xml" />
     <EmbeddedResource Include="NH.Mapping\AdmissionInterviews.hbm.xml" />
     <EmbeddedResource Include="NH.Mapping\ExamGrade.hbm.xml" />

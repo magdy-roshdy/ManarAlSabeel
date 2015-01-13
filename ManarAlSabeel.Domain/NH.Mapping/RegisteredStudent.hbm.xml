@@ -32,7 +32,10 @@
 			<key column="ExamRegisteredStudentID" />
 			<one-to-many class="Exam" />
 		</bag>
-		
+    <bag name="DisciplinaryActivities">
+      <key column="ActivityRegisteredStudentID" />
+      <one-to-many class="DisciplinaryActivityLog" />
+    </bag>
 		<filter name="sexFilter" condition=":sex = RegisteredStudentsSex" />
 		<filter name="branchFilter" condition=":branch = RegisteredStudentsBranchID" />
 	</class>

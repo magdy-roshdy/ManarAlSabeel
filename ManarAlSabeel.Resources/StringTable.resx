@@ -492,4 +492,25 @@
   <data name="StudentPhoto" xml:space="preserve">
     <value>صورة الطالب</value>
   </data>
+  <data name="DisciplinaryActivityComments" xml:space="preserve">
+    <value>ملاحظات</value>
+  </data>
+  <data name="DisciplinaryActivityDate" xml:space="preserve">
+    <value>تاريخ النشاط التأديبي</value>
+  </data>
+  <data name="DisciplinaryActivityDetails" xml:space="preserve">
+    <value>تفاصيل النشاط التأديبي</value>
+  </data>
+  <data name="DisciplinaryActivityReason" xml:space="preserve">
+    <value>سبب النشاط التأديبي</value>
+  </data>
+  <data name="EditDisciplinaryActivityPageTitle" xml:space="preserve">
+    <value>تعديل بيانات النشاط التأديبي</value>
+  </data>
+  <data name="DisciplinaryActivitiesListPageTitle" xml:space="preserve">
+    <value>قائمة الانشطة التأديبية للطالب</value>
+  </data>
+  <data name="EditDisciplinaryActivity" xml:space="preserve">
+    <value>تعديل النشاط التأديبي</value>
+  </data>
 </root>
