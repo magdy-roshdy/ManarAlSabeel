@@ -747,9 +747,14 @@ namespace ManarAlSabeel.Domain.Concrete
             }
         }
 
-        public IQueryable<DisciplinaryActivityLog> GetStudentDisciplinaryActivities()
+        public IQueryable<DisciplinaryActivityLog> GetStudentDisciplinaryActivities(int? studentId = null)
         {
-            return getSession().Query<DisciplinaryActivityLog>();
+            var disciplinaryActivities = getSession().Query<DisciplinaryActivityLog>();
+            if (studentId.HasValue && studentId.Value > 0)
+            {
+                return disciplinaryActivities.Where(s => s.RegisteredStudent.ID == studentId.Value);
+            }
+            return disciplinaryActivities;
         }
     }
 }

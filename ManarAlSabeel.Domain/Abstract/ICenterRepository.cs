@@ -56,6 +56,6 @@ namespace ManarAlSabeel.Domain.Abstract
 		int? SaveExam(Exam exam);
 
         int? SaveDisciplinaryActivity(DisciplinaryActivityLog disciplinaryActivity);
-        IQueryable<DisciplinaryActivityLog> GetStudentDisciplinaryActivities();
+        IQueryable<DisciplinaryActivityLog> GetStudentDisciplinaryActivities(int? studentId = null);
 	}
 }
