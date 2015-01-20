@@ -9,10 +9,11 @@ using System.Web;
 using System.Web.Mvc;
 using System.Globalization;
 using ManarAlSabeel.Domain.Entities;
+using ManarAlSabeel.Web.Models;
 
 namespace ManarAlSabeel.Web.Controllers
 {
-	[Authorize]
+	[ForbiddenRedirectAuthorizeAttribute]
     public class HomeController : Controller
     {
 		private ICenterRepository dbRepository;
@@ -21,11 +22,18 @@ namespace ManarAlSabeel.Web.Controllers
 			dbRepository = repo;
 		}
 
-		[ForbiddenRedirectAuthorizeAttribute]
 		public ViewResult Index()
 		{
 			Semester current = dbRepository.GetAllSemesters().ToList().FirstOrDefault(x => x.IsTheCurrent);
-			return View(current);
+			IEnumerable<IGrouping<ExamType, Exam>> examsGroups = null;
+			if (current != null)
+			{
+				examsGroups = dbRepository.GetAllExams()
+					.Where(exam => exam.RegisteredStudent.Class.Semester.ID == current.ID)
+					.ToList().GroupBy(exam => exam.Type);
+			}
+
+			return View(new HomeDashboardViewModel { Semester = current, ExamsGroup = examsGroups });
 		}
     }
 }

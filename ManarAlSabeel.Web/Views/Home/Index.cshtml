@@ -1,4 +1,4 @@
-﻿@model ManarAlSabeel.Domain.Entities.Semester
+﻿@model ManarAlSabeel.Web.Models.HomeDashboardViewModel
 @using ManarAlSabeel.Web.Heplers
 @using ManarAlSabeel.Domain.Entities
 @using System.Collections.Generic
@@ -7,73 +7,58 @@
 	ViewBag.Title = ManarAlSabeel.Web.Heplers.Helpers.GetPageTitle("");
 }
 <br /><br />
-<style type="text/css">
-	.class-panel {
-		float: right;
-		width: 260px;
-		margin: 6px;
-		min-height: 155px;
-	}
-
-	.class-panel-heading {
-		font-weight: bold;
-	}
-
-	.no-students {
-		font-style: italic;
-		color: #B6B2B2;
-		margin: auto;
-		text-align: center;
-		vertical-align: middle;
-	}
-
-	.track-name-heading {
-		margin-bottom: 1px;
-		font-family: Arial;
-		font-size: 12pt;
-		font-weight: bold;
-	}
-
-	.devider {
-		background: #C1BCB9;
-		height: 1px;
-		margin-bottom: 1px;
-		margin-top: 1px;
-	}
-
-	.students-count {
-		text-align: left;
-		height: 3px;
-		margin-bottom: 10px;
-		font-style: italic;
-		font-size: 10pt;
-	}
-
-	.semester-name {
-		color: #033633;;
-	}
-</style>
-<div class="panel panel-default">
-	<div class="panel-body">
-		@if (Model == null)
-		{
-			<div>
-				<h2>
-					@Messages.ThereIsNoCurrentSemester
-				</h2>
+@if (Model != null)
+{
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="semester-name">
+				@StringTable.CurrentSemester
+				@Html.ActionLink(Model.Semester.Name, "Edit", "Semester", new { Model.Semester.ID }, null)
+				@string.Format(StringTable.PeriodBetweenString, Model.Semester.StartDate.ToShortDateString(), Model.Semester.EndDate.ToShortDateString())
+			</h3>
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-6">
+					<h4>@StringTable.Classes</h4>
+					<ul>
+						@{int studentsCount = 0;}
+						@foreach (Class _class in Model.Semester.Classes)
+						{
+							<li>
+								@Html.ActionLink(_class.Name, "Edit", "Class", new { _class.ID }, null)
+								(@_class.RegisteredStudents.Count @StringTable.AStudent)
+								@{studentsCount += _class.RegisteredStudents.Count;}
+							</li>
+							
+						}
+					</ul>
+					---------------------------------
+					<br />
+					
+					@StringTable.NofStudentInSemester (@Html.ActionLink(@studentsCount.ToString() + " " + StringTable.AStudent, "List", "RegisteredStudent", new { semesterId = Model.Semester.ID }, null))
+				</div>
+				<div class="col-md-6">
+					<h4>@StringTable.Exams</h4>
+					<ul>
+						@{int examsCount = 0;}
+						@foreach (IGrouping<ExamType, Exam> examGroup in Model.ExamsGroup)
+						{
+							<li>
+								@examGroup.Key.Name
+								(@Html.ActionLink(@examGroup.Count().ToString() + " " + @StringTable.AnExam, "List", "Exam", new { examType = examGroup.Key.ID, semesterId=Model.Semester.ID }, null))
+							</li>
+							examsCount += examGroup.Count();
+						}
+					</ul>
+					---------------------------------
+					<br />
+					@StringTable.NofExamsPerSemester (@examsCount @StringTable.AnExam)
+				</div>
 			</div>
-		}
-		else
-		{
-			<div>
-				<h2 class="semester-name">@StringTable.CurrentSemester [@Model.Name]</h2>
-			</div>
-			<div>
-				@Html.ActionLink(@StringTable.SemesterRegisteredStudentsList, "List", "RegisteredStudent", new { semesterId = Model.ID }, null)
-			</div>
-			<div>
-				@Html.ActionLink(@StringTable.AddRegisteredStudentToSemester, "Create", "RegisteredStudent", new { semesterId = Model.ID }, null)
-			</div>
-		}
+		</div>
+		<div class="panel-footer" style="text-align: left;">
+			+ @Html.ActionLink(@StringTable.AddRegisteredStudentToSemester, "Create", "RegisteredStudent", new { semesterId = Model.Semester.ID }, null)
+		</div>
 	</div>
-</div>
+}

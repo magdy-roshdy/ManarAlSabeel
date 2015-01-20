@@ -20,13 +20,19 @@ namespace ManarAlSabeel.Web.Controllers
 			dbRepository = repo;
 		}
 
-		public ViewResult List(int? registeredStudentId)
+		public ViewResult List(int? registeredStudentId, int? examType, int? semesterId)
 		{
-			IQueryable<Exam> exams = null;
+			IQueryable<Exam> exams = new List<Exam>().AsQueryable();
 			if (registeredStudentId.HasValue)
+			{
 				exams = dbRepository.GetAllExams().Where(exam => exam.RegisteredStudent.ID == registeredStudentId.Value).OrderBy(exam => exam.Date);
-			else
-				exams = dbRepository.GetAllExams().Where(exam => exam.ID == 0);
+			}
+
+			if (examType.HasValue && semesterId.HasValue)
+			{
+				exams = dbRepository.GetAllExams().Where(exam => exam.Type.ID == examType.Value
+					&& exam.RegisteredStudent.Class.Semester.ID == semesterId.Value).OrderBy(exam => exam.Date);
+			}
 
 			return View(new ExamsListViewModel { Exams = exams });
 		}

@@ -76,9 +76,9 @@ namespace ManarAlSabeel.Web.Controllers
 		public ActionResult Edit(RegisteredStudentEditViewModel registeredStudent)
 		{
 			bool newStudentRegistration = (registeredStudent.ID == 0);
+			Class _class = dbRepository.GetAllClasses().FirstOrDefault(x => x.ID == registeredStudent.ClassID);
 			if (newStudentRegistration)
 			{
-				Class _class = dbRepository.GetAllClasses().FirstOrDefault(x => x.ID == registeredStudent.ClassID);
 				if (_class != null)
 				{
 					bool regisredBefore = dbRepository.IsStudentInSemester(registeredStudent.StudentID, _class.Semester.ID);
@@ -104,7 +104,7 @@ namespace ManarAlSabeel.Web.Controllers
 				dbRepository.SaveRegisteredStudent(registeredStudentEntity);
 				TempData["message"] = newStudentRegistration ? Messages.StudentRegisteredSuccesfully : Messages.StudentRegistrationEditedSuccesfully;
 
-				return RedirectToAction("List");
+				return RedirectToAction("List", new { semesterId = _class.Semester.ID });
 			}
 			else
 			{

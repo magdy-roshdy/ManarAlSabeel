@@ -36,7 +36,10 @@
       <key column="ActivityRegisteredStudentID" />
       <one-to-many class="DisciplinaryActivityLog" />
     </bag>
+		
+		<!--
 		<filter name="sexFilter" condition=":sex = RegisteredStudentsSex" />
 		<filter name="branchFilter" condition=":branch = RegisteredStudentsBranchID" />
+		-->
 	</class>
 </hibernate-mapping>

@@ -17,6 +17,7 @@
 		<bag name="Classes">
 			<key column="ClassSemesterID" />
 			<one-to-many class="Class"/>
+			<filter name="sexFilter" condition=":sex = ClassSex" />
 		</bag>
 
 		<filter name="branchFilter" condition=":branch = SemesterBranchID" />

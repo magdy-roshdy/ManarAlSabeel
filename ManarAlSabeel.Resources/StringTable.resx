@@ -472,7 +472,7 @@
     <value>تعديل بيانات الامتحان</value>
   </data>
   <data name="ExamsListPageTitle" xml:space="preserve">
-    <value>قائمة امتحانات طالب مسجل</value>
+    <value>قائمة امتحانات</value>
   </data>
   <data name="CurrentSemester" xml:space="preserve">
     <value>الدورة العلمية الحالية</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="EditDisciplinaryActivity" xml:space="preserve">
     <value>تعديل النشاط التأديبي</value>
+  </data>
+  <data name="AnExam" xml:space="preserve">
+    <value>امتحان</value>
+  </data>
+  <data name="AStudent" xml:space="preserve">
+    <value>طالب</value>
+  </data>
+  <data name="NofStudentInSemester" xml:space="preserve">
+    <value>عدد الطلاب بالدورة</value>
+  </data>
+  <data name="PeriodBetweenString" xml:space="preserve">
+    <value>في الفترة من [{0}] الى [{1}]</value>
+  </data>
+  <data name="NofExamsPerSemester" xml:space="preserve">
+    <value>عدد الاختبارات بالدورة</value>
   </data>
 </root>

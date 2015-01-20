@@ -158,10 +158,10 @@
     <Compile Include="Models\DisciplinaryActivityEitViewModel.cs" />
     <Compile Include="Models\ExamEditViewModel.cs" />
     <Compile Include="Models\ExamsListViewModel.cs" />
+    <Compile Include="Models\HomeDashboardViewModel.cs" />
     <Compile Include="Models\RegisteredStudentEditViewModel.cs" />
     <Compile Include="Models\RegisteredStudentsListViewModel.cs" />
     <Compile Include="Models\StudentEditViewModel.cs" />
-    <Compile Include="Models\HomeDashbaordViewModel.cs" />
     <Compile Include="Models\TeacherEditViewModel.cs" />
     <Compile Include="Models\PagingInfo.cs" />
     <Compile Include="Models\SemesterEditViewModel.cs" />
