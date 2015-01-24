@@ -62,7 +62,6 @@
     <Compile Include="Entities\Enums.cs" />
     <Compile Include="Entities\Exam.cs" />
     <Compile Include="Entities\ExternalSupervisor.cs" />
-    <Compile Include="Entities\LearningProgressLog.cs" />
     <Compile Include="Entities\LearningProgressMark.cs" />
     <Compile Include="Entities\LearningProgressAxes.cs" />
     <Compile Include="Entities\LearningProgressUnit.cs" />

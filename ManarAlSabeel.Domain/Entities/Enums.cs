@@ -57,12 +57,6 @@ namespace ManarAlSabeel.Domain.Entities
 		Evening = 1
 	}
 
-	public enum LearningProgressMarkType
-	{
-		From = 0,
-		To = 1
-	}
-
 	public enum StudentBehaviorLevels
 	{
 		VeryPolite = 0,

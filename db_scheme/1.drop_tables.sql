@@ -50,10 +50,6 @@ ALTER TABLE [dbo].[Exams] DROP [FK_Teachers_Exams]
 
 ALTER TABLE [dbo].[InterviewCommittee] DROP [FK_Teachers_InterviewCommittee]
 
-ALTER TABLE [dbo].[LearningProgressLogs] DROP [FK_Exams_LearningProgressLogs]
-ALTER TABLE [dbo].[LearningProgressLogs] DROP [FK_ProgressAxes_LearningProgressLogs]
-
-ALTER TABLE [dbo].[LearningProgressMarks] DROP [FK_LearningProgressLogs_LearningProgressMarks]
 ALTER TABLE [dbo].[LearningProgressMarks] DROP [FK_LearningProgressUnits_LearningProgressMarks]
 
 ALTER TABLE [dbo].[StudentAbsenceLogs] DROP [FK_RegisteredStudents_StudentAbsenceLogs]
@@ -110,10 +106,7 @@ GO
 DROP TABLE [dbo].[Exams]
 GO
 
-DROP TABLE [dbo].[LearningProgressLogs]
-GO
-
-DROP TABLE [dbo].[InterviewCommittee]
+DROP TABLE [dbo].[AdmissionInterviewCommittee]
 GO
 
 DROP TABLE [dbo].[DisciplinaryActivitiesLog]

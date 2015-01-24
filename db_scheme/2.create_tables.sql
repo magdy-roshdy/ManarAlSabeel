@@ -434,10 +434,10 @@ GO
 /****** Object:  Table [dbo].[LearningProgressMarks]    Script Date: 2/10/2014 2:40:02 PM ******/
 CREATE TABLE [dbo].[LearningProgressMarks](
 	[LearningProgressMarkID] [int] IDENTITY(1,1) NOT NULL,
-	[LearningProgressMarkProgressLogID] [int] NOT NULL,
+	[LearningProgressMarkExamID] [int] NOT NULL,
 	[LearningProgressMarkUnitID] [int] NOT NULL,
 	[LearningProgressMarkSubUnitNumber] [int] NULL,
-	[LearningProgressMarkType] [tinyint] NOT NULL,
+	[LearningProgressMarkAxesID] [int] NOT NULL,
  CONSTRAINT [PK_LearningProgressMark] PRIMARY KEY CLUSTERED 
 (
 	[LearningProgressMarkID] ASC

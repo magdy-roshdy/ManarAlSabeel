@@ -304,18 +304,25 @@ GO
 /*****************************/
 /*** Table [dbo].[LearningProgressMarks] ***/
 /*****************************/
-ALTER TABLE [dbo].[LearningProgressMarks]  WITH CHECK ADD  CONSTRAINT [FK_LearningProgressLogs_LearningProgressMarks] FOREIGN KEY([LearningProgressMarkProgressLogID])
-REFERENCES [dbo].[LearningProgressLogs] ([LearningProgressLogID])
-GO
-
-ALTER TABLE [dbo].[LearningProgressMarks] CHECK CONSTRAINT [FK_LearningProgressLogs_LearningProgressMarks]
-GO
-
 ALTER TABLE [dbo].[LearningProgressMarks]  WITH CHECK ADD  CONSTRAINT [FK_LearningProgressUnits_LearningProgressMarks] FOREIGN KEY([LearningProgressMarkUnitID])
 REFERENCES [dbo].[LearningProgressUnits] ([LearningProgressUnitID])
 GO
 
 ALTER TABLE [dbo].[LearningProgressMarks] CHECK CONSTRAINT [FK_LearningProgressUnits_LearningProgressMarks]
+GO
+
+ALTER TABLE [dbo].[LearningProgressMarks]  WITH CHECK ADD  CONSTRAINT [FK_Exams_LearningProgressMarks] FOREIGN KEY([LearningProgressMarkExamID])
+REFERENCES [dbo].[Exams] ([ExamID])
+GO
+
+ALTER TABLE [dbo].[LearningProgressMarks] CHECK CONSTRAINT [FK_Exams_LearningProgressMarks]
+GO
+
+ALTER TABLE [dbo].[LearningProgressMarks]  WITH CHECK ADD  CONSTRAINT [FK_ProgressAxes_LearningProgressMarks] FOREIGN KEY([LearningProgressMarkAxesID])
+REFERENCES [dbo].[ProgressAxes] ([ProgressAxisID])
+GO
+
+ALTER TABLE [dbo].[LearningProgressMarks] CHECK CONSTRAINT [FK_ProgressAxes_LearningProgressMarks]
 GO
 
 /*****************************/

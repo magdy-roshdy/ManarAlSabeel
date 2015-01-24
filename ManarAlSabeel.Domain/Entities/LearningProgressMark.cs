@@ -11,6 +11,7 @@ namespace ManarAlSabeel.Domain.Entities
 
 		public virtual LearningProgressUnit Unit { get; set; }
 		public virtual int? SubUnitNumber { get; set; }
-		public virtual LearningProgressMarkType MarkType { get; set; }
+		public virtual Exam Exam { get; set; }
+		public virtual LearningProgressAxes Axes { get; set; }
 	}
 }
